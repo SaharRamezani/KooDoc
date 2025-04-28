@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="@drawable/bg_start"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.ParentLoginFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="24dp"
+            android:id="@+id/question"
+            android:text="@string/who_am_i_talk"
+            android:textAlignment="center"
+            android:textSize="18sp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/radio_group"
+            app:layout_constraintTop_toBottomOf="@id/question">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mother"
+                android:id="@+id/radio_mom"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dad"
+                android:id="@+id/radio_dad"/>
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other"
+                android:id="@+id/radio_other"/>
+        </RadioGroup>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:layout_constraintTop_toBottomOf="@id/radio_group"
+            android:hint="@string/relation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            android:visibility="gone"
+            android:layout_margin="18dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            android:id="@+id/box_relation"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="2dp">
+
+            <EditText
+                android:id="@+id/txt_relation"
+                android:layout_width="match_parent"
+                android:text="@={viewModel.name}"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="12dp"
+            app:cornerRadius="0dp"
+            android:text="@string/next"
+            android:textStyle="bold"
+            android:id="@+id/btn_next"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

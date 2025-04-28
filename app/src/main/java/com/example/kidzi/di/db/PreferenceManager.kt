@@ -1,0 +1,52 @@
+package com.example.kidzi.di.db
+
+import android.content.Context
+import android.util.Log
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
+
+private const val LEVEL = "level"
+private const val PARENT = "parent"
+private const val PARENT_NAME = "parent_name"
+private const val PARENT_JOB = "parent_job"
+private const val PARENT_BIRTH = "parent_birth"
+private const val PARENT_CARE = "parent_care"
+private const val CURRENT_KID = "ck"
+private const val CAN_OPEN = "co"
+
+class PreferenceManager @Inject constructor(@ApplicationContext context: Context) {
+
+    private val sharedPreferences = context.getSharedPreferences("MyPref",Context.MODE_PRIVATE)
+
+
+
+    fun canOpen(): Boolean{return sharedPreferences.getBoolean(CAN_OPEN,true)}
+    fun updateOpen(open: Boolean){
+        Log.i("Log1","can open updateing is : $open")
+        sharedPreferences.edit().putBoolean(CAN_OPEN,open).commit()
+    }
+
+
+    fun getCurrentKid(): Int{return sharedPreferences.getInt(CURRENT_KID,0)}
+    fun updateCurrentKid(kid: Int){ sharedPreferences.edit().putInt(CURRENT_KID,kid).commit() }
+
+    fun getLevel(): Int{return sharedPreferences.getInt(LEVEL,0) }
+    fun updateLevel(level: Int){ sharedPreferences.edit().putInt(LEVEL,level).commit() }
+
+    fun updateParent(parent: Int){ sharedPreferences.edit().putInt(PARENT,parent).commit() }
+    fun getParent():Int{ return sharedPreferences.getInt(PARENT,0) }
+
+    fun updateParentName(name: String){ sharedPreferences.edit().putString(PARENT_NAME,name).commit() }
+    fun getParentName(): String{ return sharedPreferences.getString(PARENT_NAME,"")!! }
+
+    fun updateParentJob(job: Int){ sharedPreferences.edit().putInt(PARENT_JOB,job).commit() }
+    fun getParentJob(): Int{return sharedPreferences.getInt(PARENT_JOB,0)}
+
+    fun updateParentBirth(birth: String){ sharedPreferences.edit().putString(PARENT_BIRTH,birth).commit() }
+    fun getParentBirth(): String{ return sharedPreferences.getString(PARENT_BIRTH,"")!! }
+
+    fun updateParentCare(care: Int){ sharedPreferences.edit().putInt(PARENT_CARE,care).commit() }
+    fun getParentCare(): Int{return sharedPreferences.getInt(PARENT_CARE,0)}
+
+
+}

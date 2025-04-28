@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#2CB9F0</color>
+    <color name="blue_dark">#111154</color>
+    <color name="purple">#642CF0</color>
+    <color name="teal_200">#F0642C</color>
+    <color name="blue_light">#2CF0C6</color>
+    <color name="teal_700">#F02CB9</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#D9D9D9</color>
+    <color name="gray">#4A4A4A</color>
+    <color name="background2">#E9E9E9</color>
+    <color name="palette_dark">#364954</color>
+    <color name="palette_natural">#5C98B8</color>
+    <color name="blue_1">#00CFEC</color>
+    <color name="blue_2">#00E1D5</color>
+    <color name="green">#5DEEB1</color>
+    <color name="red">#EA6970</color>
+    <color name="green_1">#AEF78B</color>
+    <color name="yellow">#F9F871</color>
+    <array name="loading_color">
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
+    </array>
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_alert"
+    tools:context=".ui.toxic.ToxicIronFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_header"
+            android:id="@+id/btn_back"
+            android:clickable="true"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="0dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_left"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="@dimen/header_size"
+                    android:text="@string/tox_iron"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:stretchColumns="1"
+            android:padding="16dp">
+
+
+            <!-- Row 1 -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="زمان"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:background="@android:color/darker_gray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="علایم"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:background="@android:color/darker_gray"/>
+            </TableRow>
+
+            <!-- Row 2 -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="30 دقیقه تا 6 ساعت پس از مصرف آهن"
+                    android:padding="8dp"
+                    android:textSize="@dimen/table_txt"
+                    android:background="@android:color/holo_blue_light"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="تهوع، استفراغ، درد شکم، اسهال"
+                    android:padding="8dp"
+                    android:textSize="@dimen/table_txt"
+                    android:background="@android:color/holo_blue_light"/>
+            </TableRow>
+
+            <!-- Row 3 -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="6 تا 24 ساعت بعد "
+                    android:padding="8dp"
+                    android:textSize="@dimen/table_txt"
+                    android:background="@android:color/holo_green_light"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="کم شدن  و بهبود علائم گوارشی مانند استفراغ و اسهال "
+                    android:padding="8dp"
+                    android:textSize="@dimen/table_txt"
+                    android:background="@android:color/holo_green_light"/>
+            </TableRow>
+
+            <!-- Row 4 -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="12 تا 36 ساعت بعد "
+                    android:padding="8dp"
+                    android:textSize="@dimen/table_txt"
+                    android:background="@android:color/holo_red_light"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="کم آب شدن بدن
+درگیری احتمای کبد"
+                    android:padding="8dp"
+                    android:textSize="@dimen/table_txt"
+                    android:background="@android:color/holo_red_light"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_margin="18dp"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:textSize="16sp"
+                    android:text="@string/iron_extra"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</FrameLayout>

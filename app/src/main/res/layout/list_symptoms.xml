@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:id="@+id/color"
+            android:background="@android:color/holo_red_light"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_circle_black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="نام واکسن یسنمیتلبشمسنتیب نشسی تیمنشت بنشمس نشمست بیمنشست نمشت سنمی تنمشسب منشس تیمش سیمنب نمشس تبنمش ست"
+            android:textDirection="rtl"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:textSize="16sp"
+            android:id="@+id/txt_name"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+
+
+</LinearLayout>

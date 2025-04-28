@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_vaccine"
+    android:layout_height="match_parent"
+    tools:context=".ui.vaccine.VaccineMainFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/main_margin"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_header_corrected"
+            android:id="@+id/btn_back"
+            android:clickable="true"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="0dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_left"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="@dimen/header_size"
+                    android:text="@string/vaccine_main"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/black"
+            android:textColor="@color/black"
+            android:id="@+id/btn_age"
+            app:cornerRadius="@dimen/corner_main"
+            android:text="@string/vaccine_age"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/black"
+            android:id="@+id/btn_special"
+            android:textColor="@color/black"
+            app:cornerRadius="@dimen/corner_main"
+            android:text="@string/special_child"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/black"
+            android:id="@+id/btn_advice"
+            android:textColor="@color/black"
+            app:cornerRadius="@dimen/corner_main"
+            android:text="@string/care_advice"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/black"
+            android:id="@+id/btn_wrong"
+            android:textColor="@color/black"
+            app:cornerRadius="@dimen/corner_main"
+            android:text="@string/wrong_believes"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"/>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/black"
+            android:id="@+id/btn_about"
+            android:textColor="@color/black"
+            app:cornerRadius="@dimen/corner_main"
+            android:text="@string/about_vaccines"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

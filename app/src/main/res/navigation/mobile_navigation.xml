@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.kidzi.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_parentLoginFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/parentLoginFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_parentInfoIntroFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/parentInfoIntroFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_kidIntroFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/kidIntroFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_familyDisFirstFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/familyDisFirstFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_mainFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parentLoginFragment"
+        android:name="com.example.kidzi.ui.home.ParentLoginFragment"
+        android:label="fragment_parent_login"
+        tools:layout="@layout/fragment_parent_login" >
+        <action
+            android:id="@+id/action_parentLoginFragment_to_parentInfoIntroFragment"
+            app:destination="@id/parentInfoIntroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parentInfoIntroFragment"
+        android:name="com.example.kidzi.ui.home.ParentInfoIntroFragment"
+        android:label="fragment_parent_info_intro"
+        tools:layout="@layout/fragment_parent_info_intro" >
+        <action
+            android:id="@+id/action_parentInfoIntroFragment_to_parentInfoFragment"
+            app:destination="@id/parentInfoFragment" />
+        <action
+            android:id="@+id/action_parentInfoIntroFragment_to_parentLoginFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/parentLoginFragment" />
+        <action
+            android:id="@+id/action_parentInfoIntroFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parentInfoFragment"
+        android:name="com.example.kidzi.ui.home.ParentInfoFragment"
+        android:label="fragment_parent_info"
+        tools:layout="@layout/fragment_parent_info" >
+        <action
+            android:id="@+id/action_parentInfoFragment_to_kidIntroFragment"
+            app:destination="@id/kidIntroFragment" />
+        <action
+            android:id="@+id/action_parentInfoFragment_to_parentInfoIntroFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/parentInfoIntroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidIntroFragment"
+        android:name="com.example.kidzi.ui.kid.KidIntroFragment"
+        android:label="fragment_kid_intro"
+        tools:layout="@layout/fragment_kid_intro" >
+        <action
+            android:id="@+id/action_kidIntroFragment_to_kidInfoFragment"
+            app:destination="@id/kidInfoFragment" />
+        <action
+            android:id="@+id/action_kidIntroFragment_to_parentInfoFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/parentInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidInfoFragment"
+        android:name="com.example.kidzi.ui.kid.KidInfoFragment"
+        android:label="fragment_kid_info"
+        tools:layout="@layout/fragment_kid_info" >
+        <argument
+            android:name="kid_id"
+            app:argType="integer"/>
+        <argument
+            android:name="new"
+            app:argType="boolean"/>
+        <action
+            android:id="@+id/action_kidInfoFragment_to_kidDiseaseFragment"
+            app:destination="@id/kidDiseaseFragment" />
+        <action
+            android:id="@+id/action_kidInfoFragment_to_kidIntroFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/kidIntroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidDiseaseFragment"
+        android:name="com.example.kidzi.ui.kid.KidDiseaseFragment"
+        android:label="fragment_kid_disease"
+        tools:layout="@layout/fragment_kid_disease" >
+        <argument
+            android:name="kid_id"
+            app:argType="integer"/>
+        <argument
+            android:name="new"
+            app:argType="boolean"/>
+        <action
+            android:id="@+id/action_kidDiseaseFragment_to_kidAlergyFragment"
+            app:destination="@id/kidAlergyFragment" />
+        <action
+            android:id="@+id/action_kidDiseaseFragment_to_kidInfoFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/kidInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidAlergyFragment"
+        android:name="com.example.kidzi.ui.kid.KidAlergyFragment"
+        android:label="fragment_kid_alergy"
+        tools:layout="@layout/fragment_kid_alergy" >
+
+        <argument
+            android:name="kid_id"
+            app:argType="integer"/>
+        <argument
+            android:name="new"
+            app:argType="boolean"/>
+        <action
+            android:id="@+id/action_kidAlergyFragment_to_kidSocial"
+            app:destination="@id/kidSocial" />
+        <action
+            android:id="@+id/action_kidAlergyFragment_to_kidDiseaseFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/kidDiseaseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidSocial"
+        android:name="com.example.kidzi.ui.kid.KidSocial"
+        android:label="fragment_kid_social"
+        tools:layout="@layout/fragment_kid_social" >
+        <argument
+            android:name="kid_id"
+            app:argType="integer"/>
+        <argument
+            android:name="new"
+            app:argType="boolean"/>
+        <action
+            android:id="@+id/action_kidSocial_to_familyDisFirstFragment"
+            app:destination="@id/familyDisFirstFragment" />
+        <action
+            android:id="@+id/action_kidSocial_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_kidSocial_to_kidAlergyFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/kidAlergyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/familyDisFirstFragment"
+        android:name="com.example.kidzi.ui.kid.FamilyDisFirstFragment"
+        android:label="fragment_family_dis_first"
+        tools:layout="@layout/fragment_family_dis_first" >
+        <argument
+            android:name="kid_id"
+            app:argType="integer"/>
+        <argument
+            android:name="new"
+            app:argType="boolean"/>
+        <action
+            android:id="@+id/action_familyDisFirstFragment_to_familyDisSecondFragment"
+            app:destination="@id/familyDisSecondFragment" />
+        <action
+            android:id="@+id/action_familyDisFirstFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_familyDisFirstFragment_to_kidSocial"
+            app:popUpToInclusive="true"
+            app:destination="@id/kidSocial" />
+    </fragment>
+    <fragment
+        android:id="@+id/familyDisSecondFragment"
+        android:name="com.example.kidzi.ui.kid.FamilyDisSecondFragment"
+        android:label="fragment_family_dis_second"
+        tools:layout="@layout/fragment_family_dis_second" >
+        <argument
+            android:name="parentId"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_familyDisSecondFragment_to_familyDisFirstFragment"
+            app:destination="@id/familyDisFirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.kidzi.ui.home.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_vaccineMainFragment"
+            app:destination="@id/vaccineMainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_toxicMainFragment"
+            app:destination="@id/toxicMainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_symptomsFragment"
+            app:destination="@id/symptomsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_milGrowthFragment"
+            app:destination="@id/milGrowthFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_milkIntroFragment"
+            app:destination="@id/milkIntroFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/milkIntroFragment"
+        android:name="com.example.kidzi.ui.milk.MilkIntroFragment"
+        android:label="fragment_milk_intro"
+        tools:layout="@layout/fragment_milk_intro" >
+        <action
+            android:id="@+id/action_milkIntroFragment_to_kidsChooseFragment"
+            app:destination="@id/kidsChooseFragment" />
+        <action
+            android:id="@+id/action_milkIntroFragment_to_milkManualFragment"
+            app:destination="@id/milkManualFragment" />
+        <action
+            android:id="@+id/action_milkIntroFragment_to_milkResultFragment"
+            app:destination="@id/milkResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidsChooseFragment"
+        android:name="com.example.kidzi.ui.kid.KidsChooseFragment"
+        android:label="fragment_kids_choose"
+        tools:layout="@layout/fragment_kids_choose" />
+    <fragment
+        android:id="@+id/milkManualFragment"
+        android:name="com.example.kidzi.ui.milk.MilkManualFragment"
+        android:label="fragment_milk_manual"
+        tools:layout="@layout/fragment_milk_manual" >
+        <action
+            android:id="@+id/action_milkManualFragment_to_milkResultFragment"
+            app:destination="@id/milkResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/milkResultFragment"
+        android:name="com.example.kidzi.ui.milk.MilkResultFragment"
+        android:label="fragment_milk_result"
+        tools:layout="@layout/fragment_milk_result" >
+        <argument
+            android:name="type"
+            app:argType="integer"/>
+        <argument
+            android:name="age"
+            app:argType="integer"/>
+
+        <argument
+            android:name="lac"
+            app:argType="boolean"/>
+
+        <argument
+            android:name="cow"
+            app:argType="boolean"/>
+    </fragment>
+    <fragment
+        android:id="@+id/vaccineFragment"
+        android:name="com.example.kidzi.ui.vaccine.VaccineFragment"
+        android:label="fragment_vaccine"
+        tools:layout="@layout/fragment_vaccine" >
+        <argument
+            android:name="row"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/vaccineMainFragment"
+        android:name="com.example.kidzi.ui.vaccine.VaccineMainFragment"
+        android:label="fragment_vaccine_main"
+        tools:layout="@layout/fragment_vaccine_main" >
+        <action
+            android:id="@+id/action_vaccineMainFragment_to_vaccineAgeFragment"
+            app:destination="@id/vaccineAgeFragment" />
+        <action
+            android:id="@+id/action_vaccineMainFragment_to_vaccineSpecialFragment"
+            app:destination="@id/vaccineSpecialFragment" />
+        <action
+            android:id="@+id/action_vaccineMainFragment_to_vaccineAdviceFragment"
+            app:destination="@id/vaccineAdviceFragment" />
+        <action
+            android:id="@+id/action_vaccineMainFragment_to_vaccineAboutFragment"
+            app:destination="@id/vaccineAboutFragment" />
+        <action
+            android:id="@+id/action_vaccineMainFragment_to_vaccineWrongFragment"
+            app:destination="@id/vaccineWrongFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vaccineAgeFragment"
+        android:name="com.example.kidzi.ui.vaccine.VaccineAgeFragment"
+        android:label="fragment_vaccine_age"
+        tools:layout="@layout/fragment_vaccine_age" >
+        <action
+            android:id="@+id/action_vaccineAgeFragment_to_vaccineFragment"
+            app:destination="@id/vaccineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vaccineSpecialFragment"
+        android:name="com.example.kidzi.ui.vaccine.VaccineSpecialFragment"
+        android:label="fragment_vaccine_special"
+        tools:layout="@layout/fragment_vaccine_special" />
+    <fragment
+        android:id="@+id/vaccineAdviceFragment"
+        android:name="com.example.kidzi.ui.vaccine.VaccineAdviceFragment"
+        android:label="fragment_vaccine_advice"
+        tools:layout="@layout/fragment_vaccine_advice" />
+    <fragment
+        android:id="@+id/vaccineAboutFragment"
+        android:name="com.example.kidzi.ui.vaccine.VaccineAboutFragment"
+        android:label="fragment_vaccine_about"
+        tools:layout="@layout/fragment_vaccine_about" />
+    <fragment
+        android:id="@+id/vaccineWrongFragment"
+        android:name="com.example.kidzi.ui.vaccine.VaccineWrongFragment"
+        android:label="fragment_vaccine_wrong"
+        tools:layout="@layout/fragment_vaccine_wrong" />
+    <fragment
+        android:id="@+id/toxicMainFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicMainFragment"
+        android:label="fragment_toxic_main"
+        tools:layout="@layout/fragment_toxic_main" >
+        <action
+            android:id="@+id/action_toxicMainFragment_to_toxicMedFragment"
+            app:destination="@id/toxicMedFragment" />
+        <action
+            android:id="@+id/action_toxicMainFragment_to_toxicNoMedFragment"
+            app:destination="@id/toxicNoMedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toxicMedFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicMedFragment"
+        android:label="fragment_toxic_med"
+        tools:layout="@layout/fragment_toxic_med" >
+        <action
+            android:id="@+id/action_toxicMedFragment_to_toxicIronFragment"
+            app:destination="@id/toxicIronFragment" />
+        <action
+            android:id="@+id/action_toxicMedFragment_to_toxicMedDetailFragment"
+            app:destination="@id/toxicMedDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toxicIronFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicIronFragment"
+        android:label="fragment_toxic_iron"
+        tools:layout="@layout/fragment_toxic_iron" />
+    <fragment
+        android:id="@+id/toxicMedDetailFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicMedDetailFragment"
+        android:label="fragment_toxic_med_detail"
+        tools:layout="@layout/fragment_toxic_med_detail" >
+
+        <argument
+            android:name="row"
+            app:argType="integer"/>
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/toxicNoMedFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicNoMedFragment"
+        android:label="fragment_toxic_no_med"
+        tools:layout="@layout/fragment_toxic_no_med" >
+        <action
+            android:id="@+id/action_toxicNoMedFragment_to_toxicDrugFragment"
+            app:destination="@id/toxicDrugFragment" />
+        <action
+            android:id="@+id/action_toxicNoMedFragment_to_toxicPlantsFragment"
+            app:destination="@id/toxicPlantsFragment" />
+        <action
+            android:id="@+id/action_toxicNoMedFragment_to_toxicStingFragment"
+            app:destination="@id/toxicStingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toxicDrugFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicDrugFragment"
+        android:label="fragment_toxic_drug"
+        tools:layout="@layout/fragment_toxic_drug" >
+        <action
+            android:id="@+id/action_toxicDrugFragment_to_toxicNoMedDetailFragment"
+            app:destination="@id/toxicNoMedDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toxicNoMedDetailFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicNoMedDetailFragment"
+        android:label="fragment_toxic_no_med_detail"
+        tools:layout="@layout/fragment_toxic_no_med_detail" >
+        <argument
+            android:name="row"
+            app:argType="integer"/>
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/toxicPlantsFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicPlantsFragment"
+        android:label="fragment_toxic_plants"
+        tools:layout="@layout/fragment_toxic_plants" />
+    <fragment
+        android:id="@+id/toxicStingFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicStingFragment"
+        android:label="fragment_toxic_sting"
+        tools:layout="@layout/fragment_toxic_sting" >
+        <action
+            android:id="@+id/action_toxicStingFragment_to_toxicBeeFragment"
+            app:destination="@id/toxicBeeFragment" />
+        <action
+            android:id="@+id/action_toxicStingFragment_to_toxicSnakeFragment"
+            app:destination="@id/toxicSnakeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toxicBeeFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicBeeFragment"
+        android:label="fragment_toxic_bee"
+        tools:layout="@layout/fragment_toxic_bee" />
+    <fragment
+        android:id="@+id/toxicSnakeFragment"
+        android:name="com.example.kidzi.ui.toxic.ToxicSnakeFragment"
+        android:label="fragment_toxic_snake"
+        tools:layout="@layout/fragment_toxic_snake" />
+    <fragment
+        android:id="@+id/symptomsFragment"
+        android:name="com.example.kidzi.ui.symptoms.SymptomsFragment"
+        android:label="fragment_symptoms"
+        tools:layout="@layout/fragment_symptoms" >
+        <action
+            android:id="@+id/action_symptomsFragment_to_kidsChooseFragment"
+            app:destination="@id/kidsChooseFragment" />
+        <action
+            android:id="@+id/action_symptomsFragment_to_kidInfoFragment"
+            app:destination="@id/kidInfoFragment" />
+        <action
+            android:id="@+id/action_symptomsFragment_to_symptomsParentFragment"
+            app:destination="@id/symptomsParentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/milGrowthFragment"
+        android:name="com.example.kidzi.ui.milk.MilGrowthFragment"
+        android:label="fragment_mil_growth"
+        tools:layout="@layout/fragment_mil_growth" >
+        <action
+            android:id="@+id/action_milGrowthFragment_to_milkIntroFragment"
+            app:destination="@id/milkIntroFragment" />
+        <action
+            android:id="@+id/action_milGrowthFragment_to_growthMainFragment"
+            app:destination="@id/growthMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/growthMainFragment"
+        android:name="com.example.kidzi.ui.milk.GrowthMainFragment"
+        android:label="fragment_groth_main"
+        tools:layout="@layout/fragment_groth_main" >
+        <action
+            android:id="@+id/action_growthMainFragment_to_kidsChooseFragment"
+            app:destination="@id/kidsChooseFragment" />
+        <action
+            android:id="@+id/action_growthMainFragment_to_kidInfoFragment"
+            app:destination="@id/kidInfoFragment" />
+        <action
+            android:id="@+id/action_growthMainFragment_to_growthChartFragment"
+            app:destination="@id/growthChartFragment" />
+        <action
+            android:id="@+id/action_growthMainFragment_to_growthFollowFragment"
+            app:destination="@id/growthFollowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/growthChartFragment"
+        android:name="com.example.kidzi.ui.milk.GrowthChartFragment"
+        android:label="fragment_growth_chart"
+        tools:layout="@layout/fragment_growth_chart" >
+        <argument
+            android:name="type"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/growthFollowFragment"
+        android:name="com.example.kidzi.ui.milk.GrowthFollowFragment"
+        android:label="fragment_growth_follow"
+        tools:layout="@layout/fragment_growth_follow" />
+    <fragment
+        android:id="@+id/symptomsParentFragment"
+        android:name="com.example.kidzi.ui.symptoms.SymptomsParentFragment"
+        android:label="fragment_symptoms_parent"
+        tools:layout="@layout/fragment_symptoms_parent" >
+        <action
+            android:id="@+id/action_symptomsParentFragment_to_symptomsDetailsFragment"
+            app:destination="@id/symptomsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/symptomsDetailsFragment"
+        android:name="com.example.kidzi.ui.symptoms.SymptomsDetailsFragment"
+        android:label="fragment_symptoms_details"
+        tools:layout="@layout/fragment_symptoms_details" >
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <argument
+            android:name="row"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.kidzi.ui.home.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.kidzi.ui.home.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_parentShowFragment"
+            app:destination="@id/parentShowFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_kidChoose2Fragment"
+            app:destination="@id/kidChoose2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parentShowFragment"
+        android:name="com.example.kidzi.ui.home.ParentShowFragment"
+        android:label="fragment_parent_show"
+        tools:layout="@layout/fragment_parent_show" />
+    <fragment
+        android:id="@+id/kidChoose2Fragment"
+        android:name="com.example.kidzi.ui.kid.KidChoose2Fragment"
+        android:label="fragment_kid_choose2"
+        tools:layout="@layout/fragment_kid_choose2" >
+        <action
+            android:id="@+id/action_kidChoose2Fragment_to_kidInfoFragment"
+            app:destination="@id/kidInfoFragment" />
+    </fragment>
+
+</navigation>

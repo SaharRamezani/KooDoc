@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="milk_start">
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>6</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
+        <item>6</item>
+        <item>0</item>
+        <item>36</item>
+        <item>36</item>
+        <item>0</item>
+        <item>6</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>6</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="milk_finish">
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>500</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>6</item>
+        <item>12</item>
+        <item>12</item>
+        <item>500</item>
+        <item>500</item>
+        <item>6</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>500</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>500</item>
+        <item>12</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>500</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>6</item>
+        <item>12</item>
+        <item>36</item>
+    </string-array>
+
+    <string-array name="milk_name_fa">
+        <item>نان ۱</item>
+        <item>نان ۲</item>
+        <item>نان ۳</item>
+        <item>نان کید</item>
+        <item>پری نان</item>
+        <item>نان بدون لاکتوز</item>
+        <item>نان کامفورت</item>
+        <item>نان ای آر</item>
+        <item>نان اچ آ ۱</item>
+        <item>نان اچ آ ۲</item>
+        <item>آپتامیل ۱</item>
+        <item>آپتامیل ۲</item>
+        <item>آپتامیل ۳</item>
+        <item>آپتامیل پرونوترا ۱</item>
+        <item>اپتامیل پرونوترا ۲</item>
+        <item>آپتامیل پرونوترا ۳</item>
+        <item>آپتامیل پپتی ۱</item>
+        <item>آپتامیل پپتی ۲</item>
+        <item>آپتامیل پپتی جونیر</item>
+        <item>اپتاکید پرونوترا</item>
+        <item>آپتاکید</item>
+        <item>اپتامیل اچ آ ۱</item>
+        <item>آپتامیل اچ آ ۲</item>
+        <item>آپتامیل پی دی اف</item>
+        <item>پری آپتامیل</item>
+        <item>ببلاک ۱</item>
+        <item>ببلاک ۲</item>
+        <item>ببلاک ۳</item>
+        <item>ببجونیور</item>
+        <item>ببلاک ای آر</item>
+        <item>ببلاک ال اف</item>
+        <item>ببلاک کامفورت</item>
+        <item>ببلاک اچ آ ۱</item>
+        <item>بببلاک اچ آ ۲</item>
+        <item>ببلاک پی دی اف</item>
+        <item>ببلاک پری مچور</item>
+        <item>گیگوز ۱</item>
+        <item>گیگوز ۲</item>
+        <item>گیگوز ۳</item>
+        <item>تروویتال ۱</item>
+        <item>تروویتال ۲</item>
+        <item>ترووویتال ۳</item>
+        <item>تروکید</item>
+        <item>ترویتال ای آر</item>
+        <item>تروویتال ال اف</item>
+        <item>بیومیل ۱</item>
+        <item>بیومیل ۲</item>
+        <item>بیومیل ۳</item>
+        <item>بیومیل ای آر</item>
+        <item>بیومیل ال اف</item>
+        <item>پری بیومیل</item>
+        <item>بیومیل سوی</item>
+        <item>بیومیل پلاس ۱</item>
+        <item>بیومیل پلاس ۲</item>
+        <item>بیومیل پلاس ۳</item>
+        <item>بیومیل پلاس جونیور</item>
+        <item>سوپرامیل ۱</item>
+        <item>سوپرامیل ۱</item>
+        <item>سوپرامیل ۳</item>
+        <item>سیمیلاک توتال کامفورت ۱</item>
+        <item>سیمیلاک توتال کامفورت ۲</item>
+        <item>سیمیلاک توتال کامفورت ۳</item>
+        <item>سیمیلاک نئوشور</item>
+        <item>ایزومیل</item>
+        <item>نئوکیت</item>
+        <item>اس ام ای ۱</item>
+        <item>اس ام ای ۲</item>
+        <item>اس ام ای ۳</item>
+    </string-array>
+
+    <string-array name="milk_name_en">
+        <item>NAN 1</item>
+        <item>NAN2</item>
+        <item>NAN 3</item>
+        <item>NAN KID</item>
+        <item>pre NAN</item>
+        <item>NAN LF</item>
+        <item>NAN Comfort</item>
+        <item>NAN AR</item>
+        <item>NAN HA 1</item>
+        <item>NAN HA 2</item>
+        <item>Aptamil 1</item>
+        <item>Apatamil 2</item>
+        <item>Apatmil 3</item>
+        <item>Aptamil pronutra 1</item>
+        <item>Aptamil pronutra 2</item>
+        <item>Aptamil pronutra 3</item>
+        <item>Aptamil Pepti 1</item>
+        <item>Aptamil Pepti 2</item>
+        <item>Aptamil Pepti Junior</item>
+        <item>AptaKid pronutra</item>
+        <item>AptaKid</item>
+        <item>Aptamil HA 1</item>
+        <item>Aptamil HA 2</item>
+        <item>Aptamil pdf</item>
+        <item>pre Aptamil</item>
+        <item>Bebelac 1</item>
+        <item>Bebelac 2</item>
+        <item>Bebelac 3</item>
+        <item>Bebejunior</item>
+        <item>Bebelac AR</item>
+        <item>Bebelac LF</item>
+        <item>Bebelac Comfort</item>
+        <item>Bebelac HA 1</item>
+        <item>Bebelac HA 2</item>
+        <item>Bebelac pdf</item>
+        <item>Bebelac premature</item>
+        <item>Guigoz 1</item>
+        <item>Guigoz 2</item>
+        <item>Guigoz 3</item>
+        <item>Truevital 1</item>
+        <item>Truevital 2</item>
+        <item>Truevital 3</item>
+        <item>TrueKid</item>
+        <item>Truevital AR</item>
+        <item>Truevital LF</item>
+        <item>Biomil 1</item>
+        <item>Biomil 2</item>
+        <item>Biomil 3</item>
+        <item>Biomil AR</item>
+        <item>Biomil LF</item>
+        <item>pre Biomil</item>
+        <item>Biomil Soy</item>
+        <item>Biomil plus 1</item>
+        <item>Biomil plus 2</item>
+        <item>Biomil plus 3</item>
+        <item>Biomil plus junior</item>
+        <item>Supramil 1</item>
+        <item>Supramil 2</item>
+        <item>Supramil 3</item>
+        <item>Similac total comfort 1</item>
+        <item>Similac total comfort 2</item>
+        <item>Similac total comfort 3</item>
+        <item>Similac NeoSure</item>
+        <item>Isomil</item>
+        <item>Neokate</item>
+        <item>SMA 1</item>
+        <item>SMA 2</item>
+        <item>SMA 3</item>
+    </string-array>
+
+    <string-array name="milk_lac">
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>0</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>1</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>0</item>
+        <item>2</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>0</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>0</item>
+        <item>2</item>
+        <item>0</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="milk_use">
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رژیمی</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+        <item>رگولار</item>
+    </string-array>
+
+    <string-array name="milk_type">
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین هیدرولیز شده</item>
+        <item>پروتئین هیدرولیز شده</item>
+        <item>پروتئین هیدرولیز شده</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین سویا</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتئین نسبتا هیدرولیز شده</item>
+        <item>پروتیین شیر گاو</item>
+        <item>پروتئین سویا</item>
+        <item>آمینو اسید</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+        <item>پروتئین شیر</item>
+    </string-array>
+</resources>

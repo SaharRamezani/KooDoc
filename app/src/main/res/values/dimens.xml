@@ -1,0 +1,17 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="main_margin">18dp</dimen>
+    <dimen name="corner_milk_buttons">15dp</dimen>
+    <dimen name="margin_header">24dp</dimen>
+    <dimen name="txt_header">20sp</dimen>
+    <dimen name="header_size">20sp</dimen>
+    <dimen name="margin_header_corrected">6dp</dimen>
+    <dimen name="corner_main">10dp</dimen>
+    <dimen name="line_extra">4dp</dimen>
+    <dimen name="table_txt">10sp</dimen>
+    <dimen name="margin_main_icons">36dp</dimen>
+    <dimen name="margin_symptoms_cards">12dp</dimen>
+    <dimen name="main_icon_size">100dp</dimen>
+</resources>
