@@ -4,10 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_main"
-    tools:context=".ui.home.AccountFragment">
-
-
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_header_corrected"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:id="@+id/btn_back"
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
@@ -32,59 +31,47 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_left"/>
+                    app:tint="@color/button_outlined_border"
+                    android:src="@drawable/ic_arrow_left" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
-                    android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
+                    android:textColor="@color/colorTextPrimary"
                     android:textSize="@dimen/header_size"
-                    android:text="@string/account"/>
-
+                    android:text="@string/account" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
-            android:textColor="@color/black"
+            style="@style/Widget.Material3.Button"
             android:id="@+id/btn_my_detail"
-            app:cornerRadius="@dimen/corner_main"
             android:text="@string/my_detail"
             android:textSize="16sp"
-            android:layout_marginTop="18dp"/>
-
+            android:layout_marginTop="18dp"
+            app:cornerRadius="@dimen/corner_main" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            style="@style/Widget.Material3.Button"
             android:id="@+id/btn_kids"
-            android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
             android:text="@string/my_kids"
             android:textSize="16sp"
-            android:layout_marginTop="18dp"/>
-
+            android:layout_marginTop="18dp"
+            app:cornerRadius="@dimen/corner_main" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            style="@style/Widget.Material3.Button"
             android:id="@+id/btn_rules"
-            android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
             android:text="@string/rules_2"
             android:textSize="16sp"
-            android:layout_marginTop="18dp"/>
-
-
-
+            android:layout_marginTop="18dp"
+            app:cornerRadius="@dimen/corner_main" />
     </LinearLayout>
 </FrameLayout>
