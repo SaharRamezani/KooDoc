@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand Colors -->
+    <color name="colorPrimary">#ED7D31</color> <!-- Warm Orange -->
+    <color name="colorSecondary">#4A86B8</color> <!-- Calm Blue -->
+    <color name="colorAccent">#FFE3C4</color> <!-- Apricot Cream -->
+    <!-- Text -->
+    <color name="colorTextPrimary">#333333</color> <!-- Charcoal Gray -->
+    <color name="colorTextMuted">#7C6F64</color> <!-- Warm Taupe -->
+    <!-- Status -->
+    <color name="colorSuccess">#B2E2B9</color> <!-- Mint Green -->
+    <!-- Button Colors -->
+    <color name="button_primary_bg">#ED7D31</color> <!-- Warm Orange -->
+    <color name="button_primary_text">#FFF9F5</color> <!-- Soft Ivory -->
+
+    <color name="button_secondary_bg">#4A86B8</color> <!-- Calm Blue -->
+    <color name="button_secondary_text">#FFF9F5</color> <!-- Soft Ivory -->
+
+    <color name="button_outlined_bg">#FFF9F5</color> <!-- Soft Ivory -->
+    <color name="button_outlined_text">#333333</color> <!-- Charcoal Gray -->
+    <color name="button_outlined_border">#7C6F64</color> <!-- Warm Taupe -->
+
+    <color name="button_success_bg">#B2E2B9</color> <!-- Mint Green -->
+    <color name="button_success_text">#333333</color> <!-- Charcoal Gray -->
+    <!--    legacy colors:-->
     <color name="blue">#2CB9F0</color>
     <color name="blue_dark">#111154</color>
     <color name="purple">#642CF0</color>
@@ -8,9 +31,9 @@
     <color name="teal_700">#F02CB9</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background">#D9D9D9</color>
+    <color name="background">#FFF9F5</color>
     <color name="gray">#4A4A4A</color>
-    <color name="background2">#E9E9E9</color>
+    <color name="background2">#FFF9F5</color>
     <color name="palette_dark">#364954</color>
     <color name="palette_natural">#5C98B8</color>
     <color name="blue_1">#00CFEC</color>

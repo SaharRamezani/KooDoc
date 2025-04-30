@@ -2,9 +2,56 @@
     <!-- Base application theme. -->
     <style name="Theme.Kidzi" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_1</item>
         <item name="fontFamily">@font/yekanregular</item>
         <item name="android:fontFamily">@font/yekanregular</item>
+
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/background</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/background</item>
+
+        <!-- Background and Surface -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/colorAccent</item>
+        <item name="colorOnSurface">@color/colorTextPrimary</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextMuted</item>
+
+        <!-- Positive state color -->
+        <item name="colorSecondaryContainer">@color/colorSuccess</item>
+
+        <!-- Others (optional) -->
+        <item name="colorOutline">@color/colorTextMuted</item>
         <!-- Customize your theme here. -->
+
+        <!-- Primary Button Style -->
+        <style name="Widget.MyApp.Button.Primary" parent="Widget.Material3.Button">
+            <item name="backgroundTint">@color/button_primary_bg</item>
+            <item name="android:textColor">@color/button_primary_text</item>
+        </style>
+
+        <!-- Secondary Button Style -->
+        <style name="Widget.MyApp.Button.Secondary" parent="Widget.Material3.Button">
+            <item name="backgroundTint">@color/button_secondary_bg</item>
+            <item name="android:textColor">@color/button_secondary_text</item>
+        </style>
+
+        <!-- Outlined Button Style -->
+        <style name="Widget.MyApp.Button.Outlined" parent="Widget.Material3.OutlinedButton">
+            <item name="backgroundTint">@color/button_outlined_bg</item>
+            <item name="strokeColor">@color/button_outlined_border</item>
+            <item name="android:textColor">@color/button_outlined_text</item>
+        </style>
+
+        <!-- Success Button Style -->
+        <style name="Widget.MyApp.Button.Success" parent="Widget.Material3.Button">
+            <item name="backgroundTint">@color/button_success_bg</item>
+            <item name="android:textColor">@color/button_success_text</item>
+        </style>
     </style>
 </resources>
