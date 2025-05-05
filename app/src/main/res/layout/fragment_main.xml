@@ -113,17 +113,14 @@
 
 
         <!-- Main Action Grid -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            app:layout_constraintTop_toBottomOf="@id/top"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingStart="@dimen/main_margin"
-            android:paddingEnd="@dimen/main_margin">
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="2"
+            android:padding="@dimen/main_margin"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true">
 
         <!-- Column 1 -->
         <LinearLayout
