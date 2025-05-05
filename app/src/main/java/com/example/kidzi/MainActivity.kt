@@ -30,10 +30,19 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("StartupDebug", "Level: $sharedPreferences.getLevel(), CanOpen: $sharedPreferences.canOpen()")
 
+        val level = sharedPreferences.getLevel()
+        val canOpen = sharedPreferences.canOpen()
+
         val startDestination = when {
-            sharedPreferences.canOpen() && sharedPreferences.getLevel() == 4 -> R.id.mainFragment
-            else -> R.id.navigation_home
+            !canOpen -> R.id.navigation_home
+            level == 0 -> R.id.parentLoginFragment
+            level == 1 -> R.id.parentInfoIntroFragment
+            level == 2 -> R.id.kidIntroFragment
+            level == 3 -> R.id.familyDisFirstFragment
+            level == 4 -> R.id.mainFragment
+            else -> R.id.parentLoginFragment
         }
+
         navGraph.setStartDestination(startDestination)
         navController.graph = navGraph
     }

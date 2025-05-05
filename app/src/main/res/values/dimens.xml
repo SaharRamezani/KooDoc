@@ -13,5 +13,6 @@
     <dimen name="table_txt">10sp</dimen>
     <dimen name="margin_main_icons">36dp</dimen>
     <dimen name="margin_symptoms_cards">12dp</dimen>
-    <dimen name="main_icon_size">100dp</dimen>
+    <dimen name="main_icon_size_width">120dp</dimen>
+    <dimen name="main_icon_size_height">120dp</dimen>
 </resources>

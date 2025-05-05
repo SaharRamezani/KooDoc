@@ -76,7 +76,7 @@
         android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:text="@string/lets_go"
         android:textStyle="bold"
         app:cornerRadius="12dp"
         app:backgroundTint="@color/button_primary_bg"

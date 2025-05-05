@@ -1,268 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_main"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.MainFragment">
+    android:background="@color/background">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Top Action Buttons -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="@android:color/transparent"
+            android:id="@+id/btn_account"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginTop="18dp"
-            app:cardElevation="0dp"
-            android:layout_marginLeft="12dp"
-            android:clickable="true"
-            android:id="@+id/btn_account">
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/button_primary_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:clickable="true">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_horizontal"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/outline_supervisor_account_24"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/account"
-                    android:textColor="@color/black"
-                    android:textSize="8sp"/>
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/outline_supervisor_account_24"
+                    app:tint="@color/button_primary_text" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:visibility="gone"
-            android:backgroundTint="@android:color/transparent"
+            android:id="@+id/btn_kids"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/btn_account"
-            android:layout_marginTop="18dp"
-            app:cardElevation="0dp"
+            app:layout_constraintStart_toEndOf="@id/btn_account"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/button_secondary_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
             android:clickable="true"
-            android:id="@+id/btn_kids">
+            android:visibility="gone">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_horizontal"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_kids_16"/>
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/ic_kids_16"
+                    app:tint="@color/button_secondary_text" />
+
                 <TextView
+                    style="@style/TextAppearance.MaterialComponents.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/kids"
-                    android:textColor="@color/white"
-                    android:textSize="8sp"/>
+                    android:textColor="@color/button_secondary_text" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
 
-
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
+        <!-- Header Section -->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/top"
-            app:layout_constraintHeight_percent="0.3333">
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_account"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.33">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/kodak"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/black"
-                android:layout_marginRight="86dp"
-                android:layout_marginBottom="40dp"
-                android:textStyle="bold"
-                android:textSize="28sp"/>
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+            android:id="@+id/title_kodak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kodak"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
             <ImageView
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:id="@+id/logo"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
                 android:src="@drawable/logo_koo"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="26dp"
-                android:id="@+id/logo"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layoutDirection="rtl"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@id/logo">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/smart_assistance"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+        <!-- Main Action Grid -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginLeft="@dimen/main_margin"
-            android:layout_marginRight="@dimen/main_margin"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/top"
-            app:layout_constraintBottom_toBottomOf="parent">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingStart="@dimen/main_margin"
+            android:paddingEnd="@dimen/main_margin">
 
+        <!-- Column 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/main_icon_size"
-                    android:layout_height="@dimen/main_icon_size"
-                    android:clickable="true"
-                    android:id="@+id/btn_symptoms"
-                    android:backgroundTint="@android:color/holo_orange_dark">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_symptoms_main"
-                            android:layout_centerInParent="true"/>
-                    </RelativeLayout>
+            <!-- Symptoms Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_symptoms"
+                android:layout_width="@dimen/main_icon_size_width"
+                android:layout_height="@dimen/main_icon_size_height"
+                android:clickable="true"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
 
-                </com.google.android.material.card.MaterialCardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/symptoms_diag"
-                    android:textColor="@color/black"/>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:srcCompat="@drawable/ic_symptoms_main"
+                        app:tint="@color/button_primary_text"/>
 
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/symptoms_diag"
+                        android:textColor="@color/button_primary_text"/>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/main_icon_size"
-                    android:layout_height="@dimen/main_icon_size"
-                    android:layout_marginTop="@dimen/margin_main_icons"
-                    android:clickable="true"
-                    android:id="@+id/btn_food"
-                    android:backgroundTint="@android:color/holo_purple">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_food_24"
-                            android:layout_centerInParent="true"/>
-                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                </com.google.android.material.card.MaterialCardView>
+            <!-- gap between cards -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
 
+            <!-- Food Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_food"
+                android:layout_width="@dimen/main_icon_size_width"
+                android:layout_height="@dimen/main_icon_size_height"
+                android:clickable="true"
+                app:cardBackgroundColor="@color/colorSecondary"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/food_milk"
-                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:srcCompat="@drawable/ic_food_24"
+                        app:tint="@color/button_secondary_text"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/food_milk"
+                        android:textColor="@color/button_secondary_text"/>
 
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btn_vaccine"
-                    android:layout_width="@dimen/main_icon_size"
-                    android:layout_height="@dimen/main_icon_size"
-                    android:backgroundTint="@android:color/holo_red_dark"
-                    android:clickable="true">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_vaccines" />
-                    </RelativeLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/vaccine_info"
-                    android:textColor="@color/black" />
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btn_alert"
-                    android:layout_width="@dimen/main_icon_size"
-                    android:layout_height="@dimen/main_icon_size"
-                    android:layout_marginTop="@dimen/margin_main_icons"
-                    android:backgroundTint="@android:color/holo_green_dark"
-                    android:clickable="true">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_alert_24" />
-                    </RelativeLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/alert_bad"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
+        <!-- Column 2 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Vaccine Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_vaccine"
+                android:layout_width="@dimen/main_icon_size_width"
+                android:layout_height="@dimen/main_icon_size_height"
+                android:clickable="true"
+                app:cardBackgroundColor="@color/colorSecondary"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:srcCompat="@drawable/ic_vaccines"
+                        app:tint="@color/button_primary_text"/>
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/vaccine_info"
+                        android:textColor="@color/button_primary_text"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- gap between cards -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+
+            <!-- Alert Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_alert"
+                android:layout_width="@dimen/main_icon_size_width"
+                android:layout_height="@dimen/main_icon_size_height"
+                android:clickable="true"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:srcCompat="@drawable/ic_alert_24"
+                        app:tint="@color/button_primary_text"/>
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/alert_bad"
+                        android:textColor="@color/button_primary_text"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
