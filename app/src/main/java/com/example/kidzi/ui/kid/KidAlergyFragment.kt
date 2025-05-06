@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import androidx.paging.LOGGER
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidAlergyBinding
 import com.example.kidzi.databinding.FragmentKidDiseaseBinding
