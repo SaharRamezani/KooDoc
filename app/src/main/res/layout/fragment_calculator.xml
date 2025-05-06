@@ -90,7 +90,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/choose_drug_name"
-                        android:padding="@dimen/spacing_medium"
+                        android:padding="@dimen/spacing_small"
                         android:layout_marginBottom="16dp">
 
                         <AutoCompleteTextView
@@ -106,7 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/kid_weight"
-                        android:padding="@dimen/spacing_medium"
+                        android:padding="@dimen/spacing_small"
                         android:layout_marginBottom="12dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -122,8 +122,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_age"
-                        android:padding="@dimen/spacing_medium"
-                        android:layout_marginBottom="12dp">
+                        android:padding="@dimen/spacing_small"
+                        android:layout_marginBottom="0dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/input_age"
