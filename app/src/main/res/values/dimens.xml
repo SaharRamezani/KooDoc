@@ -7,7 +7,8 @@
     <dimen name="margin_header">24dp</dimen>
     <dimen name="txt_header">20sp</dimen>
     <dimen name="header_size">20sp</dimen>
-    <dimen name="margin_header_corrected">6dp</dimen>
+    <dimen name="margin_header_corrected">10dp</dimen>
+    <dimen name="height_header">10dp</dimen>
     <dimen name="corner_main">10dp</dimen>
     <dimen name="line_extra">4dp</dimen>
     <dimen name="table_txt">10sp</dimen>

@@ -197,6 +197,15 @@
             app:destination="@id/familyDisFirstFragment" />
     </fragment>
     <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.example.kidzi.ui.calculator.CalculatorFragment"
+        android:label="@string/main_calculator"
+        tools:layout="@layout/fragment_calculator" >
+        <action
+            android:id="@+id/action_calculatorFragment_to_mainFragment"
+            app:destination="@id/mainFragment"/>
+    </fragment>
+    <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.kidzi.ui.home.MainFragment"
         android:label="fragment_main"
@@ -204,6 +213,9 @@
         <action
             android:id="@+id/action_mainFragment_to_vaccineMainFragment"
             app:destination="@id/vaccineMainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
         <action
             android:id="@+id/action_mainFragment_to_toxicMainFragment"
             app:destination="@id/toxicMainFragment" />

@@ -75,7 +75,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_next"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:text="@string/lets_go"
         android:textStyle="bold"
         app:cornerRadius="12dp"

@@ -19,7 +19,11 @@ class MainFragment : Fragment() {
         val binding = FragmentMainBinding.inflate(inflater, container, false)
 
         binding.btnAccount.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToAccountFragment()) }
-
+        binding.btnCalculator.setOnClickListener {
+            findNavController().navigate(
+                MainFragmentDirections.actionMainFragmentToCalculatorFragment()
+            )
+        }
         binding.btnVaccine.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToVaccineMainFragment()) }
         binding.btnAlert.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToToxicMainFragment()) }
         binding.btnSymptoms.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToSymptomsFragment()) }
@@ -27,5 +31,4 @@ class MainFragment : Fragment() {
 
         return binding.root
     }
-
 }
