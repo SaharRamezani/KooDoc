@@ -36,6 +36,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     app:srcCompat="@drawable/outline_supervisor_account_24"
+                    android:contentDescription="@string/account_main"
                     app:tint="@color/button_primary_text" />
 
             </LinearLayout>
@@ -65,6 +66,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     app:srcCompat="@drawable/ic_kids_16"
+                    android:contentDescription="@string/alert"
                     app:tint="@color/button_secondary_text" />
 
                 <TextView
@@ -107,6 +109,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/logo_main"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -123,12 +126,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:contentDescription="@string/checkup"
                 android:padding="@dimen/card_content_padding">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     app:srcCompat="@drawable/ic_symptoms_main"
+                    android:contentDescription="@string/checkup_image"
                     app:tint="@color/surface_text_deep" />
 
                 <TextView
@@ -154,12 +159,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:contentDescription="@string/main_calculator"
                 android:padding="@dimen/card_content_padding">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     app:srcCompat="@drawable/ic_calculator"
+                    android:contentDescription="@string/main_calculator"
                     app:tint="@color/surface_text_deep" />
 
                 <TextView
@@ -185,12 +192,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:contentDescription="@string/food_milk"
                 android:padding="@dimen/card_content_padding">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     app:srcCompat="@drawable/ic_food_24"
+                    android:contentDescription="@string/food_milk"
                     app:tint="@color/surface_text_deep" />
 
                 <TextView
@@ -216,12 +225,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:contentDescription="@string/vaccine_main"
                 android:padding="@dimen/card_content_padding">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     app:srcCompat="@drawable/ic_vaccines"
+                    android:contentDescription="@string/vaccine_main"
                     app:tint="@color/surface_text_deep" />
 
                 <TextView
@@ -247,12 +258,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:contentDescription="@string/alert"
                 android:padding="@dimen/card_content_padding">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     app:srcCompat="@drawable/ic_alert_24"
+                    android:contentDescription="@string/alert"
                     app:tint="@color/surface_text_deep" />
 
                 <TextView

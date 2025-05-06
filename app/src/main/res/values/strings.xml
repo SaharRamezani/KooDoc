@@ -12,6 +12,10 @@
     <string name="welcome_kodak">خوش آمدی به کوداک</string>
     <string name="next">بعدی</string>
     <string name="lets_go">بزن بریم!</string>
+    <string name="account_main">account</string>
+    <string name="logo_main">logo_main</string>
+    <string name="checkup">checkup</string>
+    <string name="checkup_image">checkup image</string>
     <string name="main_calculator">ماشین حساب دارویی</string>
     <string name="whatis_kodak">همراه هوشمندت برای مراقبت از سلامت کودکت</string>
     <string name="we_are_here"> با کوداک همیشه می‌دونی کی وقت دکتر رفتنه، چه علائمی مهمن، و چطور بهتر مراقب فرزندت باشی</string>
