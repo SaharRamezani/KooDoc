@@ -10,6 +10,7 @@
     <dimen name="margin_header_corrected">10dp</dimen>
     <dimen name="height_header">10dp</dimen>
     <dimen name="corner_main">10dp</dimen>
+    <dimen name="spacing_medium">5dp</dimen>
     <dimen name="line_extra">4dp</dimen>
     <dimen name="table_txt">10sp</dimen>
     <dimen name="margin_main_icons">36dp</dimen>

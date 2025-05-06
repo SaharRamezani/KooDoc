@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/spacing_medium"
         android:orientation="vertical"
         android:layout_margin="@dimen/main_margin"
         android:layoutDirection="rtl">
@@ -71,6 +72,7 @@
                         android:text="@string/calculator_description"
                         android:textColor="@color/colorTextPrimary"
                         android:textSize="16sp"
+                        android:padding="@dimen/spacing_medium"
                         android:layout_marginBottom="8dp"/>
 
                     <TextView
@@ -80,6 +82,7 @@
                         android:textColor="@color/colorTextPrimary"
                         android:textSize="16sp"
                         android:layout_marginBottom="8dp"
+                        android:padding="@dimen/spacing_medium"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -87,6 +90,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/choose_drug_name"
+                        android:padding="@dimen/spacing_medium"
                         android:layout_marginBottom="16dp">
 
                         <AutoCompleteTextView
@@ -102,6 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/kid_weight"
+                        android:padding="@dimen/spacing_medium"
                         android:layout_marginBottom="12dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -117,6 +122,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_age"
+                        android:padding="@dimen/spacing_medium"
                         android:layout_marginBottom="12dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -134,6 +140,7 @@
                         android:text="@string/warning_enter_weight_instead"
                         android:textColor="@color/colorTextMuted"
                         android:textSize="14sp"
+                        android:padding="@dimen/spacing_medium"
                         android:layout_marginBottom="24dp" />
 
                     <!-- Calculate button -->
@@ -141,9 +148,10 @@
                         android:id="@+id/btn_calculate"
                         style="@style/Widget.MyApp.Button.Primary"
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
+                        android:layout_height="55dp"
                         android:text="@string/but_calculator"
                         android:textSize="18sp"
+                        android:padding="@dimen/spacing_medium"
                         android:layout_marginTop="8dp"/>
 
                 </LinearLayout>
