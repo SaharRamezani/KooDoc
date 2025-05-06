@@ -55,11 +55,11 @@ class KidAlergyFragment : Fragment() {
 
             }
         }
-        binding.checkHoney.setOnCheckedChangeListener { buttonView, isChecked -> honey = isChecked}
-        binding.checkLactoz.setOnCheckedChangeListener { buttonView, isChecked -> lac = isChecked}
-        binding.checkProtein.setOnCheckedChangeListener { buttonView, isChecked -> cow = isChecked}
-        binding.checkPeanut.setOnCheckedChangeListener { buttonView, isChecked -> peanut = isChecked}
-        binding.checkAlcohol.setOnCheckedChangeListener { buttonView, isChecked -> alcohol = isChecked}
+        binding.checkHoney.setOnCheckedChangeListener { _, isChecked -> honey = isChecked}
+        binding.checkLactoz.setOnCheckedChangeListener { _, isChecked -> lac = isChecked}
+        binding.checkProtein.setOnCheckedChangeListener { _, isChecked -> cow = isChecked}
+        binding.checkPeanut.setOnCheckedChangeListener { _, isChecked -> peanut = isChecked}
+        binding.checkAlcohol.setOnCheckedChangeListener { _, isChecked -> alcohol = isChecked}
 
         binding.btnNext.setOnClickListener {
             if(saveAlergy()){ findNavController().navigate(KidAlergyFragmentDirections.actionKidAlergyFragmentToKidSocial(kidId,isNew)) }
