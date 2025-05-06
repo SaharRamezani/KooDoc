@@ -53,82 +53,102 @@
             android:padding="16dp">
 
             <!-- START: NEW UI -->
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:layout_height="match_parent"
+                android:fillViewport="true">
 
-                <!-- Drug selector -->
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/choose_drug_name"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="8dp"/>
+                    android:orientation="vertical"
+                    android:gravity="top">
 
-                <Spinner
-                    android:id="@+id/spinner_drug"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:popupBackground="@color/surface_bg_default"
-                    android:backgroundTint="@color/button_outlined_border"
-                    android:layout_marginBottom="16dp" />
-
-                <!-- Weight input -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/kid_weight"
-                    app:boxStrokeColor="@color/colorTextMuted"
-                    android:layout_marginBottom="12dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/input_weight"
+                    <!-- Drug selector -->
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:text="@string/calculator_description"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp"/>
 
-                <!-- Age input -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_age"
-                    app:boxStrokeColor="@color/colorTextMuted"
-                    android:layout_marginBottom="8dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/input_age"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLines="1" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:text="@string/not_substitute_warning"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp"
+                        android:textStyle="bold" />
 
-                <!-- Reminder text -->
-                <TextView
-                    android:id="@+id/tv_warning"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/warning_enter_weight_instead"
-                    android:textColor="@color/colorTextMuted"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="24dp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/choose_drug_name"
+                        android:layout_marginBottom="16dp">
 
-                <!-- Calculate button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_calculate"
-                    style="@style/Widget.MyApp.Button.Primary"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="@string/but_calculator"
-                    android:layout_marginTop="8dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/auto_complete_drug"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            </LinearLayout>
-            <!-- END: NEW UI -->
+                    <!-- Weight input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/kid_weight"
+                        android:layout_marginBottom="12dp">
 
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Age input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_age"
+                        android:layout_marginBottom="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_age"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Reminder text -->
+                    <TextView
+                        android:id="@+id/tv_warning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/warning_enter_weight_instead"
+                        android:textColor="@color/colorTextMuted"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="24dp" />
+
+                    <!-- Calculate button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_calculate"
+                        style="@style/Widget.MyApp.Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="@string/but_calculator"
+                        android:textSize="18sp"
+                        android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
+                <!-- END: NEW UI -->
+            </ScrollView>
         </FrameLayout>
     </LinearLayout>
 </FrameLayout>
