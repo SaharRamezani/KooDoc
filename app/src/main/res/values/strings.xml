@@ -13,6 +13,11 @@
     <string name="next">بعدی</string>
     <string name="lets_go">بزن بریم!</string>
     <string name="account_main">account</string>
+    <string name="choose_drug_name">نام دارو را انتخاب کنید</string>
+    <string name="enter_age">سن کودک (در صورتی که وزن کودک را نمیدانید)</string>
+    <string name="kid_weight">وزن کودک (kg)</string>
+    <string name="warning_enter_weight_instead">برای دقت بیشتر، وزن را وارد کنید. اگر وزن را ندارید، سن را وارد نمایید.</string>
+    <string name="but_calculator">حساب کن</string>
     <string name="logo_main">logo_main</string>
     <string name="checkup">checkup</string>
     <string name="checkup_image">checkup image</string>

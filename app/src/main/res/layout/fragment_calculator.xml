@@ -63,7 +63,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="نام دارو را انتخاب کنید"
+                    android:text="@string/choose_drug_name"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="16sp"
                     android:layout_marginBottom="8dp"/>
@@ -80,7 +80,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="وزن کودک (kg)"
+                    android:hint="@string/kid_weight"
                     app:boxStrokeColor="@color/colorTextMuted"
                     android:layout_marginBottom="12dp">
 
@@ -95,7 +95,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="سن کودک (در صورتی که وزن ندارید)"
+                    android:hint="@string/enter_age"
                     app:boxStrokeColor="@color/colorTextMuted"
                     android:layout_marginBottom="8dp">
 
@@ -112,7 +112,7 @@
                     android:id="@+id/tv_warning"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="برای دقت بیشتر، ابتدا وزن را وارد کنید. اگر وزن را ندارید، سن را وارد نمایید."
+                    android:text="@string/warning_enter_weight_instead"
                     android:textColor="@color/colorTextMuted"
                     android:textSize="14sp"
                     android:layout_marginBottom="24dp" />
@@ -123,7 +123,7 @@
                     style="@style/Widget.MyApp.Button.Primary"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:text="حساب کن"
+                    android:text="@string/but_calculator"
                     android:layout_marginTop="8dp"/>
 
             </LinearLayout>
