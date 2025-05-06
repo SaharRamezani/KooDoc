@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/arrays.xml -->
+<resources>
+    <string-array name="drug_names">
+        <item>شربت یا سوسپانسیون ایبوپروفن </item>
+        <item>شربت یا سوسپانسیون استامینوفن </item>
+        <item>قطره استامینوفن </item>
+        <item>شیاف استامینوفن</item>
+        <item>شیاف ایبوپروفن </item>
+    </string-array>
+</resources>
