@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- OPTION A: Neutral Grayscale Layers -->
+    <!-- Base -->
+    <color name="surface_bg_default">#FFFFFF</color>       <!-- Pure White -->
+    <color name="surface_text_default">#333333</color>     <!-- Charcoal Gray -->
+
+    <!-- Light Layer -->
+    <color name="surface_bg_light">#F5F5F5</color>         <!-- Very Light Gray -->
+    <color name="surface_text_light">#7C6F64</color>       <!-- Warm Taupe -->
+
+    <!-- Dark Layer -->
+    <color name="surface_bg_dark">#CCCCCC</color>          <!-- Medium Gray -->
+    <color name="surface_text_dark">#333333</color>
+
+    <!-- Medium Tint -->
+    <color name="surface_bg_medium">#FFE3C4</color>        <!-- Apricot Cream -->
+    <color name="surface_text_medium">#333333</color>
+
+    <!-- Deep Tint -->
+    <color name="surface_bg_deep">#FFD0A0</color>          <!-- Apricot Cream Darker -->
+    <color name="surface_text_deep">#333333</color>
+
+    <!-- Scrim -->
+    <color name="surface_scrim">#00000080</color>
+    <color name="surface_on_scrim">#FFF9F5</color>
+
+    <!-- Menu Button Colors -->
+    <!-- Default -->
+    <color name="menu_button_bg_default">#FFF9F5</color>        <!-- Soft Ivory (base) -->
+    <color name="menu_button_text_default">#333333</color>      <!-- Charcoal Gray -->
+    <color name="menu_button_icon_default">#7C6F64</color>      <!-- Warm Taupe -->
+
+    <!-- Selected/Active -->
+    <color name="menu_button_bg_active">#ED7D31</color>         <!-- Warm Orange -->
+    <color name="menu_button_text_active">#FFF9F5</color>       <!-- Soft Ivory -->
+    <color name="menu_button_icon_active">#FFF9F5</color>       <!-- Soft Ivory -->
+
+    <!-- Pressed (darkened active) -->
+    <color name="menu_button_bg_pressed">#D26924</color>        <!-- Slightly darker Warm Orange -->
+    <color name="menu_button_text_pressed">#FFF9F5</color>
+    <color name="menu_button_icon_pressed">#FFF9F5</color>
+
+    <!-- Disabled -->
+    <color name="menu_button_bg_disabled">#FFE3C4</color>       <!-- Apricot Cream -->
+    <color name="menu_button_text_disabled">#7C6F64</color>     <!-- Warm Taupe -->
+    <color name="menu_button_icon_disabled">#7C6F64</color>
+
     <!-- Brand Colors -->
     <color name="colorPrimary">#ED7D31</color> <!-- Warm Orange -->
     <color name="colorSecondary">#4A86B8</color> <!-- Calm Blue -->

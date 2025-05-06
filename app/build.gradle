@@ -57,31 +57,33 @@ dependencies {
     implementation libs.room.paging
     implementation libs.nav.fragment
     implementation libs.nav.ui
-    implementation "androidx.paging:paging-runtime:3.2.0"// Check for the latest version
-    implementation "androidx.paging:paging-common-ktx:3.2.0"
-    implementation 'com.github.parniyan7:DotLoading:4.0.0'
-    implementation 'com.github.savvyapps:ToggleButtonLayout:1.3.0'
+    implementation libs.androidx.paging.runtime
+    implementation libs.androidx.gridlayout
+    implementation libs.androidx.paging.common.ktx
+    implementation libs.dotloading
+    implementation libs.togglebuttonlayout
 
     //persian date :
-    implementation ("com.github.SirLordPouya:PersianLinearDatePicker:1.6.0")
+    implementation (libs.persianlineardatepicker)
 
-    implementation 'com.github.aliab:Persian-Date-Picker-Dialog:1.8.0'
-    implementation 'com.github.samanzamani:PersianDate:1.7.1'
+    implementation libs.persian.date.picker.dialog
+    implementation libs.persiandate
 
 
     //ok http
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation(libs.okhttp.bom)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
 
     //retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation libs.retrofit
+    implementation libs.converter.gson
 
     //navigation :
-    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
-    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
 
-    implementation "com.google.dagger:hilt-android:2.51.1"
-    kapt("com.google.dagger:hilt-compiler:2.51.1")
+    implementation libs.hilt.android
+    kapt(libs.hilt.compiler)
+    implementation libs.androidx.constraintlayout.v221
 }

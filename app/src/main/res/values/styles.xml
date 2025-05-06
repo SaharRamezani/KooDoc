@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- your shared card style -->
+    <style name="Widget.KooDoc.MaterialCard"
+        parent="Widget.MaterialComponents.CardView">
+        <!-- uniform corner radius -->
+        <item name="cardCornerRadius">16dp</item>
+        <!-- uniform elevation -->
+        <item name="cardElevation">6dp</item>
+        <!-- inner compat padding so content never touches edges -->
+        <item name="cardUseCompatPadding">true</item>
+        <!-- use your theme’s surface color for the background -->
+        <item name="cardBackgroundColor">@color/surface_bg_deep</item>
+    </style>
+
+</resources>

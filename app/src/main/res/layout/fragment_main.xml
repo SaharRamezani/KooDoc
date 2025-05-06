@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
 
         <!-- Top Action Buttons -->
         <com.google.android.material.card.MaterialCardView
@@ -74,7 +77,6 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
         <!-- Header Section -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/top"
@@ -87,23 +89,21 @@
 
             <TextView
                 style="@style/TextAppearance.MaterialComponents.Headline4"
-            android:id="@+id/title_kodak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kodak"
-            android:textColor="@color/colorTextPrimary"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
+                android:id="@+id/title_kodak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kodak"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="350dp"
                 android:layout_height="300dp"
                 android:src="@drawable/logo_koo"
-
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -111,184 +111,180 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <!-- Main Action Cards -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_symptoms"
+            style="@style/Widget.KooDoc.MaterialCard"
+            android:layout_width="@dimen/card_size"
+            android:layout_height="@dimen/card_size">
 
-        <!-- Main Action Grid -->
-        <androidx.gridlayout.widget.GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:rowCount="2"
-            android:padding="@dimen/main_margin"
-            android:alignmentMode="alignMargins"
-            android:useDefaultMargins="true">
-
-        <!-- Column 1 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-
-            <!-- Symptoms Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btn_symptoms"
-                android:layout_width="@dimen/main_icon_size_width"
-                android:layout_height="@dimen/main_icon_size_height"
-                android:clickable="true"
-                app:cardBackgroundColor="@color/colorPrimary"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_symptoms_main"
-                        app:tint="@color/button_primary_text"/>
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/symptoms_diag"
-                        android:textColor="@color/button_primary_text"/>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- gap between cards -->
-            <Space
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/card_content_padding">
 
-            <!-- Food Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btn_food"
-                android:layout_width="@dimen/main_icon_size_width"
-                android:layout_height="@dimen/main_icon_size_height"
-                android:clickable="true"
-                app:cardBackgroundColor="@color/colorSecondary"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="6dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/ic_symptoms_main"
+                    app:tint="@color/surface_text_deep" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/symptoms_diag"
                     android:gravity="center"
-                    android:padding="12dp">
+                    android:textAlignment="center"
+                    android:textColor="@color/surface_text_deep"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_food_24"
-                        app:tint="@color/button_secondary_text"/>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_calculator"
+            style="@style/Widget.KooDoc.MaterialCard"
+            android:layout_width="@dimen/card_size"
+            android:layout_height="@dimen/card_size">
 
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/food_milk"
-                        android:textColor="@color/button_secondary_text"/>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-
-        <!-- Column 2 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-
-            <!-- Vaccine Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btn_vaccine"
-                android:layout_width="@dimen/main_icon_size_width"
-                android:layout_height="@dimen/main_icon_size_height"
-                android:clickable="true"
-                app:cardBackgroundColor="@color/colorSecondary"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_vaccines"
-                        app:tint="@color/button_primary_text"/>
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/vaccine_info"
-                        android:textColor="@color/button_primary_text"/>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- gap between cards -->
-            <Space
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/card_content_padding">
 
-            <!-- Alert Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btn_alert"
-                android:layout_width="@dimen/main_icon_size_width"
-                android:layout_height="@dimen/main_icon_size_height"
-                android:clickable="true"
-                app:cardBackgroundColor="@color/colorPrimary"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="6dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/ic_calculator"
+                    app:tint="@color/surface_text_deep" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_calculator"
                     android:gravity="center"
-                    android:padding="12dp">
+                    android:textAlignment="center"
+                android:textColor="@color/surface_text_deep"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_alert_24"
-                        app:tint="@color/button_primary_text"/>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_food"
+            style="@style/Widget.KooDoc.MaterialCard"
+            android:layout_width="@dimen/card_size"
+            android:layout_height="@dimen/card_size">
 
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/alert_bad"
-                        android:textColor="@color/button_primary_text"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/card_content_padding">
 
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/ic_food_24"
+                    app:tint="@color/surface_text_deep" />
 
-        </LinearLayout>
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/food_milk"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/surface_text_deep"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_vaccine"
+            style="@style/Widget.KooDoc.MaterialCard"
+            android:layout_width="@dimen/card_size"
+            android:layout_height="@dimen/card_size">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/card_content_padding">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/ic_vaccines"
+                    app:tint="@color/surface_text_deep" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vaccine_main"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/surface_text_deep"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_alert"
+            style="@style/Widget.KooDoc.MaterialCard"
+            android:layout_width="@dimen/card_size"
+            android:layout_height="@dimen/card_size">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/card_content_padding">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/ic_alert_24"
+                    app:tint="@color/surface_text_deep" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alert_bad"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/surface_text_deep"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:flow_wrapMode="chain"
+            app:flow_maxElementsWrap="3"
+            app:flow_horizontalGap="16dp"
+            app:flow_verticalGap="16dp"
+            app:flow_horizontalAlign="center"
+            app:flow_verticalAlign="center"
+            app:constraint_referenced_ids="
+            btn_symptoms,
+            btn_calculator,
+            btn_food,
+            btn_vaccine,
+            btn_alert"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

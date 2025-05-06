@@ -15,4 +15,8 @@
     <dimen name="margin_symptoms_cards">12dp</dimen>
     <dimen name="main_icon_size_width">120dp</dimen>
     <dimen name="main_icon_size_height">120dp</dimen>
+    <!-- Uniform size for all cards -->
+    <dimen name="card_size">140dp</dimen>
+    <!-- Inner padding for card content -->
+    <dimen name="card_content_padding">12dp</dimen>
 </resources>
