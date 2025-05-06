@@ -52,13 +52,82 @@
             android:layout_weight="1"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/text_calculator_placeholder"
-                android:layout_width="wrap_content"
+            <!-- START: NEW UI -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/main_calculator"
-                android:textSize="18sp"
-                android:layout_gravity="center" />
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <!-- Drug selector -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="نام دارو را انتخاب کنید"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <Spinner
+                    android:id="@+id/spinner_drug"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:popupBackground="@color/surface_bg_default"
+                    android:backgroundTint="@color/button_outlined_border"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Weight input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="وزن کودک (kg)"
+                    app:boxStrokeColor="@color/colorTextMuted"
+                    android:layout_marginBottom="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Age input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="سن کودک (در صورتی که وزن ندارید)"
+                    app:boxStrokeColor="@color/colorTextMuted"
+                    android:layout_marginBottom="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Reminder text -->
+                <TextView
+                    android:id="@+id/tv_warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="برای دقت بیشتر، ابتدا وزن را وارد کنید. اگر وزن را ندارید، سن را وارد نمایید."
+                    android:textColor="@color/colorTextMuted"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Calculate button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_calculate"
+                    style="@style/Widget.MyApp.Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="حساب کن"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+            <!-- END: NEW UI -->
 
         </FrameLayout>
     </LinearLayout>
