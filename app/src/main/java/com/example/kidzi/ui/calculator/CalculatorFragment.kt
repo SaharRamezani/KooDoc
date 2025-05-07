@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
@@ -14,6 +13,12 @@ import com.example.kidzi.databinding.FragmentCalculatorBinding
 class CalculatorFragment : Fragment() {
     private var _binding: FragmentCalculatorBinding? = null
     private val binding get() = _binding!!
+
+    // Valid input ranges
+    private val MIN_WEIGHT = 2.0
+    private val MAX_WEIGHT = 50.0
+    private val MIN_AGE = 1
+    private val MAX_AGE = 12
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +32,6 @@ class CalculatorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Back navigation
         binding.btnBack.setOnClickListener {
             findNavController().navigate(
                 CalculatorFragmentDirections
@@ -43,34 +47,38 @@ class CalculatorFragment : Fragment() {
             drugNames
         )
 
-        // 2) Attach adapter to AutoCompleteTextView
+        // 2) Attach adapter
         binding.autoCompleteDrug.setAdapter(adapter)
         binding.autoCompleteDrug.threshold = 1
 
-        // 3) Handle selection
-        binding.autoCompleteDrug.setOnItemClickListener { parent, _, position, _ ->
-            val selectedDrug = parent.getItemAtPosition(position) as String
-            Toast.makeText(
-                requireContext(),
-                "Selected drug: $selectedDrug",
-                Toast.LENGTH_SHORT
-            ).show()
-
-            // TODO: perform any action based on selectedDrug
-        }
-
-        // 4) Calculate button logic
+        // 3) Calculate button logic with manual Bundle navigation
         binding.btnCalculate.setOnClickListener {
-            val weight = binding.inputWeight.text.toString().toDoubleOrNull()
-            val age = binding.inputAge.text.toString().toIntOrNull()
-            val drug = binding.autoCompleteDrug.text.toString()
+            val drugStr  = binding.autoCompleteDrug.text.toString()
+            var weightF  = binding.inputWeight.text.toString().toFloatOrNull()
+            var ageInt   = binding.inputAge.text.toString().toIntOrNull()
 
-            if (drug.isBlank() || weight == null || age == null) {
-                binding.tvWarning.text = getString(R.string.warning_enter_weight_instead)
-            } else {
-                // TODO: implement your dosage calculation here
-                // e.g.: val dose = calculateDose(drug, weight, age)
-                //      show result in a dialog or new screen
+            when {
+                drugStr.isBlank() ->
+                    binding.tvWarning.text = getString(R.string.warning_select_drug)
+
+                weightF == null && ageInt == null ->
+                    binding.tvWarning.text = getString(R.string.warning_enter_weight_age)
+
+                else -> {
+                    // Build a Bundle and navigate to ResultFragment
+                    weightF  = binding.inputWeight.text.toString().toFloat()
+                    ageInt   = binding.inputAge.text.toString().toInt()
+
+                    val bundle = Bundle().apply {
+                        putString("drug", drugStr)
+                        putFloat("weight", weightF)
+                        putInt("age", ageInt)
+                    }
+                    findNavController().navigate(
+                        R.id.action_calculatorFragment_to_calculatorResultFragment,
+                        bundle
+                    )
+                }
             }
         }
     }
