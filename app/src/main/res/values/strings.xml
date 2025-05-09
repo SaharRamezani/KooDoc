@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">koodoc</string>
+    <string name="drug_ibuprofen_syrup">شربت یا سوسپانسیون ایبوپروفن</string>
+    <string name="drug_paracetamol_syrup">شربت یا سوسپانسیون استامینوفن</string>
+    <string name="drug_paracetamol_drop">قطره استامینوفن</string>
+    <string name="drug_paracetamol_suppository">شیاف استامینوفن</string>
+    <string name="drug_ibuprofen_suppository">شیاف ایبوپروفن</string>
+    <string name="dose_2_5ml">۲.۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>
+    <string name="dose_insufficient">اطلاعات ناکافی برای محاسبه دوز.</string>
     <string name="title_home">خانه</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -50,6 +57,7 @@
     <string name="parent_info">اطلاعات والدین</string>
     <string name="is_caring">آیا شما مراقب اصلی کودک هستید ؟</string>
     <string name="dear">عزیز</string>
+    <string name="calculator_result_title">میزان دوز مصرفی:</string>
     <string name="info_for_baby">حالا ازت میخام که اطلاعات مربوط به بچه یا بچه ها رو بهم بگی.</string>
     <string name="ready_2">"آماده هستی ؟ "</string>
     <string name="kid_info">اطلاعات کودک</string>

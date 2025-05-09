@@ -8,12 +8,15 @@ hiltAndroid = "2.51.1"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
+materialVersion = "1.8.0"
 nav = "2.8.5"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.6.1"
 material = "1.12.0"
+navigationFragmentKtx = "2.8.5"
 navigationUiKtx = "2.8.9"
+navigationUiKtxVersion = "2.8.5"
 okhttpBom = "4.11.0"
 pagingCommonKtx = "3.3.6"
 persiandate = "1.7.1"
@@ -30,7 +33,9 @@ androidx-constraintlayout-v221 = { module = "androidx.constraintlayout:constrain
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-gridlayout = { module = "androidx.gridlayout:gridlayout", version.ref = "gridlayout" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationUiKtx" }
+androidx-navigation-fragment-ktx-v285 = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-navigation-ui-ktx-v285 = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtxVersion" }
 androidx-paging-common-ktx = { module = "androidx.paging:paging-common-ktx", version.ref = "pagingCommonKtx" }
 androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pagingCommonKtx" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
@@ -39,6 +44,7 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltA
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor" }
+material-v180 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 okhttp = { module = "com.squareup.okhttp3:okhttp" }
 okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttpBom" }
 persian-date-picker-dialog = { module = "com.github.aliab:Persian-Date-Picker-Dialog", version.ref = "persianDatePickerDialog" }

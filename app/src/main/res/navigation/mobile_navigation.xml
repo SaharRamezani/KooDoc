@@ -204,25 +204,6 @@
         <action
             android:id="@+id/action_calculatorFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
-        <action
-            android:id="@+id/action_calculatorFragment_to_calculatorResultFragment"
-            app:destination="@id/calculatorResultFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/calculatorResultFragment"
-        android:name="com.example.kidzi.ui.calculator.CalculatorResultFragment"
-        android:label="title_calculator_result"
-        tools:layout="@layout/fragment_calculator_result">
-        <argument
-            android:name="drug"
-            app:argType="string" />
-        <argument
-            android:name="weight"
-            app:argType="float" />
-        <argument
-            android:name="age"
-            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"

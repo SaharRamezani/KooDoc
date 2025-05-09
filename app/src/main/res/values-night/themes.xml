@@ -6,5 +6,6 @@
         <item name="fontFamily">@font/yekanregular</item>
         <item name="android:fontFamily">@font/yekanregular</item>
         <!-- Customize your theme here. -->
+        <item name="materialAlertDialogTheme">@style/DialogBlurTheme</item>
     </style>
 </resources>

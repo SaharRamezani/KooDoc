@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!-- res/values/arrays.xml -->
 <resources>
     <string-array name="drug_names">
-        <item>شربت یا سوسپانسیون ایبوپروفن </item>
-        <item>شربت یا سوسپانسیون استامینوفن </item>
-        <item>قطره استامینوفن </item>
-        <item>شیاف استامینوفن</item>
-        <item>شیاف ایبوپروفن </item>
+        <item>@string/drug_ibuprofen_syrup</item>
+        <item>@string/drug_paracetamol_syrup</item>
+        <item>@string/drug_paracetamol_drop</item>
+        <item>@string/drug_paracetamol_suppository</item>
+        <item>@string/drug_ibuprofen_suppository</item>
     </string-array>
 </resources>

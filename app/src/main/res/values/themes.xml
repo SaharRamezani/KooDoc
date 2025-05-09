@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Kidzi" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="materialAlertDialogTheme">@style/DialogBlurTheme</item>
+
         <!-- Primary brand color. -->
         <item name="fontFamily">@font/yekanregular</item>
         <item name="android:fontFamily">@font/yekanregular</item>

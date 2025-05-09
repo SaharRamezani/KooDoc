@@ -16,13 +16,28 @@
         <item name="cardBackgroundColor">@color/surface_bg_deep</item>
     </style>
 
-    <style name="DialogBlurTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
-        <!-- Make the window itself transparent -->
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <!-- Dim the activity behind by 50% -->
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:backgroundDimAmount">0.5</item>
-        <!-- Optional: remove the default title bar -->
-        <item name="android:windowNoTitle">true</item>
+    <!-- res/values/styles.xml -->
+    <style name="ShapeAppearanceOverlay.Kidzi.Dialog"
+        parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
     </style>
+
+    <style name="DialogBlurTheme"
+        parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+
+        <!-- keep your RTL and shape -->
+        <item name="android:layoutDirection">rtl</item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearanceOverlay.Kidzi.Dialog
+        </item>
+
+        <!-- 1) Dialog background comes from your surface palette -->
+        <item name="android:windowBackground">@color/surface_bg_default</item> :contentReference[oaicite:0]{index=0}
+
+        <!-- 2) All title & message text will use your primary-on-surface color -->
+        <item name="colorOnSurface">@color/colorTextPrimary</item> :contentReference[oaicite:1]{index=1}
+
+    </style>
+
 </resources>
