@@ -29,7 +29,6 @@ class FamilyDisFirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentFamilyDisFirstBinding.inflate(inflater)
         kidId = FamilyDisFirstFragmentArgs.fromBundle(requireArguments()).kidId
         isNew = FamilyDisFirstFragmentArgs.fromBundle(requireArguments()).new
@@ -42,7 +41,6 @@ class FamilyDisFirstFragment : Fragment() {
         }
 
         binding.btnNext.setOnClickListener {
-
             sharedPreferences.updateLevel(4)
             findNavController().navigate(FamilyDisFirstFragmentDirections.actionFamilyDisFirstFragmentToMainFragment())
             /*if (familyDiseaseDao.getAll().size>1) {
@@ -52,12 +50,8 @@ class FamilyDisFirstFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
-
             findNavController().navigate(FamilyDisFirstFragmentDirections.actionFamilyDisFirstFragmentToKidSocial(kidId,false))
-
         }
-
-
 
         return binding.root
     }
@@ -76,8 +70,6 @@ class FamilyDisFirstFragment : Fragment() {
                 binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.green))
             else
                 binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.green))
-
         }
     }
-
 }

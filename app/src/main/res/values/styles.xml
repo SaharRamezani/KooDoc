@@ -16,4 +16,13 @@
         <item name="cardBackgroundColor">@color/surface_bg_deep</item>
     </style>
 
+    <style name="DialogBlurTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <!-- Make the window itself transparent -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- Dim the activity behind by 50% -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <!-- Optional: remove the default title bar -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

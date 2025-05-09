@@ -31,11 +31,10 @@ class KidIntroFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             findNavController().navigate(KidIntroFragmentDirections.actionKidIntroFragmentToKidInfoFragment(0,true))
         }
-        binding.btnBack.setOnClickListener {
-            findNavController().navigate(KidIntroFragmentDirections.actionKidIntroFragmentToParentInfoFragment())
-        }
-
-
+//        binding.btnBack.setOnClickListener {
+//            sharedPreferences.updateLevel(2)
+//            findNavController().navigate(KidIntroFragmentDirections.actionKidIntroFragmentToParentInfoFragment())
+//        }
 
         return binding.root
     }

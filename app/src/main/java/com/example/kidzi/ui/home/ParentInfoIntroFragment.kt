@@ -15,8 +15,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class ParentInfoIntroFragment : Fragment() {
-
-
     @Inject
     lateinit var sharedPreferences: PreferenceManager
 
@@ -32,7 +30,6 @@ class ParentInfoIntroFragment : Fragment() {
             3 -> binding.txtRelation.text = "مراقب کودک"
             else -> binding.txtRelation.text = "مراقب کودک"
         }
-
 
         binding.btnRules.setOnClickListener {
             findNavController().navigate(ParentInfoIntroFragmentDirections.actionParentInfoIntroFragmentToRulesFragment())

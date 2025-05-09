@@ -18,11 +18,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class ParentInfoFragment : Fragment() {
-
-
     @Inject
     lateinit var sharedPreferences: PreferenceManager
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +29,7 @@ class ParentInfoFragment : Fragment() {
         val binding = FragmentParentInfoBinding.inflate(inflater)
 
         binding.btnNext.setOnClickListener {
+            sharedPreferences.updateLevel(2)
             if(checkNext(binding))
                 findNavController().navigate(ParentInfoFragmentDirections.actionParentInfoFragmentToKidIntroFragment())
         }
@@ -41,7 +39,6 @@ class ParentInfoFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().navigate(ParentInfoFragmentDirections.actionParentInfoFragmentToParentInfoIntroFragment())
         }
-
 
         return binding.root
     }
@@ -71,8 +68,6 @@ class ParentInfoFragment : Fragment() {
         dialog.show()
     }
 
-
-
     private fun checkNext(binding: FragmentParentInfoBinding) : Boolean{
         //var status = true
         if(binding.txtName.text.isNullOrBlank())
@@ -88,7 +83,7 @@ class ParentInfoFragment : Fragment() {
                         var caring = if(binding.radioCaringYes.isChecked) 1 else 2
                         sharedPreferences.updateParentJob(working)
                         sharedPreferences.updateParentCare(caring)
-                        sharedPreferences.updateLevel(2)
+                        sharedPreferences.updateLevel(3)
                     }else
                         Toast.makeText(requireContext(),"وضعیت مراقبت خود را انتخاب کنید.",Toast.LENGTH_SHORT).show()
                 }else
@@ -99,5 +94,4 @@ class ParentInfoFragment : Fragment() {
         }
         return true
     }
-
 }

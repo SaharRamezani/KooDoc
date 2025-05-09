@@ -15,8 +15,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class ParentLoginFragment : Fragment() {
-
-
     @Inject
     lateinit var sharedPreferences: PreferenceManager
 
@@ -24,7 +22,6 @@ class ParentLoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentParentLoginBinding.inflate(inflater)
 
         binding.btnNext.setOnClickListener {
@@ -36,7 +33,7 @@ class ParentLoginFragment : Fragment() {
                 else
                     3
                 sharedPreferences.updateParent(parent)
-                sharedPreferences.updateLevel(1)
+                sharedPreferences.updateLevel(2)
                 findNavController().navigate(ParentLoginFragmentDirections.actionParentLoginFragmentToParentInfoIntroFragment())
             }else{
                 Toast.makeText(requireContext(),"باید یکی از گزینه ها را انتخاب کنید.",Toast.LENGTH_SHORT).show()

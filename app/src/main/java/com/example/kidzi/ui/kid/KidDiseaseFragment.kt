@@ -17,7 +17,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class KidDiseaseFragment : Fragment() {
-
     var isNew = true
     lateinit var binding: FragmentKidDiseaseBinding
     var kidId = 0
@@ -34,7 +33,6 @@ class KidDiseaseFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentKidDiseaseBinding.inflate(inflater)
         kidId = KidDiseaseFragmentArgs.fromBundle(requireArguments()).kidId
 
@@ -54,7 +52,6 @@ class KidDiseaseFragment : Fragment() {
             }catch (e: Exception){
                 Log.i("Log1","error is: $e")
             }
-
         }
 
         binding.checkAsm.setOnCheckedChangeListener { buttonView, isChecked ->
@@ -110,7 +107,6 @@ class KidDiseaseFragment : Fragment() {
             findNavController().navigate(KidDiseaseFragmentDirections.actionKidDiseaseFragmentToKidInfoFragment(kidId,false))
         }
 
-
         binding.btnNext.setOnClickListener {
             if(id > 0){
                 if(saveDisease()){
@@ -120,9 +116,7 @@ class KidDiseaseFragment : Fragment() {
             }else{
                 Toast.makeText(requireContext(),"کودک یافت نشد!",Toast.LENGTH_SHORT).show()
             }
-
         }
-
 
         return binding.root
     }
@@ -138,5 +132,4 @@ class KidDiseaseFragment : Fragment() {
             return false
         }
     }
-
 }

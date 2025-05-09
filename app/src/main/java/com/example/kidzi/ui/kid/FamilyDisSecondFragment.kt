@@ -48,9 +48,7 @@ class FamilyDisSecondFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             save(parentId)
             findNavController().popBackStack()
-
         }
-
 
         return binding.root
     }

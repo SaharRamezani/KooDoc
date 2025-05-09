@@ -24,8 +24,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class KidInfoFragment : Fragment() {
-
-
     @Inject
     lateinit var sharedPreferences: PreferenceManager
 
@@ -51,20 +49,16 @@ class KidInfoFragment : Fragment() {
                 binding.txtHeight.setText(kidInfo.height.toString())
                 binding.txtWeight.setText(kidInfo.weight.toString())
                 binding.btnGroup.setText(kidInfo.birthDate)
-            }catch (e: Exception){
-
-            }
+            }catch (e: Exception){}
         }
 
         binding.btnBack.setOnClickListener {
             findNavController().navigate(KidInfoFragmentDirections.actionKidInfoFragmentToKidIntroFragment())
-
         }
 
         binding.btnGroup.setOnClickListener {
-
             val picker = PersianDatePickerDialog(requireContext())
-                .setPositiveButtonString("باشه")
+                .setPositiveButtonString("تائید")
                 .setNegativeButton("بیخیال")
                 .setTodayButton("امروز")
                 .setTodayButtonVisible(true)
@@ -77,7 +71,6 @@ class KidInfoFragment : Fragment() {
                     override fun onDateSelected(persianPickerDate: PersianPickerDate) {
                         binding.btnGroup.setText("${persianPickerDate.persianYear}-${persianPickerDate.persianMonth}-${persianPickerDate.persianDay}")
                     }
-
                     override fun onDismissed() {
                     }
                 })
@@ -88,7 +81,7 @@ class KidInfoFragment : Fragment() {
             if(binding.txtName.text.isNullOrEmpty())
                 Toast.makeText(requireContext(),"نام نوزاد را وارد کنید",Toast.LENGTH_SHORT).show()
             else{
-                if(binding.txtHeight.text.isNullOrEmpty())
+                if (binding.txtHeight.text.isNullOrEmpty())
                     Toast.makeText(requireContext(),"قد نوزاد را وارد کنید",Toast.LENGTH_SHORT).show()
                 else {
                     if (binding.txtWeight.text.isNullOrEmpty())
@@ -98,7 +91,7 @@ class KidInfoFragment : Fragment() {
                             Toast.LENGTH_SHORT
                         ).show()
                     else{
-                        if(binding.btnGroup.text.toString().contains("-")){
+                        if (binding.btnGroup.text.toString().contains("-")){
                             val sex = if(binding.radioWorkingYes.isChecked) 1 else 2
                             if (isNew){
                                 id = kidNameDao.insert(KidNameModel(
@@ -124,12 +117,9 @@ class KidInfoFragment : Fragment() {
                         }
                     }
                 }
-
             }
         }
 
         return binding.root
     }
-
-
 }

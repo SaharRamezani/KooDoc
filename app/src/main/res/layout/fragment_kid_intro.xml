@@ -58,34 +58,32 @@
                 android:text="@string/ready_2"
                 android:textSize="20sp"
                 android:textStyle="bold"
-
                 android:layout_marginTop="42dp"/>
-
         </LinearLayout>
-
-
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_back"
             app:cornerRadius="0dp"
             android:text="@string/go"
             android:textStyle="bold"
-            android:id="@+id/btn_next"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_back"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            app:backgroundTint="@android:color/transparent"
-            app:strokeColor="@color/white"
-            app:strokeWidth="2dp"
-            android:layout_marginBottom="12dp"
+            android:id="@+id/btn_next"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/before"
-            android:textStyle="bold"
-            app:cornerRadius="0dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/btn_back"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="60dp"-->
+        <!--            app:backgroundTint="@android:color/transparent"-->
+        <!--            app:strokeColor="@color/white"-->
+        <!--            app:strokeWidth="2dp"-->
+        <!--            android:layout_marginBottom="12dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            android:text="@string/before"-->
+        <!--            android:textStyle="bold"-->
+        <!--            app:cornerRadius="0dp" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

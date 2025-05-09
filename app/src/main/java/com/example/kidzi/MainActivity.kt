@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -34,13 +33,11 @@ class MainActivity : AppCompatActivity() {
         val canOpen = sharedPreferences.canOpen()
 
         val startDestination = when {
-            !canOpen -> R.id.navigation_home
-            level == 0 -> R.id.parentLoginFragment
-            level == 1 -> R.id.parentInfoIntroFragment
-            level == 2 -> R.id.kidIntroFragment
-            level == 3 -> R.id.familyDisFirstFragment
-            level == 4 -> R.id.mainFragment
-            else -> R.id.parentLoginFragment
+            level == 0 -> R.id.navigation_home
+            level == 1 -> R.id.parentLoginFragment
+            level == 2 -> R.id.parentInfoIntroFragment
+            level == 3 -> R.id.kidIntroFragment
+            else -> R.id.mainFragment
         }
 
         navGraph.setStartDestination(startDestination)

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentHomeBinding
 import com.example.kidzi.di.db.PreferenceManager
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,38 +39,13 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
         binding.btnNext.setOnClickListener {
-            //checkApiStatus()
-
-            Log.i("Log1","can open is: ${sharedPreferences.canOpen()}")
-            if(sharedPreferences.canOpen()) {
-                when (sharedPreferences.getLevel()) {
-                    0 -> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToParentLoginFragment())
-                    1 -> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToParentInfoIntroFragment())
-                    2 -> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToKidIntroFragment())
-                    3 -> findNavController().navigate(
-                        HomeFragmentDirections.actionNavigationHomeToFamilyDisFirstFragment(
-                            0,
-                            true
-                        )
-                    )
-
-                    4 -> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToMainFragment())
-                    else -> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToParentLoginFragment())
-                }
-            }
-            /*
-            when(sharedPreferences.getLevel()){
-                0-> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToParentLoginFragment())
-                1-> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToParentInfoIntroFragment())
-                2-> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToKidIntroFragment())
-                3-> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToFamilyDisFirstFragment(0,true))
-                4-> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToMainFragment())
-                else -> findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToParentLoginFragment())
-            }*/
+            sharedPreferences.updateLevel(1)
+            findNavController().navigate(
+                HomeFragmentDirections
+                    .actionNavigationHomeToParentLoginFragment()
+            )
         }
-
 
         return root
     }

@@ -21,11 +21,9 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class KidAlergyFragment : Fragment() {
-
     var isNew = true
     var kidId = 0
     lateinit var binding: FragmentKidAlergyBinding
-
 
     @Inject lateinit var kidAlergyDao: KidAlergyDao
     var honey = false
@@ -33,7 +31,6 @@ class KidAlergyFragment : Fragment() {
     var lac = false
     var cow = false
     var alcohol = false
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,10 +59,11 @@ class KidAlergyFragment : Fragment() {
         binding.checkAlcohol.setOnCheckedChangeListener { _, isChecked -> alcohol = isChecked}
 
         binding.btnNext.setOnClickListener {
-            if(saveAlergy()){ findNavController().navigate(KidAlergyFragmentDirections.actionKidAlergyFragmentToKidSocial(kidId,isNew)) }
+            if(saveAlergy()){
+                findNavController().navigate(KidAlergyFragmentDirections.actionKidAlergyFragmentToKidSocial(kidId,isNew))
+            }
             else Toast.makeText(requireContext(),"خطا در ذخیره اطلاعات",Toast.LENGTH_SHORT).show()
         }
-
 
         binding.btnBack.setOnClickListener {
             findNavController().navigate(KidAlergyFragmentDirections.actionKidAlergyFragmentToKidDiseaseFragment(kidId,false))

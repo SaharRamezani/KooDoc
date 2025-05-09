@@ -74,10 +74,12 @@ class CalculatorFragment : Fragment() {
                         putFloat("weight", weightF)
                         putInt("age", ageInt)
                     }
-                    findNavController().navigate(
-                        R.id.action_calculatorFragment_to_calculatorResultFragment,
-                        bundle
-                    )
+//                    findNavController().navigate(
+//                        R.id.action_calculatorFragment_to_calculatorResultFragment,
+//                        bundle
+//                    )
+                    val dialog = CalculatorResultFragment().apply { arguments = bundle }
+                    dialog.show(parentFragmentManager, "CalculatorResultDialog")
                 }
             }
         }

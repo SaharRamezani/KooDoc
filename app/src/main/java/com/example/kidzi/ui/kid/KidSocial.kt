@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidSocialBinding
+import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.FamilyDiseaseDao
 import com.example.kidzi.di.db.dao.KidSocialDao
 import com.example.kidzi.di.db.models.KidSocialModel
@@ -40,9 +41,7 @@ class KidSocial : Fragment() {
                 var kido = kidSocialDao.getKidInfo(id)
                 if(kido.social) binding.radioYes.isChecked = true
                 else binding.radioNo.isChecked = true
-            }catch (e: Exception){
-
-            }
+            }catch (e: Exception){}
         }
 
         binding.btnBack.setOnClickListener {
@@ -57,16 +56,19 @@ class KidSocial : Fragment() {
                 else
                     kidSocialDao.update(KidSocialModel(kidId,socialMode))
 
-                if(!isNew)
-                    findNavController().navigate(KidSocialDirections.actionKidSocialToMainFragment())
-                else
-                    findNavController().navigate(KidSocialDirections.actionKidSocialToFamilyDisFirstFragment(kidId,isNew))
+//                if(!isNew) {
+//                    findNavController().navigate(KidSocialDirections.actionKidSocialToMainFragment())
+//                }
+//                else
+//                {
+//                    findNavController().navigate(KidSocialDirections.actionKidSocialToFamilyDisFirstFragment(kidId,isNew))
+//                }
+                findNavController().navigate(KidSocialDirections.actionKidSocialToFamilyDisFirstFragment(kidId,isNew))
 
             }else{
                 Toast.makeText(requireContext(),"باید یک گزینه را انتخاب نمایید.",Toast.LENGTH_SHORT).show()
             }
         }
-
 
         return binding.root
     }
