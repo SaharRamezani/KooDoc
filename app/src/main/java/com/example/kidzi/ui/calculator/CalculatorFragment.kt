@@ -1,5 +1,6 @@
 package com.example.kidzi.ui.calculator
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,15 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import com.example.kidzi.databinding.FragmentCalculatorBinding
+import com.example.kidzi.di.db.PreferenceManager
 
+@AndroidEntryPoint
 class CalculatorFragment : Fragment() {
+    @Inject
+    lateinit var prefs: PreferenceManager
     private var _binding: FragmentCalculatorBinding? = null
     private val binding get() = _binding!!
 
@@ -31,6 +38,24 @@ class CalculatorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // 2) set up AGE-UNIT dropdown
+        val units = resources.getStringArray(R.array.age_units)
+        val unitAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_dropdown_item_1line,
+            units
+        )
+        binding.autoCompleteAgeUnit.setAdapter(unitAdapter)
+        binding.autoCompleteAgeUnit.threshold = 1
+
+        // restore last (or default = “Month”)
+        binding.autoCompleteAgeUnit.setText(prefs.getLastAgeUnit(), false)
+
+        // save on pick
+        binding.autoCompleteAgeUnit.setOnItemClickListener { _, _, pos, _ ->
+            prefs.updateLastAgeUnit(units[pos])
+        }
 
         // Back button
         binding.btnBack.setOnClickListener {
@@ -71,6 +96,7 @@ class CalculatorFragment : Fragment() {
             val drugStr  = binding.autoCompleteDrug.text.toString()
             var weightF  = binding.inputWeight.text.toString().toFloatOrNull()
             var ageInt   = binding.inputAge.text.toString().toIntOrNull()
+            val unitStr = binding.autoCompleteAgeUnit.text.toString()
 
             when {
                 drugStr.isBlank() ->
@@ -87,6 +113,7 @@ class CalculatorFragment : Fragment() {
                         putString("drug", drugStr)
                         putFloat("weight", weightF)
                         putInt("age", ageInt)
+                        putString("age_unit", unitStr)
                     }
 
                     val dialog = CalculatorResultFragment().apply { arguments = bundle }

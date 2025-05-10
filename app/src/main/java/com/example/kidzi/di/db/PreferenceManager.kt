@@ -13,12 +13,10 @@ private const val PARENT_BIRTH = "parent_birth"
 private const val PARENT_CARE = "parent_care"
 private const val CURRENT_KID = "ck"
 private const val CAN_OPEN = "co"
+private const val AGE_UNIT_KEY = "age_unit"
 
 class PreferenceManager @Inject constructor(@ApplicationContext context: Context) {
-
     private val sharedPreferences = context.getSharedPreferences("MyPref",Context.MODE_PRIVATE)
-
-
 
     fun canOpen(): Boolean{return sharedPreferences.getBoolean(CAN_OPEN,true)}
     fun updateOpen(open: Boolean){
@@ -26,6 +24,15 @@ class PreferenceManager @Inject constructor(@ApplicationContext context: Context
         sharedPreferences.edit().putBoolean(CAN_OPEN,open).commit()
     }
 
+    fun getLastAgeUnit(): String =
+        sharedPreferences.getString(AGE_UNIT_KEY, "Month")!!
+
+    /** Saves the chosen age unit */
+    fun updateLastAgeUnit(unit: String) {
+        sharedPreferences.edit()
+            .putString(AGE_UNIT_KEY, unit)
+            .apply()
+    }
 
     fun getCurrentKid(): Int{return sharedPreferences.getInt(CURRENT_KID,0)}
     fun updateCurrentKid(kid: Int){ sharedPreferences.edit().putInt(CURRENT_KID,kid).commit() }
@@ -47,6 +54,4 @@ class PreferenceManager @Inject constructor(@ApplicationContext context: Context
 
     fun updateParentCare(care: Int){ sharedPreferences.edit().putInt(PARENT_CARE,care).commit() }
     fun getParentCare(): Int{return sharedPreferences.getInt(PARENT_CARE,0)}
-
-
 }

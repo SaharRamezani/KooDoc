@@ -7,4 +7,9 @@
         <item>@string/drug_paracetamol_suppository</item>
         <item>@string/drug_ibuprofen_suppository</item>
     </string-array>
+    <string-array name="age_units">
+        <item>@string/Year</item>
+        <item>@string/Month</item>
+        <item>@string/Week</item>
+    </string-array>
 </resources>

@@ -12,6 +12,7 @@ class CalculatorResultFragment : DialogFragment() {
         val drug   = arguments?.getString("drug").orEmpty()
         val weight = arguments?.getFloat("weight") ?: 0f
         val age    = arguments?.getInt("age")   ?: 0
+        val age_unit    = arguments?.getString("age_unit").orEmpty()
 
         // 1) calculate the proper dose text
         val resultText = calculateDose(drug, weight, age)
