@@ -101,6 +101,7 @@ class CalculatorResultFragment : DialogFragment() {
                 append(resultText)
                 append("\n\n⚠ ")
                 append(getString(R.string.warning_fever_usage))
+                append(getString(R.string.warning_ibuprofen_syrup_usage))
             }
         }
         // End drug_ibuprofen_syrup
@@ -172,216 +173,139 @@ class CalculatorResultFragment : DialogFragment() {
         // Start drug_paracetamol_drop
         else if (drug == getString(R.string.drug_paracetamol_drop))
         {
-            if (ageInWeeks > 0 && ageInWeeks  < 6 * 4)
-            {
-                resultText = getString(R.string.age_below_6mon_ibuprofen_syrup)
+            if (ageInWeeks > 2 * 52) {
+                resultText = getString(R.string.age_above_2_paracetamol_drop)
             }
-            if (weight > 0 && weight < 5.4f)
+            else if (weight > 0 && weight < 2.7f)
             {
-                resultText = getString(R.string.weight_below_5_ibuprofen_syrup)
+                resultText = getString(R.string.weight_below_2_7_paracetamol_drop)
+            }
+            else if (weight > 10.8f)
+            {
+                resultText = getString(R.string.weight_above_10_8_paracetamol_drop)
+            }
+            else if (weight in 2.7f..5.3f) {
+                resultText = getString(R.string.dose_10drop)
             }
             else if (weight in 5.4f..8.1f) {
-                resultText = getString(R.string.dose_2_5cc)
+                resultText = getString(R.string.dose_20drop)
             }
             else if (weight in 8.2f..10.8f) {
-                resultText = getString(R.string.dose_3_5_4cc)
+                resultText = getString(R.string.dose_30drop)
             }
-            else if (weight in 10.9f..16.3f) {
-                resultText = getString(R.string.dose_5cc)
+            else if (ageInWeeks in 0 * 4..3 * 4) {
+                resultText = getString(R.string.dose_10drop)
             }
-            else if (weight in 16.4f..21.7f) {
-                resultText = getString(R.string.dose_7_5cc)
+            else if (ageInWeeks in 4 * 4..< 11 * 4) {
+                resultText = getString(R.string.dose_20drop)
             }
-            else if (weight in 21.8f..27.2f) {
-                resultText = getString(R.string.dose_10cc)
+            else if (ageInWeeks in 1 * 52..< 2 * 52) {
+                resultText = getString(R.string.dose_30drop)
             }
-            else if (weight in 27.3f..32.6f) {
-                resultText = getString(R.string.dose_10_12_5cc)
-            }
-            else if (weight >= 32.7f) {
-                resultText = getString(R.string.dose_15cc)
-            }
-            else if (ageInWeeks in 6 * 4..12 * 4) {
-                resultText = getString(R.string.dose_2_5cc)
-            }
-            else if (ageInWeeks in 12 * 4..< 2 * 52) {
-                resultText = getString(R.string.dose_3_5_4cc)
-            }
-            else if (ageInWeeks in 2 * 52..< 4 * 52) {
-                resultText = getString(R.string.dose_5cc)
-            }
-            else if (ageInWeeks in 4 * 52..< 6 * 52) {
-                resultText = getString(R.string.dose_7_5cc)
-            }
-            else if (ageInWeeks in 6 * 52..< 8 * 52) {
-                resultText = getString(R.string.dose_10cc)
-            }
-            else if (ageInWeeks in 8 * 52..< 9 * 52) {
-                resultText = getString(R.string.dose_10_12_5cc)
-            }
-            else if (ageInWeeks >= 9 * 52) {
-                resultText = getString(R.string.dose_15cc)
-            }
+
+//            return buildString {
+//                append(resultText)
+//                append("\n\n⚠ ")
+//                append(getString(R.string.warning_paracetamol_drop))
+//            }
         }
-        else if (drug == getString(R.string.drug_paracetamol_drop))
-        {
-            if (ageInWeeks > 0 && ageInWeeks  < 6 * 4)
-            {
-                resultText = getString(R.string.age_below_6mon_ibuprofen_syrup)
-            }
-            if (weight > 0 && weight < 5.4f)
-            {
-                resultText = getString(R.string.weight_below_5_ibuprofen_syrup)
-            }
-            else if (weight in 5.4f..8.1f) {
-                resultText = getString(R.string.dose_2_5cc)
-            }
-            else if (weight in 8.2f..10.8f) {
-                resultText = getString(R.string.dose_3_5_4cc)
-            }
-            else if (weight in 10.9f..16.3f) {
-                resultText = getString(R.string.dose_5cc)
-            }
-            else if (weight in 16.4f..21.7f) {
-                resultText = getString(R.string.dose_7_5cc)
-            }
-            else if (weight in 21.8f..27.2f) {
-                resultText = getString(R.string.dose_10cc)
-            }
-            else if (weight in 27.3f..32.6f) {
-                resultText = getString(R.string.dose_10_12_5cc)
-            }
-            else if (weight >= 32.7f) {
-                resultText = getString(R.string.dose_15cc)
-            }
-            else if (ageInWeeks in 6 * 4..12 * 4) {
-                resultText = getString(R.string.dose_2_5cc)
-            }
-            else if (ageInWeeks in 12 * 4..< 2 * 52) {
-                resultText = getString(R.string.dose_3_5_4cc)
-            }
-            else if (ageInWeeks in 2 * 52..< 4 * 52) {
-                resultText = getString(R.string.dose_5cc)
-            }
-            else if (ageInWeeks in 4 * 52..< 6 * 52) {
-                resultText = getString(R.string.dose_7_5cc)
-            }
-            else if (ageInWeeks in 6 * 52..< 8 * 52) {
-                resultText = getString(R.string.dose_10cc)
-            }
-            else if (ageInWeeks in 8 * 52..< 9 * 52) {
-                resultText = getString(R.string.dose_10_12_5cc)
-            }
-            else if (ageInWeeks >= 9 * 52) {
-                resultText = getString(R.string.dose_15cc)
-            }
-        }
+        // End drug_paracetamol_drop
+
+        // Start drug_paracetamol_suppository
         else if (drug == getString(R.string.drug_paracetamol_suppository))
         {
             if (ageInWeeks > 0 && ageInWeeks  < 6 * 4)
             {
-                resultText = getString(R.string.age_below_6mon_ibuprofen_syrup)
+                resultText = getString(R.string.age_below_6mon_paracetamol_suppository)
             }
             if (weight > 0 && weight < 5.4f)
             {
-                resultText = getString(R.string.weight_below_5_ibuprofen_syrup)
+                resultText = getString(R.string.weight_below_5_4_paracetamol_suppository)
             }
             else if (weight in 5.4f..8.1f) {
-                resultText = getString(R.string.dose_2_5cc)
+                resultText = getString(R.string.suppository_75_5_4)
             }
-            else if (weight in 8.2f..10.8f) {
-                resultText = getString(R.string.dose_3_5_4cc)
-            }
-            else if (weight in 10.9f..16.3f) {
-                resultText = getString(R.string.dose_5cc)
+            else if (weight in 8.2f..16.3f) {
+                resultText = getString(R.string.suppository_75_8_2)
             }
             else if (weight in 16.4f..21.7f) {
-                resultText = getString(R.string.dose_7_5cc)
+                resultText = getString(R.string.suppository_125)
             }
-            else if (weight in 21.8f..27.2f) {
-                resultText = getString(R.string.dose_10cc)
+            else if (weight >= 21.8f) {
+                resultText = getString(R.string.suppository_325)
             }
-            else if (weight in 27.3f..32.6f) {
-                resultText = getString(R.string.dose_10_12_5cc)
+            else if (ageInWeeks in 6 * 4..< 12 * 4) {
+                resultText = getString(R.string.suppository_75_5_4)
             }
-            else if (weight >= 32.7f) {
-                resultText = getString(R.string.dose_15cc)
+            else if (ageInWeeks in 12 * 4..< 3 * 52) {
+                resultText = getString(R.string.suppository_75_8_2)
             }
-            else if (ageInWeeks in 6 * 4..12 * 4) {
-                resultText = getString(R.string.dose_2_5cc)
+            else if (ageInWeeks in 3 * 52..< 6 * 52) {
+                resultText = getString(R.string.suppository_125)
             }
-            else if (ageInWeeks in 12 * 4..< 2 * 52) {
-                resultText = getString(R.string.dose_3_5_4cc)
+            else if (ageInWeeks >= 6 * 52) {
+                resultText = getString(R.string.suppository_325)
             }
-            else if (ageInWeeks in 2 * 52..< 4 * 52) {
-                resultText = getString(R.string.dose_5cc)
-            }
-            else if (ageInWeeks in 4 * 52..< 6 * 52) {
-                resultText = getString(R.string.dose_7_5cc)
-            }
-            else if (ageInWeeks in 6 * 52..< 8 * 52) {
-                resultText = getString(R.string.dose_10cc)
-            }
-            else if (ageInWeeks in 8 * 52..< 9 * 52) {
-                resultText = getString(R.string.dose_10_12_5cc)
-            }
-            else if (ageInWeeks >= 9 * 52) {
-                resultText = getString(R.string.dose_15cc)
-            }
+
+//            return buildString {
+//                append(resultText)
+//                append("\n\n⚠ ")
+//                append(getString(R.string.warning_paracetamol_suppository))
+//            }
         }
+        // End drug_paracetamol_suppository
+
+        // Start drug_ibuprofen_suppository
         else if (drug == getString(R.string.drug_ibuprofen_suppository))
         {
             if (ageInWeeks > 0 && ageInWeeks  < 6 * 4)
             {
-                resultText = getString(R.string.age_below_6mon_ibuprofen_syrup)
+                resultText = getString(R.string.age_below_6mon_ibuprofen_suppository)
             }
-            if (weight > 0 && weight < 5.4f)
+            else if (ageInWeeks >= 6 * 4 && ageInWeeks  <= 8 * 4)
             {
-                resultText = getString(R.string.weight_below_5_ibuprofen_syrup)
+                resultText = getString(R.string.age_6_8_mon_ibuprofen_suppository)
             }
-            else if (weight in 5.4f..8.1f) {
-                resultText = getString(R.string.dose_2_5cc)
+            else if (weight > 0 && weight < 7.5f)
+            {
+                resultText = getString(R.string.weight_below_7_5_ibuprofen_suppository)
             }
-            else if (weight in 8.2f..10.8f) {
-                resultText = getString(R.string.dose_3_5_4cc)
+            else if (weight in 7.5f..< 10f) {
+                resultText = getString(R.string.suppository_75_1)
             }
-            else if (weight in 10.9f..16.3f) {
-                resultText = getString(R.string.dose_5cc)
+            else if (weight in 10f..< 15f) {
+                resultText = getString(R.string.suppository_75_2)
             }
-            else if (weight in 16.4f..21.7f) {
-                resultText = getString(R.string.dose_7_5cc)
+            else if (weight in 15f..< 20f) {
+                resultText = getString(R.string.suppository_150_1)
             }
-            else if (weight in 21.8f..27.2f) {
-                resultText = getString(R.string.dose_10cc)
+            else if (weight > 20f) {
+                resultText = getString(R.string.suppository_150_2)
             }
-            else if (weight in 27.3f..32.6f) {
-                resultText = getString(R.string.dose_10_12_5cc)
+            else if (ageInWeeks >= 8 * 4 && ageInWeeks  < 12 * 4)
+            {
+                resultText = getString(R.string.suppository_75_1)
             }
-            else if (weight >= 32.7f) {
-                resultText = getString(R.string.dose_15cc)
+            else if (ageInWeeks >= 12 * 4 && ageInWeeks  < 3 * 52)
+            {
+                resultText = getString(R.string.suppository_75_2)
             }
-            else if (ageInWeeks in 6 * 4..12 * 4) {
-                resultText = getString(R.string.dose_2_5cc)
+            else if (ageInWeeks >= 3 * 52 && ageInWeeks  < 6 * 52)
+            {
+                resultText = getString(R.string.suppository_150_1)
             }
-            else if (ageInWeeks in 12 * 4..< 2 * 52) {
-                resultText = getString(R.string.dose_3_5_4cc)
+            else if (ageInWeeks >= 6 * 52)
+            {
+                resultText = getString(R.string.suppository_150_2)
             }
-            else if (ageInWeeks in 2 * 52..< 4 * 52) {
-                resultText = getString(R.string.dose_5cc)
-            }
-            else if (ageInWeeks in 4 * 52..< 6 * 52) {
-                resultText = getString(R.string.dose_7_5cc)
-            }
-            else if (ageInWeeks in 6 * 52..< 8 * 52) {
-                resultText = getString(R.string.dose_10cc)
-            }
-            else if (ageInWeeks in 8 * 52..< 9 * 52) {
-                resultText = getString(R.string.dose_10_12_5cc)
-            }
-            else if (ageInWeeks >= 9 * 52) {
-                resultText = getString(R.string.dose_15cc)
-            }
+
+//            return buildString {
+//                append(resultText)
+//                append("\n\n⚠ ")
+//                append(getString(R.string.warning_paracetamol_suppository))
+//            }
         }
+        // End drug_ibuprofen_suppository
 
         return getString(R.string.dose_no_data)
     }

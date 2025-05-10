@@ -152,6 +152,33 @@
                                 android:textSize="16sp"
                                 android:layout_marginBottom="8dp"
                                 android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/warning_drug_allergy"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/multiple_drug_usage"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/infant_dosage_warning"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
