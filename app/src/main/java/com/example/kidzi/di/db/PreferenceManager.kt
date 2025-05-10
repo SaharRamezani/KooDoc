@@ -25,7 +25,7 @@ class PreferenceManager @Inject constructor(@ApplicationContext context: Context
     }
 
     fun getLastAgeUnit(): String =
-        sharedPreferences.getString(AGE_UNIT_KEY, "Month")!!
+        sharedPreferences.getString(AGE_UNIT_KEY, "ماه")!!
 
     /** Saves the chosen age unit */
     fun updateLastAgeUnit(unit: String) {
