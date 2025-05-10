@@ -7,6 +7,10 @@
     <string name="drug_ibuprofen_suppository">شیاف ایبوپروفن</string>
     <string name="dose_2_5ml">۲.۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>
     <string name="dose_insufficient">اطلاعات ناکافی برای محاسبه دوز.</string>
+    <string name="dose_2_5cc">۲.۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>
+    <string name="below_5kg_warning">⚠️ برای کودکان کم تر از 5 کیلوگرم حتما از داروساز و یا پزشک مشورت گرفته شود.</string>
+    <string name="fever_warning">⚠️ در صورت مصرف دارو برای کاهش تب، در قسمت ارزیابی علائم نرم افزار، تب و اندازه گیری تب خوانده شود.</string>
+    <string name="read_before_use">نکات مهم استفاده از ماشین حساب</string>
     <string name="title_home">خانه</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>

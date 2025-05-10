@@ -65,32 +65,104 @@
                     android:orientation="vertical"
                     android:gravity="top">
 
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_read_before_use"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/spacing_medium"
+                        android:clickable="true"
+                        android:minHeight="50dp"
+                        android:backgroundTint="@color/surface_bg_medium"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:id="@+id/ll_read_before_use_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/spacing_medium">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/read_before_use"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_read_before_use_arrow"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_arrow_down"
+                                android:tintMode="src_in"
+                                app:tint="@color/menu_button_icon_default" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Collapsible content (hidden by default) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_read_before_use_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/spacing_medium"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_medium">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/calculator_description"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="8dp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/not_substitute_warning"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/fever_warning"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/below_5kg_warning"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="8dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
                     <!-- Drug selector -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/calculator_description"
-                        android:textColor="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        android:padding="@dimen/spacing_medium"
-                        android:layout_marginBottom="8dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/not_substitute_warning"
-                        android:textColor="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="8dp"
-                        android:padding="@dimen/spacing_medium"
-                        android:textStyle="bold" />
-
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/choose_drug_name"
-                        android:padding="@dimen/spacing_small"
                         android:layout_marginBottom="16dp">
 
                         <AutoCompleteTextView
@@ -106,7 +178,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/kid_weight"
-                        android:padding="@dimen/spacing_small"
                         android:layout_marginBottom="12dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -121,9 +192,7 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enter_age"
-                        android:padding="@dimen/spacing_small"
-                        android:layout_marginBottom="0dp">
+                        android:hint="@string/enter_age">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/input_age"
@@ -140,7 +209,6 @@
                         android:text="@string/warning_enter_weight_instead"
                         android:textColor="@color/colorTextMuted"
                         android:textSize="14sp"
-                        android:padding="@dimen/spacing_medium"
                         android:layout_marginBottom="24dp" />
 
                     <!-- Calculate button -->
@@ -150,9 +218,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
                         android:text="@string/but_calculator"
-                        android:textSize="18sp"
-                        android:padding="@dimen/spacing_medium"
-                        android:layout_marginTop="8dp"/>
+                        android:textSize="18sp" />
 
                 </LinearLayout>
                 <!-- END: NEW UI -->

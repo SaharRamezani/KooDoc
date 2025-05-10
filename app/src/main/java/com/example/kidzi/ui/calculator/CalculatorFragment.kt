@@ -32,11 +32,26 @@ class CalculatorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Back button
         binding.btnBack.setOnClickListener {
             findNavController().navigate(
-                CalculatorFragmentDirections
-                    .actionCalculatorFragmentToMainFragment()
+                CalculatorFragmentDirections.actionCalculatorFragmentToMainFragment()
             )
+        }
+
+        // Collapsible "Read before use" section
+        binding.cardReadBeforeUseContent.visibility = View.GONE
+        binding.ivReadBeforeUseArrow.rotation = 0f
+
+        binding.cardReadBeforeUse.setOnClickListener {
+            val isOpen = binding.cardReadBeforeUseContent.visibility == View.VISIBLE
+            binding.cardReadBeforeUseContent.visibility =
+                if (isOpen) View.GONE else View.VISIBLE
+
+            binding.ivReadBeforeUseArrow.animate()
+                .rotation(if (isOpen) 0f else 180f)
+                .setDuration(200)
+                .start()
         }
 
         // 1) Prepare dropdown data
@@ -51,7 +66,7 @@ class CalculatorFragment : Fragment() {
         binding.autoCompleteDrug.setAdapter(adapter)
         binding.autoCompleteDrug.threshold = 1
 
-        // 3) Calculate button logic with manual Bundle navigation
+        // 3) Calculate button logic
         binding.btnCalculate.setOnClickListener {
             val drugStr  = binding.autoCompleteDrug.text.toString()
             var weightF  = binding.inputWeight.text.toString().toFloatOrNull()
@@ -65,7 +80,6 @@ class CalculatorFragment : Fragment() {
                     binding.tvWarning.text = getString(R.string.warning_enter_weight_age)
 
                 else -> {
-                    // Build a Bundle and navigate to ResultFragment
                     weightF  = binding.inputWeight.text.toString().toFloat()
                     ageInt   = binding.inputAge.text.toString().toInt()
 
@@ -74,10 +88,7 @@ class CalculatorFragment : Fragment() {
                         putFloat("weight", weightF)
                         putInt("age", ageInt)
                     }
-//                    findNavController().navigate(
-//                        R.id.action_calculatorFragment_to_calculatorResultFragment,
-//                        bundle
-//                    )
+
                     val dialog = CalculatorResultFragment().apply { arguments = bundle }
                     dialog.show(parentFragmentManager, "CalculatorResultDialog")
                 }

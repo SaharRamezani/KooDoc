@@ -24,13 +24,12 @@ class CalculatorResultFragment : DialogFragment() {
     }
 
     private fun calculateDose(drug: String, weight: Float, age: Int): String {
-if (drug == getString(R.string.drug_ibuprofen_syrup)) {
+        if (drug == getString(R.string.drug_ibuprofen_syrup)) {
             if (weight in 5.4f..8.1f) {
-                return "۲.۵ میلی‌لیتر (سی‌سی) مصرف شود."
+                return getString(R.string.dose_2_5cc)
             }
-            // otherwise, fall back to age
-            if (age in 6..12) {
-                return "۲.۵ میلی‌لیتر (سی‌سی) مصرف شود."
+            else if (age in 6..12) {
+                return getString(R.string.dose_2_5cc)
             }
         }
 
