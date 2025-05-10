@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
@@ -54,7 +55,7 @@ class CalculatorFragment : Fragment() {
 
         // save on pick
         binding.autoCompleteAgeUnit.setOnItemClickListener { _, _, pos, _ ->
-            prefs.updateLastAgeUnit(units[pos])
+            prefs.updateLastAgeUnit(binding.autoCompleteAgeUnit.adapter.getItem(pos).toString())
         }
 
         // Back button
@@ -98,28 +99,28 @@ class CalculatorFragment : Fragment() {
             var ageInt   = binding.inputAge.text.toString().toIntOrNull()
             val unitStr = binding.autoCompleteAgeUnit.text.toString()
 
-            when {
-                drugStr.isBlank() ->
-                    binding.tvWarning.text = getString(R.string.warning_select_drug)
-
-                weightF == null && ageInt == null ->
-                    binding.tvWarning.text = getString(R.string.warning_enter_weight_age)
-
-                else -> {
-                    weightF  = binding.inputWeight.text.toString().toFloat()
-                    ageInt   = binding.inputAge.text.toString().toInt()
-
-                    val bundle = Bundle().apply {
-                        putString("drug", drugStr)
-                        putFloat("weight", weightF)
-                        putInt("age", ageInt)
-                        putString("age_unit", unitStr)
-                    }
-
-                    val dialog = CalculatorResultFragment().apply { arguments = bundle }
-                    dialog.show(parentFragmentManager, "CalculatorResultDialog")
-                }
+            if (drugStr.isBlank()) {
+                Toast.makeText(requireContext(),
+                    getString(R.string.choose_drug_first), Toast.LENGTH_LONG).show()
+                return@setOnClickListener
             }
+
+            if (weightF == null && ageInt == null) {
+                Toast.makeText(requireContext(),
+                    getString(R.string.age_weight_must_enter), Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            val bundle = Bundle().apply {
+                putString("drug", drugStr)
+                weightF?.let { putFloat("weight", it) }
+                ageInt ?.let { putInt  ("age",   it) }
+                putString("age_unit", unitStr)
+            }
+
+            CalculatorResultFragment()
+                .apply { arguments = bundle }
+                .show(parentFragmentManager, "CalculatorResultDialog")
         }
     }
 
