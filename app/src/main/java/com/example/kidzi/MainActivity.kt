@@ -1,8 +1,10 @@
 package com.example.kidzi
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.example.kidzi.databinding.ActivityMainBinding
 import com.example.kidzi.di.db.PreferenceManager
@@ -21,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Disable system-drawn background
+        //WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        // Set status bar to transparent manually
+        window.statusBarColor = Color.TRANSPARENT
 
         // Set up navigation with conditional start destination
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
