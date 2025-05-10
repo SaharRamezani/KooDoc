@@ -190,7 +190,7 @@ class CalculatorResultFragment : DialogFragment() {
             else if (weight in 5.4f..8.1f) {
                 resultText = getString(R.string.dose_20drop)
             }
-            else if (weight in 8.2f..10.8f) {
+            else if (weight > 8.2f) {
                 resultText = getString(R.string.dose_30drop)
             }
             else if (ageInWeeks in 0 * 4..3 * 4) {
@@ -199,10 +199,11 @@ class CalculatorResultFragment : DialogFragment() {
             else if (ageInWeeks in 4 * 4..< 11 * 4) {
                 resultText = getString(R.string.dose_20drop)
             }
-            else if (ageInWeeks in 1 * 52..< 2 * 52) {
+            else if (ageInWeeks >= 11 * 4) {
                 resultText = getString(R.string.dose_30drop)
             }
 
+            return resultText
 //            return buildString {
 //                append(resultText)
 //                append("\n\n⚠ ")
@@ -247,6 +248,7 @@ class CalculatorResultFragment : DialogFragment() {
                 resultText = getString(R.string.suppository_325)
             }
 
+            return resultText
 //            return buildString {
 //                append(resultText)
 //                append("\n\n⚠ ")
@@ -299,6 +301,7 @@ class CalculatorResultFragment : DialogFragment() {
                 resultText = getString(R.string.suppository_150_2)
             }
 
+            return resultText
 //            return buildString {
 //                append(resultText)
 //                append("\n\n⚠ ")
