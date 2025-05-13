@@ -23,12 +23,12 @@
             android:layout_gravity="top"
             android:layout_marginRight="12dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/ic_circle_black"/>
+            android:src="@drawable/ic_circle_white"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="نام واکسن یسنمیتلبشمسنتیب نشسی تیمنشت بنشمس نشمست بیمنشست نمشت سنمی تنمشسب منشس تیمش سیمنب نمشس تبنمش ست"
+            android:text="نام علائم"
             android:textDirection="rtl"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"

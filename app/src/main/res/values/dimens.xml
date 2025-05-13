@@ -12,12 +12,16 @@
     <dimen name="corner_main">10dp</dimen>
     <dimen name="spacing_medium">5dp</dimen>
     <dimen name="spacing_small">0dp</dimen>
+    <dimen name="corner_radius">5dp</dimen>
     <dimen name="line_extra">4dp</dimen>
     <dimen name="table_txt">10sp</dimen>
     <dimen name="margin_main_icons">36dp</dimen>
     <dimen name="margin_symptoms_cards">12dp</dimen>
     <dimen name="main_icon_size_width">120dp</dimen>
     <dimen name="main_icon_size_height">120dp</dimen>
+    <dimen name="spacing_xsmall">4dp</dimen>
+    <dimen name="compat_value_width">40dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
     <!-- Uniform size for all cards -->
     <dimen name="card_size">140dp</dimen>
     <!-- Inner padding for card content -->
