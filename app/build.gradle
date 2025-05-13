@@ -12,6 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.kidzi"
+        vectorDrawables.useSupportLibrary = true
         minSdk 26
         targetSdk 34
         versionCode 1

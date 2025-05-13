@@ -204,11 +204,11 @@ class CalculatorResultFragment : DialogFragment() {
             }
 
             return resultText
-//            return buildString {
-//                append(resultText)
-//                append("\n\n⚠ ")
-//                append(getString(R.string.warning_paracetamol_drop))
-//            }
+            return buildString {
+                append(resultText)
+                append("\n\n⚠ ")
+                append(getString(R.string.warning_paracetamol_drop))
+            }
         }
         // End drug_paracetamol_drop
 

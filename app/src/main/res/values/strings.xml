@@ -47,7 +47,8 @@
     <string name="weight_below_2_7_paracetamol_drop">با پزشک یا داروساز مشورت شود.</string>
     <string name="weight_below_2_7_paracetamol_syrup">با پزشک یا داروساز مشورت شود.</string>
     <string name="age_weight_must_enter">حداقل یکی از دو مورد "وزن" یا "سن" باید وارد شود.</string>
-    <string name="warning_paracetamol_syrup">در صورت تداوم علائم کودک، مثل تب، هر ۴ تا ۶ ساعت «میزان مصرف» مصرف شود. نهایتاً در هر ۲۴ ساعت ۵ بار به کودک دارو داده شود.</string>
+    <string name="warning_paracetamol_syrup">در صورت تداوم علائم کودک، مثل تب، هر ۴ تا ۶ ساعت دوز مربوطه مصرف شود. نهایتاً در هر ۲۴ ساعت ۵ بار به کودک دارو داده شود.</string>
+    <string name="warning_paracetamol_drop">در صورت تداوم علائم کودک، مثل تب، هر ۴ تا ۶ ساعت دوز مربوطه مصرف شود. نهایتاً در هر ۲۴ ساعت ۵ بار به کودک دارو داده شود.</string>
     <string name="choose_drug_first">نوع دارو را انتخاب کنید.</string>
     <string name="below_5kg_warning">⚠️ برای کودکان کم تر از 5 کیلوگرم حتما از داروساز و یا پزشک مشورت گرفته شود.</string>
     <string name="fever_warning">⚠️ در صورت مصرف دارو برای کاهش تب، در قسمت ارزیابی علائم نرم افزار، تب و اندازه گیری تب خوانده شود.</string>

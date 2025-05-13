@@ -9,6 +9,7 @@
 
         <!-- Primary brand color -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/background</item>
 
         <!-- Secondary brand color -->
