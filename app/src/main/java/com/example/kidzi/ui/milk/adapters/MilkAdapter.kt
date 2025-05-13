@@ -35,10 +35,17 @@ class MilkAdapter(
             //binding.txtLact.text = if(vaccine.lac) "دارد" else "ندارد"
             binding.txtStart.text = vaccine.startAge.toString()
             binding.txtEnd.text = vaccine.endAge.toString()
-            if(vaccine.endAge > 36) {
+            binding.txtStart.text = vaccine.startAge.toString()
+
+            if (vaccine.endAge > 36) {
                 binding.txtMonth.visibility = View.GONE
-                binding.txtEnd.text = "آخر عمر"
+                binding.txtEnd.text       = "آخر عمر"
+            } else {
+                binding.txtMonth.visibility = View.VISIBLE
+                binding.txtEnd.visibility   = View.VISIBLE
+                binding.txtEnd.text         = vaccine.endAge.toString()
             }
+
             binding.txtBase.text = vaccine.milkType
         }
     }
