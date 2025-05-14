@@ -43,9 +43,6 @@
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
                     android:text="@string/snake_sting"/>
-
-
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
