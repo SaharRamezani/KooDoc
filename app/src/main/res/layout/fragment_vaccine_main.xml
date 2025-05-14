@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_vaccine"
+    app:cardBackgroundColor="@android:color/transparent"
     android:layout_height="match_parent"
     tools:context=".ui.vaccine.VaccineMainFragment">
     <LinearLayout
@@ -29,6 +29,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -46,11 +47,13 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:textColor="@color/black"
             android:id="@+id/btn_age"
-            app:cornerRadius="@dimen/corner_main"
             android:text="@string/vaccine_age"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
@@ -60,10 +63,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:id="@+id/btn_special"
             android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:text="@string/special_child"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
@@ -73,10 +78,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:id="@+id/btn_advice"
             android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:text="@string/care_advice"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
@@ -86,10 +93,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:id="@+id/btn_wrong"
             android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:text="@string/wrong_believes"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
@@ -100,10 +109,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:id="@+id/btn_about"
             android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:text="@string/about_vaccines"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
