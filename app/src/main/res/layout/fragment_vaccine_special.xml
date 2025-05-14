@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_vaccine"
     android:layout_height="match_parent"
+    app:cardBackgroundColor="@android:color/transparent"
     tools:context=".ui.vaccine.VaccineSpecialFragment">
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +29,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -52,6 +53,9 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:clickable="true"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:id="@+id/card_hot"
                     android:layout_height="wrap_content">
                     <LinearLayout
@@ -71,6 +75,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                app:tint="@color/button_outlined_border"
                                 android:id="@+id/arrow_hot"
                                 android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_arrow_down"/>
@@ -96,13 +101,15 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/yellow_kids"
-                    android:layout_height="wrap_content">
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -122,6 +129,7 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_yellow"
                                 android:layout_alignParentLeft="true"
+                                app:tint="@color/button_outlined_border"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
@@ -150,6 +158,9 @@
                     android:layout_width="match_parent"
                     android:clickable="true"
                     android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:id="@+id/pre_kids"
                     android:layout_height="wrap_content">
                     <LinearLayout
@@ -169,6 +180,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                app:tint="@color/button_outlined_border"
                                 android:id="@+id/arrow_pre"
                                 android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_arrow_down"/>
@@ -199,6 +211,9 @@
                     android:layout_width="match_parent"
                     android:clickable="true"
                     android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:id="@+id/brain_kids"
                     android:layout_height="wrap_content">
                     <LinearLayout
@@ -219,6 +234,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_brain"
+                                app:tint="@color/button_outlined_border"
                                 android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
