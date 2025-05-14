@@ -42,7 +42,6 @@ class VaccineFragment : Fragment() {
             adapter = VaccineAdapter(vaccineTimesList) { position ->
             }
 
-
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
             binding.recycler.adapter = adapter
         }
@@ -50,7 +49,6 @@ class VaccineFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
-
 
         return root
     }
