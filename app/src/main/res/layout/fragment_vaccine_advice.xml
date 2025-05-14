@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_vaccine"
+    android:background="@android:color/transparent"
     android:layout_height="match_parent"
     tools:context=".ui.vaccine.VaccineAdviceFragment">
 
@@ -17,7 +17,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_header"
+            android:layout_margin="@dimen/margin_header_corrected"
             android:id="@+id/btn_back"
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
@@ -30,6 +30,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -49,6 +50,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_marginBottom="12dp"
+            android:layout_marginTop="15dp"
             android:text="@string/advice_more"/>
 
         <ScrollView
@@ -62,6 +64,9 @@
                     android:layout_width="match_parent"
                     android:clickable="true"
                     android:id="@+id/card_physical"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -81,6 +86,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_physical"
+                                app:tint="@color/button_outlined_border"
                                 android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
@@ -111,6 +117,9 @@
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/card_mental"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -130,6 +139,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_mental"
+                                app:tint="@color/button_outlined_border"
                                 android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
@@ -160,6 +170,9 @@
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/card_after"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -179,6 +192,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_after"
+                                app:tint="@color/button_outlined_border"
                                 android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>

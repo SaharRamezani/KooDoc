@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_alert"
+    android:background="@android:color/transparent"
     tools:context=".ui.toxic.ToxicStingFragment">
 
 
@@ -31,6 +31,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -49,10 +50,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:textColor="@color/black"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:id="@+id/btn_snake"
-            app:cornerRadius="@dimen/corner_main"
             android:text="@string/snake_sting"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
@@ -62,10 +65,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/button_outlined_border"
             android:id="@+id/btn_bee"
             android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
             android:text="@string/bee_sting"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
