@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Success (Green) -->
+    <color name="colorSuccessStrong">#66B58F</color> <!-- Button or alert background -->
+    <color name="colorSuccessText">#FFFFFF</color>   <!-- On green -->
+
+    <color name="colorErrorSoft">#E28B8B</color>     <!-- Muted Blush Red -->
+    <color name="colorErrorText">#333333</color>     <!-- Charcoal Gray (theme-consistent) -->
+
     <!-- OPTION A: Neutral Grayscale Layers -->
     <!-- Base -->
     <color name="surface_bg_default">#FFFFFF</color>       <!-- Pure White -->
@@ -40,6 +47,10 @@
     <color name="menu_button_bg_pressed">#D26924</color>        <!-- Slightly darker Warm Orange -->
     <color name="menu_button_text_pressed">#FFF9F5</color>
     <color name="menu_button_icon_pressed">#FFF9F5</color>
+
+    <!-- Soft Pastel Background-->
+    <color name="pastel_background">#FFEEDD</color>
+    <color name="text_pastel_background">#2C2C2C</color>
 
     <!-- Disabled -->
     <color name="menu_button_bg_disabled">#FFE3C4</color>       <!-- Apricot Cream -->
