@@ -11,7 +11,7 @@
         app:strokeColor="@color/gray"
         app:strokeWidth="1dp"
         app:cardCornerRadius="15dp"
-        app:cardBackgroundColor="@color/white">
+        app:cardBackgroundColor="@color/surface_bg_medium">>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,7 +36,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="13sp"
                         android:textStyle="bold"
                         android:text="سن:"/>
@@ -53,7 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="4dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="13sp"
                         android:textStyle="bold"
                         android:text="ماهگی"/>
@@ -84,7 +84,7 @@
                         android:text="@string/normal_height"
                         android:layout_marginLeft="18dp"
                         android:gravity="right"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="16sp"
                         android:id="@+id/txt_month"/>
                     <TextView
@@ -103,7 +103,7 @@
                         android:layout_height="match_parent"
                         android:text="تا"
                         android:gravity="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="16sp"
                         android:textAlignment="center"/>
 
@@ -144,7 +144,7 @@
                         android:text="@string/normal_weight"
                         android:layout_marginLeft="18dp"
                         android:gravity="right"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="16sp"/>
                     <TextView
                         android:layout_width="50dp"
@@ -162,7 +162,7 @@
                         android:layout_height="match_parent"
                         android:text="تا"
                         android:gravity="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="16sp"
                         android:textAlignment="center"/>
 
@@ -209,7 +209,7 @@
                         android:text="@string/normal_head"
                         android:layout_marginLeft="18dp"
                         android:gravity="right"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="16sp"/>
                     <TextView
                         android:layout_width="50dp"
@@ -227,7 +227,7 @@
                         android:layout_height="match_parent"
                         android:text="تا"
                         android:gravity="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/surface_text_light"
                         android:textSize="16sp"
                         android:textAlignment="center"/>
 

@@ -49,6 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_arrow_left"
+                    app:tint="@color/button_outlined_border"
                     android:layoutDirection="ltr"
                     android:layout_gravity="center_vertical"/>
 
