@@ -80,12 +80,6 @@
                                 android:textColor="@color/colorErrorText"
                                 android:layout_alignParentRight="true"
                                 android:text="@string/alert"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_alert"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -132,12 +126,6 @@
                                 android:textColor="@color/button_success_text"
                                 android:layout_alignParentRight="true"
                                 android:text="@string/actions"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_actions"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -185,12 +173,6 @@
                                 android:textColor="@color/text_pastel_background"
                                 android:layout_alignParentRight="true"
                                 android:text="@string/forbid"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_forbid"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
