@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorOrangePastel">#FFC999</color> <!-- Soft Pastel Orange -->
+
     <!-- Success (Green) -->
     <color name="colorSuccessStrong">#66B58F</color> <!-- Button or alert background -->
     <color name="colorSuccessText">#FFFFFF</color>   <!-- On green -->

@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_alert"
+    android:background="@android:color/transparent"
     android:layout_height="match_parent"
     tools:context=".ui.toxic.ToxicDrugFragment">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +28,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,9 +48,9 @@
             android:layout_marginRight="18dp"
             android:layout_marginLeft="18dp"
             app:cardCornerRadius="25dp"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             app:strokeWidth="2dp"
-            app:cardBackgroundColor="@color/red"
+            app:cardBackgroundColor="@color/colorErrorSoft"
             android:layout_height="wrap_content">
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -63,6 +63,7 @@
                     android:layout_centerInParent="true"
                     android:textStyle="bold"
                     android:text="@string/drugs_caution"
+                    android:textColor="@color/colorErrorText"
                     android:lineSpacingExtra="6dp"/>
 
             </RelativeLayout>

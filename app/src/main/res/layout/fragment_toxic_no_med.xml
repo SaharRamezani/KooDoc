@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bg_alert"
+    android:background="@android:color/transparent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.toxic.ToxicNoMedFragment">
@@ -30,6 +30,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -47,10 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:textColor="@color/black"
             android:id="@+id/btn_drug"
-            app:cornerRadius="@dimen/corner_main"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:text="@string/drug_active"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
@@ -74,10 +77,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:id="@+id/btn_plants"
             android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:text="@string/plants_tox"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>
@@ -88,10 +93,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:id="@+id/btn_snake"
             android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
+            android:backgroundTint="@color/surface_bg_medium"
+            android:elevation="2dp"
+            app:cornerRadius="8dp"
             android:text="@string/snake_bee"
             android:textSize="16sp"
             android:layout_marginTop="18dp"/>

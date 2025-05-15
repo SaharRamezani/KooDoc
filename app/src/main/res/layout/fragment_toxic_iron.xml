@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_alert"
+    android:background="@android:color/transparent"
     tools:context=".ui.toxic.ToxicIronFragment">
 
 
@@ -29,6 +29,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -47,99 +48,114 @@
             android:layout_height="wrap_content">
 
         </com.google.android.material.card.MaterialCardView>
-
         <TableLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layoutDirection="rtl"
             android:stretchColumns="1"
             android:padding="16dp">
 
-
-            <!-- Row 1 -->
+            <!-- Header Row -->
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/header_cell_bg_right"
                     android:text="زمان"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:background="@android:color/darker_gray"/>
+                    android:textColor="@color/surface_text_light"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:gravity="center"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/header_cell_bg_left"
                     android:text="علائم"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:background="@android:color/darker_gray"/>
+                    android:textColor="@color/surface_text_light"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:gravity="center"/>
             </TableRow>
 
-            <!-- Row 2 -->
+            <!-- Row 1: Success -->
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:text="30 دقیقه تا 6 ساعت پس از مصرف آهن"
-                    android:padding="8dp"
-                    android:textSize="@dimen/table_txt"
-                    android:background="@android:color/holo_blue_light"/>
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/surface_text_medium"
+                    android:background="@drawable/cell_bg"/>
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:text="تهوع، استفراغ، درد شکم، اسهال"
-                    android:padding="8dp"
-                    android:textSize="@dimen/table_txt"
-                    android:background="@android:color/holo_blue_light"/>
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/surface_text_medium"
+                    android:background="@drawable/cell_bg"/>
             </TableRow>
 
-            <!-- Row 3 -->
+            <!-- Row 2: Neutral -->
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="6 تا 24 ساعت بعد "
-                    android:padding="8dp"
-                    android:textSize="@dimen/table_txt"
-                    android:background="@android:color/holo_green_light"/>
+                    android:layout_weight="1"
+                    android:text="6 تا 24 ساعت بعد"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/surface_text_medium"
+                    android:background="@drawable/cell_bg"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="کم شدن  و بهبود علائم گوارشی مانند استفراغ و اسهال "
-                    android:padding="8dp"
-                    android:textSize="@dimen/table_txt"
-                    android:background="@android:color/holo_green_light"/>
+                    android:layout_weight="1"
+                    android:text="کم شدن و بهبود علائم گوارشی مانند استفراغ و اسهال"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/surface_text_medium"
+                    android:background="@drawable/cell_bg"/>
             </TableRow>
 
-            <!-- Row 4 -->
+            <!-- Row 3: Error -->
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="12 تا 36 ساعت بعد "
-                    android:padding="8dp"
-                    android:textSize="@dimen/table_txt"
-                    android:background="@android:color/holo_red_light"/>
+                    android:layout_weight="1"
+                    android:text="12 تا 36 ساعت بعد"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorErrorText"
+                    android:background="@drawable/cell_bg"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="کم آب شدن بدن
-درگیری احتمای کبد"
-                    android:padding="8dp"
-                    android:textSize="@dimen/table_txt"
-                    android:background="@android:color/holo_red_light"/>
+                    android:layout_weight="1"
+                    android:text="کم آب شدن بدن\nدرگیری احتمالی کبد"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorErrorText"
+                    android:background="@drawable/cell_bg"/>
             </TableRow>
-
         </TableLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_margin="18dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorErrorSoft">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -152,7 +168,7 @@
                     android:textSize="16sp"
                     android:text="@string/iron_extra"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/colorErrorText"
                     android:textStyle="bold"/>
 
             </RelativeLayout>
