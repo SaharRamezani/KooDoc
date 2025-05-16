@@ -223,8 +223,8 @@
     <string name="age_week">سن(هفته)</string>
     <string name="head">دور سر</string>
     <string name="info_about">"اطلاعات در مورد "</string>
-    <string name="emergency">با دیدن یکی از این علائم سریعا به اورژانس مراجعه کنید:</string>
-    <string name="emergency_medium">با دیدن یکی از علائم زیر به نزدیکترین داروخانه|درمانگاه مراجعه کنید:</string>
+    <string name="emergency">با دیدن یکی از این علائم سریعا به اورژانس مراجعه کنید</string>
+    <string name="emergency_medium">با مشاهده علائم زیر به داروخانه یا درمانگاه مراجعه کنید</string>
     <string name="emergency_low">با دیدن علائم زیر طی ۲۴ ساعت به پزشک مراجعه کنید</string>
     <string name="home_care">با دیدن علائم زیر میتوانید در خانه مراقبت کنید</string>
     <string name="caring_advice">نکات مراقبتی</string>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_symptoms"
+    android:background="@android:color/transparent"
     android:layout_height="match_parent"
     tools:context=".ui.symptoms.SymptomsDetailsFragment">
 
@@ -30,6 +30,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,7 +49,7 @@
                     android:id="@+id/txtHeader"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="سر درد"/>
+                    android:text="سردرد"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -67,6 +68,9 @@
                     android:layout_width="match_parent"
                     android:clickable="true"
                     android:id="@+id/card_info"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -83,12 +87,9 @@
                                 android:id="@+id/txt_right"
                                 android:layout_alignParentRight="true"
                                 android:text="@string/info_about"/>
-
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="2dp"
                                 android:id="@+id/txt_cause"
                                 android:layout_toLeftOf="@id/txt_right"
                                 android:textColor="@color/black"
@@ -127,6 +128,9 @@
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/card_emergency"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -187,6 +191,9 @@
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/card_emergency_med"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -204,7 +211,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="12sp"
                                 android:layout_margin="@dimen/margin_symptoms_cards"
                                 android:layout_alignParentRight="true"
                                 android:text="@string/emergency_medium"/>
@@ -246,6 +253,9 @@
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/card_emergency_low"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -305,6 +315,9 @@
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/card_home"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -363,8 +376,10 @@
                     android:layout_width="match_parent"
                     android:clickable="true"
                     android:layout_marginTop="12dp"
-                    app:cardBackgroundColor="@color/blue"
                     android:id="@+id/card_relative"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -417,6 +432,9 @@
                     android:clickable="true"
                     android:layout_marginTop="12dp"
                     android:id="@+id/card_care"
+                    app:cardBackgroundColor="@color/surface_bg_medium"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
