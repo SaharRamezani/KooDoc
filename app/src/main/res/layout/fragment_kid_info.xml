@@ -108,7 +108,7 @@
             android:textStyle="bold"
             android:text="@string/birth_date"
             android:textColor="@color/white"
-            android:id="@+id/btn_date"/>
+            android:id="@+id/btn_group"/>
 
         <TextView
             android:layout_width="wrap_content"
