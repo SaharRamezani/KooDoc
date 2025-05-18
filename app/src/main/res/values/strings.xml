@@ -98,8 +98,8 @@
     <string name="go">بریم</string>
     <string name="hello">سلام</string>
     <string name="test">تست</string>
-    <string name="info_to_help">برای اینکه بهتر بتونم بهت کمک کنم لازمه تا اطلاعات زیر رو داشته باشم.</string>
-    <string name="few_questions">پس ازت چند تا سوال میپرسم.</string>
+    <string name="info_to_help">برای اینکه بتونم بهتر کمکت کنم، یه‌سری اطلاعات ازت می‌خوام.</string>
+    <string name="few_questions">چند تا سوال ازت می‌پرسم، باشه؟</string>
     <string name="ready">حاضری؟</string>
     <string name="name">نام</string>
     <string name="birth_date">تاریخ تولد</string>

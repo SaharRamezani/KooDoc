@@ -3,9 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_start"
+    android:background="@android:color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.ParentInfoIntroFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        android:layout_margin="18dp"
+        android:orientation="vertical">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,16 +66,6 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ready"
-                android:textSize="20sp"
-                android:textStyle="bold"
-
-                android:layout_marginTop="42dp"/>
-
         </LinearLayout>
 
 
@@ -84,10 +82,11 @@
                 android:text="@string/with"
                 android:id="@+id/check_rules"/>
             <com.google.android.material.button.MaterialButton
-                android:layout_width="55dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:text="@string/rules_2"
+                android:textStyle="bold"
                 android:id="@+id/btn_rules"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -95,31 +94,29 @@
                 android:text="@string/agree_koodoc"/>
         </LinearLayout>
 
-
-
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
             app:layout_constraintBottom_toTopOf="@id/btn_back"
-            app:cornerRadius="0dp"
-            android:text="@string/go"
             android:textStyle="bold"
+            app:cornerRadius="8dp"
+            android:text="@string/go"
             android:id="@+id/btn_next"/>
-
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_back"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:backgroundTint="@android:color/transparent"
-            app:strokeColor="@color/white"
+            app:backgroundTint="@color/colorSecondary"
+            app:strokeColor="@color/colorSecondary"
             app:strokeWidth="2dp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
             android:layout_marginBottom="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/before"
-            android:textStyle="bold"
-            app:cornerRadius="0dp" />
+            android:text="@string/before"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 </FrameLayout>
