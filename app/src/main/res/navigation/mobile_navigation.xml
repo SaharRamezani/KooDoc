@@ -220,8 +220,8 @@
             android:id="@+id/action_mainFragment_to_toxicMainFragment"
             app:destination="@id/toxicMainFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_symptomsFragment"
-            app:destination="@id/symptomsFragment" />
+            android:id="@+id/action_mainFragment_to_SymptomsParentFragment"
+            app:destination="@id/symptomsParentFragment" />
         <action
             android:id="@+id/action_mainFragment_to_milGrowthFragment"
             app:destination="@id/milGrowthFragment" />

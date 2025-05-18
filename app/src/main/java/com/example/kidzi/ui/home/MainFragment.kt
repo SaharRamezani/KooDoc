@@ -26,7 +26,7 @@ class MainFragment : Fragment() {
         }
         binding.btnVaccine.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToVaccineMainFragment()) }
         binding.btnAlert.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToToxicMainFragment()) }
-        binding.btnSymptoms.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToSymptomsFragment()) }
+        binding.btnSymptoms.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToSymptomsParentFragment()) }
         binding.btnFood.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToMilGrowthFragment()) }
 
         return binding.root
