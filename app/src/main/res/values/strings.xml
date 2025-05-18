@@ -252,7 +252,7 @@
     <string name="my_detail">مشخصات من</string>
     <string name="my_kids">کودکان من</string>
     <string name="ok">باشه</string>
-    <string name="select_milk_type">نوع شیر خشک را انتخاب کنین:</string>
+    <string name="select_milk_type">نوع شیر خشک:</string>
     <string name="diet">رژیمی</string>
     <string name="regular">رگولار</string>
 </resources>
