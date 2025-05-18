@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_start"
+    android:background="@android:color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.kid.FamilyDisFirstFragment">
 
@@ -18,6 +18,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:tint="@color/button_outlined_border"
+            android:textSize="18dp"
+            android:textStyle="bold"
             android:text="@string/family_disease_history" />
 
         <com.google.android.material.card.MaterialCardView
@@ -26,12 +29,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.3"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:clickable="true"
             android:id="@+id/father_disease"
             app:strokeWidth="2dp"
             app:cardCornerRadius="45dp"
             android:layout_margin="36dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,19 +50,16 @@
                     android:text="@string/father_health"
                     android:textColor="@color/black"
                     android:textAlignment="center"
+                    android:textSize="16dp"
                     android:lineSpacingExtra="4dp"/>
-
-
             </LinearLayout>
-
         </com.google.android.material.card.MaterialCardView>
-
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/father_disease"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/button_outlined_border"
             android:clickable="true"
             android:id="@+id/mother_disease"
             app:strokeWidth="2dp"
@@ -78,41 +79,35 @@
                     android:text="@string/mother_health"
                     android:textColor="@color/black"
                     android:textAlignment="center"
+                    android:textSize="16dp"
                     android:lineSpacingExtra="4dp"/>
-
-
             </LinearLayout>
-
         </com.google.android.material.card.MaterialCardView>
-
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             app:layout_constraintBottom_toTopOf="@id/btn_back"
+            app:backgroundTint="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:text="@string/next"
             android:textStyle="bold"
-            app:cornerRadius="0dp" />
-
+            app:cornerRadius="8dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_back"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:backgroundTint="@android:color/transparent"
-            app:strokeColor="@color/white"
+            app:backgroundTint="@color/colorSecondary"
+            app:strokeColor="@color/colorSecondary"
             app:strokeWidth="2dp"
+            android:layout_marginBottom="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="@string/before"
             android:textStyle="bold"
-            app:cornerRadius="0dp" />
-
-
-
-
+            app:cornerRadius="8dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </FrameLayout>

@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:id="@+id/btn_choose_kid"
-            app:cardBackgroundColor="@color/colorSecondary"
+            app:cardBackgroundColor="@color/colorPrimary"
             app:layout_constraintTop_toBottomOf="@id/btn_back"
             android:layout_margin="18dp"
             app:cardCornerRadius="25dp">

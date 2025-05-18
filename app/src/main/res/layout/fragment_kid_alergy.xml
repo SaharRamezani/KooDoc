@@ -7,7 +7,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.kid.KidAlergyFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +32,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-
                 <CheckBox
                     android:id="@+id/check_peanut"
                     android:layout_width="wrap_content"
@@ -48,7 +46,6 @@
                     android:layout_marginTop="8dp"
                     android:text="@string/honey" />
 
-
                 <CheckBox
                     android:id="@+id/check_lactoz"
                     android:layout_width="wrap_content"
@@ -56,14 +53,12 @@
                     android:layout_marginTop="8dp"
                     android:text="@string/lactoz" />
 
-
                 <CheckBox
                     android:id="@+id/check_protein"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/cow_protein" />
-
 
                 <CheckBox
                     android:id="@+id/check_alcohol"
