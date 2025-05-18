@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_start"
+    android:background="@android:color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.kid.KidDiseaseFragment">
 
@@ -141,7 +141,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="12dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/colorSecondary"
                 android:text="@string/add"
                 android:id="@+id/btn_add"/>
         </LinearLayout>
