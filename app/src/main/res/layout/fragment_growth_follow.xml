@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_milk"
+    android:background="@android:color/transparent"
     android:layout_height="match_parent"
     tools:context=".ui.milk.GrowthFollowFragment">
 
@@ -30,6 +30,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,7 +49,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:id="@+id/btn_choose_kid"
-            app:cardBackgroundColor="@color/black"
+            app:cardBackgroundColor="@color/colorSecondary"
             app:layout_constraintTop_toBottomOf="@id/btn_back"
             android:layout_margin="18dp"
             app:cardCornerRadius="25dp">
@@ -303,6 +304,13 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                app:backgroundTint="@color/colorPrimary"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold"
+                app:cornerRadius="8dp"
                 android:id="@+id/btn_register"
                 android:text="@string/register"/>
 
