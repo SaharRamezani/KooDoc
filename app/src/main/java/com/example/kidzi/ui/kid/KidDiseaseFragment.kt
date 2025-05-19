@@ -54,20 +54,44 @@ class KidDiseaseFragment : Fragment() {
 
     private fun loadKidData() {
         try {
-            kidDiseaseDao.getKidInfo(kidId)?.let { kido ->
-                binding.checkAsm.isChecked = kido.asm
-                binding.checkFawism.isChecked = kido.faw
-                binding.checkFibrozm.isChecked = kido.fibr
-                binding.checkMetabolism.isChecked = kido.meta
-                binding.checkSeliac.isChecked = kido.seli
-                binding.checkDiabetes.isChecked = kido.diabetes
-                binding.txtDis.setText(kido.other)
+            val kido = kidDiseaseDao.getKidInfo(kidId) ?: return
 
-                binding.txtDis.visibility = View.GONE
+            // Set states for hardcoded checkboxes
+            binding.checkAsm.isChecked = kido.asm
+            binding.checkFawism.isChecked = kido.faw
+            binding.checkFibrozm.isChecked = kido.fibr
+            binding.checkMetabolism.isChecked = kido.meta
+            binding.checkSeliac.isChecked = kido.seli
+            binding.checkDiabetes.isChecked = kido.diabetes
 
-                // Dynamically recreate extra checkboxes
-                val diseases = kido.other.split(",").map { it.trim() }.filter { it.isNotEmpty() }
-                diseases.forEach { disease ->
+            // Sync booleans manually since listeners won’t fire
+            diabetB = kido.diabetes
+            fawB = kido.faw
+            metaB = kido.meta
+            asmB = kido.asm
+            fiberB = kido.fibr
+            selB = kido.seli
+
+            // Get texts of all hardcoded checkboxes for comparison
+            val hardcodedCheckBoxes = listOf(
+                binding.checkAsm,
+                binding.checkFawism,
+                binding.checkFibrozm,
+                binding.checkMetabolism,
+                binding.checkSeliac,
+                binding.checkDiabetes
+            )
+            val hardcodedTexts = hardcodedCheckBoxes.map { it.text.toString().trim() }
+
+            // Parse other diseases
+            val diseases = kido.other.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+
+            diseases.forEach { disease ->
+                if (hardcodedTexts.contains(disease)) {
+                    // Find and check the corresponding hardcoded checkbox
+                    hardcodedCheckBoxes.find { it.text.toString().trim() == disease }?.isChecked = true
+                } else {
+                    // Add dynamically if not in hardcoded list
                     val checkBox = CheckBox(requireContext()).apply {
                         text = disease
                         isChecked = true
@@ -82,6 +106,7 @@ class KidDiseaseFragment : Fragment() {
                     binding.dynamicCheckContainer.addView(checkBox)
                 }
             }
+
         } catch (e: Exception) {
             Log.e("Log1", "Error loading kid data: $e")
         }
@@ -141,11 +166,21 @@ class KidDiseaseFragment : Fragment() {
 
     private fun saveDisease(): Boolean {
         return try {
-            val extraDiseases = StringBuilder(binding.txtDis.text.toString().trim())
+            val extraDiseases = StringBuilder()
+
+            // Only gather checked boxes not among hardcoded
+            val hardcodedIds = setOf(
+                binding.checkAsm.id,
+                binding.checkFawism.id,
+                binding.checkFibrozm.id,
+                binding.checkMetabolism.id,
+                binding.checkSeliac.id,
+                binding.checkDiabetes.id
+            )
 
             for (i in 0 until binding.dynamicCheckContainer.childCount) {
                 val view = binding.dynamicCheckContainer.getChildAt(i)
-                if (view is CheckBox && view.isChecked) {
+                if (view is CheckBox && view.isChecked && view.id !in hardcodedIds) {
                     if (extraDiseases.isNotEmpty()) extraDiseases.append(", ")
                     extraDiseases.append(view.text.toString())
                 }
@@ -155,6 +190,7 @@ class KidDiseaseFragment : Fragment() {
                 kidId, diabetB, fawB, metaB, asmB, fiberB, selB,
                 extraDiseases.toString()
             )
+
             if (isNew) kidDiseaseDao.insert(model) else kidDiseaseDao.update(model)
             true
         } catch (e: Exception) {
