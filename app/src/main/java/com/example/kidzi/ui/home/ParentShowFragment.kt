@@ -1,12 +1,15 @@
 package com.example.kidzi.ui.home
 
+import android.app.AlertDialog
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.core.widget.addTextChangedListener
+import com.pouyaheydari.lineardatepicker.PersianLinearDatePicker
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentParentShowBinding
@@ -19,6 +22,35 @@ class ParentShowFragment : Fragment() {
 
     @Inject lateinit var preferenceManager: PreferenceManager
 
+    private fun showDatePickerDialog(button: Button) {
+        val datePicker = PersianLinearDatePicker(requireContext()).apply {
+            setMaxYear(1400,1320)
+        }
+
+        val dialog = AlertDialog.Builder(requireContext())
+            .setTitle("انتخاب تاریخ")
+            .setView(datePicker)
+            .setPositiveButton("تأیید") { _, _ ->
+                val year = datePicker.getSelectedYear()
+                val month = datePicker.getSelectedMonth()
+                val day = datePicker.getSelectedDay()
+                val selectedDate = "$year/${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}"
+                button.text = convertToPersianDigits(selectedDate)
+                preferenceManager.setParentBirth(selectedDate)
+            }
+            .setNegativeButton("لغو", null)
+            .create()
+
+        dialog.show()
+    }
+
+    private fun convertToPersianDigits(input: String): String {
+        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
+        return input.map {
+            if (it.isDigit()) persianDigits[it.digitToInt()] else it
+        }.joinToString("")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +58,10 @@ class ParentShowFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentParentShowBinding.inflate(inflater)
 
-        // binding.btnBack.setOnClickListener { findNavController().popBackStack() }
-
+        // Restore saved name
+        binding.txtName.setText(preferenceManager.getParentName())
         binding.btnDate.text = preferenceManager.getParentBirth()
-        binding.txtName.setText( preferenceManager.getParentName())
+        binding.btnDate.text = convertToPersianDigits(preferenceManager.getParentBirth())
 
         if (preferenceManager.getParentCare() == 1)
             binding.radioCaringYes.isChecked = true
@@ -42,9 +74,10 @@ class ParentShowFragment : Fragment() {
             binding.radioWorkingNo.isChecked = true
 
         // Update name immediately on text change
-        binding.txtName.addTextChangedListener {
-            val newName = it.toString().trim()
-            preferenceManager.setParentName(newName)
+        binding.txtName.addTextChangedListener { editable ->
+            editable?.let {
+                preferenceManager.setParentName(it.toString().trim())
+            }
         }
 
         // Radio buttons: Caring
@@ -63,15 +96,10 @@ class ParentShowFragment : Fragment() {
             if (isChecked) preferenceManager.setParentJob(0)
         }
 
-        // Optional: Save on date button click if user selects a new date
         binding.btnDate.setOnClickListener {
-            // showDatePicker(...) -> On date selected:
-            val selectedDate = "2025-05-19" // Example
-            binding.btnDate.text = selectedDate
-            preferenceManager.setParentBirth(selectedDate)
+            showDatePickerDialog(binding.btnDate)
         }
 
-        // The "Next" button can still be used for navigation or confirmation
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_parentShowFragment_to_accountFragment)
         }
