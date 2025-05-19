@@ -32,6 +32,11 @@ class KidInfoFragment : Fragment() {
 
     var isNew = false
 
+    private fun convertToPersianDigits(input: String): String {
+        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
+        return input.map { if (it.isDigit()) persianDigits[it.digitToInt()] else it }.joinToString("")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -69,7 +74,8 @@ class KidInfoFragment : Fragment() {
                 .setShowInBottomSheet(true)
                 .setListener(object : PersianPickerListener {
                     override fun onDateSelected(persianPickerDate: PersianPickerDate) {
-                        binding.btnGroup.setText("${persianPickerDate.persianYear}-${persianPickerDate.persianMonth}-${persianPickerDate.persianDay}")
+                        val date = "${persianPickerDate.persianYear}/${persianPickerDate.persianMonth}/${persianPickerDate.persianDay}"
+                        binding.btnGroup.text = convertToPersianDigits(date)
                     }
                     override fun onDismissed() {
                     }
@@ -91,7 +97,7 @@ class KidInfoFragment : Fragment() {
                             Toast.LENGTH_SHORT
                         ).show()
                     else{
-                        if (binding.btnGroup.text.toString().contains("-")){
+                        if (binding.btnGroup.text.toString().contains("/")){
                             val sex = if(binding.radioWorkingYes.isChecked) 1 else 2
                             if (isNew){
                                 id = kidNameDao.insert(KidNameModel(

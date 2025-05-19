@@ -21,6 +21,13 @@ class ParentInfoFragment : Fragment() {
     @Inject
     lateinit var sharedPreferences: PreferenceManager
 
+    private fun convertToPersianDigits(input: String): String {
+        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
+        return input.map {
+            if (it.isDigit()) persianDigits[it.digitToInt()] else it
+        }.joinToString("")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,7 +67,7 @@ class ParentInfoFragment : Fragment() {
                 val day = datePicker.getSelectedDay()
                 val selectedDate = "$year/${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}"
                 // Update button text
-                button.text = selectedDate
+                button.text = convertToPersianDigits(selectedDate)
             }
             .setNegativeButton("لغو", null)
             .create()
