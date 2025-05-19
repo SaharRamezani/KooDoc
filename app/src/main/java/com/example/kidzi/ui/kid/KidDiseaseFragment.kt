@@ -61,7 +61,26 @@ class KidDiseaseFragment : Fragment() {
                 binding.checkMetabolism.isChecked = kido.meta
                 binding.checkSeliac.isChecked = kido.seli
                 binding.checkDiabetes.isChecked = kido.diabetes
-                binding.txtDis.text = kido.other
+                binding.txtDis.setText(kido.other)
+
+                binding.txtDis.visibility = View.GONE
+
+                // Dynamically recreate extra checkboxes
+                val diseases = kido.other.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+                diseases.forEach { disease ->
+                    val checkBox = CheckBox(requireContext()).apply {
+                        text = disease
+                        isChecked = true
+                        id = View.generateViewId()
+                        layoutParams = ViewGroup.MarginLayoutParams(
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT
+                        ).apply {
+                            topMargin = resources.getDimensionPixelSize(R.dimen.default_checkbox_margin_top)
+                        }
+                    }
+                    binding.dynamicCheckContainer.addView(checkBox)
+                }
             }
         } catch (e: Exception) {
             Log.e("Log1", "Error loading kid data: $e")

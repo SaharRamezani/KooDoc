@@ -60,16 +60,16 @@ class FamilyDisFirstFragment : Fragment() {
         super.onResume()
         val data = familyDiseaseDao.getAll()
         if(data.size > 1){
-            binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.green))
-            binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.green))
+            binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
+            binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
         }else if(data.isEmpty()){
             binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.white))
             binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.white))
         }else{
             if(data[0].parentId == 1)
-                binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.green))
+                binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
             else
-                binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.green))
+                binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
         }
     }
 }

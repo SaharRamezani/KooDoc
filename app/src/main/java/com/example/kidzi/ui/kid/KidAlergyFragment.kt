@@ -35,42 +35,63 @@ class KidAlergyFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentKidAlergyBinding.inflate(inflater)
-        kidId = KidAlergyFragmentArgs.fromBundle(requireArguments()).kidId
-        Log.i("Log1","kidId is: $kidId")
-        isNew = KidAlergyFragmentArgs.fromBundle(requireArguments()).new
-        if(!isNew){
-            try {
-                var kido = kidAlergyDao.getKidInfo(kidId)
-                if(kido.honey) binding.checkHoney.isChecked = true
-                if(kido.lac) binding.checkLactoz.isChecked = true
-                if(kido.peanut) binding.checkPeanut.isChecked = true
-                if(kido.cow) binding.checkProtein.isChecked = true
-                if(kido.alcohol) binding.checkAlcohol.isChecked = true
-            }catch (e: Exception){
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        kidId = KidAlergyFragmentArgs.fromBundle(requireArguments()).kidId
+        isNew = KidAlergyFragmentArgs.fromBundle(requireArguments()).new
+
+        Log.i("Log1", "kidId is: $kidId")
+
+        if (!isNew) {
+            try {
+                val kido = kidAlergyDao.getKidInfo(kidId)
+                binding.checkHoney.isChecked = kido.honey
+                binding.checkLactoz.isChecked = kido.lac
+                binding.checkPeanut.isChecked = kido.peanut
+                binding.checkProtein.isChecked = kido.cow
+                binding.checkAlcohol.isChecked = kido.alcohol
+
+                // Set internal state variables as well
+                honey = kido.honey
+                lac = kido.lac
+                peanut = kido.peanut
+                cow = kido.cow
+                alcohol = kido.alcohol
+            } catch (e: Exception) {
+                Log.e("AlergyLoad", "Failed to load allergy data", e)
             }
         }
-        binding.checkHoney.setOnCheckedChangeListener { _, isChecked -> honey = isChecked}
-        binding.checkLactoz.setOnCheckedChangeListener { _, isChecked -> lac = isChecked}
-        binding.checkProtein.setOnCheckedChangeListener { _, isChecked -> cow = isChecked}
-        binding.checkPeanut.setOnCheckedChangeListener { _, isChecked -> peanut = isChecked}
-        binding.checkAlcohol.setOnCheckedChangeListener { _, isChecked -> alcohol = isChecked}
+
+        // Keep this part here
+        binding.checkHoney.setOnCheckedChangeListener { _, isChecked -> honey = isChecked }
+        binding.checkLactoz.setOnCheckedChangeListener { _, isChecked -> lac = isChecked }
+        binding.checkProtein.setOnCheckedChangeListener { _, isChecked -> cow = isChecked }
+        binding.checkPeanut.setOnCheckedChangeListener { _, isChecked -> peanut = isChecked }
+        binding.checkAlcohol.setOnCheckedChangeListener { _, isChecked -> alcohol = isChecked }
 
         binding.btnNext.setOnClickListener {
-            if(saveAlergy()){
-                findNavController().navigate(KidAlergyFragmentDirections.actionKidAlergyFragmentToKidSocial(kidId,isNew))
+            if (saveAlergy()) {
+                findNavController().navigate(
+                    KidAlergyFragmentDirections.actionKidAlergyFragmentToKidSocial(kidId, isNew)
+                )
+            } else {
+                Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
             }
-            else Toast.makeText(requireContext(),"خطا در ذخیره اطلاعات",Toast.LENGTH_SHORT).show()
         }
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(KidAlergyFragmentDirections.actionKidAlergyFragmentToKidDiseaseFragment(kidId,false))
+            findNavController().navigate(
+                KidAlergyFragmentDirections.actionKidAlergyFragmentToKidDiseaseFragment(kidId, false)
+            )
         }
-
-        return binding.root
     }
+
     private fun saveAlergy(): Boolean{
             if(isNew)
                 kidAlergyDao.insert(KidAlergyModel(kidId,peanut,honey,lac,cow,alcohol))

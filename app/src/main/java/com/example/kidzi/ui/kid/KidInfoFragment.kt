@@ -47,14 +47,23 @@ class KidInfoFragment : Fragment() {
         var id = KidInfoFragmentArgs.fromBundle(requireArguments()).kidId
         isNew = KidInfoFragmentArgs.fromBundle(requireArguments()).new
 
-        if(!isNew){
+        if (!isNew) {
             try {
-                var kidInfo = kidNameDao.getKidInfo(id)
+                val kidInfo = kidNameDao.getKidInfo(id)
                 binding.txtName.setText(kidInfo.name)
                 binding.txtHeight.setText(kidInfo.height.toString())
                 binding.txtWeight.setText(kidInfo.weight.toString())
                 binding.btnGroup.setText(kidInfo.birthDate)
-            }catch (e: Exception){}
+
+                if (kidInfo.type == 1) {
+                    binding.radioWorkingYes.isChecked = true
+                } else {
+                    binding.radioWorkingNo.isChecked = true
+                }
+
+            } catch (e: Exception) {
+                Log.e("KidInfoFragment", "Error loading kid info", e)
+            }
         }
 
         binding.btnBack.setOnClickListener {
