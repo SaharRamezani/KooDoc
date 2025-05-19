@@ -17,9 +17,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class KidChoose2Fragment : Fragment() {
-
-
-
     @Inject
     lateinit var kidNameDao: KidNameDao
     @Inject
@@ -31,25 +28,21 @@ class KidChoose2Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentKidChoose2Binding.inflate(inflater)
 
-
-        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+        // binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+        binding.btn_back.visibility = View.GONE
 
         val kidList = kidNameDao.getAll()
 
         adapter = KidChooseAdapter(kidList) { position ->
             preferenceManager.updateCurrentKid(kidList.get(position).id)
-            findNavController().navigate(KidChoose2FragmentDirections.actionKidChoose2FragmentToKidInfoFragment(kidList.get(position).id,false))
+            findNavController().navigate(KidChoose2FragmentDirections.actionKidChoose2FragmentToAccountFragment())
         }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
 
-
-
         return binding.root
     }
-
 }

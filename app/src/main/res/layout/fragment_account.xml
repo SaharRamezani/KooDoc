@@ -49,6 +49,8 @@
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button"
             android:id="@+id/btn_my_detail"
+            app:backgroundTint="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
             android:text="@string/my_detail"
             android:textSize="16sp"
             android:layout_marginTop="18dp"
@@ -62,6 +64,8 @@
             android:text="@string/my_kids"
             android:textSize="16sp"
             android:layout_marginTop="18dp"
+            app:backgroundTint="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
             app:cornerRadius="@dimen/corner_main" />
 
         <com.google.android.material.button.MaterialButton
@@ -71,6 +75,8 @@
             android:id="@+id/btn_rules"
             android:text="@string/rules_2"
             android:textSize="16sp"
+            app:backgroundTint="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
             android:layout_marginTop="18dp"
             app:cornerRadius="@dimen/corner_main" />
     </LinearLayout>
