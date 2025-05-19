@@ -28,12 +28,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.3"
+            app:cardBackgroundColor="@color/surface_bg_medium"
             app:strokeColor="@color/surface_bg_medium"
             android:id="@+id/center"
             app:strokeWidth="2dp"
             app:cardCornerRadius="45dp"
-
             android:layout_margin="36dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,36 +51,51 @@
                     android:textSize="16dp"
                     android:textStyle="bold"
                     android:lineSpacingExtra="4dp"/>
-
-
             </LinearLayout>
-
         </com.google.android.material.card.MaterialCardView>
-
-        <RadioGroup
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layoutDirection="rtl"
             android:layout_margin="36dp"
+            android:gravity="center"
             android:id="@+id/radio_group_school"
             app:layout_constraintTop_toTopOf="@id/center"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <RadioButton
+            <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/yes"
-                android:id="@+id/radio_yes"/>
+                android:foregroundGravity="center">
 
-            <RadioButton
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/yes"
+                    android:layoutDirection="rtl"
+                    android:textDirection="rtl"
+                    android:id="@+id/radio_yes"/>
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:id="@+id/radio_no"/>
-        </RadioGroup>
+                android:foregroundGravity="center">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/no"
+                    android:layoutDirection="rtl"
+                    android:textDirection="rtl"
+
+                    android:id="@+id/radio_no"/>
+            </FrameLayout>
+        </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_next"
