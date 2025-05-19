@@ -54,4 +54,20 @@ class PreferenceManager @Inject constructor(@ApplicationContext context: Context
 
     fun updateParentCare(care: Int){ sharedPreferences.edit().putInt(PARENT_CARE,care).commit() }
     fun getParentCare(): Int{return sharedPreferences.getInt(PARENT_CARE,0)}
+
+    fun setParentName(name: String) {
+        sharedPreferences.edit().putString("parent_name", name).apply()
+    }
+
+    fun setParentCare(value: Int) {
+        sharedPreferences.edit().putInt("parent_care", value).apply()
+    }
+
+    fun setParentJob(value: Int) {
+        sharedPreferences.edit().putInt("parent_job", value).apply()
+    }
+
+    fun setParentBirth(date: String) {
+        sharedPreferences.edit().putString("parent_birth", date).apply()
+    }
 }

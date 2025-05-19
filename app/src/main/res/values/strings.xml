@@ -153,7 +153,7 @@
     <string name="current_kid">کودک من:</string>
     <string name="choose_by_kid">نمایش شیر خشک های کودک من</string>
     <string name="all_milks">نمایش همه شیر خشک ها</string>
-    <string name="manual_milk">ويژگی های انتخابی</string>
+    <string name="manual_milk">نمایش شیرخشک ها براساس حساسیت کودک</string>
     <string name="see_milks">مشاهده شیر خشک ها</string>
     <string name="age_month">سن(ماه)</string>
     <string name="is_lactoz">به لاکتوز حساسیت دارد؟</string>

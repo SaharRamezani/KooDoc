@@ -100,44 +100,47 @@
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_my_kid"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="@color/button_outlined_border"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/surface_bg_medium"
+                android:elevation="2dp"
+                app:cornerRadius="8dp"
                 android:text="@string/choose_by_kid"
-                app:cornerRadius="@dimen/corner_milk_buttons"
-                android:backgroundTint="@color/colorPrimary"
-                android:textStyle="bold"
-                android:id="@+id/btn_my_kid"/>
-
+                android:textSize="16sp"
+                android:layout_marginTop="18dp"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_manual_milk"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="@string/all_milks"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                app:cornerRadius="@dimen/corner_milk_buttons"
-                app:strokeColor="@color/colorSecondary"
-                app:strokeWidth="2dp"
-                app:backgroundTint="@color/colorSecondary"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:id="@+id/btn_all_milk"/>
-
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:backgroundTint="@color/colorSecondary"
-                android:textColor="@color/white"
-                android:textStyle="bold"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="@color/button_outlined_border"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/surface_bg_medium"
+                android:elevation="2dp"
+                app:cornerRadius="8dp"
                 android:text="@string/manual_milk"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                app:cornerRadius="@dimen/corner_milk_buttons"
-                app:strokeColor="@color/colorSecondary"
-                app:strokeWidth="2dp"
-                android:id="@+id/btn_manual_milk"/>
+                android:textSize="16sp"
+                android:layout_marginTop="18dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_all_milk"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="@color/button_outlined_border"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/surface_bg_medium"
+                android:elevation="2dp"
+                app:cornerRadius="8dp"
+                android:text="@string/all_milks"
+                android:textSize="16sp"
+                android:layout_marginTop="18dp"/>
 
         </LinearLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

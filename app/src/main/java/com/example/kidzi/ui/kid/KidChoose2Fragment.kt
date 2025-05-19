@@ -30,14 +30,13 @@ class KidChoose2Fragment : Fragment() {
     ): View? {
         val binding = FragmentKidChoose2Binding.inflate(inflater)
 
-        // binding.btnBack.setOnClickListener { findNavController().popBackStack() }
-        binding.btn_back.visibility = View.GONE
+        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         val kidList = kidNameDao.getAll()
 
         adapter = KidChooseAdapter(kidList) { position ->
             preferenceManager.updateCurrentKid(kidList.get(position).id)
-            findNavController().navigate(KidChoose2FragmentDirections.actionKidChoose2FragmentToAccountFragment())
+            findNavController().navigate(KidChoose2FragmentDirections.actionKidChoose2FragmentToKidInfoFragment(kidList.get(position).id,false))
         }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())

@@ -551,7 +551,11 @@
         android:id="@+id/parentShowFragment"
         android:name="com.example.kidzi.ui.home.ParentShowFragment"
         android:label="fragment_parent_show"
-        tools:layout="@layout/fragment_parent_show" />
+        tools:layout="@layout/fragment_parent_show" >
+        <action
+            android:id="@+id/action_parentShowFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/kidChoose2Fragment"
         android:name="com.example.kidzi.ui.kid.KidChoose2Fragment"
