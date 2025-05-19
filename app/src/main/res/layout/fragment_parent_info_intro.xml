@@ -79,10 +79,9 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/with"
                 android:id="@+id/check_rules"/>
             <com.google.android.material.button.MaterialButton
-                android:layout_width="50dp"
+                android:layout_width="55dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:text="@string/rules_2"
@@ -100,6 +99,8 @@
             app:layout_constraintBottom_toTopOf="@id/btn_back"
             android:textStyle="bold"
             app:cornerRadius="8dp"
+            app:backgroundTint="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
             android:text="@string/go"
             android:id="@+id/btn_next"/>
 
