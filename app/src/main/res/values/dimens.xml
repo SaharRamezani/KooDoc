@@ -26,4 +26,5 @@
     <dimen name="card_size">140dp</dimen>
     <!-- Inner padding for card content -->
     <dimen name="card_content_padding">12dp</dimen>
+    <dimen name="default_checkbox_margin_top">16dp</dimen>
 </resources>
