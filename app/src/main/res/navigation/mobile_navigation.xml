@@ -565,5 +565,4 @@
             android:id="@+id/action_kidChoose2Fragment_to_kidInfoFragment"
             app:destination="@id/kidInfoFragment" />
     </fragment>
-
 </navigation>
