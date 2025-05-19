@@ -86,9 +86,13 @@ class KidAlergyFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(
-                KidAlergyFragmentDirections.actionKidAlergyFragmentToKidDiseaseFragment(kidId, false)
-            )
+            if (saveAlergy()) {
+                findNavController().navigate(
+                    KidAlergyFragmentDirections.actionKidAlergyFragmentToKidDiseaseFragment(kidId, false)
+                )
+            } else {
+                Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
