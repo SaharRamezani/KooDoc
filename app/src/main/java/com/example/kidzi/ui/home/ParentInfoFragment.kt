@@ -75,30 +75,36 @@ class ParentInfoFragment : Fragment() {
         dialog.show()
     }
 
-    private fun checkNext(binding: FragmentParentInfoBinding) : Boolean{
-        //var status = true
-        if(binding.txtName.text.isNullOrBlank())
-            Toast.makeText(requireContext(),"نام خود را وارد کنید",Toast.LENGTH_SHORT).show()
-        else{
-            if(binding.btnDate.text.contains("/")){
-                if(binding.radioWorkingYes.isChecked||binding.radioWorkingNo.isChecked){
-                    if(binding.radioCaringYes.isChecked||binding.radioCaringNo.isChecked){
-                        //status = true
-                        sharedPreferences.updateParentName(binding.txtName.text.toString())
-                        sharedPreferences.updateParentBirth(binding.btnDate.text.toString())
-                        var working = if(binding.radioWorkingYes.isChecked) 1 else 2
-                        var caring = if(binding.radioCaringYes.isChecked) 1 else 2
-                        sharedPreferences.updateParentJob(working)
-                        sharedPreferences.updateParentCare(caring)
-                        sharedPreferences.updateLevel(3)
-                    }else
-                        Toast.makeText(requireContext(),"وضعیت مراقبت خود را انتخاب کنید.",Toast.LENGTH_SHORT).show()
-                }else
-                    Toast.makeText(requireContext(),"وضعیت اشتغال خود را انتخاب کنید.",Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(requireContext(),"تاریخ تولد خود را وارد کنید.",Toast.LENGTH_SHORT).show()
-            }
+    private fun checkNext(binding: FragmentParentInfoBinding): Boolean {
+        if (binding.txtName.text.isNullOrBlank()) {
+            Toast.makeText(requireContext(), "نام خود را وارد کنید", Toast.LENGTH_SHORT).show()
+            return false
         }
+
+        if (!binding.btnDate.text.contains("/")) {
+            Toast.makeText(requireContext(), "تاریخ تولد خود را وارد کنید.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if (!binding.radioWorkingYes.isChecked && !binding.radioWorkingNo.isChecked) {
+            Toast.makeText(requireContext(), "وضعیت اشتغال خود را انتخاب کنید.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if (!binding.radioCaringYes.isChecked && !binding.radioCaringNo.isChecked) {
+            Toast.makeText(requireContext(), "وضعیت مراقبت خود را انتخاب کنید.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        // All inputs are valid, update shared preferences
+        sharedPreferences.updateParentName(binding.txtName.text.toString())
+        sharedPreferences.updateParentBirth(binding.btnDate.text.toString())
+        val working = if (binding.radioWorkingYes.isChecked) 1 else 2
+        val caring = if (binding.radioCaringYes.isChecked) 1 else 2
+        sharedPreferences.updateParentJob(working)
+        sharedPreferences.updateParentCare(caring)
+        sharedPreferences.updateLevel(3)
+
         return true
     }
 }

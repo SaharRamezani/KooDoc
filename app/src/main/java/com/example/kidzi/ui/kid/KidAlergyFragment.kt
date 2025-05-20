@@ -30,7 +30,7 @@ class KidAlergyFragment : Fragment() {
     var peanut = false
     var lac = false
     var cow = false
-    var alcohol = false
+    var elexir = false
     var diet = false
 
     override fun onCreateView(
@@ -56,14 +56,14 @@ class KidAlergyFragment : Fragment() {
                 binding.checkLactoz.isChecked = kido.lac
                 binding.checkPeanut.isChecked = kido.peanut
                 binding.checkProtein.isChecked = kido.cow
-                binding.checkAlcohol.isChecked = kido.alcohol
+                binding.checkElixir.isChecked = kido.elixir
 
                 // Set internal state variables as well
                 honey = kido.honey
                 lac = kido.lac
                 peanut = kido.peanut
                 cow = kido.cow
-                alcohol = kido.alcohol
+                elexir = kido.elixir
             } catch (e: Exception) {
                 Log.e("AlergyLoad", "Failed to load allergy data", e)
             }
@@ -74,7 +74,7 @@ class KidAlergyFragment : Fragment() {
         binding.checkLactoz.setOnCheckedChangeListener { _, isChecked -> lac = isChecked }
         binding.checkProtein.setOnCheckedChangeListener { _, isChecked -> cow = isChecked }
         binding.checkPeanut.setOnCheckedChangeListener { _, isChecked -> peanut = isChecked }
-        binding.checkAlcohol.setOnCheckedChangeListener { _, isChecked -> alcohol = isChecked }
+        binding.checkElixir.setOnCheckedChangeListener { _, isChecked -> elexir = isChecked }
 
         binding.btnNext.setOnClickListener {
             if (saveAlergy()) {
@@ -99,9 +99,9 @@ class KidAlergyFragment : Fragment() {
 
     private fun saveAlergy(): Boolean{
         if(isNew)
-            kidAlergyDao.insert(KidAlergyModel(kidId,peanut,honey,lac,cow,alcohol))
+            kidAlergyDao.insert(KidAlergyModel(kidId,peanut,honey,lac,cow,elexir))
         else
-            kidAlergyDao.update(KidAlergyModel(kidId,peanut,honey,lac,cow,alcohol))
+            kidAlergyDao.update(KidAlergyModel(kidId,peanut,honey,lac,cow,elexir))
         return true
     }
 

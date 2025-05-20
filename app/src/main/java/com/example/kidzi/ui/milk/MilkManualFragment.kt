@@ -112,7 +112,7 @@ class MilkManualFragment : Fragment() {
                                 honey = false,
                                 lac = lac,
                                 cow = cow,
-                                alcohol = false,
+                                elixir = false,
                             )
                         )
                     }

@@ -10,5 +10,5 @@ data class KidAlergyModel (
     val honey: Boolean,
     val lac: Boolean,
     val cow: Boolean,
-    val alcohol: Boolean
+    val elixir: Boolean
 )

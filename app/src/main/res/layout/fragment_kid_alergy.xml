@@ -61,11 +61,11 @@
                     android:text="@string/cow_protein" />
 
                 <CheckBox
-                    android:id="@+id/check_alcohol"
+                    android:id="@+id/check_elixir"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/alcohol" />
+                    android:text="@string/elixir" />
             </LinearLayout>
         </ScrollView>
 
