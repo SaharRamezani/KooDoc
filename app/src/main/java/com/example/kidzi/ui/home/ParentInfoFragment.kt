@@ -77,7 +77,7 @@ class ParentInfoFragment : Fragment() {
 
     private fun checkNext(binding: FragmentParentInfoBinding): Boolean {
         if (binding.txtName.text.isNullOrBlank()) {
-            Toast.makeText(requireContext(), "نام خود را وارد کنید", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "نام خود را وارد کنید.", Toast.LENGTH_SHORT).show()
             return false
         }
 

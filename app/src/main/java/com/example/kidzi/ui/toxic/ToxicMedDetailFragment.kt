@@ -18,7 +18,6 @@ class ToxicMedDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentToxicMedDetailBinding.inflate(inflater, container, false)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 

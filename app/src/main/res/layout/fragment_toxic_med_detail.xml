@@ -61,9 +61,9 @@
             android:layout_margin="18dp"
             android:textSize="18sp"
             android:lineSpacingExtra="4dp"
-            android:textColor="@color/white"
+            android:justificationMode="inter_word"
+            android:textColor="@color/colorTextPrimary"
             android:id="@+id/tox_detail"/>
 
     </LinearLayout>
-
 </FrameLayout>

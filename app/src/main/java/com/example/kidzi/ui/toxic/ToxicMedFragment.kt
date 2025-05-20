@@ -16,16 +16,13 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ToxicMedFragment : Fragment() {
 
-
     private lateinit var adapter: VaccineAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val binding= FragmentToxicMedBinding.inflate(inflater)
-
+        val binding = FragmentToxicMedBinding.inflate(inflater)
 
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
@@ -41,13 +38,9 @@ class ToxicMedFragment : Fragment() {
             }
         }
 
-
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
 
-
-
         return binding.root
     }
-
 }
