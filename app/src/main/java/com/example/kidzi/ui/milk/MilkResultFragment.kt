@@ -15,9 +15,12 @@ import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidAlergyDao
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.di.helpers.PersianDateHelper
+import com.example.kidzi.di.helpers.PersianDateHelper.Companion.toEnglishDigits
 import com.example.kidzi.ui.milk.adapters.MilkAdapter
 import com.example.kidzi.ui.vaccine.adapters.VaccineInfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import ir.hamsaa.persiandatepicker.util.PersianCalendar
+import java.util.Calendar
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -29,20 +32,36 @@ class MilkResultFragment : Fragment() {
     @Inject lateinit var kidNameDao: KidNameDao
     @Inject lateinit var kidAlergyDao: KidAlergyDao
 
+    fun getAgeInMonthsEn(persianDate: String): Int {
+        val parts = persianDate.toEnglishDigits().split("/")
+        val (year, month, day) = parts.map { it.toInt() }
+
+        val calendar = PersianCalendar()
+        calendar.setPersianDate(year, month - 1, day)
+
+        val dob = Calendar.getInstance().apply { timeInMillis = calendar.timeInMillis }
+        val now = Calendar.getInstance()
+
+        val yearDiff = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
+        val monthDiff = now.get(Calendar.MONTH) - dob.get(Calendar.MONTH)
+        return yearDiff * 12 + monthDiff
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = FragmentMilkResultBinding.inflate(inflater, container, false)
         val args = MilkResultFragmentArgs.fromBundle(requireArguments())
 
-        val milkList = generateMilkList(args.type, args.age, args.cow, args.lac)
+        val milkList = try {
+            generateMilkList(args.type, args.age, args.cow, args.lac)
+        } catch (e: Exception) {
+            Log.e("MilkResultFragment", "Failed to generate list", e)
+            emptyList()
+        }
 
         setupRecycler(binding, milkList)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
-        binding.txtTitle.text = when (args.type) {
-            1 -> getString(R.string.all_milk)
-            2 -> getString(R.string.my_kid_milk)
-            else -> getString(R.string.my_kid_allergy_milk)
-        }
+        binding.txtTitle.text = getString(R.string.my_kid_allergy_milk)
 
         return binding.root
     }
@@ -65,37 +84,25 @@ class MilkResultFragment : Fragment() {
         val monthStart = resources.getStringArray(R.array.milk_start)
         val monthFinish = resources.getStringArray(R.array.milk_finish)
         val milkType = resources.getStringArray(R.array.milk_type)
-        val milkUse = resources.getStringArray(R.array.milk_use)
+        val milkUseArr = resources.getStringArray(R.array.milk_use)
         val milkLac = resources.getStringArray(R.array.milk_lac)
-
-        if (type == 1) {
-            for (i in englishName.indices) {
-                list.add(createModel(i, persianName, englishName, monthStart, monthFinish, milkLac, milkUse, milkType))
-            }
-            return list
-        }
 
         var cow = inputCow ?: false
         var lac = inputLac ?: false
-        val age = if (type == 2) {
-            val kidId = preferenceManager.getCurrentKid()
-            val kid = kidNameDao.getKidInfo(kidId)
-            val alergy = kidAlergyDao.getKidInfo(kidId)
 
-            cow = alergy.cow ?: false
-            lac = alergy.lac ?: false
-
-            PersianDateHelper.getAgeInMonths(kid.birthDate)
-        } else inputAge ?: 0
+        val kidId = preferenceManager.getCurrentKid()
+        val kid = kidNameDao.getKidInfo(kidId)
+        val age = kid?.birthDate?.let { getAgeInMonthsEn(it) } ?: 0
 
         for (i in englishName.indices) {
             val start = monthStart[i].toInt()
             val end = monthFinish[i].toInt()
             val lactoseLevel = milkLac[i].toInt()
             val typeStr = milkType[i]
+            val milkUse = milkUseArr[i]
 
-            if (isMilkSuitable(age, start, end, lactoseLevel, typeStr, cow, lac, type)) {
-                list.add(createModel(i, persianName, englishName, monthStart, monthFinish, milkLac, milkUse, milkType))
+            if (isMilkSuitable(age, start, end, lactoseLevel, typeStr, cow, lac, type, milkUse)) {
+                list.add(createModel(i, persianName, englishName, monthStart, monthFinish, milkLac, milkUseArr, milkType))
             }
         }
 
@@ -105,12 +112,14 @@ class MilkResultFragment : Fragment() {
     private fun isMilkSuitable(
         age: Int, start: Int, end: Int,
         lactoseLevel: Int, typeStr: String,
-        cow: Boolean, lac: Boolean, type: Int
+        cow: Boolean, lac: Boolean, type: Int, milkUse: String
     ): Boolean {
         return age in start..end &&
                 !(lac && lactoseLevel >= 3) &&
                 !(cow && typeStr.contains(getString(R.string.cow))) &&
-                !(type == 3 && !typeStr.contains(getString(R.string.diet)))
+                ((type == 5) ||
+                        (type == 3 && milkUse.contains(getString(R.string.diet))) ||
+                        (type == 4 && milkUse.contains(getString(R.string.regular))))
     }
 
     private fun createModel(

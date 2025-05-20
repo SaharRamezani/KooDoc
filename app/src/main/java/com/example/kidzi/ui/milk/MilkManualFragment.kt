@@ -31,7 +31,7 @@ class MilkManualFragment : Fragment() {
             val parts = persianDate.split("/")
             val (year, month, day) = parts.map { it.toInt() }
             val persian = PersianCalendar()
-            persian.setPersianDate(year, month - 1, day)  // FIX: month - 1
+            persian.setPersianDate(year, month - 1, day)
             persian.timeInMillis
         } catch (_: Exception) {
             0L
@@ -76,10 +76,10 @@ class MilkManualFragment : Fragment() {
             val ageText = binding.txtAge.text.toString()
             val isLacSelected = binding.radioLacNo.isChecked || binding.radioLacYes.isChecked
             val isCowSelected = binding.radioCaringNo.isChecked || binding.radioCaringYes.isChecked
-            val isDietChecked = binding.radioDietYes.isChecked
+            val isDietChecked = binding.radioDietNo.isChecked || binding.radioDietYes.isChecked
 
-            if (ageText.isEmpty() || ageText.contains(".")) {
-                Toast.makeText(requireContext(), "سن باید بصورت عدد صحیح وارد شود", Toast.LENGTH_SHORT).show()
+            if (ageText.isEmpty()) {
+                Toast.makeText(requireContext(), "سن باید بصورت عدد صحیح وارد شود.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (!isLacSelected) {
@@ -94,6 +94,8 @@ class MilkManualFragment : Fragment() {
             val age = ageText.toInt()
             val lac = binding.radioLacYes.isChecked
             val cow = binding.radioCaringYes.isChecked
+            val diet_yes = binding.radioDietYes.isChecked
+            val diet_no = binding.radioDietNo.isChecked
             val kidId = preferenceManager.getCurrentKid()
 
             viewLifecycleOwner.lifecycleScope.launch {
@@ -115,7 +117,16 @@ class MilkManualFragment : Fragment() {
                         )
                     }
 
-                    val type = if (isDietChecked) 3 else 4
+                    var type = 5 // does not matter
+                    if (isDietChecked)
+                    {
+                        if (diet_yes){
+                            type = 3 // dietary
+                        }
+                        else if (diet_no){
+                            type = 4 // regular
+                        }
+                    }
                     findNavController().navigate(
                         MilkManualFragmentDirections.actionMilkManualFragmentToMilkResultFragment(
                             type, age, lac, cow

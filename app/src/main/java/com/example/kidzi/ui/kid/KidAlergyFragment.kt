@@ -98,11 +98,11 @@ class KidAlergyFragment : Fragment() {
     }
 
     private fun saveAlergy(): Boolean{
-            if(isNew)
-                kidAlergyDao.insert(KidAlergyModel(kidId,peanut,honey,lac,cow,alcohol))
-            else
-                kidAlergyDao.update(KidAlergyModel(kidId,peanut,honey,lac,cow,alcohol))
-            return true
+        if(isNew)
+            kidAlergyDao.insert(KidAlergyModel(kidId,peanut,honey,lac,cow,alcohol))
+        else
+            kidAlergyDao.update(KidAlergyModel(kidId,peanut,honey,lac,cow,alcohol))
+        return true
     }
 
 }
