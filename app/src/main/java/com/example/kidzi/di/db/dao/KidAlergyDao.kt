@@ -10,7 +10,6 @@ import com.example.kidzi.di.db.models.KidDiseaseModel
 
 @Dao
 interface KidAlergyDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(kidAlergyModel: KidAlergyModel)
 
@@ -22,5 +21,4 @@ interface KidAlergyDao {
 
     @Update
     fun update(kidAlergyModel: KidAlergyModel)
-
 }

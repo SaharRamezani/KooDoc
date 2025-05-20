@@ -25,12 +25,9 @@ class MilkIntroFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentMilkIntroBinding.inflate(inflater)
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
-
-
 
         binding.btnChooseKid.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToKidsChooseFragment())}
         binding.btnAllMilk.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToMilkResultFragment(1,1,false,false))}

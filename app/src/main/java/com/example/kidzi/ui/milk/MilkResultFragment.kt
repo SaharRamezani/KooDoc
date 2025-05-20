@@ -29,18 +29,36 @@ class MilkResultFragment : Fragment() {
     @Inject lateinit var kidNameDao: KidNameDao
     @Inject lateinit var kidAlergyDao: KidAlergyDao
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = FragmentMilkResultBinding.inflate(inflater, container, false)
-        var type = MilkResultFragmentArgs.fromBundle(requireArguments()).type
-        var age = MilkResultFragmentArgs.fromBundle(requireArguments()).age
-        var cow : Boolean? = MilkResultFragmentArgs.fromBundle(requireArguments()).cow
-        var lac : Boolean? = MilkResultFragmentArgs.fromBundle(requireArguments()).lac
+        val args = MilkResultFragmentArgs.fromBundle(requireArguments())
 
-        val milkList = mutableListOf<MilkModel>()
+        val milkList = generateMilkList(args.type, args.age, args.cow, args.lac)
+
+        setupRecycler(binding, milkList)
+        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+
+        binding.txtTitle.text = when (args.type) {
+            1 -> getString(R.string.all_milk)
+            2 -> getString(R.string.my_kid_milk)
+            else -> getString(R.string.my_kid_allergy_milk)
+        }
+
+        return binding.root
+    }
+
+    private fun setupRecycler(binding: FragmentMilkResultBinding, milkList: List<MilkModel>) {
+        try {
+            adapter = MilkAdapter(milkList)
+            binding.recycler.layoutManager = LinearLayoutManager(requireContext())
+            binding.recycler.adapter = adapter
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun generateMilkList(type: Int, inputAge: Int?, inputCow: Boolean?, inputLac: Boolean?): List<MilkModel> {
+        val list = mutableListOf<MilkModel>()
 
         val englishName = resources.getStringArray(R.array.milk_name_en)
         val persianName = resources.getStringArray(R.array.milk_name_fa)
@@ -50,139 +68,63 @@ class MilkResultFragment : Fragment() {
         val milkUse = resources.getStringArray(R.array.milk_use)
         val milkLac = resources.getStringArray(R.array.milk_lac)
 
-        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
-
-        if (type == 1){
-            try {
-
-                binding.txtTitle.text = "همه شیر خشک ها"
-                for (i in 0 until englishName.size - 1) {
-                    milkList.add(
-                        MilkModel(
-                            persianName[i],
-                            englishName[i],
-                            monthStart[i].toInt(),
-                            monthFinish[i].toInt(),
-                            milkLac[i].toInt(),
-                            milkUse[i],
-                            milkType[i]
-                        )
-                    )
-
-                }
-            }catch (e:Exception){
-                Toast.makeText(requireContext(),e.toString(),Toast.LENGTH_SHORT).show()
+        if (type == 1) {
+            for (i in englishName.indices) {
+                list.add(createModel(i, persianName, englishName, monthStart, monthFinish, milkLac, milkUse, milkType))
             }
-        }else if(type == 2){
-            binding.txtTitle.text = "شیر خشک های مناسب فرزند من"
-
-            Log.i("Log1","my current kid is : ${preferenceManager.getCurrentKid()}")
-
-            val kid = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
-            val alergy = kidAlergyDao.getKidInfo(preferenceManager.getCurrentKid())
-
-            Log.i("Log1","birth is : ${kid.birthDate}")
-
-            val age = PersianDateHelper.getAgeInMonths(kid.birthDate)
-            Log.i("Log1","age is : $age")
-
-            cow = alergy.cow
-            lac = alergy.lac
-
-            if(cow == null)
-                cow = false
-            if(lac == null)
-                lac = false
-            for(i in 0 until  englishName.size){
-                if ((age >= monthStart[i].toInt() && age <= monthFinish[i].toInt())){
-                    if(lac){
-                        if(milkLac[i].toInt() <3){
-                            if(cow){
-                                if(!milkType[i].contains("گاو")){
-                                    if(type == 3){
-                                        if(milkType[i].contains("رژیمی")){
-                                            milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                                        }
-                                        }else{ milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i])) }
-                                    }
-                            }else{
-                                if(type == 3){
-                                    if(milkType[i].contains("رژیمی")){
-                                        milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                                    }
-                                }else{ milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i])) }
-                            }
-                        }
-                    }else{
-                        if(cow){
-                            if(!milkType[i].contains("گاو")){
-                                if(type == 3){
-                                    if(milkType[i].contains("رژیمی")){
-                                        milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                                    }
-                                }else{ milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i])) }
-                            }
-                        }else{
-                            if(type == 3){
-                                if(milkType[i].contains("رژیمی")){
-                                    milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                                }
-                            }else{ milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i])) }
-                        }
-                    }
-                }
-            }
-        }else{
-
-            binding.txtTitle.text = "شیر خشک های مناسب ویژگی انتخابی"
-
-            if(cow == null)
-                cow = false
-            if(lac == null)
-                lac = false
-
-            for(i in 0 until  englishName.size){
-                if ((age >= monthStart[i].toInt() && age <= monthFinish[i].toInt())){
-                    if(lac){
-                        if(milkLac[i].toInt() <3){
-                            if(cow){
-                                if(!milkType[i].contains("گاو")){
-                                    milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                                }
-                            }else{
-                                milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                            }
-                        }
-                    }else{
-                        if(cow){
-                            if(!milkType[i].contains("گاو")){
-                                milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                            }
-                        }else{
-                            milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                        }
-                    }
-                }
-            }
-            /*for(i in 0 until  englishName.size){
-                if ((age >= monthStart[i].toInt() && age <= monthFinish[i].toInt())){
-                if((milkLac[i].toBoolean() && !lac!!) || (!milkLac[i].toBoolean() && !cow!!))
-                        milkList.add(MilkModel(persianName[i],englishName[i],monthStart[i].toInt(),monthFinish[i].toInt(),milkLac[i].toInt(), milkUse[i],milkType[i]))
-                }
-            }*/
+            return list
         }
 
+        var cow = inputCow ?: false
+        var lac = inputLac ?: false
+        val age = if (type == 2) {
+            val kidId = preferenceManager.getCurrentKid()
+            val kid = kidNameDao.getKidInfo(kidId)
+            val alergy = kidAlergyDao.getKidInfo(kidId)
 
-        try {
-            adapter = MilkAdapter(milkList)
-            binding.recycler.layoutManager = LinearLayoutManager(requireContext())
-            binding.recycler.adapter = adapter
-        }catch (e: Exception){
-            Toast.makeText(requireContext(),e.toString(),Toast.LENGTH_SHORT).show()
+            cow = alergy.cow ?: false
+            lac = alergy.lac ?: false
+
+            PersianDateHelper.getAgeInMonths(kid.birthDate)
+        } else inputAge ?: 0
+
+        for (i in englishName.indices) {
+            val start = monthStart[i].toInt()
+            val end = monthFinish[i].toInt()
+            val lactoseLevel = milkLac[i].toInt()
+            val typeStr = milkType[i]
+
+            if (isMilkSuitable(age, start, end, lactoseLevel, typeStr, cow, lac, type)) {
+                list.add(createModel(i, persianName, englishName, monthStart, monthFinish, milkLac, milkUse, milkType))
+            }
         }
 
-
-        return binding.root
+        return list
     }
 
+    private fun isMilkSuitable(
+        age: Int, start: Int, end: Int,
+        lactoseLevel: Int, typeStr: String,
+        cow: Boolean, lac: Boolean, type: Int
+    ): Boolean {
+        return age in start..end &&
+                !(lac && lactoseLevel >= 3) &&
+                !(cow && typeStr.contains(getString(R.string.cow))) &&
+                !(type == 3 && !typeStr.contains(getString(R.string.diet)))
+    }
+
+    private fun createModel(
+        i: Int,
+        fa: Array<String>, en: Array<String>,
+        start: Array<String>, end: Array<String>,
+        lac: Array<String>, use: Array<String>, type: Array<String>
+    ) = MilkModel(
+        fa[i],
+        en[i],
+        start[i].toInt(),
+        end[i].toInt(),
+        lac[i].toInt(),
+        use[i],
+        type[i]
+    )
 }

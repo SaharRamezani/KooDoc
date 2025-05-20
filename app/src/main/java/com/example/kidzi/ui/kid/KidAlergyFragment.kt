@@ -31,6 +31,7 @@ class KidAlergyFragment : Fragment() {
     var lac = false
     var cow = false
     var alcohol = false
+    var diet = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
