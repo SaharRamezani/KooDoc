@@ -562,7 +562,22 @@
         android:label="fragment_kid_choose2"
         tools:layout="@layout/fragment_kid_choose2" >
         <action
-            android:id="@+id/action_kidChoose2Fragment_to_kidInfoFragment"
-            app:destination="@id/kidInfoFragment" />
+            android:id="@+id/action_kidChoose2Fragment_to_kidInfoShowFragment"
+            app:destination="@id/kidInfoShowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidInfoShowFragment"
+        android:name="com.example.kidzi.ui.kid.KidInfoShowFragment"
+        android:label="fragment_kid_info_show"
+        tools:layout="@layout/fragment_kid_info_show" >
+        <argument
+            android:name="kid_id"
+            app:argType="integer"/>
+        <argument
+            android:name="new"
+            app:argType="boolean"/>
+        <action
+            android:id="@+id/action_KidInfoShowFragment_to_KidChoose2Fragment"
+            app:destination="@id/kidChoose2Fragment" />
     </fragment>
 </navigation>

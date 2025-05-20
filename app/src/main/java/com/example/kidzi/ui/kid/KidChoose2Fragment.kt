@@ -36,7 +36,7 @@ class KidChoose2Fragment : Fragment() {
 
         adapter = KidChooseAdapter(kidList) { position ->
             preferenceManager.updateCurrentKid(kidList.get(position).id)
-            findNavController().navigate(KidChoose2FragmentDirections.actionKidChoose2FragmentToKidInfoFragment(kidList.get(position).id,false))
+            findNavController().navigate(KidChoose2FragmentDirections.actionKidChoose2FragmentToKidInfoShowFragment(kidList.get(position).id, false))
         }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
