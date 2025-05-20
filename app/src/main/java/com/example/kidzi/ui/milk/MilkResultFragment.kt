@@ -61,7 +61,10 @@ class MilkResultFragment : Fragment() {
         setupRecycler(binding, milkList)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
-        binding.txtTitle.text = getString(R.string.my_kid_allergy_milk)
+        binding.txtTitle.text = when (args.type) {
+            6 -> getString(R.string.all_milks)
+            else -> getString(R.string.my_kid_milk)
+        }
 
         return binding.root
     }
@@ -119,7 +122,8 @@ class MilkResultFragment : Fragment() {
                 !(cow && typeStr.contains(getString(R.string.cow))) &&
                 ((type == 5) ||
                         (type == 3 && milkUse.contains(getString(R.string.diet))) ||
-                        (type == 4 && milkUse.contains(getString(R.string.regular))))
+                        (type == 4 && milkUse.contains(getString(R.string.regular)))) ||
+                (type == 6)
     }
 
     private fun createModel(
