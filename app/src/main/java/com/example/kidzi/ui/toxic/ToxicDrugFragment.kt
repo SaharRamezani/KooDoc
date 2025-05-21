@@ -16,32 +16,24 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ToxicDrugFragment : Fragment() {
-
-
-
     private lateinit var adapter: VaccineAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentToxicDrugBinding.inflate(inflater)
-
-
         val vaccineArray = resources.getStringArray(R.array.toxic_drugs).toList()
-
 
         adapter = VaccineAdapter(vaccineArray) { position ->
             val action = ToxicDrugFragmentDirections.actionToxicDrugFragmentToToxicNoMedDetailFragment(position,vaccineArray[position])
             findNavController().navigate(action)
         }
 
+        binding.btnBack.setOnClickListener {findNavController().popBackStack()}
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
 
-
         return binding.root
     }
-
 }

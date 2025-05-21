@@ -57,7 +57,7 @@
     <string-array name="toxic_drugs">
         <item>مسمومیت با حشیش( گل )</item>
         <item>مسمومیت با تریاک و اوپیوم</item>
-        <item>مسمومیت با شیشه و سایر آمفتامین ها</item>
+        <item>مسمومیت با شیشه و آمفتامین ها</item>
         <item>مسمومیت با الکل( اتانول، متانول)</item>
     </string-array>
     
