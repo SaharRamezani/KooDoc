@@ -25,7 +25,7 @@ import com.example.kidzi.di.db.models.KidSocialModel
         FamilyDiseaseModel::class,
         KidGrowthModel::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
     autoMigrations = []
 )
@@ -37,5 +37,4 @@ abstract class AppDatabase:RoomDatabase() {
     abstract fun kidSocialDao(): KidSocialDao
     abstract fun familyDiseaseDao(): FamilyDiseaseDao
     abstract fun kidGrowthDao(): KidGrowthDao
-
 }

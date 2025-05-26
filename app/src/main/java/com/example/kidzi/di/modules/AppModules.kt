@@ -19,7 +19,7 @@ class AppModules{
     @Provides
     @Singleton
     fun providesDatabase(@ApplicationContext context: Context): AppDatabase {
-        return Room.databaseBuilder(context,AppDatabase::class.java,"db").allowMainThreadQueries().build()
+        return Room.databaseBuilder(context,AppDatabase::class.java,"db").allowMainThreadQueries().fallbackToDestructiveMigration().build()
     }
 
     @Provides
@@ -27,6 +27,4 @@ class AppModules{
     fun providesPreferences(@ApplicationContext context: Context): PreferenceManager {
         return PreferenceManager(context)
     }
-
-
 }
