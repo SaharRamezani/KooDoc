@@ -62,6 +62,22 @@ class MilkAdapter(
                 val updated = milkList.filter { it.isSelected }.map { it.englishName }.toSet()
                 preferenceManager.saveSelectedMilks(updated)
             }
+
+            binding.milkCheckbox.setOnCheckedChangeListener { _, isChecked ->
+                milk.isSelected = isChecked
+
+                val updatedSet = milkList.filter { it.isSelected }.map { it.englishName }.toSet()
+                preferenceManager.saveSelectedMilks(updatedSet)
+
+                if (!isChecked) {
+                    val position = adapterPosition
+                    if (position != RecyclerView.NO_POSITION) {
+                        milkList.removeAt(position)
+                        notifyItemRemoved(position)
+                        onItemRemoved?.invoke(milkList.size)
+                    }
+                }
+            }
         }
     }
 
