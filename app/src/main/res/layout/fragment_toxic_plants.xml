@@ -47,11 +47,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/red"
             tools:listitem="@layout/list_vaccine_about"
             android:id="@+id/recycler"/>
-
-
-
     </LinearLayout>
 
 </FrameLayout>
