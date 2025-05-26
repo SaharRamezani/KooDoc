@@ -50,9 +50,14 @@
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
                     android:text="پسران"/>
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
