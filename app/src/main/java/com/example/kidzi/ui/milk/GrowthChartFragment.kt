@@ -55,19 +55,19 @@ class GrowthChartFragment : Fragment() {
     }
 
     fun setupMultiLineChart(chart: LineChart, m: List<Entry>, p3: List<Entry>, p97: List<Entry>) {
-        val dataSetM = LineDataSet(m, "میانگین").apply {
+        val dataSetM = LineDataSet(m, getString(R.string.mean)).apply {
             color = Color.BLUE
             lineWidth = 2f
             setDrawCircles(false)
         }
 
-        val dataSetP3 = LineDataSet(p3, "احتمال 3 درصد").apply {
+        val dataSetP3 = LineDataSet(p3, getString(R.string.percent_3_weight)).apply {
             color = Color.RED
             lineWidth = 2f
             setDrawCircles(false)
         }
 
-        val dataSetP97 = LineDataSet(p97, "احتمال 97 درصد").apply {
+        val dataSetP97 = LineDataSet(p97, getString(R.string.percent_97_weight)).apply {
             color = Color.GREEN
             lineWidth = 2f
             setDrawCircles(false)

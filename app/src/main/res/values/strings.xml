@@ -207,6 +207,9 @@
     <string name="drugs_caution">مهم ترین نکته: در صورت احتمال حتی پایین به مسموم شدن\nسریعا به اورژانس بیمارستان مراجعه شود و در مورد علت آن با\nکادر بیمارستان صادق باشید.</string>
     <string name="snake_sting">مارگزیدگی</string>
     <string name="bee_sting">زنبور گزیدگی</string>
+    <string name="percent_3_weight">صدک ۳ درصد</string>
+    <string name="percent_97_weight">صدک ۹۷ درصد</string>
+    <string name="mean">میانگین</string>
     <string name="explanations">توضیحات</string>
     <string name="bee_expl">بعضی افراد ممکن است واکنش های شدید حساسیت به نیش زنبور داشته باشند بنابراین اگر کودک جز این دسته از افراد است و قبلا به نیش زنبور واکنش شدید نشان داده است حتما با پزشک مشورت کنید. \nدر صورتی که اولین بار است کودک مورد گزیدگی قرار میگیرد به مراکز درمانی مراجعه کنید.</string>
     <string name="actions">اقدامات</string>
