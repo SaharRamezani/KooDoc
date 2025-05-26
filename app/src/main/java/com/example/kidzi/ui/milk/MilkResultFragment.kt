@@ -69,9 +69,26 @@ class MilkResultFragment : Fragment() {
         return binding.root
     }
 
+//    private fun setupRecycler(binding: FragmentMilkResultBinding, milkList: List<MilkModel>) {
+//        try {
+//            adapter = MilkAdapter(milkList)
+//            binding.recycler.layoutManager = LinearLayoutManager(requireContext())
+//            binding.recycler.adapter = adapter
+//        } catch (e: Exception) {
+//            Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_SHORT).show()
+//        }
+//    }
     private fun setupRecycler(binding: FragmentMilkResultBinding, milkList: List<MilkModel>) {
         try {
-            adapter = MilkAdapter(milkList)
+            // Step 1: Get previously selected items
+            val savedSet = preferenceManager.getSelectedMilks()
+
+            // Step 2: Update each item based on saved selection
+            milkList.forEach { it.isSelected = savedSet.contains(it.englishName) }
+
+            // Step 3: Pass preferenceManager and context to adapter
+            adapter = MilkAdapter(milkList, requireContext(), preferenceManager)
+
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
             binding.recycler.adapter = adapter
         } catch (e: Exception) {

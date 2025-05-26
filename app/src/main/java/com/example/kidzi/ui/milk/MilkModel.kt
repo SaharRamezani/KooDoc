@@ -7,5 +7,6 @@ data class MilkModel(
     val endAge: Int,
     val lac: Int,
     val usage: String,
-    val milkType: String
+    val milkType: String,
+    var isSelected: Boolean = false,
 )

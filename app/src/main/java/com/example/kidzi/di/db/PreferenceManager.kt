@@ -14,6 +14,7 @@ private const val PARENT_CARE = "parent_care"
 private const val CURRENT_KID = "ck"
 private const val CAN_OPEN = "co"
 private const val AGE_UNIT_KEY = "age_unit"
+private val SELECTED_MILKS = "selected_milks"
 
 class PreferenceManager @Inject constructor(@ApplicationContext context: Context) {
     private val sharedPreferences = context.getSharedPreferences("MyPref",Context.MODE_PRIVATE)
@@ -32,6 +33,18 @@ class PreferenceManager @Inject constructor(@ApplicationContext context: Context
         sharedPreferences.edit()
             .putString(AGE_UNIT_KEY, unit)
             .apply()
+    }
+
+    /** Save selected milk english names */
+    fun saveSelectedMilks(selected: Set<String>) {
+        sharedPreferences.edit()
+            .putStringSet(SELECTED_MILKS, selected)
+            .apply()
+    }
+
+    /** Retrieve selected milk english names */
+    fun getSelectedMilks(): Set<String> {
+        return sharedPreferences.getStringSet(SELECTED_MILKS, emptySet()) ?: emptySet()
     }
 
     fun getCurrentKid(): Int{return sharedPreferences.getInt(CURRENT_KID,0)}

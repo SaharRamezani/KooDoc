@@ -12,20 +12,23 @@ import com.example.kidzi.databinding.ListMilkBinding
 import com.example.kidzi.databinding.ListVaccineAboutBinding
 import com.example.kidzi.databinding.ListVaccinesBinding
 import com.example.kidzi.databinding.ListWrongBinding
+import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.ui.milk.GrowthModel
 import com.example.kidzi.ui.milk.MilkModel
 import com.example.kidzi.ui.vaccine.VaccineAboutModel
 
 class MilkAdapter(
-    private val vaccineList: List<MilkModel>
+    private val vaccineList: List<MilkModel>,
+    private val context: Context,  // pass context for PreferenceManager
+    private val preferenceManager: PreferenceManager // inject or pass it
 ) : RecyclerView.Adapter<MilkAdapter.GrowthChartViewHolder>() {
 
     inner class GrowthChartViewHolder(val binding: ListMilkBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(vaccine: MilkModel, position: Int) {
-            binding.persianName.text = vaccine.persianName
-            binding.enName.text = vaccine.englishName
-            binding.txtType.text = vaccine.usage
-            binding.txtLact.text = when(vaccine.lac){
+        fun bind(milk: MilkModel, position: Int) {
+            binding.persianName.text = milk.persianName
+            binding.enName.text = milk.englishName
+            binding.txtType.text = milk.usage
+            binding.txtLact.text = when(milk.lac){
                 0 -> "ندارد"
                 1 -> "ناچیز"
                 2 -> "کم"
@@ -33,20 +36,31 @@ class MilkAdapter(
                 else -> "دارد"
             }
             //binding.txtLact.text = if(vaccine.lac) "دارد" else "ندارد"
-            binding.txtStart.text = vaccine.startAge.toString()
-            binding.txtEnd.text = vaccine.endAge.toString()
-            binding.txtStart.text = vaccine.startAge.toString()
+            binding.txtStart.text = milk.startAge.toString()
+            binding.txtEnd.text = milk.endAge.toString()
+            binding.txtStart.text = milk.startAge.toString()
 
-            if (vaccine.endAge > 36) {
+            if (milk.endAge > 36) {
                 binding.txtMonth.visibility = View.GONE
                 binding.txtEnd.text       = "آخر عمر"
             } else {
                 binding.txtMonth.visibility = View.VISIBLE
                 binding.txtEnd.visibility   = View.VISIBLE
-                binding.txtEnd.text         = vaccine.endAge.toString()
+                binding.txtEnd.text         = milk.endAge.toString()
             }
 
-            binding.txtBase.text = vaccine.milkType
+            binding.txtBase.text = milk.milkType
+
+            // 🧠 Set checkbox state
+            binding.milkCheckbox.setOnCheckedChangeListener(null)
+            binding.milkCheckbox.isChecked = milk.isSelected
+
+            // 💾 Save immediately on change
+            binding.milkCheckbox.setOnCheckedChangeListener { _, isChecked ->
+                milk.isSelected = isChecked
+                val updated = vaccineList.filter { it.isSelected }.map { it.englishName }.toSet()
+                preferenceManager.saveSelectedMilks(updated)
+            }
         }
     }
 
