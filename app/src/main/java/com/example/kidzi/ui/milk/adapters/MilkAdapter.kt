@@ -18,9 +18,10 @@ import com.example.kidzi.ui.milk.MilkModel
 import com.example.kidzi.ui.vaccine.VaccineAboutModel
 
 class MilkAdapter(
-    private val vaccineList: List<MilkModel>,
-    private val context: Context,  // pass context for PreferenceManager
-    private val preferenceManager: PreferenceManager // inject or pass it
+    private val milkList: MutableList<MilkModel>,
+    private val context: Context,
+    private val preferenceManager: PreferenceManager,
+    private val onItemRemoved: ((Int) -> Unit)? = null
 ) : RecyclerView.Adapter<MilkAdapter.GrowthChartViewHolder>() {
 
     inner class GrowthChartViewHolder(val binding: ListMilkBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -58,7 +59,7 @@ class MilkAdapter(
             // 💾 Save immediately on change
             binding.milkCheckbox.setOnCheckedChangeListener { _, isChecked ->
                 milk.isSelected = isChecked
-                val updated = vaccineList.filter { it.isSelected }.map { it.englishName }.toSet()
+                val updated = milkList.filter { it.isSelected }.map { it.englishName }.toSet()
                 preferenceManager.saveSelectedMilks(updated)
             }
         }
@@ -70,8 +71,8 @@ class MilkAdapter(
     }
 
     override fun onBindViewHolder(holder: GrowthChartViewHolder, position: Int) {
-        holder.bind(vaccineList[position], position)
+        holder.bind(milkList[position], position)
     }
 
-    override fun getItemCount(): Int = vaccineList.size
+    override fun getItemCount(): Int = milkList.size
 }

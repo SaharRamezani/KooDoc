@@ -155,7 +155,7 @@
     <string name="alert_bad">مسمومیت</string>
     <string name="dry_milk">شیر خشک</string>
     <string name="current_kid">کودک من:</string>
-    <string name="choose_by_kid">نمایش شیرخشک های کودک من</string>
+    <string name="choose_by_kid">نمایش شیرخشک های کودکان من</string>
     <string name="all_milks">نمایش همه شیر خشک ها</string>
     <string name="manual_milk">نمایش شیرخشک ها براساس حساسیت کودک</string>
     <string name="see_milks">مشاهده شیر خشک ها</string>

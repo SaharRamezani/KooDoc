@@ -30,10 +30,11 @@ class MilkIntroFragment : Fragment() {
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         binding.btnChooseKid.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToKidsChooseFragment())}
+        binding.btnMyKid.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToMyKidMilkFragment())}
         binding.btnAllMilk.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToMilkResultFragment(6,0,false,false))}
         binding.btnManualMilk.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToMilkManualFragment())}
         // Show milks that are pinned
-        binding.btnMyKid.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToMilkResultFragment(7,1,false,false))}
+//        binding.btnMyKid.setOnClickListener {findNavController().navigate(MilkIntroFragmentDirections.actionMilkIntroFragmentToMilkResultFragment(7,1,false,false))}
 
         return binding.root
     }

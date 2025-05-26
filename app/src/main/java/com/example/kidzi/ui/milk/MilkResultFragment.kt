@@ -87,7 +87,7 @@ class MilkResultFragment : Fragment() {
             milkList.forEach { it.isSelected = savedSet.contains(it.englishName) }
 
             // Step 3: Pass preferenceManager and context to adapter
-            adapter = MilkAdapter(milkList, requireContext(), preferenceManager)
+            adapter = MilkAdapter(milkList.toMutableList(), requireContext(), preferenceManager)
 
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
             binding.recycler.adapter = adapter

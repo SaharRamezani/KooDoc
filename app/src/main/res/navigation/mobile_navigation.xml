@@ -238,8 +238,11 @@
         android:label="fragment_milk_intro"
         tools:layout="@layout/fragment_milk_intro" >
         <action
-            android:id="@+id/action_milkIntroFragment_to_kidsChooseFragment"
+            android:id="@+id/action_milkIntroFragment_to_KidsChooseFragment"
             app:destination="@id/kidsChooseFragment" />
+        <action
+            android:id="@+id/action_milkIntroFragment_to_MyKidMilkFragment"
+            app:destination="@id/fragment_my_kid_milk" />
         <action
             android:id="@+id/action_milkIntroFragment_to_milkManualFragment"
             app:destination="@id/milkManualFragment" />
@@ -247,6 +250,11 @@
             android:id="@+id/action_milkIntroFragment_to_milkResultFragment"
             app:destination="@id/milkResultFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_my_kid_milk"
+        android:name="com.example.kidzi.ui.milk.MyKidMilkFragment"
+        android:label="fragment_my_kid_milk"
+        tools:layout="@layout/fragment_my_kid_milk" />
     <fragment
         android:id="@+id/kidsChooseFragment"
         android:name="com.example.kidzi.ui.kid.KidsChooseFragment"
