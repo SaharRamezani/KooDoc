@@ -25,10 +25,14 @@ class ToxicDrugFragment : Fragment() {
         val binding = FragmentToxicDrugBinding.inflate(inflater)
         val vaccineArray = resources.getStringArray(R.array.toxic_drugs).toList()
 
-        adapter = VaccineAdapter(vaccineArray) { position ->
-            val action = ToxicDrugFragmentDirections.actionToxicDrugFragmentToToxicNoMedDetailFragment(position,vaccineArray[position])
-            findNavController().navigate(action)
-        }
+        adapter = VaccineAdapter(
+            vaccineArray,
+            onItemClick = { position ->
+                val action = ToxicDrugFragmentDirections.actionToxicDrugFragmentToToxicNoMedDetailFragment(position, vaccineArray[position])
+                findNavController().navigate(action)
+            },
+            useArrow = true
+        )
 
         binding.btnBack.setOnClickListener {findNavController().popBackStack()}
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())

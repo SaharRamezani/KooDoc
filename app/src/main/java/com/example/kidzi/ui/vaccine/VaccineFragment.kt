@@ -35,12 +35,17 @@ class VaccineFragment : Fragment() {
 
         val pos = VaccineFragmentArgs.fromBundle(requireArguments()).row
 
-        val vaccineTimeArray  = resources.getStringArray(R.array.vaccine_time_names)
+        val vaccineTimeArray = resources.getStringArray(R.array.vaccine_time_names)
 
         if(pos < vaccineTimeArray.size){
             val vaccineTimesList = vaccineTimeArray[pos].split("،").map { it.trim() }
-            adapter = VaccineAdapter(vaccineTimesList) { position ->
-            }
+            adapter = VaccineAdapter(
+                vaccineList = vaccineTimesList,
+                onItemClick = { position ->
+                    // your logic here
+                },
+                useArrow = false
+            )
 
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
             binding.recycler.adapter = adapter

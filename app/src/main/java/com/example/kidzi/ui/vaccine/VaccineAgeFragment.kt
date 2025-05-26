@@ -30,10 +30,10 @@ class VaccineAgeFragment : Fragment() {
 
         val vaccineArray = resources.getStringArray(R.array.vaccine_use_time).toList()
 
-        adapter = VaccineAdapter(vaccineArray) { position ->
+        adapter = VaccineAdapter(vaccineArray, { position ->
             val action = VaccineAgeFragmentDirections.actionVaccineAgeFragmentToVaccineFragment(position)
             findNavController().navigate(action)
-        }
+        }, useArrow = true)
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter

@@ -30,13 +30,17 @@ class ToxicMedFragment : Fragment() {
 
         val vaccineArray = resources.getStringArray(R.array.toxic_med_names).toList()
 
-        adapter = VaccineAdapter(vaccineArray){ position ->
-            if(position == 0){
-                findNavController().navigate(ToxicMedFragmentDirections.actionToxicMedFragmentToToxicIronFragment())
-            }else{
-                findNavController().navigate(ToxicMedFragmentDirections.actionToxicMedFragmentToToxicMedDetailFragment(position,vaccineArray[position]))
-            }
-        }
+        adapter = VaccineAdapter(
+            vaccineList = vaccineArray,
+            onItemClick = { position ->
+                if (position == 0) {
+                    findNavController().navigate(ToxicMedFragmentDirections.actionToxicMedFragmentToToxicIronFragment())
+                } else {
+                    findNavController().navigate(ToxicMedFragmentDirections.actionToxicMedFragmentToToxicMedDetailFragment(position, vaccineArray[position]))
+                }
+            },
+            useArrow = true
+        )
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
