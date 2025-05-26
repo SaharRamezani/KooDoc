@@ -203,7 +203,6 @@ class CalculatorResultFragment : DialogFragment() {
                 resultText = getString(R.string.dose_30drop)
             }
 
-            return resultText
             return buildString {
                 append(resultText)
                 append("\n\n⚠ ")

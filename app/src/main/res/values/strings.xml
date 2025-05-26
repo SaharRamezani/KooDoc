@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">koodoc</string>
-    <string name="drug_ibuprofen_syrup">شربت یا سوسپانسیون ایبوپروفن</string>
-    <string name="drug_paracetamol_syrup">شربت یا سوسپانسیون استامینوفن</string>
-    <string name="drug_paracetamol_drop">قطره استامینوفن</string>
-    <string name="drug_paracetamol_suppository">شیاف استامینوفن</string>
-    <string name="drug_ibuprofen_suppository">شیاف ایبوپروفن</string>
+    <string name="drug_ibuprofen_syrup">شربت یا سوسپانسیون ایبوپروفن (دوز 100 میلی گرم در 5 میلی لیتر)</string>
+    <string name="drug_paracetamol_syrup">شربت یا سوسپانسیون استامینوفن (دوز 120 میلی گرم در 5 میلی لیتر)</string>
+    <string name="drug_paracetamol_drop">قطره استامینوفن (دوز 100 میلی گرم در 1 میلی لیتر)</string>
+    <string name="drug_paracetamol_suppository">شیاف استامینوفن (دوز 75 و 125 و 325 میلی گرم)</string>
+    <string name="drug_ibuprofen_suppository">شیاف ایبوپروفن (دوز 75 و 150 میلی گرم)</string>
     <string name="dose_2_5ml">۲.۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>
     <string name="dose_insufficient">اطلاعات ناکافی برای محاسبه دوز.</string>
     <string name="age_below_6mon_ibuprofen_syrup">بهتر است از قطره ی استامینوفن استفاده شود. </string>
@@ -48,7 +48,7 @@
     <string name="weight_below_2_7_paracetamol_syrup">با پزشک یا داروساز مشورت شود.</string>
     <string name="age_weight_must_enter">حداقل یکی از دو مورد "وزن" یا "سن" باید وارد شود.</string>
     <string name="warning_paracetamol_syrup">در صورت تداوم علائم کودک، مثل تب، هر ۴ تا ۶ ساعت دوز مربوطه مصرف شود. نهایتاً در هر ۲۴ ساعت ۵ بار به کودک دارو داده شود.</string>
-    <string name="warning_paracetamol_drop">در صورت تداوم علائم کودک، مثل تب، هر ۴ تا ۶ ساعت دوز مربوطه مصرف شود. نهایتاً در هر ۲۴ ساعت ۵ بار به کودک دارو داده شود.</string>
+    <string name="warning_paracetamol_drop">در صورت تداوم علائم کودک، مثل تب، هر ۶ تا ۸ ساعت دوز مربوطه مصرف شود.</string>
     <string name="choose_drug_first">نوع دارو را انتخاب کنید.</string>
     <string name="below_5kg_warning">⚠️ برای کودکان کم تر از 5 کیلوگرم حتما از داروساز و یا پزشک مشورت گرفته شود.</string>
     <string name="fever_warning">⚠️ در صورت مصرف دارو برای کاهش تب، در قسمت ارزیابی علائم نرم افزار، تب و اندازه گیری تب خوانده شود.</string>
@@ -235,9 +235,9 @@
     <string name="related_symptoms">علائم مرتبط</string>
     <string name="comatible_with">مناسب برای:</string>
     <string name="before">قبلی</string>
-    <string name="normal_height">قد نرمال:</string>
-    <string name="normal_weight">وزن نرمال:</string>
-    <string name="normal_head">دورسر نرمال:</string>
+    <string name="normal_height">قد نرمال (سانتی متر):</string>
+    <string name="normal_weight">وزن نرمال (کیلوگرم):</string>
+    <string name="normal_head">دورسر نرمال (سانتی متر):</string>
     <string name="elixir">الگزیر</string>
     <string name="rules">سلب مسئولیت</string>
     <string name="rules_info">حریم خصوصی \"کوداک” اطلاعاتی از کاربران خود دریافت می کندکه می تواند برای ارائۀ سرویس های بهتر و دقیق تر مورد استفاده قرار گیرد.“کوداک” حق دارد برای مقاصدِ پژوهشی و بهبود سرویس خود از این اطلاعات استفادهکند. حق انتشار عمومی اطلاعات و افشای مطالب ارسال شده برای “کوداک” وجود ندارد.سلب مسئولیت از صحت اطلاعات علارغم اطمینان از کیفیت آنهااین محتوا تنها به عنوان یک منبع کمک آموزشی عمومی طراحی شده است و به عنوانمشاوره پزشکی یا بهداشتی، و یا برای استفاده از دیاگرام یا درمان پزشکی، برایهرگونه مشکلات فردی نیست. این سرویس به عنوان یک جایگزین برای مشاورۀ حرفه ایو خدمات از یک مجموعۀ ارائه دهندۀ خدمات بهداشتی با کیفیت با ویژگی های منحصر بهفرد شما نیست. همیشه توصیه پزشک یا سایر ارائه دهنده خدمات بهداشتی مناسب را دررابطه با هر شرایط پزشکی و قبل از شروع هر گونه درمان جدید، در اولویت قرار دهید.جبران خسارت “کوداک”، مدیران، کارکنان، نمایندگان ووابستگان خود را از هر وظیفه و مسئولیت، خسارت، ضرر، ادعا، هزینه (از جمله، بدونمحدودیت، هزینه وکالت معقول و منطقی)، تخلف، به طور مستقیم یا غیر مستقیم مربوط بهمحتوای ارسالی، ارسال یا انتقال از طریق سرویس معاف از خسارت بشناسید.اصلاح یا تعلیق سرویس“کوداک” ممکن است در هر زمانیتغییر، قطع و یا تعلیق فعالیت خود را از این سرویس و یا هر بخش از آن، به طور موقتیا دائمی، بدون اطلاع شما، انجام دهد. “کوداک” حق دریافت هزینه ای را در صورت قطعسرویس نخواهد داشت.خاتمه دادنهر یک از طرفین می تواند این موافقتنامه را حتی بدون هیچ دلیلی، درهر زمان، خاتمه دهد. بعد از خاتمه، شما دیگر نباید به سرویس دسترسی داشته باشید.</string>
