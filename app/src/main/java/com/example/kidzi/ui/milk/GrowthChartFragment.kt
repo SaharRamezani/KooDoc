@@ -29,25 +29,21 @@ import com.example.kidzi.ui.milk.GrowthModel
 class GrowthChartFragment : Fragment() {
     lateinit var adapter: GrowthChartAdapter
 
-    fun readGrowthChartFromExcel(context: Context, type: Int): Triple<List<Entry>, List<Entry>, List<Entry>> {
+    fun readGrowthChartFromCSV(context: Context, type: Int): Triple<List<Entry>, List<Entry>, List<Entry>> {
         val entriesM = mutableListOf<Entry>()
         val entriesP3 = mutableListOf<Entry>()
         val entriesP97 = mutableListOf<Entry>()
 
-        val assetManager = context.assets
-        val inputStream = if (type == 2) assetManager.open("girls_weight.xlsx") else assetManager.open("boys_weight.xlsx")
+        val fileName = if (type == 2) "girls_weight.csv" else "boys_weight.csv"
+        val inputStream = context.assets.open(fileName)
 
-        val workbook = WorkbookFactory.create(inputStream)
-        val sheet = workbook.getSheetAt(0)
-
-        // Skip header (row 0), start from row 1
-        for (rowIndex in 1..sheet.lastRowNum) {
-            val row = sheet.getRow(rowIndex)
-            if (row != null) {
-                val month = row.getCell(0).numericCellValue.toFloat()
-                val m = row.getCell(2).numericCellValue.toFloat()
-                val p3 = row.getCell(6).numericCellValue.toFloat()
-                val p97 = row.getCell(16).numericCellValue.toFloat()
+        inputStream.bufferedReader().useLines { lines ->
+            lines.drop(1).forEach { line ->
+                val tokens = line.split(",")
+                val month = tokens[0].toFloat()
+                val m = tokens[2].toFloat()
+                val p3 = tokens[6].toFloat()
+                val p97 = tokens[16].toFloat()
 
                 entriesM.add(Entry(month, m))
                 entriesP3.add(Entry(month, p3))
@@ -55,24 +51,23 @@ class GrowthChartFragment : Fragment() {
             }
         }
 
-        workbook.close()
         return Triple(entriesM, entriesP3, entriesP97)
     }
 
     fun setupMultiLineChart(chart: LineChart, m: List<Entry>, p3: List<Entry>, p97: List<Entry>) {
-        val dataSetM = LineDataSet(m, "M (Median)").apply {
+        val dataSetM = LineDataSet(m, "میانگین").apply {
             color = Color.BLUE
             lineWidth = 2f
             setDrawCircles(false)
         }
 
-        val dataSetP3 = LineDataSet(p3, "P3").apply {
+        val dataSetP3 = LineDataSet(p3, "احتمال 3 درصد").apply {
             color = Color.RED
             lineWidth = 2f
             setDrawCircles(false)
         }
 
-        val dataSetP97 = LineDataSet(p97, "P97").apply {
+        val dataSetP97 = LineDataSet(p97, "احتمال 97 درصد").apply {
             color = Color.GREEN
             lineWidth = 2f
             setDrawCircles(false)
@@ -101,7 +96,7 @@ class GrowthChartFragment : Fragment() {
         val headStart = if(type == 2) resources.getStringArray(R.array.girl_head_from) else resources.getStringArray(R.array.boy_head_from)
         val headEnd = if(type == 2) resources.getStringArray(R.array.girl_head_to) else resources.getStringArray(R.array.boy_head_to)
 
-        val (m, p3, p97) = readGrowthChartFromExcel(requireContext(), type)
+        val (m, p3, p97) = readGrowthChartFromCSV(requireContext(), type)
         setupMultiLineChart(binding.lineChart, m, p3, p97)
 
         val vaccineList = mutableListOf<GrowthModel>()
