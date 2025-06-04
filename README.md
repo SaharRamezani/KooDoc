@@ -59,7 +59,6 @@ KooDoc simplifies access to:
 ## 📱 Screenshots
 
 
-
 ---
 
 ## 🧪 Development Status
