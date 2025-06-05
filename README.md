@@ -14,7 +14,7 @@ KooDoc is a helpful, modern Android app that supports parents. From navigating t
 - Allows parents to search for and understand potential symptoms in their children.
 - Provides guidance on when to seek help from a pharmacy or clinic.
 
-### 💉 **Vaccine Schedule Assistant**
+### 💉 **Vaccine Assistant**
 - A streamlined view of vaccination schedules and important information.
 - Helps parents track vaccine milestones and prepare for upcoming appointments.
 
