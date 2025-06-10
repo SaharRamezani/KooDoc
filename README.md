@@ -10,7 +10,7 @@ KooDoc is a helpful, modern Android app that supports parents. From navigating t
 
 ## 🌟 Features
 
-### 🧠 **Smart Symptoms Checker**
+### 🧠 **Symptoms Checker**
 - Allows parents to search for and understand potential symptoms in their children.
 - Provides guidance on when to seek help from a pharmacy or clinic.
 
