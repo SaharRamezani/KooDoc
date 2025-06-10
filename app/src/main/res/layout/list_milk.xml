@@ -113,6 +113,15 @@
                         android:id="@+id/txt_start"/>
 
                     <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:text="ماه"
+                        android:gravity="center"
+                        android:textColor="@color/surface_text_light"
+                        android:textSize="11sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="تا"
@@ -120,7 +129,6 @@
                         android:textColor="@color/surface_text_light"
                         android:textSize="11sp"
                         android:textAlignment="center"/>
-
 
                     <TextView
                         android:layout_width="50dp"
