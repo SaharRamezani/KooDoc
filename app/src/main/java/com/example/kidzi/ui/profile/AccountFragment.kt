@@ -35,7 +35,7 @@ class AccountFragment : Fragment() {
         }
 
         binding.btnAddKid.setOnClickListener {
-            findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToKidInfoFragment(0, true))
+            findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToKidInfoFragmentNew(0, true))
         }
 
         return binding.root

@@ -549,11 +549,26 @@
             android:id="@+id/action_accountFragment_to_rulesFragment"
             app:destination="@id/rulesFragment" />
         <action
-            android:id="@+id/action_accountFragment_to_kidInfoFragment"
-            app:destination="@id/kidInfoFragment" />
+            android:id="@+id/action_accountFragment_to_kidInfoFragmentNew"
+            app:destination="@id/kidInfoNewFragment" />
         <action
             android:id="@+id/action_accountFragment_to_kidChoose2Fragment"
             app:destination="@id/kidChoose2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kidInfoNewFragment"
+        android:name="com.example.kidzi.ui.kid.KidInfoFragmentNew"
+        android:label="fragment_kid_info_new"
+        tools:layout="@layout/fragment_kid_info_new" >
+        <argument
+            android:name="kid_id"
+            app:argType="integer" />
+        <argument
+            android:name="new"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_kidInfoNewFragment_to_AccountFragment"
+            app:destination="@id/accountFragment" />
     </fragment>
     <fragment
         android:id="@+id/parentShowFragment"
