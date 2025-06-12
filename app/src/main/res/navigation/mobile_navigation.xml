@@ -491,9 +491,6 @@
             android:id="@+id/action_growthMainFragment_to_kidsChooseFragment"
             app:destination="@id/kidsChooseFragment" />
         <action
-            android:id="@+id/action_growthMainFragment_to_kidInfoFragment"
-            app:destination="@id/kidInfoFragment" />
-        <action
             android:id="@+id/action_growthMainFragment_to_growthChartFragment"
             app:destination="@id/growthChartFragment" />
         <action
@@ -551,6 +548,9 @@
         <action
             android:id="@+id/action_accountFragment_to_rulesFragment"
             app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_kidInfoFragment"
+            app:destination="@id/kidInfoFragment" />
         <action
             android:id="@+id/action_accountFragment_to_kidChoose2Fragment"
             app:destination="@id/kidChoose2Fragment" />

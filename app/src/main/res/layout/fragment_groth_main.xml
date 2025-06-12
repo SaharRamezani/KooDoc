@@ -113,18 +113,6 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="@string/add_kid"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                app:cornerRadius="@dimen/corner_milk_buttons"
-                android:backgroundTint="@color/surface_bg_medium"
-                android:textColor="@color/colorTextPrimary"
-                app:strokeColor="@color/button_outlined_border"
-                app:strokeWidth="2dp"
-                android:id="@+id/btn_add_kid"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
                 android:text="@string/boy_chart"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 app:cornerRadius="@dimen/corner_milk_buttons"

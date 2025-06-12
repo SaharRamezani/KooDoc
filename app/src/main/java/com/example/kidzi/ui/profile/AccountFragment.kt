@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentAccountBinding
+import com.example.kidzi.ui.milk.GrowthMainFragmentDirections
 
 class AccountFragment : Fragment() {
 
@@ -31,6 +32,10 @@ class AccountFragment : Fragment() {
 
         binding.btnRules.setOnClickListener {
             findNavController().navigate(R.id.action_accountFragment_to_rulesFragment)
+        }
+
+        binding.btnAddKid.setOnClickListener {
+            findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToKidInfoFragment(0, true))
         }
 
         return binding.root

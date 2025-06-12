@@ -69,6 +69,19 @@
             app:cornerRadius="@dimen/corner_main" />
 
         <com.google.android.material.button.MaterialButton
+            app:strokeWidth="2dp"
+            android:id="@+id/btn_add_kid"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/Widget.Material3.Button"
+            android:text="@string/add_kid"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"
+            app:backgroundTint="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
+            app:cornerRadius="@dimen/corner_main"/>
+
+        <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.Material3.Button"

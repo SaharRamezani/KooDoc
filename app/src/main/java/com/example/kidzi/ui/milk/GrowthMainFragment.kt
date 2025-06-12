@@ -28,7 +28,6 @@ class GrowthMainFragment : Fragment() {
         binding = FragmentGrothMainBinding.inflate(inflater, container, false)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
         binding.btnChooseKid.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToKidsChooseFragment()) }
-        binding.btnAddKid.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToKidInfoFragment(0,true)) }
         binding.btnBoy.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToGrowthChartFragment(1)) }
         binding.btnGirl.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToGrowthChartFragment(2)) }
         binding.btnGrowth.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToGrowthFollowFragment()) }
