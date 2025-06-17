@@ -4,7 +4,7 @@
 
 KooDoc is a helpful, modern Android app that supports parents. From navigating toxic symptoms and vaccines to discovering child-friendly places, KooDoc offers a simple and informative platform to guide caregivers in everyday decisions.
 
----
+-----
 
 ## 🌟 Features:
 
