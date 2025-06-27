@@ -17,7 +17,7 @@
             android:id="@+id/txtEmpty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="لیستی برای نمایش وجود ندارد"
+            android:text=""
             android:visibility="gone"
             />
 

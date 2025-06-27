@@ -21,7 +21,10 @@ class AccountFragment : Fragment() {
     ): View {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
 
-        // Hook up buttons to navigation actions
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         binding.btnMyDetail.setOnClickListener {
             findNavController().navigate(R.id.action_accountFragment_to_parentShowFragment)
         }
