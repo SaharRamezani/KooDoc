@@ -11,9 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layoutDirection="rtl"
-        android:layout_margin="@dimen/main_margin"
         android:orientation="vertical">
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,922 +48,910 @@
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
                     android:text="سردرد"/>
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_margin">
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <com.google.android.material.card.MaterialCardView
+                android:layout_height="match_parent">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:clickable="true"
-                    android:id="@+id/card_info"
-                    app:cardBackgroundColor="@color/surface_bg_medium"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:padding="12dp"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:id="@+id/txt_right"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/info_about"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/txt_cause"
-                                android:layout_toLeftOf="@id/txt_right"
-                                android:textColor="@color/black"
-                                android:text="@string/tox_ways"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_info"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
-                        </RelativeLayout>
+                        android:clickable="true"
+                        android:id="@+id/card_info"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_info">
-                            <View
+                            android:orientation="vertical">
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-                            <TextView
+                                android:padding="12dp"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:id="@+id/txt_right"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/info_about"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txt_cause"
+                                    android:layout_toLeftOf="@id/txt_right"
+                                    android:textColor="@color/black"
+                                    android:text="@string/tox_ways"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_info"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/ic_arrow_down"/>
+                            </RelativeLayout>
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_margin="12dp"
-                                android:lineSpacingExtra="@dimen/line_extra"
-                                android:id="@+id/info_detail"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_info">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="12dp"
+                                    android:lineSpacingExtra="@dimen/line_extra"
+                                    android:id="@+id/info_detail"/>
+                            </LinearLayout>
+
                         </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:clickable="true"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/card_emergency"
-                    app:cardBackgroundColor="@color/surface_bg_medium"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="match_parent"
-                                android:background="@android:color/holo_red_dark"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="12sp"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/emergency"/>
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_emergency"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
-                        </LinearLayout>
+                        android:clickable="true"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/card_emergency"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_emergency">
-                            <View
+                            android:orientation="vertical">
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-                            <androidx.recyclerview.widget.RecyclerView
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/holo_red_dark"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/emergency"/>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_emergency"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/ic_arrow_down"/>
+                            </LinearLayout>
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                tools:listitem="@layout/list_symptoms"
-                                android:lineSpacingExtra="@dimen/line_extra"
-                                android:id="@+id/emergency_detail"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_emergency">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black"/>
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    tools:listitem="@layout/list_symptoms"
+                                    android:lineSpacingExtra="@dimen/line_extra"
+                                    android:id="@+id/emergency_detail"/>
+                            </LinearLayout>
+
                         </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:clickable="true"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/card_emergency_med"
-                    app:cardBackgroundColor="@color/surface_bg_medium"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="match_parent"
-                                android:background="@android:color/holo_orange_light"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="12sp"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/emergency_medium"/>
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_emergency_medium"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
-                        </LinearLayout>
+                        android:clickable="true"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/card_emergency_med"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_emergency_med">
-                            <View
+                            android:orientation="vertical">
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-                            <androidx.recyclerview.widget.RecyclerView
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/holo_orange_light"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/emergency_medium"/>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_emergency_medium"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/ic_arrow_down"/>
+                            </LinearLayout>
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:lineSpacingExtra="@dimen/line_extra"
-                                android:id="@+id/emergency_med_detail"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_emergency_med">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black"/>
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:lineSpacingExtra="@dimen/line_extra"
+                                    android:id="@+id/emergency_med_detail"/>
+                            </LinearLayout>
+
                         </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:clickable="true"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/card_emergency_low"
-                    app:cardBackgroundColor="@color/surface_bg_medium"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="match_parent"
-                                android:background="@android:color/holo_blue_light"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="12sp"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/emergency_low"/>
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_emergency_low"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
-                        </LinearLayout>
+                        android:clickable="true"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/card_emergency_low"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_emergency_low">
-                            <View
+                            android:orientation="vertical">
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-                            <androidx.recyclerview.widget.RecyclerView
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/holo_blue_light"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/emergency_low"/>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_emergency_low"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/ic_arrow_down"/>
+                            </LinearLayout>
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:lineSpacingExtra="@dimen/line_extra"
-                                android:id="@+id/emergency_low_detail"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_emergency_low">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black"/>
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:lineSpacingExtra="@dimen/line_extra"
+                                    android:id="@+id/emergency_low_detail"/>
+                            </LinearLayout>
+
                         </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:clickable="true"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/card_home"
-                    app:cardBackgroundColor="@color/surface_bg_medium"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="match_parent"
-                                android:background="@android:color/holo_green_light"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="12sp"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/home_care"/>
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_home"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
-                        </LinearLayout>
+                        android:clickable="true"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/card_home"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_home">
-                            <View
+                            android:orientation="vertical">
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-                            <androidx.recyclerview.widget.RecyclerView
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/holo_green_light"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/home_care"/>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_home"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/ic_arrow_down"/>
+                            </LinearLayout>
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:lineSpacingExtra="@dimen/line_extra"
-                                android:id="@+id/home_detail"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_home">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black"/>
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:lineSpacingExtra="@dimen/line_extra"
+                                    android:id="@+id/home_detail"/>
+                            </LinearLayout>
+
                         </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:clickable="true"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/card_relative"
-                    app:cardBackgroundColor="@color/surface_bg_medium"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:padding="12dp"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:id="@+id/txt_right1"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/related_symptoms"/>
-
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_relative"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
-                        </RelativeLayout>
+                        android:clickable="true"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/card_relative"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_relative">
-                            <View
+                            android:orientation="vertical">
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-                            <TextView
+                                android:padding="12dp"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:id="@+id/txt_right1"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/related_symptoms"/>
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_relative"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/ic_arrow_down"/>
+                            </RelativeLayout>
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_margin="12dp"
-                                android:lineSpacingExtra="@dimen/line_extra"
-                                android:id="@+id/relative_detail"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_relative">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="12dp"
+                                    android:lineSpacingExtra="@dimen/line_extra"
+                                    android:id="@+id/relative_detail"/>
+                            </LinearLayout>
                         </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:clickable="true"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/card_care"
-                    app:cardBackgroundColor="@color/surface_bg_medium"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:padding="12dp"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/caring_advice"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_care"
-                                android:layout_alignParentLeft="true"
-                                android:src="@drawable/ic_arrow_down"/>
-                        </RelativeLayout>
+                        android:clickable="true"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/card_care"
+                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_care">
-                            <View
+                            android:orientation="vertical">
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:clickable="true"
-                                android:id="@+id/card_care_h1"
+                                android:padding="12dp"
                                 android:layout_height="wrap_content">
-                                <LinearLayout
-                                    android:layout_width="match_parent"
+                                <TextView
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:orientation="horizontal"
-                                        android:layout_height="wrap_content">
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                            android:src="@drawable/ic_circle_black"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp"
-                                            android:text="تست"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentRight="true"
-                                            android:id="@+id/txt_header_h1"/>
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"/>
+                                    android:textColor="@color/black"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/caring_advice"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_care"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/ic_arrow_down"/>
+                            </RelativeLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_care">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black"/>
 
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/arrow_h1"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentLeft="true"
-                                            android:src="@drawable/ic_arrow_down"/>
-                                    </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/card_care_h1"
+                                    android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical"
-                                        android:visibility="gone"
-                                        android:id="@+id/layout_more_h1">
-                                        <View
+                                        android:orientation="vertical">
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:background="@color/black"/>
-                                        <TextView
+                                            android:orientation="horizontal"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
+                                                android:src="@drawable/ic_circle_black"
+                                                android:layout_height="wrap_content"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp"
+                                                android:text="تست"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentRight="true"
+                                                android:id="@+id/txt_header_h1"/>
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/arrow_h1"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentLeft="true"
+                                                android:src="@drawable/ic_arrow_down"/>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:lineSpacingExtra="@dimen/line_extra"
-                                            android:layout_margin="12dp"
-                                            android:id="@+id/h1_detail"/>
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            android:id="@+id/layout_more_h1">
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:lineSpacingExtra="@dimen/line_extra"
+                                                android:layout_margin="12dp"
+                                                android:id="@+id/h1_detail"/>
+                                        </LinearLayout>
+
                                     </LinearLayout>
-
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
+                                </com.google.android.material.card.MaterialCardView>
 
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:id="@+id/line_h2"
-                                android:background="@color/black"/>
-
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:clickable="true"
-                                android:id="@+id/card_care_h2"
-                                android:layout_height="wrap_content">
-                                <LinearLayout
+                                <View
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:orientation="horizontal"
-                                        android:layout_height="wrap_content">
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                            android:src="@drawable/ic_circle_black"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp"
-                                            android:text="تست"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentRight="true"
-                                            android:id="@+id/txt_header_h2"/>
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"/>
+                                    android:layout_height="1dp"
+                                    android:id="@+id/line_h2"
+                                    android:background="@color/black"/>
 
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/arrow_h2"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentLeft="true"
-                                            android:src="@drawable/ic_arrow_down"/>
-                                    </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/card_care_h2"
+                                    android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical"
-                                        android:visibility="gone"
-                                        android:id="@+id/layout_more_h2">
-                                        <View
+                                        android:orientation="vertical">
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:background="@color/black"/>
-                                        <TextView
+                                            android:orientation="horizontal"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
+                                                android:src="@drawable/ic_circle_black"
+                                                android:layout_height="wrap_content"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp"
+                                                android:text="تست"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentRight="true"
+                                                android:id="@+id/txt_header_h2"/>
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/arrow_h2"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentLeft="true"
+                                                android:src="@drawable/ic_arrow_down"/>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:lineSpacingExtra="@dimen/line_extra"
-                                            android:layout_margin="12dp"
-                                            android:id="@+id/h2_detail"/>
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            android:id="@+id/layout_more_h2">
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:lineSpacingExtra="@dimen/line_extra"
+                                                android:layout_margin="12dp"
+                                                android:id="@+id/h2_detail"/>
+                                        </LinearLayout>
+
                                     </LinearLayout>
-
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
+                                </com.google.android.material.card.MaterialCardView>
 
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:id="@+id/line_h3"
-                                android:background="@color/black"/>
-
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:clickable="true"
-                                android:id="@+id/card_care_h3"
-                                android:layout_height="wrap_content">
-                                <LinearLayout
+                                <View
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:orientation="horizontal"
-                                        android:layout_height="wrap_content">
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                            android:src="@drawable/ic_circle_black"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp"
-                                            android:text="تست"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentRight="true"
-                                            android:id="@+id/txt_header_h3"/>
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"/>
+                                    android:layout_height="1dp"
+                                    android:id="@+id/line_h3"
+                                    android:background="@color/black"/>
 
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/arrow_h3"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentLeft="true"
-                                            android:src="@drawable/ic_arrow_down"/>
-                                    </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/card_care_h3"
+                                    android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical"
-                                        android:visibility="gone"
-                                        android:id="@+id/layout_more_h3">
-                                        <View
+                                        android:orientation="vertical">
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:background="@color/black"/>
-                                        <TextView
+                                            android:orientation="horizontal"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
+                                                android:src="@drawable/ic_circle_black"
+                                                android:layout_height="wrap_content"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp"
+                                                android:text="تست"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentRight="true"
+                                                android:id="@+id/txt_header_h3"/>
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/arrow_h3"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentLeft="true"
+                                                android:src="@drawable/ic_arrow_down"/>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:lineSpacingExtra="@dimen/line_extra"
-                                            android:layout_margin="12dp"
-                                            android:id="@+id/h3_detail"/>
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            android:id="@+id/layout_more_h3">
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:lineSpacingExtra="@dimen/line_extra"
+                                                android:layout_margin="12dp"
+                                                android:id="@+id/h3_detail"/>
+                                        </LinearLayout>
+
                                     </LinearLayout>
-
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
+                                </com.google.android.material.card.MaterialCardView>
 
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:id="@+id/line_h4"
-                                android:background="@color/black"/>
-
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:clickable="true"
-                                android:id="@+id/card_care_h4"
-                                android:layout_height="wrap_content">
-                                <LinearLayout
+                                <View
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:orientation="horizontal"
-                                        android:layout_height="wrap_content">
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                            android:src="@drawable/ic_circle_black"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp"
-                                            android:text="تست"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentRight="true"
-                                            android:id="@+id/txt_header_h4"/>
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"/>
+                                    android:layout_height="1dp"
+                                    android:id="@+id/line_h4"
+                                    android:background="@color/black"/>
 
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/arrow_h4"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentLeft="true"
-                                            android:src="@drawable/ic_arrow_down"/>
-                                    </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/card_care_h4"
+                                    android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical"
-                                        android:visibility="gone"
-                                        android:id="@+id/layout_more_h4">
-                                        <View
+                                        android:orientation="vertical">
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:background="@color/black"/>
-                                        <TextView
+                                            android:orientation="horizontal"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
+                                                android:src="@drawable/ic_circle_black"
+                                                android:layout_height="wrap_content"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp"
+                                                android:text="تست"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentRight="true"
+                                                android:id="@+id/txt_header_h4"/>
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/arrow_h4"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentLeft="true"
+                                                android:src="@drawable/ic_arrow_down"/>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:lineSpacingExtra="@dimen/line_extra"
-                                            android:layout_margin="12dp"
-                                            android:id="@+id/h4_detail"/>
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            android:id="@+id/layout_more_h4">
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:lineSpacingExtra="@dimen/line_extra"
+                                                android:layout_margin="12dp"
+                                                android:id="@+id/h4_detail"/>
+                                        </LinearLayout>
+
                                     </LinearLayout>
-
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
+                                </com.google.android.material.card.MaterialCardView>
 
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:id="@+id/line_h5"
-                                android:background="@color/black"/>
-
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:clickable="true"
-                                android:id="@+id/card_care_h5"
-                                android:layout_height="wrap_content">
-                                <LinearLayout
+                                <View
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:orientation="horizontal"
-                                        android:layout_height="wrap_content">
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                            android:src="@drawable/ic_circle_black"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp"
-                                            android:text="تست"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentRight="true"
-                                            android:id="@+id/txt_header_h5"/>
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"/>
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/arrow_h5"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentLeft="true"
-                                            android:src="@drawable/ic_arrow_down"/>
-                                    </LinearLayout>
+                                    android:layout_height="1dp"
+                                    android:id="@+id/line_h5"
+                                    android:background="@color/black"/>
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/card_care_h5"
+                                    android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical"
-                                        android:visibility="gone"
-                                        android:id="@+id/layout_more_h5">
-                                        <View
+                                        android:orientation="vertical">
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:background="@color/black"/>
-                                        <TextView
+                                            android:orientation="horizontal"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
+                                                android:src="@drawable/ic_circle_black"
+                                                android:layout_height="wrap_content"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp"
+                                                android:text="تست"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentRight="true"
+                                                android:id="@+id/txt_header_h5"/>
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/arrow_h5"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentLeft="true"
+                                                android:src="@drawable/ic_arrow_down"/>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:lineSpacingExtra="@dimen/line_extra"
-                                            android:layout_margin="12dp"
-                                            android:id="@+id/h5_detail"/>
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            android:id="@+id/layout_more_h5">
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:lineSpacingExtra="@dimen/line_extra"
+                                                android:layout_margin="12dp"
+                                                android:id="@+id/h5_detail"/>
+                                        </LinearLayout>
+
                                     </LinearLayout>
-
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
+                                </com.google.android.material.card.MaterialCardView>
 
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:id="@+id/line_h6"
-                                android:background="@color/black"/>
-
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:clickable="true"
-                                android:id="@+id/card_care_h6"
-                                android:layout_height="wrap_content">
-                                <LinearLayout
+                                <View
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:orientation="horizontal"
-                                        android:layout_height="wrap_content">
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                            android:src="@drawable/ic_circle_black"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp"
-                                            android:text="تست"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentRight="true"
-                                            android:id="@+id/txt_header_h6"/>
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"/>
+                                    android:layout_height="1dp"
+                                    android:id="@+id/line_h6"
+                                    android:background="@color/black"/>
 
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/arrow_h6"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentLeft="true"
-                                            android:src="@drawable/ic_arrow_down"/>
-                                    </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/card_care_h6"
+                                    android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical"
-                                        android:visibility="gone"
-                                        android:id="@+id/layout_more_h6">
-                                        <View
+                                        android:orientation="vertical">
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:background="@color/black"/>
-                                        <TextView
+                                            android:orientation="horizontal"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
+                                                android:src="@drawable/ic_circle_black"
+                                                android:layout_height="wrap_content"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp"
+                                                android:text="تست"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentRight="true"
+                                                android:id="@+id/txt_header_h6"/>
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/arrow_h6"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentLeft="true"
+                                                android:src="@drawable/ic_arrow_down"/>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:lineSpacingExtra="@dimen/line_extra"
-                                            android:layout_margin="12dp"
-                                            android:id="@+id/h6_detail"/>
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            android:id="@+id/layout_more_h6">
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:lineSpacingExtra="@dimen/line_extra"
+                                                android:layout_margin="12dp"
+                                                android:id="@+id/h6_detail"/>
+                                        </LinearLayout>
+
                                     </LinearLayout>
-
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
+                                </com.google.android.material.card.MaterialCardView>
 
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:id="@+id/line_h7"
-                                android:background="@color/black"/>
-
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:clickable="true"
-                                android:id="@+id/card_care_h7"
-                                android:layout_height="wrap_content">
-                                <LinearLayout
+                                <View
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:orientation="horizontal"
-                                        android:layout_height="wrap_content">
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                            android:src="@drawable/ic_circle_black"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp"
-                                            android:text="تست"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentRight="true"
-                                            android:id="@+id/txt_header_h7"/>
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"/>
+                                    android:layout_height="1dp"
+                                    android:id="@+id/line_h7"
+                                    android:background="@color/black"/>
 
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/arrow_h7"
-                                            android:layout_margin="@dimen/margin_symptoms_cards"
-                                            android:layout_alignParentLeft="true"
-                                            android:src="@drawable/ic_arrow_down"/>
-                                    </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/card_care_h7"
+                                    android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical"
-                                        android:visibility="gone"
-                                        android:id="@+id/layout_more_h7">
-                                        <View
+                                        android:orientation="vertical">
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:background="@color/black"/>
-                                        <TextView
+                                            android:orientation="horizontal"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
+                                                android:src="@drawable/ic_circle_black"
+                                                android:layout_height="wrap_content"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp"
+                                                android:text="تست"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentRight="true"
+                                                android:id="@+id/txt_header_h7"/>
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/arrow_h7"
+                                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                                android:layout_alignParentLeft="true"
+                                                android:src="@drawable/ic_arrow_down"/>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:lineSpacingExtra="@dimen/line_extra"
-                                            android:layout_margin="12dp"
-                                            android:id="@+id/h7_detail"/>
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            android:id="@+id/layout_more_h7">
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:lineSpacingExtra="@dimen/line_extra"
+                                                android:layout_margin="12dp"
+                                                android:id="@+id/h7_detail"/>
+                                        </LinearLayout>
+
                                     </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
 
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
+                            </LinearLayout>
                         </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
-            </LinearLayout>
-        </ScrollView>
-
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
     </LinearLayout>
-
 </FrameLayout>

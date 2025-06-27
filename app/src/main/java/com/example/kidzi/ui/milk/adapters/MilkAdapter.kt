@@ -4,18 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kidzi.R
-import com.example.kidzi.databinding.ListGrowthBinding
 import com.example.kidzi.databinding.ListMilkBinding
-import com.example.kidzi.databinding.ListVaccineAboutBinding
-import com.example.kidzi.databinding.ListVaccinesBinding
-import com.example.kidzi.databinding.ListWrongBinding
 import com.example.kidzi.di.db.PreferenceManager
-import com.example.kidzi.ui.milk.GrowthModel
 import com.example.kidzi.ui.milk.MilkModel
-import com.example.kidzi.ui.vaccine.VaccineAboutModel
 
 class MilkAdapter(
     private val milkList: MutableList<MilkModel>,
@@ -65,11 +58,9 @@ class MilkAdapter(
 
             binding.txtBase.text = milk.milkType
 
-            // 🧠 Set checkbox state
             binding.milkCheckbox.setOnCheckedChangeListener(null)
             binding.milkCheckbox.isChecked = milk.isSelected
 
-            // 💾 Save immediately on change
             binding.milkCheckbox.setOnCheckedChangeListener { _, isChecked ->
                 milk.isSelected = isChecked
                 val updated = milkList.filter { it.isSelected }.map { it.englishName }.toSet()

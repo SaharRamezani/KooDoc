@@ -57,6 +57,7 @@
     <string name="Month">ماه</string>
     <string name="Week">هفته</string>
     <string name="unit">واحد</string>
+    <string name="close">بستن</string>
     <string name="warning_fever_usage">هر ۶ تا ۸ ساعت متناسب با تب کودک مصرف شود.</string>
     <string name="title_home">خانه</string>
     <string name="title_dashboard">Dashboard</string>

@@ -40,7 +40,6 @@ class SymptomsDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentSymptomsDetailsBinding.inflate(inflater)
 
         val name = SymptomsDetailsFragmentArgs.fromBundle(requireArguments()).name
@@ -62,10 +61,9 @@ class SymptomsDetailsFragment : Fragment() {
                 binding.arrowInfo.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
             }else{
                 binding.layoutMoreInfo.visibility = View.GONE
-                binding.arrowInfo.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                binding.arrowInfo.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
             }
         }
-
 
         val emergencyDetail = resources.getStringArray(R.array.symptoms_emergency)[row]
         if(emergencyDetail.isNullOrEmpty()||emergencyDetail.length < 4){
@@ -78,13 +76,14 @@ class SymptomsDetailsFragment : Fragment() {
         }
         binding.cardEmergency.setOnClickListener {
             isEmergency = !isEmergency
-            if(isEmergency){
+            if (isEmergency) {
                 binding.layoutMoreEmergency.visibility = View.VISIBLE
                 binding.arrowEmergency.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
+            } else {
                 binding.layoutMoreEmergency.visibility = View.GONE
-                binding.arrowEmergency.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                binding.arrowEmergency.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
             }
+
         }
 
         val emergencyLow = resources.getStringArray(R.array.symptoms_emergency_low)[row]
@@ -103,10 +102,9 @@ class SymptomsDetailsFragment : Fragment() {
                 binding.arrowEmergencyMedium.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
             }else{
                 binding.layoutMoreEmergencyMed.visibility = View.GONE
-                binding.arrowEmergencyMedium.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                binding.arrowEmergencyMedium.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
             }
         }
-
 
         val emergencyNo = resources.getStringArray(R.array.symptoms_emergency_no)[row]
         if(emergencyNo.isNullOrEmpty()||emergencyNo.length < 2){
@@ -125,7 +123,7 @@ class SymptomsDetailsFragment : Fragment() {
                 binding.arrowEmergencyLow.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
             }else{
                 binding.layoutMoreEmergencyLow.visibility = View.GONE
-                binding.arrowEmergencyLow.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                binding.arrowEmergencyLow.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
             }
         }
 
@@ -146,7 +144,7 @@ class SymptomsDetailsFragment : Fragment() {
                 binding.arrowHome.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
             }else{
                 binding.layoutMoreHome.visibility = View.GONE
-                binding.arrowHome.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                binding.arrowHome.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
             }
         }
 
@@ -164,7 +162,7 @@ class SymptomsDetailsFragment : Fragment() {
                 binding.arrowRelative.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
             }else{
                 binding.layoutMoreRelative.visibility = View.GONE
-                binding.arrowRelative.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                binding.arrowRelative.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
             }
         }
 
@@ -176,7 +174,7 @@ class SymptomsDetailsFragment : Fragment() {
                 binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
             }else{
                 binding.layoutMoreCare.visibility = View.GONE
-                binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
             }
         }
 
@@ -316,23 +314,8 @@ class SymptomsDetailsFragment : Fragment() {
             }
         }
 
-
-
-        // Check if the index is valid
-
-
-
         return binding.root
-
     }
-
-    /*fun parseStringToModel(input: String): SymptomsMoreModel {
-        val lines = input.lines() // Splits the input string into lines
-        val firstLine = lines.firstOrNull() ?: "" // Get the first line or empty string if input is empty
-        val remainingText = lines.drop(1).joinToString("\n") // Join the rest of the lines back into a string
-
-        return SymptomsMoreModel(firstLine, remainingText)
-    }*/
 
     fun parseStringToModel(input: String): SymptomsMoreModel {
         val regex = """^([^\n:.؟!]+)[\n:.؟!](.+)""".toRegex() // Matches first phrase as header
@@ -347,17 +330,4 @@ class SymptomsDetailsFragment : Fragment() {
     fun splitByNewLine(input: String): List<String> {
         return input.lines().map { it.trim() }.filter { it.isNotEmpty() }
     }
-
-
-   /* private fun parseSymptomDetails(details: String): MutableList<VaccineAboutModel> {
-        return details.split("#").map { section ->
-            val parts = section.split("|")
-            if (parts.size == 2) {
-                VaccineAboutModel(parts[0], parts[1],false) // title | body
-            } else {
-                VaccineAboutModel("نامشخص", "اطلاعاتی موجود نیست.",false)
-            }
-        }.toMutableList()
-    }*/
-
 }

@@ -103,7 +103,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Collapsible content (hidden by default) -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/card_read_before_use_content"
                         android:layout_width="match_parent"
@@ -117,7 +116,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="16dp"> <!-- Added padding -->
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -125,7 +125,7 @@
                                 android:text="@string/calculator_description"
                                 android:textColor="@color/colorTextPrimary"
                                 android:textSize="16sp"
-                                android:layout_marginBottom="8dp"/>
+                                android:layout_marginBottom="8dp" />
 
                             <TextView
                                 android:layout_width="match_parent"

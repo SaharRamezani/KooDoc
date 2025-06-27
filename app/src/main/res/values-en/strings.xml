@@ -53,7 +53,8 @@
     <string name="choose_drug_first">Select the drug type first.</string>
     <string name="below_5kg_warning">⚠️ For children under 5 kg, consult a pharmacist or doctor.</string>
     <string name="fever_warning">⚠️ If using medication to reduce fever, read the fever evaluation section in the app.</string>
-    <string name="read_before_use">Important points about using the calculator</string>
+    <string name="read_before_use">Important points</string>
+    <string name="close">Close</string>
     <string name="Year">Year</string>
     <string name="Month">Month</string>
     <string name="Week">Week</string>

@@ -38,7 +38,7 @@ class CalculatorResultFragment : DialogFragment() {
         return MaterialAlertDialogBuilder(requireContext(), R.style.DialogBlurTheme)
             .setTitle(getString(R.string.calculator_result_title))
             .setMessage(resultText)
-            .setNeutralButton("بستن") { _, _ -> dismiss() }
+            .setNeutralButton(getString(R.string.close)) { _, _ -> dismiss() }
             .create()
     }
 
