@@ -74,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/is_lactoz"
+            android:text="@string/is_lactose"
             android:textColor="@color/button_outlined_border"
             android:layout_marginTop="18dp"
             android:textSize="16sp"
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/radio_lactoz_group">
+            android:id="@+id/radio_lactose_group">
             <RadioButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

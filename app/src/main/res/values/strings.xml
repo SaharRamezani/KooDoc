@@ -129,10 +129,14 @@
     <string name="choose_alergy">حساسیت های غیردارویی کودک را انتخاب کنید.</string>
     <string name="peanut">بادام زمینی</string>
     <string name="honey">عسل</string>
-    <string name="lactoz">لاکتوز</string>
     <string name="cow_protein">پروتئین شیر گاو</string>
     <string name="my_kid_milk">شیر خشک های مناسب فرزند من</string>
     <string name="my_kid_allergy_milk">شیرخشک متناسب با حساسیت کودک</string>
+    <string name="lact_none">ندارد</string>
+    <string name="lact_negligible">ناچیز</string>
+    <string name="lact_low">کم</string>
+    <string name="lact_present">دارد</string>
+    <string name="end_age_lifetime">آخر عمر</string>
     <string name="all_milk">همه شیر خشک ها</string>
     <string name="cow">گاو</string>
     <string name="milk_protein">پروتئین شیر</string>
@@ -161,7 +165,7 @@
     <string name="manual_milk">نمایش شیرخشک ها براساس حساسیت کودک</string>
     <string name="see_milks">مشاهده شیر خشک ها</string>
     <string name="age_month">سن(ماه)</string>
-    <string name="is_lactoz">به لاکتوز حساسیت دارد؟</string>
+    <string name="is_lactose">به لاکتوز حساسیت دارد؟</string>
     <string name="is_protein">به پروتئین شیرگاو حساسیت دارد؟</string>
     <string name="vaccine_main">اطلاعات واکسن</string>
     <string name="vaccine_age">واکسن بر اساس سن</string>
@@ -272,6 +276,14 @@
     <string name="my_kids">کودکان من</string>
     <string name="ok">باشه</string>
     <string name="select_milk_type">نوع شیر خشک:</string>
+    <string name="base">پایه:</string>
+    <string name="lactose">لاکتوز</string>
     <string name="diet">رژیمی</string>
     <string name="regular">رگولار</string>
+    <string name="to">تا</string>
+    <string name="search">جستجو ...</string>
+    <string name="assess_symptoms">ارزیابی علائم</string>
+    <string name="default_age_unit">ماه</string>
+    <string name="my_milk">شیرخشک من</string>
+    <string name="my_child_milk">شیر خشک کودکان من</string>
 </resources>

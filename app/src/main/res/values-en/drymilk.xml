@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="milk_use">
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Diet</item>
+        <item>Regular</item>
+        <item>Regular</item>
+        <item>Regular</item>
+    </string-array>
+
+    <string-array name="milk_type">
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Milk protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Hydrolyzed protein</item>
+        <item>Hydrolyzed protein</item>
+        <item>Hydrolyzed protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Soy protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Partially hydrolyzed protein</item>
+        <item>Cow\'s milk protein</item>
+        <item>Soy protein</item>
+        <item>Amino acid</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+        <item>Milk protein</item>
+    </string-array>
+</resources>

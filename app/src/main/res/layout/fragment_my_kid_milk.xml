@@ -47,7 +47,7 @@
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="شیر خشک کودکان من"/>
+                    android:text="@string/my_child_milk"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

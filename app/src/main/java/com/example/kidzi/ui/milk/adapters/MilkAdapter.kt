@@ -29,13 +29,26 @@ class MilkAdapter(
             binding.persianName.text = milk.persianName
             binding.enName.text = milk.englishName
             binding.txtType.text = milk.usage
-            binding.txtLact.text = when(milk.lac){
-                0 -> "ندارد"
-                1 -> "ناچیز"
-                2 -> "کم"
-                5 -> "دارد"
-                else -> "دارد"
+
+            binding.txtLact.text = when(milk.lac) {
+                0 -> context.getString(R.string.lact_none)
+                1 -> context.getString(R.string.lact_negligible)
+                2 -> context.getString(R.string.lact_low)
+                5 -> context.getString(R.string.lact_present)
+                else -> context.getString(R.string.lact_present)
             }
+            val currentLocale = context.resources.configuration.locales.get(0).language
+            if (currentLocale == "fa") {
+                binding.persianName.visibility = View.VISIBLE
+                binding.persianName.text = milk.persianName
+                binding.parenthesisLeft.visibility = View.VISIBLE
+                binding.parenthesisRight.visibility = View.VISIBLE
+            } else {
+                binding.persianName.visibility = View.GONE
+                binding.parenthesisLeft.visibility = View.GONE
+                binding.parenthesisRight.visibility = View.GONE
+            }
+
             //binding.txtLact.text = if(vaccine.lac) "دارد" else "ندارد"
             binding.txtStart.text = milk.startAge.toString()
             binding.txtEnd.text = milk.endAge.toString()
@@ -43,11 +56,11 @@ class MilkAdapter(
 
             if (milk.endAge > 36) {
                 binding.txtMonth.visibility = View.GONE
-                binding.txtEnd.text       = "آخر عمر"
+                binding.txtEnd.text = context.getString(R.string.end_age_lifetime)
             } else {
                 binding.txtMonth.visibility = View.VISIBLE
-                binding.txtEnd.visibility   = View.VISIBLE
-                binding.txtEnd.text         = milk.endAge.toString()
+                binding.txtEnd.visibility = View.VISIBLE
+                binding.txtEnd.text = milk.endAge.toString()
             }
 
             binding.txtBase.text = milk.milkType

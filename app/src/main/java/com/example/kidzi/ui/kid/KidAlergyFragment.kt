@@ -53,7 +53,7 @@ class KidAlergyFragment : Fragment() {
             try {
                 val kido = kidAlergyDao.getKidInfo(kidId)
                 binding.checkHoney.isChecked = kido.honey
-                binding.checkLactoz.isChecked = kido.lac
+                binding.checkLactose.isChecked = kido.lac
                 binding.checkPeanut.isChecked = kido.peanut
                 binding.checkProtein.isChecked = kido.cow
                 binding.checkElixir.isChecked = kido.elixir
@@ -69,9 +69,8 @@ class KidAlergyFragment : Fragment() {
             }
         }
 
-        // Keep this part here
         binding.checkHoney.setOnCheckedChangeListener { _, isChecked -> honey = isChecked }
-        binding.checkLactoz.setOnCheckedChangeListener { _, isChecked -> lac = isChecked }
+        binding.checkLactose.setOnCheckedChangeListener { _, isChecked -> lac = isChecked }
         binding.checkProtein.setOnCheckedChangeListener { _, isChecked -> cow = isChecked }
         binding.checkPeanut.setOnCheckedChangeListener { _, isChecked -> peanut = isChecked }
         binding.checkElixir.setOnCheckedChangeListener { _, isChecked -> elexir = isChecked }

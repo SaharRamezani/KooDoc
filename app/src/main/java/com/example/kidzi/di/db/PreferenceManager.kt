@@ -2,6 +2,7 @@ package com.example.kidzi.di.db
 
 import android.content.Context
 import android.util.Log
+import com.example.kidzi.R
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -16,7 +17,7 @@ private const val CAN_OPEN = "co"
 private const val AGE_UNIT_KEY = "age_unit"
 private val SELECTED_MILKS = "selected_milks"
 
-class PreferenceManager @Inject constructor(@ApplicationContext context: Context) {
+class PreferenceManager @Inject constructor(@ApplicationContext private val context: Context) {
     private val sharedPreferences = context.getSharedPreferences("MyPref",Context.MODE_PRIVATE)
 
     fun canOpen(): Boolean{return sharedPreferences.getBoolean(CAN_OPEN,true)}
@@ -26,7 +27,10 @@ class PreferenceManager @Inject constructor(@ApplicationContext context: Context
     }
 
     fun getLastAgeUnit(): String =
-        sharedPreferences.getString(AGE_UNIT_KEY, "ماه")!!
+        sharedPreferences.getString(
+            AGE_UNIT_KEY,
+            context.getString(R.string.default_age_unit)
+        )!!
 
     /** Saves the chosen age unit */
     fun updateLastAgeUnit(unit: String) {

@@ -47,11 +47,11 @@
                     android:text="@string/honey" />
 
                 <CheckBox
-                    android:id="@+id/check_lactoz"
+                    android:id="@+id/check_lactose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/lactoz" />
+                    android:text="@string/lactose" />
 
                 <CheckBox
                     android:id="@+id/check_protein"

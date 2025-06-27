@@ -325,8 +325,6 @@
         <item></item>
     </string-array>
 
-
-
     <string-array name="symptoms_related">
         <item></item>
         <item>استفراغ کودک زیر یک سال\n
@@ -352,7 +350,6 @@
         سرماخوردگی</item>
         <item></item>
     </string-array>
-
 
     <string-array name="symptoms_h1">
         <item>علل استفراغ همراه با اسهال:
@@ -493,7 +490,6 @@
 ترشحات را به محض مشاهده پاک کنید.
 از قرار دادن پنبه در مجرای گوش خودداری کنید. دلیل: ترشحات نگه‌داشته شده می‌تواند منجر به عفونت بافت داخلی مجرای گوش شود</item>
     </string-array>
-
 
     <string-array name="symptoms_h3">
         <item>مراقبت از نوزادانی که شیر خشک میخورند:
@@ -712,15 +708,4 @@
         <item></item>
         <item></item>
     </string-array>
-
-
-
-
-
-
-
-
-
-
-
 </resources>

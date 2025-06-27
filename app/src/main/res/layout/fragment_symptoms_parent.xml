@@ -37,7 +37,7 @@
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="ارزیابی علائم"/>
+                    android:text="@string/assess_symptoms"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -51,7 +51,7 @@
             android:layout_marginRight="18dp"
             android:layout_marginLeft="18dp"
             android:gravity="right|center_vertical"
-            android:queryHint="جستجو ..."
+            android:queryHint=""
             android:background="@drawable/search_bg"
             android:elevation="4dp" />
 
