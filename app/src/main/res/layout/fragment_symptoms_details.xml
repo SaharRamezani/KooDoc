@@ -67,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:clickable="true"
                         android:id="@+id/card_info"
-                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
                         app:cardCornerRadius="8dp"
                         android:layout_height="wrap_content">
@@ -127,7 +127,7 @@
                         android:clickable="true"
                         android:layout_marginTop="12dp"
                         android:id="@+id/card_emergency"
-                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
                         app:cardCornerRadius="8dp"
                         android:layout_height="wrap_content">
@@ -190,7 +190,7 @@
                         android:clickable="true"
                         android:layout_marginTop="12dp"
                         android:id="@+id/card_emergency_med"
-                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
                         app:cardCornerRadius="8dp"
                         android:layout_height="wrap_content">
@@ -252,7 +252,7 @@
                         android:clickable="true"
                         android:layout_marginTop="12dp"
                         android:id="@+id/card_emergency_low"
-                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
                         app:cardCornerRadius="8dp"
                         android:layout_height="wrap_content">
@@ -314,7 +314,7 @@
                         android:clickable="true"
                         android:layout_marginTop="12dp"
                         android:id="@+id/card_home"
-                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
                         app:cardCornerRadius="8dp"
                         android:layout_height="wrap_content">
@@ -376,14 +376,16 @@
                         android:clickable="true"
                         android:layout_marginTop="12dp"
                         android:id="@+id/card_relative"
-                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
                         app:cardCornerRadius="8dp"
                         android:layout_height="wrap_content">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:padding="12dp"
@@ -429,7 +431,7 @@
                         android:clickable="true"
                         android:layout_marginTop="12dp"
                         android:id="@+id/card_care"
-                        app:cardBackgroundColor="@color/surface_bg_medium"
+                        app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
                         app:cardCornerRadius="8dp"
                         android:layout_height="wrap_content">
@@ -460,16 +462,17 @@
                                 android:orientation="vertical"
                                 android:visibility="gone"
                                 android:id="@+id/layout_more_care">
+
                                 <View
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
-                                    android:background="@color/black"/>
-
+                                    android:background="@color/button_outlined_border"/>
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:clickable="true"
                                     android:id="@+id/card_care_h1"
+                                    app:cardBackgroundColor="@color/surface_bg_medium"
                                     android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -479,12 +482,6 @@
                                             android:layout_width="match_parent"
                                             android:orientation="horizontal"
                                             android:layout_height="wrap_content">
-                                            <ImageView
-                                                android:layout_width="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                                android:src="@drawable/ic_circle_black"
-                                                android:layout_height="wrap_content"/>
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -516,7 +513,7 @@
                                             <View
                                                 android:layout_width="match_parent"
                                                 android:layout_height="1dp"
-                                                android:background="@color/black"/>
+                                                android:background="@color/button_outlined_border"/>
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
@@ -533,13 +530,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:id="@+id/line_h2"
-                                    android:background="@color/black"/>
+                                    android:background="@color/button_outlined_border"/>
 
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:clickable="true"
                                     android:id="@+id/card_care_h2"
+                                    app:cardBackgroundColor="@color/surface_bg_medium"
                                     android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -549,12 +547,6 @@
                                             android:layout_width="match_parent"
                                             android:orientation="horizontal"
                                             android:layout_height="wrap_content">
-                                            <ImageView
-                                                android:layout_width="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                                android:src="@drawable/ic_circle_black"
-                                                android:layout_height="wrap_content"/>
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -603,13 +595,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:id="@+id/line_h3"
-                                    android:background="@color/black"/>
+                                    android:background="@color/button_outlined_border"/>
 
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:clickable="true"
                                     android:id="@+id/card_care_h3"
+                                    app:cardBackgroundColor="@color/surface_bg_medium"
                                     android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -619,12 +612,6 @@
                                             android:layout_width="match_parent"
                                             android:orientation="horizontal"
                                             android:layout_height="wrap_content">
-                                            <ImageView
-                                                android:layout_width="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                                android:src="@drawable/ic_circle_black"
-                                                android:layout_height="wrap_content"/>
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -673,13 +660,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:id="@+id/line_h4"
-                                    android:background="@color/black"/>
+                                    android:background="@color/button_outlined_border"/>
 
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:clickable="true"
                                     android:id="@+id/card_care_h4"
+                                    app:cardBackgroundColor="@color/surface_bg_medium"
                                     android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -689,12 +677,6 @@
                                             android:layout_width="match_parent"
                                             android:orientation="horizontal"
                                             android:layout_height="wrap_content">
-                                            <ImageView
-                                                android:layout_width="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                                android:src="@drawable/ic_circle_black"
-                                                android:layout_height="wrap_content"/>
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -743,13 +725,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:id="@+id/line_h5"
-                                    android:background="@color/black"/>
+                                    android:background="@color/button_outlined_border"/>
 
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:clickable="true"
                                     android:id="@+id/card_care_h5"
+                                    app:cardBackgroundColor="@color/surface_bg_medium"
                                     android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -759,12 +742,6 @@
                                             android:layout_width="match_parent"
                                             android:orientation="horizontal"
                                             android:layout_height="wrap_content">
-                                            <ImageView
-                                                android:layout_width="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                                android:src="@drawable/ic_circle_black"
-                                                android:layout_height="wrap_content"/>
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -812,13 +789,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:id="@+id/line_h6"
-                                    android:background="@color/black"/>
+                                    android:background="@color/button_outlined_border"/>
 
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:clickable="true"
                                     android:id="@+id/card_care_h6"
+                                    app:cardBackgroundColor="@color/surface_bg_medium"
                                     android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -828,12 +806,6 @@
                                             android:layout_width="match_parent"
                                             android:orientation="horizontal"
                                             android:layout_height="wrap_content">
-                                            <ImageView
-                                                android:layout_width="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                                android:src="@drawable/ic_circle_black"
-                                                android:layout_height="wrap_content"/>
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -882,13 +854,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:id="@+id/line_h7"
-                                    android:background="@color/black"/>
+                                    android:background="@color/button_outlined_border"/>
 
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:clickable="true"
                                     android:id="@+id/card_care_h7"
+                                    app:cardBackgroundColor="@color/surface_bg_medium"
                                     android:layout_height="wrap_content">
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -898,12 +871,6 @@
                                             android:layout_width="match_parent"
                                             android:orientation="horizontal"
                                             android:layout_height="wrap_content">
-                                            <ImageView
-                                                android:layout_width="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginRight="@dimen/margin_symptoms_cards"
-                                                android:src="@drawable/ic_circle_black"
-                                                android:layout_height="wrap_content"/>
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"

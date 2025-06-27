@@ -1,45 +1,40 @@
 package com.example.kidzi.ui.symptoms
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentSymptomsDetailsBinding
 import com.example.kidzi.ui.symptoms.adapter.SymtomsAdapter
-import com.example.kidzi.ui.vaccine.VaccineAboutModel
-import com.example.kidzi.ui.vaccine.adapters.VaccineAdapter
-import com.example.kidzi.ui.vaccine.adapters.VaccineInfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class SymptomsDetailsFragment : Fragment() {
 
-    var isInfo = false
-    var isEmergency = false
-    var isEmergency2 = false
-    var isEmergency3 = false
-    var isHome = false
-    var isRelate = false
-    var isCaring = false
-    var isH1 = false
-    var isH2 = false
-    var isH3 = false
-    var isH4 = false
-    var isH5 = false
-    var isH6 = false
-    var isH7 = false
+    private var isInfo = false
+    private var isCaring = false
+    private var isEmergency = false
+    private var isEmergency2 = false
+    private var isEmergency3 = false
+    private var isHome = false
+    private var isRelate = false
+    private var isH1 = false
+    private var isH2 = false
+    private var isH3 = false
+    private var isH4 = false
+    private var isH5 = false
+    private var isH6 = false
+    private var isH7 = false
 
-
-    private lateinit var adapter: VaccineAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentSymptomsDetailsBinding.inflate(inflater)
 
         val name = SymptomsDetailsFragmentArgs.fromBundle(requireArguments()).name
@@ -48,286 +43,244 @@ class SymptomsDetailsFragment : Fragment() {
         binding.txtHeader.text = name
         binding.txtCause.text = name
 
-        val infoDetail = resources.getStringArray(R.array.symptoms_headers)[row]
-        if(infoDetail.isNullOrEmpty()||infoDetail.length < 2){
-            binding.cardInfo.visibility = View.GONE
-        }else{
-            binding.infoDetail.text = infoDetail
-        }
-        binding.cardInfo.setOnClickListener {
-            isInfo = !isInfo
-            if(isInfo){
-                binding.layoutMoreInfo.visibility = View.VISIBLE
-                binding.arrowInfo.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreInfo.visibility = View.GONE
-                binding.arrowInfo.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-
-        val emergencyDetail = resources.getStringArray(R.array.symptoms_emergency)[row]
-        if(emergencyDetail.isNullOrEmpty()||emergencyDetail.length < 4){
-            binding.cardEmergency.visibility = View.GONE
-        }else{
-            val list = splitByNewLine(emergencyDetail)
-            val adapter = SymtomsAdapter(list,1)
-            binding.emergencyDetail.layoutManager = LinearLayoutManager(requireContext())
-            binding.emergencyDetail.adapter = adapter
-        }
-        binding.cardEmergency.setOnClickListener {
-            isEmergency = !isEmergency
-            if (isEmergency) {
-                binding.layoutMoreEmergency.visibility = View.VISIBLE
-                binding.arrowEmergency.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            } else {
-                binding.layoutMoreEmergency.visibility = View.GONE
-                binding.arrowEmergency.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-
-        }
-
-        val emergencyLow = resources.getStringArray(R.array.symptoms_emergency_low)[row]
-        if(emergencyLow.isNullOrEmpty()||emergencyLow.length < 2){
-            binding.cardEmergencyMed.visibility = View.GONE
-        }else{
-            val list = splitByNewLine(emergencyLow)
-            val adapter = SymtomsAdapter(list,2)
-            binding.emergencyMedDetail.layoutManager = LinearLayoutManager(requireContext())
-            binding.emergencyMedDetail.adapter = adapter
-        }
-        binding.cardEmergencyMed.setOnClickListener {
-            isEmergency2 = !isEmergency2
-            if(isEmergency2){
-                binding.layoutMoreEmergencyMed.visibility = View.VISIBLE
-                binding.arrowEmergencyMedium.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreEmergencyMed.visibility = View.GONE
-                binding.arrowEmergencyMedium.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-
-        val emergencyNo = resources.getStringArray(R.array.symptoms_emergency_no)[row]
-        if(emergencyNo.isNullOrEmpty()||emergencyNo.length < 2){
-            binding.cardEmergencyLow.visibility = View.GONE
-        }else{
-
-            val list = splitByNewLine(emergencyNo)
-            val adapter = SymtomsAdapter(list,3)
-            binding.emergencyLowDetail.layoutManager = LinearLayoutManager(requireContext())
-            binding.emergencyLowDetail.adapter = adapter
-        }
-        binding.cardEmergencyLow.setOnClickListener {
-            isEmergency3 = !isEmergency3
-            if(isEmergency3){
-                binding.layoutMoreEmergencyLow.visibility = View.VISIBLE
-                binding.arrowEmergencyLow.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreEmergencyLow.visibility = View.GONE
-                binding.arrowEmergencyLow.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-
-
-        val homeDetail = resources.getStringArray(R.array.symptoms_home)[row]
-        if(homeDetail.isNullOrEmpty()||homeDetail.length < 2){
-            binding.cardEmergencyLow.visibility = View.GONE
-        }else{
-            val list = splitByNewLine(homeDetail)
-            val adapter = SymtomsAdapter(list,4)
-            binding.homeDetail.layoutManager = LinearLayoutManager(requireContext())
-            binding.homeDetail.adapter = adapter
-        }
-        binding.cardHome.setOnClickListener {
-            isHome = !isHome
-            if(isHome){
-                binding.layoutMoreHome.visibility = View.VISIBLE
-                binding.arrowHome.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreHome.visibility = View.GONE
-                binding.arrowHome.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-
-
-        val relatedDetail = resources.getStringArray(R.array.symptoms_related)[row]
-        if(relatedDetail.isNullOrEmpty()||relatedDetail.length < 2){
-            binding.cardEmergencyLow.visibility = View.GONE
-        }else{
-            binding.relativeDetail.text = relatedDetail
-        }
-        binding.cardRelative.setOnClickListener {
-            isRelate = !isRelate
-            if(isRelate){
-                binding.layoutMoreRelative.visibility = View.VISIBLE
-                binding.arrowRelative.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreRelative.visibility = View.GONE
-                binding.arrowRelative.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-
-
-        binding.cardCare.setOnClickListener {
-            isCaring = !isCaring
-            if(isCaring){
-                binding.layoutMoreCare.visibility = View.VISIBLE
-                binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreCare.visibility = View.GONE
-                binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-
-        val h1Text = resources.getStringArray(R.array.symptoms_h1)[row]
-        val h2Text = resources.getStringArray(R.array.symptoms_h2)[row]
-        val h3Text = resources.getStringArray(R.array.symptoms_h3)[row]
-        val h4Text = resources.getStringArray(R.array.symptoms_h4)[row]
-        val h5Text = resources.getStringArray(R.array.symptoms_h5)[row]
-        val h6Text = resources.getStringArray(R.array.symptoms_h6)[row]
-        val h7Text = resources.getStringArray(R.array.symptoms_h7)[row]
-
-        if(h1Text.isNullOrEmpty()||h1Text.length < 2){
-            binding.cardCareH1.visibility = View.GONE
-        }else{
-            val h1 = parseStringToModel(h1Text)
-            binding.txtHeaderH1.text = h1.header
-            binding.h1Detail.text = h1.body
-        }
-
-        if(h2Text.isNullOrEmpty()||h2Text.length < 2){
-            binding.cardCareH2.visibility = View.GONE
-        }else{
-            val h2 = parseStringToModel(h2Text)
-            binding.txtHeaderH2.text = h2.header
-            binding.h2Detail.text = h2.body
-        }
-
-        if(h3Text.isNullOrEmpty()||h3Text.length < 2){
-            binding.cardCareH3.visibility = View.GONE
-        }else{
-            val h1 = parseStringToModel(h3Text)
-            binding.txtHeaderH3.text = h1.header
-            binding.h3Detail.text = h1.body
-        }
-
-        if(h4Text.isNullOrEmpty()||h4Text.length < 2){
-            binding.cardCareH4.visibility = View.GONE
-        }else{
-            val h1 = parseStringToModel(h4Text)
-            binding.txtHeaderH4.text = h1.header
-            binding.h4Detail.text = h1.body
-        }
-
-        if(h5Text.isNullOrEmpty()||h5Text.length < 2){
-            binding.cardCareH5.visibility = View.GONE
-        }else{
-            val h1 = parseStringToModel(h5Text)
-            binding.txtHeaderH5.text = h1.header
-            binding.h5Detail.text = h1.body
-        }
-
-        if(h6Text.isNullOrEmpty()||h6Text.length < 2){
-            binding.cardCareH6.visibility = View.GONE
-        }else{
-            val h1 = parseStringToModel(h6Text)
-            binding.txtHeaderH6.text = h1.header
-            binding.h6Detail.text = h1.body
-        }
+        setupInfo(binding, row)
+        setupEmergency(binding, row)
+        setupEmergencyMed(binding, row)
+        setupEmergencyLow(binding, row)
+        setupHome(binding, row)
+        setupRelative(binding, row)
+        setupCareSections(binding, row)
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
-
-        if(h7Text.isNullOrEmpty()||h7Text.length < 2){
-            binding.cardCareH7.visibility = View.GONE
-        }else{
-            val h1 = parseStringToModel(h7Text)
-            binding.txtHeaderH7.text = h1.header
-            binding.h7Detail.text = h1.body
-        }
-        binding.cardCareH1.setOnClickListener {
-            isH1 = !isH1
-            if(isH1){
-                binding.layoutMoreH1.visibility = View.VISIBLE
-                binding.arrowH1.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreH1.visibility = View.GONE
-                binding.arrowH1.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-        binding.cardCareH2.setOnClickListener {
-            isH2 = !isH2
-            if(isH2){
-                binding.layoutMoreH2.visibility = View.VISIBLE
-                binding.arrowH2.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreH2.visibility = View.GONE
-                binding.arrowH2.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-        binding.cardCareH3.setOnClickListener {
-            isH3 = !isH3
-            if(isH1){
-                binding.layoutMoreH3.visibility = View.VISIBLE
-                binding.arrowH3.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreH3.visibility = View.GONE
-                binding.arrowH3.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-        binding.cardCareH4.setOnClickListener {
-            isH4 = !isH4
-            if(isH4){
-                binding.layoutMoreH4.visibility = View.VISIBLE
-                binding.arrowH4.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreH4.visibility = View.GONE
-                binding.arrowH4.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-        binding.cardCareH5.setOnClickListener {
-            isH5 = !isH5
-            if(isH5){
-                binding.layoutMoreH5.visibility = View.VISIBLE
-                binding.arrowH5.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreH5.visibility = View.GONE
-                binding.arrowH5.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-        binding.cardCareH6.setOnClickListener {
-            isH6 = !isH6
-            if(isH6){
-                binding.layoutMoreH6.visibility = View.VISIBLE
-                binding.arrowH6.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreH6.visibility = View.GONE
-                binding.arrowH6.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
-        binding.cardCareH7.setOnClickListener {
-            isH7 = !isH7
-            if(isH7){
-                binding.layoutMoreH7.visibility = View.VISIBLE
-                binding.arrowH7.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
-            }else{
-                binding.layoutMoreH7.visibility = View.GONE
-                binding.arrowH7.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
-            }
-        }
 
         return binding.root
     }
 
-    fun parseStringToModel(input: String): SymptomsMoreModel {
-        val regex = """^([^\n:.؟!]+)[\n:.؟!](.+)""".toRegex() // Matches first phrase as header
+    private fun setupInfo(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        val infoDetail = resources.getStringArray(R.array.symptoms_headers)[row]
+        if (infoDetail.isNullOrEmpty() || infoDetail.length < 2) {
+            binding.cardInfo.visibility = View.GONE
+        } else {
+            binding.infoDetail.text = infoDetail
+            binding.cardInfo.setOnClickListener {
+                isInfo = !isInfo
+                binding.layoutMoreInfo.visibility = if (isInfo) View.VISIBLE else View.GONE
+                binding.arrowInfo.setImageDrawable(requireContext().getDrawable(
+                    if (isInfo) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+                ))
+            }
+        }
+    }
+
+    private fun setupEmergency(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        val detail = resources.getStringArray(R.array.symptoms_emergency)[row]
+        if (detail.isNullOrEmpty() || detail.length < 2) {
+            binding.cardEmergency.visibility = View.GONE
+        } else {
+            val list = splitByNewLine(detail)
+            binding.emergencyDetail.layoutManager = LinearLayoutManager(requireContext())
+            binding.emergencyDetail.adapter = SymtomsAdapter(list, 1)
+            binding.cardEmergency.setOnClickListener {
+                isEmergency = !isEmergency
+                binding.layoutMoreEmergency.visibility = if (isEmergency) View.VISIBLE else View.GONE
+                binding.arrowEmergency.setImageDrawable(requireContext().getDrawable(
+                    if (isEmergency) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+                ))
+            }
+        }
+    }
+
+    private fun setupEmergencyMed(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        val detail = resources.getStringArray(R.array.symptoms_emergency_low)[row]
+        if (detail.isNullOrEmpty() || detail.length < 2) {
+            binding.cardEmergencyMed.visibility = View.GONE
+        } else {
+            val list = splitByNewLine(detail)
+            binding.emergencyMedDetail.layoutManager = LinearLayoutManager(requireContext())
+            binding.emergencyMedDetail.adapter = SymtomsAdapter(list, 2)
+            binding.cardEmergencyMed.setOnClickListener {
+                isEmergency2 = !isEmergency2
+                binding.layoutMoreEmergencyMed.visibility = if (isEmergency2) View.VISIBLE else View.GONE
+                binding.arrowEmergencyMedium.setImageDrawable(requireContext().getDrawable(
+                    if (isEmergency2) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+                ))
+            }
+        }
+    }
+
+    private fun setupEmergencyLow(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        val detail = resources.getStringArray(R.array.symptoms_emergency_no)[row]
+        if (detail.isNullOrEmpty() || detail.length < 2) {
+            binding.cardEmergencyLow.visibility = View.GONE
+        } else {
+            val list = splitByNewLine(detail)
+            binding.emergencyLowDetail.layoutManager = LinearLayoutManager(requireContext())
+            binding.emergencyLowDetail.adapter = SymtomsAdapter(list, 3)
+            binding.cardEmergencyLow.setOnClickListener {
+                isEmergency3 = !isEmergency3
+                binding.layoutMoreEmergencyLow.visibility = if (isEmergency3) View.VISIBLE else View.GONE
+                binding.arrowEmergencyLow.setImageDrawable(requireContext().getDrawable(
+                    if (isEmergency3) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+                ))
+            }
+        }
+    }
+
+    private fun setupHome(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        val detail = resources.getStringArray(R.array.symptoms_home)[row]
+        if (detail.isNullOrEmpty() || detail.length < 2) {
+            binding.cardHome.visibility = View.GONE
+        } else {
+            val list = splitByNewLine(detail)
+            binding.homeDetail.layoutManager = LinearLayoutManager(requireContext())
+            binding.homeDetail.adapter = SymtomsAdapter(list, 4)
+            binding.cardHome.setOnClickListener {
+                isHome = !isHome
+                binding.layoutMoreHome.visibility = if (isHome) View.VISIBLE else View.GONE
+                binding.arrowHome.setImageDrawable(requireContext().getDrawable(
+                    if (isHome) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+                ))
+            }
+        }
+    }
+
+    private fun setupRelative(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        val detail = resources.getStringArray(R.array.symptoms_related)[row]
+        if (detail.isNullOrEmpty() || detail.length < 2) {
+            binding.cardRelative.visibility = View.GONE
+        } else {
+            binding.relativeDetail.text = detail
+            binding.cardRelative.setOnClickListener {
+                isRelate = !isRelate
+                binding.layoutMoreRelative.visibility = if (isRelate) View.VISIBLE else View.GONE
+                binding.arrowRelative.setImageDrawable(requireContext().getDrawable(
+                    if (isRelate) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+                ))
+            }
+        }
+    }
+
+    private fun setupCareSections(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        setupCare(
+            binding.cardCareH1, binding.layoutMoreH1, binding.arrowH1,
+            resources.getStringArray(R.array.symptoms_h1)[row],
+            R.id.txt_header_h1, R.id.h1_detail
+        ) { isH1 = it }
+
+        setupCare(
+            binding.cardCareH2, binding.layoutMoreH2, binding.arrowH2,
+            resources.getStringArray(R.array.symptoms_h2)[row],
+            R.id.txt_header_h2, R.id.h2_detail
+        ) { isH2 = it }
+
+        setupCare(
+            binding.cardCareH3, binding.layoutMoreH3, binding.arrowH3,
+            resources.getStringArray(R.array.symptoms_h3)[row],
+            R.id.txt_header_h3, R.id.h3_detail
+        ) { isH3 = it }
+
+        setupCare(
+            binding.cardCareH4, binding.layoutMoreH4, binding.arrowH4,
+            resources.getStringArray(R.array.symptoms_h4)[row],
+            R.id.txt_header_h4, R.id.h4_detail
+        ) { isH4 = it }
+
+        setupCare(
+            binding.cardCareH5, binding.layoutMoreH5, binding.arrowH5,
+            resources.getStringArray(R.array.symptoms_h5)[row],
+            R.id.txt_header_h5, R.id.h5_detail
+        ) { isH5 = it }
+
+        setupCare(
+            binding.cardCareH6, binding.layoutMoreH6, binding.arrowH6,
+            resources.getStringArray(R.array.symptoms_h6)[row],
+            R.id.txt_header_h6, R.id.h6_detail
+        ) { isH6 = it }
+
+        val h7Text = resources.getStringArray(R.array.symptoms_h7)[row]
+        if (h7Text.isNullOrEmpty() || h7Text.length < 2) {
+            binding.cardCareH7.visibility = View.GONE
+        } else {
+            val h7 = parseStringToModel(h7Text)
+            binding.txtHeaderH7.text = h7.header
+            binding.h7Detail.text = h7.body
+        }
+
+        binding.cardCareH7.setOnClickListener {
+            isH7 = !isH7
+
+            // Make sure the main caring advice expands when H7 expands
+            if (isH7) {
+                if (binding.layoutMoreCare.visibility != View.VISIBLE) {
+                    isCaring = true
+                    binding.layoutMoreCare.visibility = View.VISIBLE
+                    binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                }
+                binding.layoutMoreH7.visibility = View.VISIBLE
+                binding.arrowH7.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+            } else {
+                binding.layoutMoreH7.visibility = View.GONE
+                binding.arrowH7.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
+
+                // Optionally collapse Caring Advice if H7 is last open section
+                val anyOtherHOpen = isH1 || isH2 || isH3 || isH4 || isH5 || isH6
+                if (!anyOtherHOpen) {
+                    isCaring = false
+                    binding.layoutMoreCare.visibility = View.GONE
+                    binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
+                }
+            }
+        }
+
+        binding.cardCare.setOnClickListener {
+            isCaring = !isCaring
+            binding.layoutMoreCare.visibility = if (isCaring) View.VISIBLE else View.GONE
+            binding.arrowCare.setImageDrawable(requireContext().getDrawable(
+                if (isCaring) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+            ))
+        }
+    }
+
+    private fun setupCare(
+        card: View,
+        layout: View,
+        arrow: View,
+        text: String,
+        headerId: Int,
+        detailId: Int,
+        toggle: (Boolean) -> Unit
+    ) {
+        if (text.isNullOrEmpty() || text.length < 2) {
+            card.visibility = View.GONE
+        } else {
+            val model = parseStringToModel(text)
+
+            val header = card.findViewById<TextView>(headerId)
+            val detail = card.findViewById<TextView>(detailId)
+
+            header.text = model.header
+            detail.text = model.body
+
+            card.setOnClickListener {
+                val state = layout.visibility != View.VISIBLE
+                toggle(state)
+                layout.visibility = if (state) View.VISIBLE else View.GONE
+                arrow.setBackgroundResource(
+                    if (state) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+                )
+            }
+        }
+    }
+
+    private fun parseStringToModel(input: String): SymptomsMoreModel {
+        val regex = """^([^\n:.؟!]+)[\n:.؟!](.+)""".toRegex()
         val match = regex.find(input.trim())
-
-        val firstLine = match?.groupValues?.get(1)?.trim() ?: input.trim() // Extract header
-        val remainingText = match?.groupValues?.get(2)?.trim() ?: "" // Extract body
-
+        val firstLine = match?.groupValues?.get(1)?.trim() ?: input.trim()
+        val remainingText = match?.groupValues?.get(2)?.trim() ?: ""
         return SymptomsMoreModel(firstLine, remainingText)
     }
 
-    fun splitByNewLine(input: String): List<String> {
+    private fun splitByNewLine(input: String): List<String> {
         return input.lines().map { it.trim() }.filter { it.isNotEmpty() }
     }
 }
