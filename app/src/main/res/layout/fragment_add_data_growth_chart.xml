@@ -154,147 +154,67 @@
 
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="18dp"
-            android:layoutDirection="rtl">
-
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:hint="@string/weight"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                android:visibility="visible"
-                app:boxCornerRadiusTopEnd="15dp"
-                android:id="@+id/box_weight"
-                app:endIconMode="clear_text"
-                app:boxStrokeColor="@color/black"
-                app:boxStrokeWidth="2dp">
-
-                <EditText
-                    android:id="@+id/txt_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="12dp"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:hint="@string/head"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                android:visibility="visible"
-                app:boxCornerRadiusTopEnd="15dp"
-                android:id="@+id/box_head"
-                app:endIconMode="clear_text"
-                app:boxStrokeColor="@color/black"
-                app:boxStrokeWidth="2dp">
-
-                <EditText
-                    android:id="@+id/txt_head"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-        </LinearLayout>
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_marginTop="18dp"
-                android:id="@+id/layout_info">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:layoutDirection="rtl">
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="@string/your_kid_info"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:layout_centerInParent="true"
+                    android:hint="@string/weight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusTopStart="15dp"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    app:boxCornerRadiusBottomEnd="15dp"
+                    android:visibility="visible"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    android:id="@+id/box_weight"
+                    app:endIconMode="clear_text"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="2dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    <EditText
+                        android:id="@+id/txt_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="12dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="@string/head"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusTopStart="15dp"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    app:boxCornerRadiusBottomEnd="15dp"
+                    android:visibility="visible"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    android:id="@+id/box_head"
+                    app:endIconMode="clear_text"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="2dp">
+
+                    <EditText
+                        android:id="@+id/txt_head"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/weight2"
-                        android:textColor="@color/black"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="4dp"
-                        android:id="@+id/txt_w"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/length"
-                        android:textColor="@color/black"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="4dp"
-                        android:id="@+id/txt_l"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/head2"
-                        android:textColor="@color/black"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="4dp"
-                        android:id="@+id/txt_h"/>
-                </LinearLayout>
-
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-
-
 
             <TextView
                 android:layout_width="match_parent"
@@ -313,11 +233,6 @@
                 app:cornerRadius="8dp"
                 android:id="@+id/btn_register"
                 android:text="@string/register"/>
-
         </LinearLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </FrameLayout>

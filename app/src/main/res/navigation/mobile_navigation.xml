@@ -486,7 +486,7 @@
         android:id="@+id/growthMainFragment"
         android:name="com.example.kidzi.ui.milk.GrowthMainFragment"
         android:label="fragment_groth_main"
-        tools:layout="@layout/fragment_groth_main" >
+        tools:layout="@layout/fragment_growth_main" >
         <action
             android:id="@+id/action_growthMainFragment_to_kidsChooseFragment"
             app:destination="@id/kidsChooseFragment" />
@@ -510,7 +510,7 @@
         android:id="@+id/growthFollowFragment"
         android:name="com.example.kidzi.ui.milk.GrowthFollowFragment"
         android:label="fragment_growth_follow"
-        tools:layout="@layout/fragment_growth_follow" />
+        tools:layout="@layout/fragment_kid_growth" />
     <fragment
         android:id="@+id/symptomsParentFragment"
         android:name="com.example.kidzi.ui.symptoms.SymptomsParentFragment"

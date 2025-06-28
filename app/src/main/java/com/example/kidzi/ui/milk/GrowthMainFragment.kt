@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
-import com.example.kidzi.databinding.FragmentGrothMainBinding
+import com.example.kidzi.databinding.FragmentGrowthMainBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class GrowthMainFragment : Fragment() {
 
-    lateinit var binding: FragmentGrothMainBinding
+    lateinit var binding: FragmentGrowthMainBinding
 
     @Inject lateinit var preferenceManager: PreferenceManager
     @Inject lateinit var kidNamesDao: KidNameDao
@@ -25,7 +25,7 @@ class GrowthMainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentGrothMainBinding.inflate(inflater, container, false)
+        binding = FragmentGrowthMainBinding.inflate(inflater, container, false)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
         binding.btnChooseKid.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToKidsChooseFragment()) }
         binding.btnBoy.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToGrowthChartFragment(1)) }

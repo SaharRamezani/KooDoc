@@ -7,7 +7,6 @@
     android:background="@android:color/transparent"
     tools:context=".ui.milk.GrowthMainFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layoutDirection="rtl"
@@ -101,7 +100,7 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="@string/add_weight"
+                android:text="@string/kid_growth_chart"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 app:cornerRadius="@dimen/corner_milk_buttons"
                 android:backgroundTint="@color/surface_bg_medium"

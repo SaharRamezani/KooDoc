@@ -11,19 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentGrowthChartBinding
 import com.example.kidzi.ui.milk.adapters.GrowthChartAdapter
-import com.example.kidzi.ui.vaccine.VaccineAboutModel
-import com.example.kidzi.ui.vaccine.adapters.VaccineInfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import org.apache.poi.ss.usermodel.WorkbookFactory
-import java.io.InputStream
 import android.content.Context
 import android.graphics.Color
-import com.example.kidzi.ui.milk.GrowthModel
-
 
 @AndroidEntryPoint
 class GrowthChartFragment : Fragment() {
