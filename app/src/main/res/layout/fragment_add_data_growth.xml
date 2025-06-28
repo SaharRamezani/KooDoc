@@ -44,50 +44,10 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:id="@+id/btn_choose_kid"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:layout_constraintTop_toBottomOf="@id/btn_back"
-            android:layout_margin="18dp"
-            app:cardCornerRadius="25dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="textEnd"
-                    android:text="@string/current_kid"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:layout_marginRight="4dp"
-                    android:id="@+id/txt_kid_name"
-                    android:text="پویا"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </com.google.android.material.card.MaterialCardView>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/btn_choose_kid"
+            app:layout_constraintTop_toBottomOf="@id/btn_back"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_margin="18dp"
             android:orientation="vertical">
