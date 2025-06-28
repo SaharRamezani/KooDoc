@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentMilkIntroBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -39,10 +41,15 @@ class MilkIntroFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        try {
-            binding.txtKidName.text = kidNameDao.getKidInfo(preferenceManager.getCurrentKid()).name
-        }catch (e: Exception){
 
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val kidInfo = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
+                binding.txtKidName.text = kidInfo.name
+            } catch (e: Exception) {
+                // Handle error — e.g. show default text or log
+                binding.txtKidName.text = "نوزادی انتخاب نشده"
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.databinding.FragmentKidInfoBinding
 import com.example.kidzi.di.db.PreferenceManager
@@ -18,6 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.api.PersianPickerDate
 import ir.hamsaa.persiandatepicker.api.PersianPickerListener
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
@@ -40,28 +42,29 @@ class KidInfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentKidInfoBinding.inflate(inflater)
-
-        var id = KidInfoFragmentArgs.fromBundle(requireArguments()).kidId
-        isNew = KidInfoFragmentArgs.fromBundle(requireArguments()).new
+        val id = KidInfoShowFragmentArgs.fromBundle(requireArguments()).kidId
+        isNew = KidInfoShowFragmentArgs.fromBundle(requireArguments()).new
 
         if (!isNew) {
-            try {
-                val kidInfo = kidNameDao.getKidInfo(id)
-                binding.txtName.setText(kidInfo.name)
-                binding.txtHeight.setText(kidInfo.height.toString())
-                binding.txtWeight.setText(kidInfo.weight.toString())
-                binding.btnGroup.setText(kidInfo.birthDate)
+            viewLifecycleOwner.lifecycleScope.launch {
+                try {
+                    val kidInfo = kidNameDao.getKidInfo(id)
+                    binding.txtName.setText(kidInfo.name)
+                    binding.txtHeight.setText(kidInfo.height.toString())
+                    binding.txtWeight.setText(kidInfo.weight.toString())
+                    binding.btnGroup.setText(kidInfo.birthDate)
 
-                if (kidInfo.type == 1) {
-                    binding.radioWorkingYes.isChecked = true
-                } else {
-                    binding.radioWorkingNo.isChecked = true
+                    if (kidInfo.type == 1) {
+                        binding.radioWorkingYes.isChecked = true
+                    } else {
+                        binding.radioWorkingNo.isChecked = true
+                    }
+
+                } catch (e: Exception) {
+                    Log.e("KidInfoShowFragment", "Error loading kid info", e)
+                    Toast.makeText(requireContext(), "خطا در بارگذاری اطلاعات", Toast.LENGTH_SHORT).show()
                 }
-
-            } catch (e: Exception) {
-                Log.e("KidInfoFragment", "Error loading kid info", e)
             }
         }
 
@@ -92,43 +95,47 @@ class KidInfoFragment : Fragment() {
         }
 
         binding.btnNext.setOnClickListener {
-            if(binding.txtName.text.isNullOrEmpty())
-                Toast.makeText(requireContext(),"نام نوزاد را وارد کنید",Toast.LENGTH_SHORT).show()
-            else{
-                if (binding.txtHeight.text.isNullOrEmpty())
-                    Toast.makeText(requireContext(),"قد نوزاد را وارد کنید",Toast.LENGTH_SHORT).show()
-                else {
-                    if (binding.txtWeight.text.isNullOrEmpty())
-                        Toast.makeText(
-                            requireContext(),
-                            "وزن نوزاد را وارد کنید",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    else{
-                        if (binding.btnGroup.text.toString().contains("/")){
-                            val sex = if(binding.radioWorkingYes.isChecked) 1 else 2
-                            if (isNew){
-                                id = kidNameDao.insert(KidNameModel(
-                                    id,
-                                    binding.txtName.text.toString(),
-                                    binding.txtWeight.text.toString().toDouble(),
-                                    binding.txtHeight.text.toString().toDouble(),
-                                    binding.btnGroup.text.toString(),sex)).toInt()
-                                sharedPreferences.updateCurrentKid(id)
-                                Log.i("Log1","id of kid is: $id")
-                                findNavController().navigate(KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(id,isNew))
-                            }else{
-                                kidNameDao.update(KidNameModel(
-                                    id,
-                                    binding.txtName.text.toString(),
-                                    binding.txtWeight.text.toString().toDouble(),
-                                    binding.txtHeight.text.toString().toDouble(),
-                                    binding.btnGroup.text.toString(),sex))
-                                findNavController().navigate(KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(id,isNew))
-                            }
-                        }else{
-                            Toast.makeText(requireContext(),"تاریخ تولد نوزاد را وارد کنید",Toast.LENGTH_SHORT).show()
-                        }
+            if (binding.txtName.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "نام نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+            } else if (binding.txtHeight.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "قد نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+            } else if (binding.txtWeight.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "وزن نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+            } else if (!binding.btnGroup.text.toString().contains("/")) {
+                Toast.makeText(requireContext(), "تاریخ تولد نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+            } else {
+                val sex = if (binding.radioWorkingYes.isChecked) 1 else 2
+
+                viewLifecycleOwner.lifecycleScope.launch {
+                    if (isNew) {
+                        val newId = kidNameDao.insert(
+                            KidNameModel(
+                                0,
+                                binding.txtName.text.toString(),
+                                binding.txtWeight.text.toString().toDouble(),
+                                binding.txtHeight.text.toString().toDouble(),
+                                binding.btnGroup.text.toString(),
+                                sex
+                            )
+                        ).toInt()
+                        sharedPreferences.updateCurrentKid(newId)
+                        findNavController().navigate(
+                            KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(newId, isNew)
+                        )
+                    } else {
+                        kidNameDao.update(
+                            KidNameModel(
+                                id,
+                                binding.txtName.text.toString(),
+                                binding.txtWeight.text.toString().toDouble(),
+                                binding.txtHeight.text.toString().toDouble(),
+                                binding.btnGroup.text.toString(),
+                                sex
+                            )
+                        )
+                        findNavController().navigate(
+                            KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(id, isNew)
+                        )
                     }
                 }
             }

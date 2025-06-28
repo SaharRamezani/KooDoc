@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
@@ -13,6 +14,7 @@ import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.ui.kid.adapter.KidChooseAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -32,15 +34,24 @@ class KidChoose2Fragment : Fragment() {
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
-        val kidList = kidNameDao.getAll()
-
-        adapter = KidChooseAdapter(kidList) { position ->
-            preferenceManager.updateCurrentKid(kidList.get(position).id)
-            findNavController().navigate(KidChoose2FragmentDirections.actionKidChoose2FragmentToKidInfoShowFragment(kidList.get(position).id, false))
-        }
-
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
-        binding.recycler.adapter = adapter
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            val kidList = kidNameDao.getAll()
+
+            adapter = KidChooseAdapter(kidList) { position ->
+                val selectedKidId = kidList[position].id
+                preferenceManager.updateCurrentKid(selectedKidId)
+                findNavController().navigate(
+                    KidChoose2FragmentDirections.actionKidChoose2FragmentToKidInfoShowFragment(
+                        selectedKidId,
+                        false
+                    )
+                )
+            }
+
+            binding.recycler.adapter = adapter
+        }
 
         return binding.root
     }

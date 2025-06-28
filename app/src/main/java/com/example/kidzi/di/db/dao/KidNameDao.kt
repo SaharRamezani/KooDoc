@@ -11,15 +11,14 @@ import com.example.kidzi.di.db.models.KidNameModel
 interface KidNameDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(kidName: KidNameModel) : Long
+    suspend fun insert(kidName: KidNameModel): Long
 
     @Query("SELECT * FROM kid_name")
-    fun getAll(): List<KidNameModel>
+    suspend fun getAll(): List<KidNameModel>
 
     @Query("SELECT * FROM kid_name WHERE id = :id")
-    fun getKidInfo(id: Int): KidNameModel
+    suspend fun getKidInfo(id: Int): KidNameModel
 
     @Update
-    fun update(kidName: KidNameModel)
-
+    suspend fun update(kidName: KidNameModel)
 }

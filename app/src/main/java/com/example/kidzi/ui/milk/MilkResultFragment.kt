@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
@@ -20,6 +21,7 @@ import com.example.kidzi.ui.milk.adapters.MilkAdapter
 import com.example.kidzi.ui.vaccine.adapters.VaccineInfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import ir.hamsaa.persiandatepicker.util.PersianCalendar
+import kotlinx.coroutines.launch
 import java.util.Calendar
 import javax.inject.Inject
 
@@ -51,14 +53,6 @@ class MilkResultFragment : Fragment() {
         val binding = FragmentMilkResultBinding.inflate(inflater, container, false)
         val args = MilkResultFragmentArgs.fromBundle(requireArguments())
 
-        val milkList = try {
-            generateMilkList(args.type, args.age, args.cow, args.lac)
-        } catch (e: Exception) {
-            Log.e("MilkResultFragment", "Failed to generate list", e)
-            emptyList()
-        }
-
-        setupRecycler(binding, milkList)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         binding.txtTitle.text = when (args.type) {
@@ -66,18 +60,25 @@ class MilkResultFragment : Fragment() {
             else -> getString(R.string.my_kid_milk)
         }
 
+        // Fetch kid info and generate list inside coroutine
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val kid = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
+                val age = kid.birthDate.let { getAgeInMonthsEn(it) }
+
+                val milkList = generateMilkList(args.type, age, args.cow, args.lac)
+                setupRecycler(binding, milkList)
+
+            } catch (e: Exception) {
+                Log.e("MilkResultFragment", "Error loading milk list", e)
+                Toast.makeText(requireContext(), "خطا در بارگذاری لیست", Toast.LENGTH_SHORT).show()
+                setupRecycler(binding, emptyList())
+            }
+        }
+
         return binding.root
     }
 
-//    private fun setupRecycler(binding: FragmentMilkResultBinding, milkList: List<MilkModel>) {
-//        try {
-//            adapter = MilkAdapter(milkList)
-//            binding.recycler.layoutManager = LinearLayoutManager(requireContext())
-//            binding.recycler.adapter = adapter
-//        } catch (e: Exception) {
-//            Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_SHORT).show()
-//        }
-//    }
     private fun setupRecycler(binding: FragmentMilkResultBinding, milkList: List<MilkModel>) {
         try {
             // Step 1: Get previously selected items
@@ -96,7 +97,7 @@ class MilkResultFragment : Fragment() {
         }
     }
 
-    private fun generateMilkList(type: Int, inputAge: Int?, inputCow: Boolean?, inputLac: Boolean?): List<MilkModel> {
+    private fun generateMilkList(type: Int, age: Int, inputCow: Boolean?, inputLac: Boolean?): List<MilkModel> {
         val list = mutableListOf<MilkModel>()
 
         val englishName = resources.getStringArray(R.array.milk_name_en)
@@ -107,12 +108,8 @@ class MilkResultFragment : Fragment() {
         val milkUseArr = resources.getStringArray(R.array.milk_use)
         val milkLac = resources.getStringArray(R.array.milk_lac)
 
-        var cow = inputCow ?: false
-        var lac = inputLac ?: false
-
-        val kidId = preferenceManager.getCurrentKid()
-        val kid = kidNameDao.getKidInfo(kidId)
-        val age = kid?.birthDate?.let { getAgeInMonthsEn(it) } ?: 0
+        val cow = inputCow ?: false
+        val lac = inputLac ?: false
 
         for (i in englishName.indices) {
             val start = monthStart[i].toInt()

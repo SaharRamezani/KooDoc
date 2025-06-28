@@ -35,7 +35,7 @@ class GrowthMainFragment : Fragment() {
         binding.btnGirl.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToGrowthChartFragment(2)) }
         binding.btnGrowth.setOnClickListener {
             val kidId = preferenceManager.getCurrentKid()
-            if (kidId != -1) {
+            if (kidId != 0) {
                 findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToKidGrowthFragment())
             } else {
                 Toast.makeText(requireContext(), getString(R.string.error_choose_child), Toast.LENGTH_SHORT).show()
