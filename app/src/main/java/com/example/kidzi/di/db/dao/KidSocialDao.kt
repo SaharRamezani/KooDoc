@@ -5,23 +5,20 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.kidzi.di.db.models.KidAlergyModel
-import com.example.kidzi.di.db.models.KidDiseaseModel
 import com.example.kidzi.di.db.models.KidSocialModel
 
 @Dao
 interface KidSocialDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(kidSocialModel: KidSocialModel)
-
-    @Query("SELECT * FROM kid_social")
-    fun getAll(): List<KidSocialModel>
-
-    @Query("SELECT * FROM kid_social WHERE kidId = :id")
-    fun getKidInfo(id: Int): KidSocialModel
+    suspend fun insert(kidSocialModel: KidSocialModel)
 
     @Update
-    fun update(kidSocialModel: KidSocialModel)
+    suspend fun update(kidSocialModel: KidSocialModel)
 
+    @Query("SELECT * FROM kid_social")
+    suspend fun getAll(): List<KidSocialModel>
+
+    @Query("SELECT * FROM kid_social WHERE kidId = :id")
+    suspend fun getKidInfo(id: Int): KidSocialModel?
 }

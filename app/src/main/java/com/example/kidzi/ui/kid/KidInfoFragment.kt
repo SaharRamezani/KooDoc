@@ -119,7 +119,10 @@ class KidInfoFragment : Fragment() {
                                 sex
                             )
                         ).toInt()
+
                         sharedPreferences.updateCurrentKid(newId)
+                        Log.i("KidInfoFragment", "Inserted KidNameModel, newId = $newId")
+
                         findNavController().navigate(
                             KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(newId, isNew)
                         )
@@ -134,6 +137,9 @@ class KidInfoFragment : Fragment() {
                                 sex
                             )
                         )
+
+                        Log.i("KidInfoFragment", "Inserted KidNameModel, id = $id")
+
                         findNavController().navigate(
                             KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(id, isNew)
                         )

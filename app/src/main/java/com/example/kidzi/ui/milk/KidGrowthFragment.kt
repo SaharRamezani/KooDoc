@@ -50,6 +50,7 @@ class KidGrowthFragment : Fragment() {
                     val (m, p3, p97) = readGrowthChartFromCSV(requireContext(), sex)
 
                     launch(Dispatchers.Main) {
+                        binding.txtKidName.text = kidInfo.name
                         setupMultiLineChart(binding.lineChart, m, p3, p97)
                     }
 

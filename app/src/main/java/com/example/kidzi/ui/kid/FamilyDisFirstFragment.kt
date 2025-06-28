@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentFamilyDisFirstBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.FamilyDiseaseDao
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
@@ -58,18 +60,28 @@ class FamilyDisFirstFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val data = familyDiseaseDao.getAll()
-        if(data.size > 1){
-            binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
-            binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
-        }else if(data.isEmpty()){
-            binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.white))
-            binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.white))
-        }else{
-            if(data[0].parentId == 1)
-                binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
-            else
-                binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val data = familyDiseaseDao.getAll()
+
+                if (data.size > 1) {
+                    binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
+                    binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
+                } else if (data.isEmpty()) {
+                    binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.white))
+                    binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.white))
+                } else {
+                    if (data[0].parentId == 1) {
+                        binding.fatherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
+                    } else {
+                        binding.motherDisease.setCardBackgroundColor(requireContext().getColor(R.color.button_success_bg))
+                    }
+                }
+
+            } catch (e: Exception) {
+                // Optionally log error or show Toast
+                // Log.e("FamilyDisFirstFragment", "Failed to load family diseases", e)
+            }
         }
     }
 }

@@ -2,36 +2,34 @@ package com.example.kidzi.ui.kid
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidAlergyBinding
-import com.example.kidzi.databinding.FragmentKidDiseaseBinding
 import com.example.kidzi.di.db.dao.KidAlergyDao
-import com.example.kidzi.di.db.dao.KidDiseaseDao
 import com.example.kidzi.di.db.models.KidAlergyModel
-import com.example.kidzi.di.db.models.KidDiseaseModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
-
 
 @AndroidEntryPoint
 class KidAlergyFragment : Fragment() {
-    var isNew = true
-    var kidId = 0
-    lateinit var binding: FragmentKidAlergyBinding
+
+    private var isNew = true
+    private var kidId = 0
+    private lateinit var binding: FragmentKidAlergyBinding
 
     @Inject lateinit var kidAlergyDao: KidAlergyDao
-    var honey = false
-    var peanut = false
-    var lac = false
-    var cow = false
-    var elexir = false
-    var diet = false
+
+    private var honey = false
+    private var peanut = false
+    private var lac = false
+    private var cow = false
+    private var elexir = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,23 +48,7 @@ class KidAlergyFragment : Fragment() {
         Log.i("Log1", "kidId is: $kidId")
 
         if (!isNew) {
-            try {
-                val kido = kidAlergyDao.getKidInfo(kidId)
-                binding.checkHoney.isChecked = kido.honey
-                binding.checkLactose.isChecked = kido.lac
-                binding.checkPeanut.isChecked = kido.peanut
-                binding.checkProtein.isChecked = kido.cow
-                binding.checkElixir.isChecked = kido.elixir
-
-                // Set internal state variables as well
-                honey = kido.honey
-                lac = kido.lac
-                peanut = kido.peanut
-                cow = kido.cow
-                elexir = kido.elixir
-            } catch (e: Exception) {
-                Log.e("AlergyLoad", "Failed to load allergy data", e)
-            }
+            loadAlergyData()
         }
 
         binding.checkHoney.setOnCheckedChangeListener { _, isChecked -> honey = isChecked }
@@ -76,32 +58,77 @@ class KidAlergyFragment : Fragment() {
         binding.checkElixir.setOnCheckedChangeListener { _, isChecked -> elexir = isChecked }
 
         binding.btnNext.setOnClickListener {
-            if (saveAlergy()) {
-                findNavController().navigate(
-                    KidAlergyFragmentDirections.actionKidAlergyFragmentToKidSocial(kidId, isNew)
-                )
-            } else {
-                Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
-            }
+            saveAlergyAndNavigateNext()
         }
 
         binding.btnBack.setOnClickListener {
-            if (saveAlergy()) {
+            saveAlergyAndNavigateBack()
+        }
+    }
+
+    private fun loadAlergyData() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val kido = kidAlergyDao.getKidInfo(kidId) ?: return@launch
+
+                binding.checkHoney.isChecked = kido.honey
+                binding.checkLactose.isChecked = kido.lac
+                binding.checkPeanut.isChecked = kido.peanut
+                binding.checkProtein.isChecked = kido.cow
+                binding.checkElixir.isChecked = kido.elixir
+
+                honey = kido.honey
+                lac = kido.lac
+                peanut = kido.peanut
+                cow = kido.cow
+                elexir = kido.elixir
+
+            } catch (e: Exception) {
+                Log.e("AlergyLoad", "Failed to load allergy data", e)
+                Toast.makeText(requireContext(), "خطا در بارگذاری اطلاعات", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun saveAlergyAndNavigateNext() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val model = KidAlergyModel(kidId, peanut, honey, lac, cow, elexir)
+                if (isNew) {
+                    kidAlergyDao.insert(model)
+                } else {
+                    kidAlergyDao.update(model)
+                }
+
                 findNavController().navigate(
-                    KidAlergyFragmentDirections.actionKidAlergyFragmentToKidDiseaseFragment(kidId, false)
+                    KidAlergyFragmentDirections.actionKidAlergyFragmentToKidSocial(kidId, isNew)
                 )
-            } else {
+
+            } catch (e: Exception) {
+                Log.e("AlergySave", "Failed to save allergy data", e)
                 Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun saveAlergy(): Boolean{
-        if(isNew)
-            kidAlergyDao.insert(KidAlergyModel(kidId,peanut,honey,lac,cow,elexir))
-        else
-            kidAlergyDao.update(KidAlergyModel(kidId,peanut,honey,lac,cow,elexir))
-        return true
-    }
+    private fun saveAlergyAndNavigateBack() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val model = KidAlergyModel(kidId, peanut, honey, lac, cow, elexir)
+                if (isNew) {
+                    kidAlergyDao.insert(model)
+                } else {
+                    kidAlergyDao.update(model)
+                }
 
+                findNavController().navigate(
+                    KidAlergyFragmentDirections.actionKidAlergyFragmentToKidDiseaseFragment(kidId, false)
+                )
+
+            } catch (e: Exception) {
+                Log.e("AlergySave", "Failed to save allergy data", e)
+                Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 }
