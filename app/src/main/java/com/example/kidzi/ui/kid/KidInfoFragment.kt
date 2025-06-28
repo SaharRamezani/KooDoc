@@ -1,11 +1,12 @@
 package com.example.kidzi.ui.kid
 
-import android.R.attr.typeface
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import com.example.kidzi.util.NumberFormatter
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -30,18 +31,13 @@ class KidInfoFragment : Fragment() {
 
     @Inject
     lateinit var kidNameDao: KidNameDao
-
     var isNew = false
 
-    private fun convertToPersianDigits(input: String): String {
-        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
-        return input.map { if (it.isDigit()) persianDigits[it.digitToInt()] else it }.joinToString("")
-    }
-
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentKidInfoBinding.inflate(inflater)
         val id = KidInfoShowFragmentArgs.fromBundle(requireArguments()).kidId
         isNew = KidInfoShowFragmentArgs.fromBundle(requireArguments()).new
@@ -86,7 +82,8 @@ class KidInfoFragment : Fragment() {
                 .setListener(object : PersianPickerListener {
                     override fun onDateSelected(persianPickerDate: PersianPickerDate) {
                         val date = "${persianPickerDate.persianYear}/${persianPickerDate.persianMonth}/${persianPickerDate.persianDay}"
-                        binding.btnGroup.text = convertToPersianDigits(date)
+                        binding.btnGroup.text =
+                            context?.let { it1 -> NumberFormatter.formatNumber(it1, date) }
                     }
                     override fun onDismissed() {
                     }
@@ -118,7 +115,10 @@ class KidInfoFragment : Fragment() {
                                 sex
                             )
                         ).toInt()
+
                         sharedPreferences.updateCurrentKid(newId)
+                        Log.i("KidInfoFragment", "Inserted KidNameModel, newId = $newId")
+
                         findNavController().navigate(
                             KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(newId, isNew)
                         )
@@ -133,6 +133,9 @@ class KidInfoFragment : Fragment() {
                                 sex
                             )
                         )
+
+                        Log.i("KidInfoFragment", "Inserted KidNameModel, id = $id")
+
                         findNavController().navigate(
                             KidInfoFragmentDirections.actionKidInfoFragmentToKidDiseaseFragment(id, isNew)
                         )

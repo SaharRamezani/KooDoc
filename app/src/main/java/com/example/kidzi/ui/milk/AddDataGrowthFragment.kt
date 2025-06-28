@@ -89,7 +89,9 @@ class AddDataGrowthFragment : Fragment() {
                 growthDataDao.insert(growthData)
                 launch(Dispatchers.Main) {
                     Toast.makeText(requireContext(), getString(R.string.success_save), Toast.LENGTH_SHORT).show()
-                    findNavController().navigateUp()
+                    findNavController().navigate(
+                        AddDataGrowthFragmentDirections.actionAddDataGrowthFragmentToKidGrowthFragment()
+                    )
                 }
             } catch (e: Exception) {
                 e.printStackTrace()

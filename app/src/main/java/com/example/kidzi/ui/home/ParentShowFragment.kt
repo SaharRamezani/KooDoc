@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentParentShowBinding
 import com.example.kidzi.di.db.PreferenceManager
+import com.example.kidzi.util.NumberFormatter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -34,7 +35,7 @@ class ParentShowFragment : Fragment() {
                 val month = datePicker.getSelectedMonth()
                 val day = datePicker.getSelectedDay()
                 val selectedDate = "$year/${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}"
-                button.text = convertToPersianDigits(selectedDate)
+                button.text = context?.let { NumberFormatter.formatNumber(it, selectedDate) }
                 preferenceManager.setParentBirth(selectedDate)
             }
             .setNegativeButton("لغو", null)
@@ -43,24 +44,15 @@ class ParentShowFragment : Fragment() {
         dialog.show()
     }
 
-    private fun convertToPersianDigits(input: String): String {
-        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
-        return input.map {
-            if (it.isDigit()) persianDigits[it.digitToInt()] else it
-        }.joinToString("")
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentParentShowBinding.inflate(inflater)
 
-        // Restore saved name
         binding.txtName.setText(preferenceManager.getParentName())
         binding.btnDate.text = preferenceManager.getParentBirth()
-        binding.btnDate.text = convertToPersianDigits(preferenceManager.getParentBirth())
+        binding.btnDate.text = context?.let { NumberFormatter.formatNumber(it, preferenceManager.getParentBirth()) }
 
         if (preferenceManager.getParentCare() == 1)
             binding.radioCaringYes.isChecked = true

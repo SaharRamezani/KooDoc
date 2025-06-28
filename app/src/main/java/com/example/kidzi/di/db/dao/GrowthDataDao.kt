@@ -10,6 +10,9 @@ interface GrowthDataDao {
     @Insert
     fun insert(growthData: KidGrowthModel)
 
-    @Query("SELECT * FROM kid_growth WHERE kidId = :kidId ORDER BY ageWeeks ASC")
+    @Query("SELECT * FROM kid_growth WHERE kidId = :kidId ORDER BY ageWeeks DESC")
     abstract fun getAllGrowthDataForKid(kidId: Int): List<KidGrowthModel>
+
+    @Query("DELETE FROM kid_growth WHERE ageWeeks = :age AND kidId = :kidId")
+    fun deleteByAgeAndKidId(age: Int, kidId: Int)
 }

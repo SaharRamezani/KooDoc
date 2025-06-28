@@ -107,7 +107,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="16dp"
-            tools:listitem="@layout/list_growth" />
+            tools:listitem="@layout/list_growth_removable" />
 
         <!-- FAB -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton

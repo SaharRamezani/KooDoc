@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentParentInfoBinding
 import com.example.kidzi.di.db.PreferenceManager
+import com.example.kidzi.util.NumberFormatter
 import com.pouyaheydari.lineardatepicker.PersianLinearDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -20,13 +20,6 @@ import javax.inject.Inject
 class ParentInfoFragment : Fragment() {
     @Inject
     lateinit var sharedPreferences: PreferenceManager
-
-    private fun convertToPersianDigits(input: String): String {
-        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
-        return input.map {
-            if (it.isDigit()) persianDigits[it.digitToInt()] else it
-        }.joinToString("")
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,7 +60,7 @@ class ParentInfoFragment : Fragment() {
                 val day = datePicker.getSelectedDay()
                 val selectedDate = "$year/${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}"
                 // Update button text
-                button.text = convertToPersianDigits(selectedDate)
+                button.text = context?.let { NumberFormatter.formatNumber(it, selectedDate) }
             }
             .setNegativeButton("لغو", null)
             .create()

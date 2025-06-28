@@ -519,7 +519,11 @@
         android:id="@+id/fragment_add_data_growth_chart"
         android:name="com.example.kidzi.ui.milk.AddDataGrowthFragment"
         android:label="fragment_add_data_growth_chart"
-        tools:layout="@layout/fragment_add_data_growth" />
+        tools:layout="@layout/fragment_add_data_growth">
+        <action
+            android:id="@+id/action_addDataGrowthFragment_to_kidGrowthFragment"
+            app:destination="@id/kidGrowthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/symptomsParentFragment"
         android:name="com.example.kidzi.ui.symptoms.SymptomsParentFragment"
