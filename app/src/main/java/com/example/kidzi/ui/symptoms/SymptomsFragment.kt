@@ -54,7 +54,6 @@ class SymptomsFragment : Fragment() {
                 val kid = kidNamesDao.getKidInfo(preferenceManager.getCurrentKid())
                 binding.txtKidName.text = kid.name
             } catch (e: Exception) {
-                // Handle error gracefully (e.g., no kid selected or DB issue)
                 binding.txtKidName.text = "نوزادی انتخاب نشده"
             }
         }
