@@ -71,12 +71,6 @@ Interested in contributing? Feel free to open issues, fork the repository, and s
 
 ---
 
-## 📬 Contact
-
-For questions or collaborations, reach out via [email].
-
----
-
 ## 📄 License
 
 MIT License - see the [LICENSE](LICENSE) file for details.

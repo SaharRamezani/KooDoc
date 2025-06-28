@@ -70,7 +70,7 @@ dependencies {
 
     //persian date :
     implementation (libs.persianlineardatepicker)
-
+    implementation 'com.github.samanzamani.persiandate:PersianDate:1.4.4'
     implementation libs.persian.date.picker.dialog
     implementation libs.persiandate
 

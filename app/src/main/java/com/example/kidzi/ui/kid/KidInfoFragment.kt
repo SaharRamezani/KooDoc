@@ -1,6 +1,6 @@
 package com.example.kidzi.ui.kid
 
-import android.R.attr.typeface
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -38,10 +38,11 @@ class KidInfoFragment : Fragment() {
         return input.map { if (it.isDigit()) persianDigits[it.digitToInt()] else it }.joinToString("")
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentKidInfoBinding.inflate(inflater)
         val id = KidInfoShowFragmentArgs.fromBundle(requireArguments()).kidId
         isNew = KidInfoShowFragmentArgs.fromBundle(requireArguments()).new

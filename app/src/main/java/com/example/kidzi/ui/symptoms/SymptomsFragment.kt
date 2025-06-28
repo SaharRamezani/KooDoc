@@ -1,15 +1,13 @@
 package com.example.kidzi.ui.symptoms
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentSymptomsBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
@@ -22,8 +20,6 @@ class SymptomsFragment : Fragment() {
 
     private var _binding: FragmentSymptomsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     @Inject lateinit var preferenceManager: PreferenceManager
@@ -54,7 +50,7 @@ class SymptomsFragment : Fragment() {
                 val kid = kidNamesDao.getKidInfo(preferenceManager.getCurrentKid())
                 binding.txtKidName.text = kid.name
             } catch (e: Exception) {
-                binding.txtKidName.text = "نوزادی انتخاب نشده"
+                binding.txtKidName.text = getString(R.string.error_choose_child)
             }
         }
     }

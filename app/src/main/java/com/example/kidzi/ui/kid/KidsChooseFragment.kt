@@ -8,13 +8,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidsChooseBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.ui.kid.adapter.KidChooseAdapter
-import com.example.kidzi.ui.vaccine.VaccineAgeFragmentDirections
-import com.example.kidzi.ui.vaccine.adapters.VaccineAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -30,13 +27,12 @@ class KidsChooseFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentKidsChooseBinding.inflate(inflater)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
 
-        // Fetch data inside coroutine
         viewLifecycleOwner.lifecycleScope.launch {
             val kidList = kidNameDao.getAll()
 

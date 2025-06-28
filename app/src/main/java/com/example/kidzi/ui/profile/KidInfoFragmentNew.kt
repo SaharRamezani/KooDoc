@@ -40,10 +40,9 @@ class KidInfoFragmentNew : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentKidInfoNewBinding.inflate(inflater)
 
-        var id = KidInfoFragmentNewArgs.fromBundle(requireArguments()).kidId
         isNew = KidInfoFragmentNewArgs.fromBundle(requireArguments()).new
 
         binding.btnBack.setOnClickListener {

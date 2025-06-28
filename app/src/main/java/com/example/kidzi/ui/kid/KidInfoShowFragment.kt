@@ -1,6 +1,6 @@
 package com.example.kidzi.ui.kid
 
-import android.R.attr.typeface
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.kidzi.databinding.FragmentKidInfoBinding
 import com.example.kidzi.databinding.FragmentKidInfoShowBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
@@ -20,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.api.PersianPickerDate
 import ir.hamsaa.persiandatepicker.api.PersianPickerListener
-import ir.hamsaa.persiandatepicker.util.PersianCalendarUtils
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -40,13 +38,14 @@ class KidInfoShowFragment : Fragment() {
         return input.map { if (it.isDigit()) persianDigits[it.digitToInt()] else it }.joinToString("")
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentKidInfoShowBinding.inflate(inflater)
 
-        var id = KidInfoShowFragmentArgs.fromBundle(requireArguments()).kidId
+        val id = KidInfoShowFragmentArgs.fromBundle(requireArguments()).kidId
         isNew = KidInfoShowFragmentArgs.fromBundle(requireArguments()).new
 
         if (!isNew) {

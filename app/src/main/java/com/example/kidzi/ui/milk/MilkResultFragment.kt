@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import saman.zamani.persiandate.PersianDate
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -15,12 +16,9 @@ import com.example.kidzi.databinding.FragmentMilkResultBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidAlergyDao
 import com.example.kidzi.di.db.dao.KidNameDao
-import com.example.kidzi.di.helpers.PersianDateHelper
 import com.example.kidzi.di.helpers.PersianDateHelper.Companion.toEnglishDigits
 import com.example.kidzi.ui.milk.adapters.MilkAdapter
-import com.example.kidzi.ui.vaccine.adapters.VaccineInfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import ir.hamsaa.persiandatepicker.util.PersianCalendar
 import kotlinx.coroutines.launch
 import java.util.Calendar
 import javax.inject.Inject
@@ -38,14 +36,20 @@ class MilkResultFragment : Fragment() {
         val parts = persianDate.toEnglishDigits().split("/")
         val (year, month, day) = parts.map { it.toInt() }
 
-        val calendar = PersianCalendar()
-        calendar.setPersianDate(year, month - 1, day)
+        val dobPersian = PersianDate().apply {
+            setShYear(year)
+            setShMonth(month)
+            setShDay(day)
+        }
 
-        val dob = Calendar.getInstance().apply { timeInMillis = calendar.timeInMillis }
+        val dobGregorian = Calendar.getInstance().apply {
+            timeInMillis = dobPersian.toDate().time
+        }
+
         val now = Calendar.getInstance()
 
-        val yearDiff = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
-        val monthDiff = now.get(Calendar.MONTH) - dob.get(Calendar.MONTH)
+        val yearDiff = now.get(Calendar.YEAR) - dobGregorian.get(Calendar.YEAR)
+        val monthDiff = now.get(Calendar.MONTH) - dobGregorian.get(Calendar.MONTH)
         return yearDiff * 12 + monthDiff
     }
 
