@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/transparent"
     android:layout_height="match_parent"
-    tools:context=".ui.milk.GrowthFollowFragment">
+    tools:context=".ui.milk.AddDataGrowthChartFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

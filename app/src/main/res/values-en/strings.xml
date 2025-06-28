@@ -59,6 +59,8 @@
     <string name="Month">Month</string>
     <string name="Week">Week</string>
     <string name="unit">Unit</string>
+    <string name="boys">Boys</string>
+    <string name="girls">Girls</string>
     <string name="add_new_data">Add new data</string>
     <string name="kid_growth_chart">My kid\'s growth chart</string>
     <string name="warning_fever_usage">Use every 6 to 8 hours according to child’s fever.</string>

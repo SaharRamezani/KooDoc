@@ -495,7 +495,7 @@
             app:destination="@id/growthChartFragment" />
         <action
             android:id="@+id/action_growthMainFragment_to_growthFollowFragment"
-            app:destination="@id/growthFollowFragment" />
+            app:destination="@id/kidGrowthFragment" />
     </fragment>
     <fragment
         android:id="@+id/growthChartFragment"
@@ -507,10 +507,19 @@
             app:argType="integer"/>
     </fragment>
     <fragment
-        android:id="@+id/growthFollowFragment"
-        android:name="com.example.kidzi.ui.milk.GrowthFollowFragment"
-        android:label="fragment_growth_follow"
-        tools:layout="@layout/fragment_kid_growth" />
+        android:id="@+id/kidGrowthFragment"
+        android:name="com.example.kidzi.ui.milk.KidGrowthFragment"
+        android:label="fragment_kid_growth"
+        tools:layout="@layout/fragment_kid_growth">
+        <action
+            android:id="@+id/action_kidGrowthFragment_to_addDataGrowthFragment"
+            app:destination="@id/fragment_add_data_growth_chart" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_add_data_growth_chart"
+        android:name="com.example.kidzi.ui.milk.AddDataGrowthFragment"
+        android:label="fragment_add_data_growth_chart"
+        tools:layout="@layout/fragment_add_data_growth_chart" />
     <fragment
         android:id="@+id/symptomsParentFragment"
         android:name="com.example.kidzi.ui.symptoms.SymptomsParentFragment"

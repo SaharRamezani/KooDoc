@@ -23,7 +23,7 @@ import android.graphics.Color
 class GrowthChartFragment : Fragment() {
     lateinit var adapter: GrowthChartAdapter
 
-    fun readGrowthChartFromCSV(context: Context, type: Int): Triple<List<Entry>, List<Entry>, List<Entry>> {
+    private fun readGrowthChartFromCSV(context: Context, type: Int): Triple<List<Entry>, List<Entry>, List<Entry>> {
         val entriesM = mutableListOf<Entry>()
         val entriesP3 = mutableListOf<Entry>()
         val entriesP97 = mutableListOf<Entry>()
@@ -77,10 +77,9 @@ class GrowthChartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentGrowthChartBinding.inflate(inflater, container, false)
         val type = GrowthChartFragmentArgs.fromBundle(requireArguments()).type
-        binding.txtType.text = if(type == 2) "دختران" else "پسران"
+        binding.txtType.text = if (type == 2) getString(R.string.girls) else getString(R.string.boys)
 
         val month = resources.getStringArray(R.array.month)
         val weightStart = if(type == 2) resources.getStringArray(R.array.girl_weight_from) else resources.getStringArray(R.array.boy_weight_from)
@@ -109,5 +108,4 @@ class GrowthChartFragment : Fragment() {
 
         return binding.root
     }
-
 }

@@ -232,6 +232,8 @@
     <string name="add_new_data">اضافه کردن داده</string>
     <string name="boy_chart">نمودار رشد پسران</string>
     <string name="girl_chart">نمودار رشد دختران</string>
+    <string name="boys">پسران</string>
+    <string name="girls">دختران</string>
     <string name="register_growth">ثبت رشد</string>
     <string name="register">ثبت</string>
     <string name="age_week">سن(هفته)</string>
