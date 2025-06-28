@@ -5,17 +5,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kidzi.databinding.ListGrowthRemovableBinding
 import com.example.kidzi.ui.milk.GrowthModel
+import com.example.kidzi.util.NumberFormatter
 
 class GrowthChartAdapter(
-    private var growthList: List<GrowthModel>
+    private var growthList: MutableList<GrowthModel>,
+    private val onDelete: (GrowthModel) -> Unit
 ) : RecyclerView.Adapter<GrowthChartAdapter.GrowthChartViewHolder>() {
 
     inner class GrowthChartViewHolder(val binding: ListGrowthRemovableBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(vaccine: GrowthModel) {
-            binding.txtAge.text = vaccine.age.toString()
-            binding.head.text = vaccine.startHead.toString()
-            binding.weight.text = vaccine.startWeight.toString()
-            binding.height.text = vaccine.startHeight.toString()
+        fun bind(data: GrowthModel) {
+            val context = binding.root.context
+            binding.txtAge.text = NumberFormatter.formatNumber(context, data.age)
+            binding.head.text = NumberFormatter.formatNumber(context, data.startHead)
+            binding.weight.text = NumberFormatter.formatNumber(context, data.startWeight)
+            binding.height.text = NumberFormatter.formatNumber(context, data.startHeight)
+
+            binding.removeIcon.setOnClickListener {
+                onDelete(data)
+            }
         }
     }
 
@@ -30,8 +37,16 @@ class GrowthChartAdapter(
 
     override fun getItemCount(): Int = growthList.size
 
+    fun removeItem(data: GrowthModel) {
+        val index = growthList.indexOf(data)
+        if (index != -1) {
+            growthList.removeAt(index)
+            notifyItemRemoved(index)
+        }
+    }
+
     fun updateData(newList: List<GrowthModel>) {
-        growthList = newList
+        growthList = newList.toMutableList()
         notifyDataSetChanged()
     }
 }

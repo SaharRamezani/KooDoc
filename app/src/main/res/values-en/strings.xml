@@ -38,6 +38,8 @@
     <string name="dose_10_12_5cc">Take 10-12 ml (cc).</string>
     <string name="error_choose_child">Choose a child first.</string>
     <string name="weeks">weeks</string>
+    <string name="remove">Remove</string>
+    <string name="success_delete">Deleted successfully</string>
     <string name="error_no_name">No name has been entered.</string>
     <string name="success_save">Data is successfully saved.</string>
     <string name="error_save">An error in the saving process occurred</string>

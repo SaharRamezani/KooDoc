@@ -92,16 +92,17 @@ class GrowthChartFragment : Fragment() {
         val (m, p3, p97) = readGrowthChartFromCSV(requireContext(), type)
         setupMultiLineChart(binding.lineChart, m, p3, p97)
 
-        val vaccineList = mutableListOf<GrowthModel>()
+        val growthList = mutableListOf<GrowthModel>()
 
         for(i in 0 until month.size){
             Log.i("Log1", "month: ${month[i]} weight start: ${weightStart[i]} weight-end:${weightEnd[i]} height-start:${heightStart[i]}height-end: ${heightEnd[i]}head-start: ${headStart[i]} head-end:${headEnd[i]}")
-            vaccineList.add(
+            growthList.add(
                 GrowthModel(month[i].toInt(),heightStart[i].toDouble(),heightEnd[i].toDouble(),weightStart[i].toDouble(),weightEnd[i].toDouble(),headStart[i].toDouble(),
                     headEnd[i].toDouble()))
         }
 
-        adapter = GrowthChartAdapter(emptyList())
+        adapter = GrowthChartAdapter(growthList) { /* no-op */ }
+
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
 

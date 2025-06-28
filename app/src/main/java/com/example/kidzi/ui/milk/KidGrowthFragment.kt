@@ -47,7 +47,21 @@ class KidGrowthFragment : Fragment() {
             findNavController().navigate(R.id.action_kidGrowthFragment_to_addDataGrowthFragment)
         }
 
-        adapter = GrowthChartAdapter(emptyList())
+        adapter = GrowthChartAdapter(mutableListOf()) { itemToDelete ->
+            lifecycleScope.launch(Dispatchers.IO) {
+                growthDataDao.deleteByAgeAndKidId(itemToDelete.age, preferenceManager.getCurrentKid())
+
+                val updatedData = growthDataDao.getAllGrowthDataForKid(preferenceManager.getCurrentKid())
+                val updatedEntries = convertSavedDataToEntries(updatedData)
+
+                launch(Dispatchers.Main) {
+                    adapter.removeItem(itemToDelete)
+                    refreshSavedDataOnChart(updatedEntries)
+                    Toast.makeText(requireContext(), getString(R.string.success_delete), Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
 
@@ -96,6 +110,28 @@ class KidGrowthFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun refreshSavedDataOnChart(savedEntries: List<Entry>) {
+        val chart = binding.lineChart
+        // Remove previous saved data set
+        val toRemove = chart.data.dataSets.find { it.label == getString(R.string.saved_growth) }
+        if (toRemove != null) {
+            chart.data.removeDataSet(toRemove)
+        }
+
+        // Add updated data
+        val updatedDataSet = LineDataSet(savedEntries, getString(R.string.saved_growth)).apply {
+            color = Color.MAGENTA
+            lineWidth = 2.5f
+            setCircleColor(Color.MAGENTA)
+            circleRadius = 4f
+            setDrawCircleHole(false)
+            setDrawValues(false)
+        }
+
+        chart.data.addDataSet(updatedDataSet)
+        chart.invalidate()
     }
 
     private fun readGrowthChartFromCSV(context: android.content.Context, type: Int): Triple<List<Entry>, List<Entry>, List<Entry>> {

@@ -14,6 +14,7 @@ import com.example.kidzi.databinding.FragmentKidInfoNewBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.di.db.models.KidNameModel
+import com.example.kidzi.util.NumberFormatter
 import dagger.hilt.android.AndroidEntryPoint
 import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.api.PersianPickerDate
@@ -31,11 +32,6 @@ class KidInfoFragmentNew : Fragment() {
     lateinit var kidNameDao: KidNameDao
 
     var isNew = false
-
-    private fun convertToPersianDigits(input: String): String {
-        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
-        return input.map { if (it.isDigit()) persianDigits[it.digitToInt()] else it }.joinToString("")
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,7 +59,8 @@ class KidInfoFragmentNew : Fragment() {
                 .setListener(object : PersianPickerListener {
                     override fun onDateSelected(persianPickerDate: PersianPickerDate) {
                         val date = "${persianPickerDate.persianYear}/${persianPickerDate.persianMonth}/${persianPickerDate.persianDay}"
-                        binding.btnGroup.text = convertToPersianDigits(date)
+                        binding.btnGroup.text =
+                            context?.let { it1 -> NumberFormatter.formatNumber(it1, date) }
                     }
                     override fun onDismissed() {
                     }

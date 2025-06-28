@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import com.example.kidzi.util.NumberFormatter
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -30,13 +31,7 @@ class KidInfoFragment : Fragment() {
 
     @Inject
     lateinit var kidNameDao: KidNameDao
-
     var isNew = false
-
-    private fun convertToPersianDigits(input: String): String {
-        val persianDigits = listOf('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹')
-        return input.map { if (it.isDigit()) persianDigits[it.digitToInt()] else it }.joinToString("")
-    }
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -87,7 +82,8 @@ class KidInfoFragment : Fragment() {
                 .setListener(object : PersianPickerListener {
                     override fun onDateSelected(persianPickerDate: PersianPickerDate) {
                         val date = "${persianPickerDate.persianYear}/${persianPickerDate.persianMonth}/${persianPickerDate.persianDay}"
-                        binding.btnGroup.text = convertToPersianDigits(date)
+                        binding.btnGroup.text =
+                            context?.let { it1 -> NumberFormatter.formatNumber(it1, date) }
                     }
                     override fun onDismissed() {
                     }
