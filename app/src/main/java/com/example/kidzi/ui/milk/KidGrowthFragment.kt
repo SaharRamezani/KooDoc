@@ -41,6 +41,10 @@ class KidGrowthFragment : Fragment() {
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
+        binding.btnAddData.setOnClickListener {
+            findNavController().navigate(R.id.action_kidGrowthFragment_to_addDataGrowthFragment)
+        }
+
         val kidId = preferenceManager.getCurrentKid()
         if (kidId != -1) {
             lifecycleScope.launch(Dispatchers.IO) {
@@ -61,7 +65,6 @@ class KidGrowthFragment : Fragment() {
                         addSavedDataToChart(binding.lineChart, savedEntries)
                     }
                 } else {
-                    // Optionally, handle case where kid info isn't found
                     launch(Dispatchers.Main) {
                         // Show a toast or navigate back
                         findNavController().popBackStack()
