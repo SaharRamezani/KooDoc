@@ -101,9 +101,10 @@ class GrowthChartFragment : Fragment() {
                     headEnd[i].toDouble()))
         }
 
-        adapter = GrowthChartAdapter(vaccineList)
+        adapter = GrowthChartAdapter(emptyList())
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
+
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         return binding.root

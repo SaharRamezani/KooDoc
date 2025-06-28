@@ -9,12 +9,14 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidGrowthBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.GrowthDataDao
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.di.db.models.KidGrowthModel
+import com.example.kidzi.ui.milk.adapters.GrowthChartAdapter
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
@@ -30,7 +32,7 @@ class KidGrowthFragment : Fragment() {
     @Inject lateinit var preferenceManager: PreferenceManager
     @Inject lateinit var kidNameDao: KidNameDao
     @Inject lateinit var growthDataDao: GrowthDataDao
-
+    private lateinit var adapter: GrowthChartAdapter
     private lateinit var binding: FragmentKidGrowthBinding
 
     override fun onCreateView(
@@ -44,6 +46,10 @@ class KidGrowthFragment : Fragment() {
         binding.btnAddData.setOnClickListener {
             findNavController().navigate(R.id.action_kidGrowthFragment_to_addDataGrowthFragment)
         }
+
+        adapter = GrowthChartAdapter(emptyList())
+        binding.recycler.adapter = adapter
+        binding.recycler.layoutManager = LinearLayoutManager(requireContext())
 
         val kidId = preferenceManager.getCurrentKid()
         if (kidId != -1) {
@@ -63,6 +69,22 @@ class KidGrowthFragment : Fragment() {
 
                     launch(Dispatchers.Main) {
                         addSavedDataToChart(binding.lineChart, savedEntries)
+                    }
+
+                    val savedDataForRecycler = savedData.map {
+                        GrowthModel(
+                            age = it.ageWeeks,
+                            startHeight = it.height,
+                            endHeight = it.height,
+                            startWeight = it.weight,
+                            endWeight = it.weight,
+                            startHead = it.headCircumference,
+                            endHead = it.headCircumference
+                        )
+                    }
+
+                    launch(Dispatchers.Main) {
+                        adapter.updateData(savedDataForRecycler)
                     }
                 } else {
                     launch(Dispatchers.Main) {
@@ -128,7 +150,8 @@ class KidGrowthFragment : Fragment() {
 
     private fun convertSavedDataToEntries(data: List<KidGrowthModel>): List<Entry> {
         return data.sortedBy { it.ageWeeks }.map {
-            Entry(it.ageWeeks.toFloat(), it.weight.toFloat())
+            val ageMonths = it.ageWeeks.toFloat() / 4.345f  // Convert weeks to months
+            Entry(ageMonths, it.weight.toFloat())
         }
     }
 
