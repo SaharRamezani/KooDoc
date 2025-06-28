@@ -238,6 +238,7 @@
     <string name="error_save">خطا در ذخیره‌سازی داده‌ها</string>
     <string name="saved_growth">اطلاعات ذخیره شده</string>
     <string name="weeks">هفتگی</string>
+    <string name="weight_kg_vs_months">وزن (کیلوگرم) بر حسب ماه</string>
     <string name="remove">حذف</string>
     <string name="success_delete">با موفقیت حذف شد</string>
     <string name="error_info_not_valid">اطلاعات وارد شده معتبر نیست</string>

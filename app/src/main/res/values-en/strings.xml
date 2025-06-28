@@ -37,6 +37,7 @@
     <string name="dose_13_5cc">Take 13.5 ml (cc).</string>
     <string name="dose_10_12_5cc">Take 10-12 ml (cc).</string>
     <string name="error_choose_child">Choose a child first.</string>
+    <string name="weight_kg_vs_months">Weight (kg) vs Months</string>
     <string name="weeks">weeks</string>
     <string name="remove">Remove</string>
     <string name="success_delete">Deleted successfully</string>
