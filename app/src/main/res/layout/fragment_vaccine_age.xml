@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:layoutDirection="rtl"
         android:orientation="vertical">
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,6 +21,7 @@
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="0dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +40,6 @@
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
                     android:text="@string/choose_age"/>
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

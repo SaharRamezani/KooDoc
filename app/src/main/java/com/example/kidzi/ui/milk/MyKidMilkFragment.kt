@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.databinding.FragmentMyKidMilkBinding
 import com.example.kidzi.di.db.PreferenceManager
@@ -52,6 +53,8 @@ class MyKidMilkFragment : Fragment() {
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
             binding.recycler.adapter = adapter
         }
+
+        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         return binding.root
     }

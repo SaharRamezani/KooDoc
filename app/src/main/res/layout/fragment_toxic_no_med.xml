@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@android:color/transparent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     tools:context=".ui.toxic.ToxicNoMedFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layoutDirection="rtl"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/main_margin"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_header_corrected"
+            android:layout_margin="@dimen/margin_header"
             android:id="@+id/btn_back"
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
@@ -25,86 +24,92 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:tint="@color/button_outlined_border"
-                    android:src="@drawable/ic_arrow_left"/>
+                    android:src="@drawable/ic_arrow_left" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
-                    android:textColor="@color/black"
+                    android:layout_marginStart="4dp"
                     android:layout_marginBottom="2dp"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/header_size"
-                    android:text="@string/toxic_no_med"/>
+                    android:text="@string/toxic_no_med" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
-        <com.google.android.material.button.MaterialButton
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/button_outlined_border"
-            android:textColor="@color/black"
-            android:id="@+id/btn_drug"
-            android:backgroundTint="@color/surface_bg_medium"
-            android:elevation="2dp"
-            app:cornerRadius="8dp"
-            android:text="@string/drug_active"
-            android:textSize="16sp"
-            android:layout_marginTop="18dp"/>
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_margin">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:visibility="gone"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/black"
-            android:id="@+id/btn_chemo"
-            android:textColor="@color/black"
-            app:cornerRadius="@dimen/corner_main"
-            android:text="@string/chemo_tox"
-            android:textSize="16sp"
-            android:layout_marginTop="18dp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_drug"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="18dp"
+                    android:backgroundTint="@color/surface_bg_medium"
+                    android:elevation="2dp"
+                    android:text="@string/drug_active"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:cornerRadius="8dp"
+                    app:strokeColor="@color/button_outlined_border"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_chemo"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="18dp"
+                    android:visibility="gone"
+                    android:text="@string/chemo_tox"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:cornerRadius="8dp"
+                    app:strokeColor="@color/button_outlined_border"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/button_outlined_border"
-            android:id="@+id/btn_plants"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/surface_bg_medium"
-            android:elevation="2dp"
-            app:cornerRadius="8dp"
-            android:text="@string/plants_tox"
-            android:textSize="16sp"
-            android:layout_marginTop="18dp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_plants"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="18dp"
+                    android:backgroundTint="@color/surface_bg_medium"
+                    android:elevation="2dp"
+                    android:text="@string/plants_tox"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:cornerRadius="8dp"
+                    app:strokeColor="@color/button_outlined_border"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_snake"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="18dp"
+                    android:backgroundTint="@color/surface_bg_medium"
+                    android:elevation="2dp"
+                    android:text="@string/snake_bee"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:cornerRadius="8dp"
+                    app:strokeColor="@color/button_outlined_border"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
 
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:strokeColor="@color/button_outlined_border"
-            android:id="@+id/btn_snake"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/surface_bg_medium"
-            android:elevation="2dp"
-            app:cornerRadius="8dp"
-            android:text="@string/snake_bee"
-            android:textSize="16sp"
-            android:layout_marginTop="18dp"/>
-
-
-
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-
 </FrameLayout>
