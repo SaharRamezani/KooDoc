@@ -36,6 +36,13 @@
     <string name="dose_13_5_16_5_5cc">Take 13.5 to 16.5 ml (cc).</string>
     <string name="dose_13_5cc">Take 13.5 ml (cc).</string>
     <string name="dose_10_12_5cc">Take 10-12 ml (cc).</string>
+    <string name="error_choose_child">Choose a child first.</string>
+    <string name="error_no_name">No name has been entered.</string>
+    <string name="success_save">Data is successfully saved.</string>
+    <string name="error_save">An error in the saving process occurred</string>
+    <string name="saved_growth">Saved Data</string>
+    <string name="error_info_not_valid">Info is not valid.</string>
+    <string name="error_fill_all_fields">Fill all the fields.</string>
     <string name="suppository_75_1">Use 1 suppository 75 mg, up to 3 in 24 hours if symptoms persist (fever).</string>
     <string name="suppository_75_2">Use 1 suppository 75 mg, up to 4 in 24 hours if symptoms persist (fever).</string>
     <string name="suppository_150_1">Use 1 suppository 150 mg, up to 3 in 24 hours if symptoms persist (fever).</string>

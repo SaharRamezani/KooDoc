@@ -96,3 +96,9 @@ dependencies {
     implementation libs.androidx.navigation.ui.ktx.v285
     implementation libs.material.v180
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

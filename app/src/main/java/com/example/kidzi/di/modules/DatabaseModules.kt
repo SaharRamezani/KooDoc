@@ -1,21 +1,35 @@
 package com.example.kidzi.di.modules
 
 import com.example.kidzi.di.db.AppDatabase
-import com.example.kidzi.di.db.dao.FamilyDiseaseDao
-import com.example.kidzi.di.db.dao.KidAlergyDao
-import com.example.kidzi.di.db.dao.KidDiseaseDao
-import com.example.kidzi.di.db.dao.KidGrowthDao
-import com.example.kidzi.di.db.dao.KidNameDao
-import com.example.kidzi.di.db.dao.KidSocialDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import android.content.Context
+import androidx.room.Room
+import com.example.kidzi.di.db.dao.*
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 
 @Module
 @InstallIn(SingletonComponent::class)
 class DatabaseModules {
+
+    @Provides
+    fun provideGrowthDataDao(appDatabase: AppDatabase): GrowthDataDao {
+        return appDatabase.growthDataDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
+        return Room.databaseBuilder(
+            context,
+            AppDatabase::class.java,
+            "kidzi_db"
+        ).build()
+    }
 
     @Provides
     fun provideKidName(appDatabase: AppDatabase): KidNameDao {
@@ -26,7 +40,6 @@ class DatabaseModules {
     fun provideKidDisease(appDatabase: AppDatabase): KidDiseaseDao{
         return appDatabase.kidDiseaseDao()
     }
-
 
     @Provides
     fun provideKidAlergy(appDatabase: AppDatabase): KidAlergyDao{

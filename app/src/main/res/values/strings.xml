@@ -230,7 +230,14 @@
     <string name="growth_chart">نمودار رشد</string>
     <string name="kid_growth_chart">نمودار رشد کودک من</string>
     <string name="add_new_data">اضافه کردن داده</string>
+    <string name="error_no_name">نامی ثبت نشده</string>
+    <string name="error_fill_all_fields">لطفا تمام فیلدها را پر کنید</string>
+    <string name="error_choose_child">لطفا ابتدا یک کودک را انتخاب کنید</string>
     <string name="boy_chart">نمودار رشد پسران</string>
+    <string name="success_save">داده‌ها با موفقیت ذخیره شد</string>
+    <string name="error_save">خطا در ذخیره‌سازی داده‌ها</string>
+    <string name="saved_growth">اطلاعات ذخیره شده</string>
+    <string name="error_info_not_valid">اطلاعات وارد شده معتبر نیست</string>
     <string name="girl_chart">نمودار رشد دختران</string>
     <string name="boys">پسران</string>
     <string name="girls">دختران</string>

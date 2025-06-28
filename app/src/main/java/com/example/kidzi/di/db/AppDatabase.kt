@@ -2,18 +2,8 @@ package com.example.kidzi.di.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.kidzi.di.db.dao.FamilyDiseaseDao
-import com.example.kidzi.di.db.dao.KidAlergyDao
-import com.example.kidzi.di.db.dao.KidDiseaseDao
-import com.example.kidzi.di.db.dao.KidGrowthDao
-import com.example.kidzi.di.db.dao.KidNameDao
-import com.example.kidzi.di.db.dao.KidSocialDao
-import com.example.kidzi.di.db.models.FamilyDiseaseModel
-import com.example.kidzi.di.db.models.KidAlergyModel
-import com.example.kidzi.di.db.models.KidDiseaseModel
-import com.example.kidzi.di.db.models.KidGrowthModel
-import com.example.kidzi.di.db.models.KidNameModel
-import com.example.kidzi.di.db.models.KidSocialModel
+import com.example.kidzi.di.db.dao.*
+import com.example.kidzi.di.db.models.*
 
 
 @Database(
@@ -30,7 +20,7 @@ import com.example.kidzi.di.db.models.KidSocialModel
     autoMigrations = []
 )
 abstract class AppDatabase:RoomDatabase() {
-
+    abstract fun growthDataDao(): GrowthDataDao
     abstract fun kidNameDao(): KidNameDao
     abstract fun kidDiseaseDao(): KidDiseaseDao
     abstract fun kisAlergyDao(): KidAlergyDao

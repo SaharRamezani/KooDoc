@@ -51,7 +51,7 @@ class PreferenceManager @Inject constructor(@ApplicationContext private val cont
         return sharedPreferences.getStringSet(SELECTED_MILKS, emptySet()) ?: emptySet()
     }
 
-    fun getCurrentKid(): Int{return sharedPreferences.getInt(CURRENT_KID,0)}
+    fun getCurrentKid(): Int { return sharedPreferences.getInt(CURRENT_KID, -1) }
     fun updateCurrentKid(kid: Int){ sharedPreferences.edit().putInt(CURRENT_KID,kid).commit() }
 
     fun getLevel(): Int{return sharedPreferences.getInt(LEVEL,0) }

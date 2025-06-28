@@ -1,0 +1,15 @@
+package com.example.kidzi.di.db.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import com.example.kidzi.di.db.models.KidGrowthModel
+
+@Dao
+interface GrowthDataDao {
+    @Insert
+    fun insert(growthData: KidGrowthModel)
+
+    @Query("SELECT * FROM kid_growth WHERE kidId = :kidId ORDER BY ageWeeks ASC")
+    abstract fun getAllGrowthDataForKid(kidId: Int): List<KidGrowthModel>
+}

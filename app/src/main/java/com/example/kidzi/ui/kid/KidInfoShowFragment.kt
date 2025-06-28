@@ -42,7 +42,6 @@ class KidInfoShowFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = FragmentKidInfoShowBinding.inflate(inflater)
 
         var id = KidInfoShowFragmentArgs.fromBundle(requireArguments()).kidId

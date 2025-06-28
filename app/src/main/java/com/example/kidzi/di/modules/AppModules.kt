@@ -15,13 +15,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class AppModules{
-
-    @Provides
-    @Singleton
-    fun providesDatabase(@ApplicationContext context: Context): AppDatabase {
-        return Room.databaseBuilder(context,AppDatabase::class.java,"db").allowMainThreadQueries().fallbackToDestructiveMigration().build()
-    }
-
     @Provides
     @Singleton
     fun providesPreferences(@ApplicationContext context: Context): PreferenceManager {

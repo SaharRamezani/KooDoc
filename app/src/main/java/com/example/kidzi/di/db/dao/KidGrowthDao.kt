@@ -13,16 +13,12 @@ interface KidGrowthDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(kidGrowthModel: KidGrowthModel)
 
-
-    @Query("SELECT * FROM growth  WHERE kidId = :id")
+    @Query("SELECT * FROM kid_growth WHERE kidId = :id")
     fun getAll(id: Int): List<KidGrowthModel>
 
-
-
-    @Query("SELECT * FROM growth  WHERE kidId = :id and age = :age")
+    @Query("SELECT * FROM kid_growth WHERE kidId = :id and ageWeeks = :age")
     fun getByAge(id: Int,age: Int): KidGrowthModel
 
     @Update
     fun update(kidGrowthModel: KidGrowthModel)
-
 }
