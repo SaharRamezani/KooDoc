@@ -11,7 +11,7 @@
     <string name="age_below_6mon_ibuprofen_syrup">It is better to use paracetamol drops.</string>
     <string name="weight_below_5_ibuprofen_syrup">At this weight, it is better to use paracetamol.</string>
     <string name="dose_2_5cc">Take 2.5 ml (cc).</string>
-    <string name="dose_3_5_4cc">Take 3.5-4 ml (cc).</string>
+    <string name="dose_3_5_4cc">Take 3.5–4 ml (cc).</string>
     <string name="dose_5cc">Take 5 ml (cc).</string>
     <string name="dose_7_5cc">Take 7.5 ml (cc).</string>
     <string name="dose_10cc">Take 10 ml (cc).</string>
@@ -35,7 +35,7 @@
     <string name="dose_20cc">Take 20 ml (cc).</string>
     <string name="dose_13_5_16_5_5cc">Take 13.5 to 16.5 ml (cc).</string>
     <string name="dose_13_5cc">Take 13.5 ml (cc).</string>
-    <string name="dose_10_12_5cc">Take 10-12 ml (cc).</string>
+    <string name="dose_10_12_5cc">Take 10–12 ml (cc).</string>
     <string name="error_choose_child">Choose a child first.</string>
     <string name="weight_kg_vs_months">Weight (kg) vs Months</string>
     <string name="choose_one_option">Choose one of the options</string>
@@ -219,7 +219,7 @@
     <string name="about_vaccines">About vaccines</string>
     <string name="choose_age">Select age</string>
     <string name="hot_ill">Fever and diseases</string>
-    <string name="hot_ill_about">Mild illnesses with or without fever (such as mild respiratory infection, mild diarrhea) or recent use of antibiotics are not barriers to vaccination...</string>
+    <string name="hot_ill_about">Mild illnesses with or without fever (such as mild respiratory infection, mild diarrhea) or recent use of antibiotics are not barriers to vaccination…</string>
     <string name="yellow_kids">Newborns with jaundice</string>
     <string name="yellow_about">Does not interfere with receiving vaccines.</string>
     <string name="pre_kids">Premature newborns</string>
@@ -271,7 +271,6 @@
     <string name="add_kid">Add child</string>
     <string name="growth_feed">Growth and nutrition</string>
     <string name="growth_chart">Growth chart</string>
-    <string name="add_weight">Add height and weight</string>
     <string name="boy_chart">Boys\' growth chart</string>
     <string name="girl_chart">Girls\' growth chart</string>
     <string name="register_growth">Register growth</string>
@@ -311,7 +310,7 @@
     <string name="select_milk_type">Type of formula:</string>
     <string name="diet">Diet</string>
     <string name="regular">Regular</string>
-    <string name="search">search...</string>
+    <string name="search">search…</string>
     <string name="base">Based on</string>
     <string name="to">to</string>
     <string name="assess_symptoms">Assess symptoms</string>

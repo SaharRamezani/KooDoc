@@ -60,13 +60,6 @@
         <item>مسمومیت با شیشه و آمفتامین ها</item>
         <item>مسمومیت با الکل( اتانول، متانول)</item>
     </string-array>
-    
-    <string-array name="toxic_drug_weight">
-        <item>هر مقداری </item>
-        <item>هر مقداری</item>
-        <item>کمترین مقدار</item>
-        <item>مقدار کم</item>
-    </string-array>
 
 
     <string-array name="toxic_drug_symptom">
@@ -139,8 +132,8 @@
 خوراکی حتی مقدار کم </item>
         <item>خوراکی</item>
     </string-array>
-    
-    
+
+
 
 
     <string-array name="toxic_med_names">
