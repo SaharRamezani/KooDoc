@@ -45,10 +45,6 @@ class FamilyDisFirstFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             sharedPreferences.updateLevel(4)
             findNavController().navigate(FamilyDisFirstFragmentDirections.actionFamilyDisFirstFragmentToMainFragment())
-            /*if (familyDiseaseDao.getAll().size>1) {
-            }else{
-                Toast.makeText(requireContext(),"اطلاعات هر دو والد را وارد کنید.",Toast.LENGTH_SHORT).show()
-            }*/
         }
 
         binding.btnBack.setOnClickListener {

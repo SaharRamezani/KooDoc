@@ -161,7 +161,7 @@ class KidDiseaseFragment : Fragment() {
             if (kidId > 0) {
                 saveDisease()
             } else {
-                Toast.makeText(requireContext(), "شناسه نوزاد معتبر نیست!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_invalid_kid_id), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -207,7 +207,7 @@ class KidDiseaseFragment : Fragment() {
 
             } catch (e: Exception) {
                 Log.e("Log1", "Save error: $e")
-                Toast.makeText(requireContext(), "خطا در ذخیره بیماری!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.error_save), Toast.LENGTH_SHORT).show()
             }
         }
     }

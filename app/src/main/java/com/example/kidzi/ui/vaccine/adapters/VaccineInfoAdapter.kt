@@ -1,15 +1,13 @@
 package com.example.kidzi.ui.vaccine.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kidzi.R
 import com.example.kidzi.databinding.ListVaccineAboutBinding
-import com.example.kidzi.databinding.ListVaccinesBinding
-import com.example.kidzi.databinding.ListWrongBinding
 import com.example.kidzi.ui.vaccine.VaccineAboutModel
 
 class VaccineInfoAdapter(
@@ -18,6 +16,7 @@ class VaccineInfoAdapter(
 ) : RecyclerView.Adapter<VaccineInfoAdapter.VaccineViewHolder>() {
 
     inner class VaccineViewHolder(val binding: ListVaccineAboutBinding, context: Context) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("UseCompatLoadingForDrawables")
         fun bind(vaccine: VaccineAboutModel, position: Int) {
             binding.txtHeader.text = vaccine.name
             binding.txtMore.text = vaccine.about

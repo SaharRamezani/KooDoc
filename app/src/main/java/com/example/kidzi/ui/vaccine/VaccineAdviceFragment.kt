@@ -1,5 +1,6 @@
 package com.example.kidzi.ui.vaccine
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,19 +11,17 @@ import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentVaccineAdviceBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names th
 @AndroidEntryPoint
 class VaccineAdviceFragment : Fragment() {
-
     var after = false
     var mental = false
     var physical = false
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentVaccineAdviceBinding.inflate(inflater, container, false)
 
         binding.btnBack.setOnClickListener {

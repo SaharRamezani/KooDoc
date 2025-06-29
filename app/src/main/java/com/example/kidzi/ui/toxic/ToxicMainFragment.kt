@@ -15,15 +15,12 @@ class ToxicMainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentToxicMainBinding.inflate(inflater)
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
         binding.btnMed.setOnClickListener { findNavController().navigate(ToxicMainFragmentDirections.actionToxicMainFragmentToToxicMedFragment()) }
         binding.btnNoMed.setOnClickListener { findNavController().navigate(ToxicMainFragmentDirections.actionToxicMainFragmentToToxicNoMedFragment()) }
-
-
 
         return binding.root
     }

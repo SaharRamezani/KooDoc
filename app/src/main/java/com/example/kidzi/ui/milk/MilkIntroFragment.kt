@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentMilkIntroBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
@@ -46,8 +47,7 @@ class MilkIntroFragment : Fragment() {
                 val kidInfo = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
                 binding.txtKidName.text = kidInfo.name
             } catch (e: Exception) {
-                // Handle error — e.g. show default text or log
-                binding.txtKidName.text = "نوزادی انتخاب نشده"
+                binding.txtKidName.text = getString(R.string.error_choose_child)
             }
         }
     }

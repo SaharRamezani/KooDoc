@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Kidzi" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="materialAlertDialogTheme">@style/DialogBlurTheme</item>
@@ -39,21 +39,8 @@
     </style>
 
     <!-- Secondary Button Style -->
-    <style name="Widget.MyApp.Button.Secondary" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@color/button_secondary_bg</item>
-        <item name="android:textColor">@color/button_secondary_text</item>
-    </style>
 
     <!-- Outlined Button Style -->
-    <style name="Widget.MyApp.Button.Outlined" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@color/button_outlined_bg</item>
-        <item name="strokeColor">@color/button_outlined_border</item>
-        <item name="android:textColor">@color/button_outlined_text</item>
-    </style>
 
     <!-- Success Button Style -->
-    <style name="Widget.MyApp.Button.Success" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@color/button_success_bg</item>
-        <item name="android:textColor">@color/button_success_text</item>
-    </style>
 </resources>

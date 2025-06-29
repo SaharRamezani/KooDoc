@@ -28,9 +28,9 @@ class ParentShowFragment : Fragment() {
         }
 
         val dialog = AlertDialog.Builder(requireContext())
-            .setTitle("انتخاب تاریخ")
+            .setTitle(getString(R.string.dialog_title_select_date))
             .setView(datePicker)
-            .setPositiveButton("تأیید") { _, _ ->
+            .setPositiveButton(getString(R.string.dialog_positive_button)) { _, _ ->
                 val year = datePicker.getSelectedYear()
                 val month = datePicker.getSelectedMonth()
                 val day = datePicker.getSelectedDay()
@@ -38,7 +38,7 @@ class ParentShowFragment : Fragment() {
                 button.text = context?.let { NumberFormatter.formatNumber(it, selectedDate) }
                 preferenceManager.setParentBirth(selectedDate)
             }
-            .setNegativeButton("لغو", null)
+            .setNegativeButton(getString(R.string.dialog_negative_button), null)
             .create()
 
         dialog.show()

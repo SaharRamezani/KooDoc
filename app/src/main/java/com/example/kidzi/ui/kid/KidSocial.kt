@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidSocialBinding
 import com.example.kidzi.di.db.dao.FamilyDiseaseDao
 import com.example.kidzi.di.db.dao.KidSocialDao
@@ -52,7 +53,7 @@ class KidSocial : Fragment() {
             if (binding.radioYes.isChecked || binding.radioNo.isChecked) {
                 saveSocialDataAndNavigate()
             } else {
-                Toast.makeText(requireContext(), "باید یک گزینه را انتخاب نمایید.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.choose_one_option), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -88,7 +89,7 @@ class KidSocial : Fragment() {
                 )
 
             } catch (e: Exception) {
-                Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.error_save), Toast.LENGTH_SHORT).show()
             }
         }
     }

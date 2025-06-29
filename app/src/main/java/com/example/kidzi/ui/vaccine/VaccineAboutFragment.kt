@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentVaccineAboutBinding
-import com.example.kidzi.ui.vaccine.adapters.VaccineAdapter
 import com.example.kidzi.ui.vaccine.adapters.VaccineInfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,8 +19,7 @@ class VaccineAboutFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentVaccineAboutBinding.inflate(inflater, container, false)
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }

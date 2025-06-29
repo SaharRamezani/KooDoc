@@ -24,11 +24,11 @@ class ParentInfoIntroFragment : Fragment() {
     ): View? {
         val binding = FragmentParentInfoIntroBinding.inflate(inflater)
 
-        when(sharedPreferences.getParent()){
-            1 -> binding.txtRelation.text = "بابا"
-            2 -> binding.txtRelation.text = "مامان"
-            3 -> binding.txtRelation.text = "مراقب کودک"
-            else -> binding.txtRelation.text = "مراقب کودک"
+        binding.txtRelation.text = when (sharedPreferences.getParent()) {
+            1 -> getString(R.string.relation_father)
+            2 -> getString(R.string.relation_mother)
+            3 -> getString(R.string.relation_caregiver)
+            else -> getString(R.string.relation_caregiver)
         }
 
         binding.btnRules.setOnClickListener {
@@ -38,7 +38,7 @@ class ParentInfoIntroFragment : Fragment() {
             if(binding.checkRules.isChecked)
                 findNavController().navigate(ParentInfoIntroFragmentDirections.actionParentInfoIntroFragmentToParentInfoFragment())
             else
-                Toast.makeText(requireContext(),"ابتدا باید با قوانین استفاده از کوداک موافقت نمایید.",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_agree_rules), Toast.LENGTH_SHORT).show()
         }
         binding.btnBack.setOnClickListener {
             findNavController().navigate(ParentInfoIntroFragmentDirections.actionParentInfoIntroFragmentToParentLoginFragment())

@@ -42,13 +42,15 @@ class MyKidMilkFragment : Fragment() {
             adapter = MilkAdapter(
                 selectedList,
                 requireContext(),
-                preferenceManager
-            ) { newSize ->
-                if (newSize == 0) {
-                    binding.txtEmpty.visibility = View.VISIBLE
-                    binding.recycler.visibility = View.GONE
-                }
-            }
+                preferenceManager,
+                onItemRemoved = { newSize ->
+                    if (newSize == 0) {
+                        binding.txtEmpty.visibility = View.VISIBLE
+                        binding.recycler.visibility = View.GONE
+                    }
+                },
+                removeOnUncheck = true
+            )
 
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
             binding.recycler.adapter = adapter

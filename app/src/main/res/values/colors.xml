@@ -3,8 +3,8 @@
     <color name="colorOrangePastel">#FFC999</color> <!-- Soft Pastel Orange -->
 
     <!-- Success (Green) -->
-    <color name="colorSuccessStrong">#66B58F</color> <!-- Button or alert background -->
-    <color name="colorSuccessText">#FFFFFF</color>   <!-- On green -->
+    <!-- Button or alert background -->
+    <!-- On green -->
 
     <color name="colorErrorSoft">#E28B8B</color>     <!-- Muted Blush Red -->
     <color name="colorErrorText">#333333</color>     <!-- Charcoal Gray (theme-consistent) -->
@@ -12,15 +12,14 @@
     <!-- OPTION A: Neutral Grayscale Layers -->
     <!-- Base -->
     <color name="surface_bg_default">#FFFFFF</color>       <!-- Pure White -->
-    <color name="surface_text_default">#333333</color>     <!-- Charcoal Gray -->
+    <!-- Charcoal Gray -->
 
     <!-- Light Layer -->
-    <color name="surface_bg_light">#F5F5F5</color>         <!-- Very Light Gray -->
+    <!-- Very Light Gray -->
     <color name="surface_text_light">#7C6F64</color>       <!-- Warm Taupe -->
 
     <!-- Dark Layer -->
-    <color name="surface_bg_dark">#CCCCCC</color>          <!-- Medium Gray -->
-    <color name="surface_text_dark">#333333</color>
+    <!-- Medium Gray -->
 
     <!-- Medium Tint -->
     <color name="surface_bg_medium">#FFE3C4</color>        <!-- Apricot Cream -->
@@ -31,33 +30,28 @@
     <color name="surface_text_deep">#333333</color>
 
     <!-- Scrim -->
-    <color name="surface_scrim">#00000080</color>
-    <color name="surface_on_scrim">#FFF9F5</color>
 
     <!-- Menu Button Colors -->
     <!-- Default -->
-    <color name="menu_button_bg_default">#FFF9F5</color>        <!-- Soft Ivory (base) -->
-    <color name="menu_button_text_default">#333333</color>      <!-- Charcoal Gray -->
+    <!-- Soft Ivory (base) -->
+    <!-- Charcoal Gray -->
     <color name="menu_button_icon_default">#7C6F64</color>      <!-- Warm Taupe -->
 
     <!-- Selected/Active -->
-    <color name="menu_button_bg_active">#ED7D31</color>         <!-- Warm Orange -->
-    <color name="menu_button_text_active">#FFF9F5</color>       <!-- Soft Ivory -->
-    <color name="menu_button_icon_active">#FFF9F5</color>       <!-- Soft Ivory -->
+    <!-- Warm Orange -->
+    <!-- Soft Ivory -->
+    <!-- Soft Ivory -->
 
     <!-- Pressed (darkened active) -->
-    <color name="menu_button_bg_pressed">#D26924</color>        <!-- Slightly darker Warm Orange -->
-    <color name="menu_button_text_pressed">#FFF9F5</color>
-    <color name="menu_button_icon_pressed">#FFF9F5</color>
+    <!-- Slightly darker Warm Orange -->
 
     <!-- Soft Pastel Background-->
     <color name="pastel_background">#FFEEDD</color>
     <color name="text_pastel_background">#2C2C2C</color>
 
     <!-- Disabled -->
-    <color name="menu_button_bg_disabled">#FFE3C4</color>       <!-- Apricot Cream -->
-    <color name="menu_button_text_disabled">#7C6F64</color>     <!-- Warm Taupe -->
-    <color name="menu_button_icon_disabled">#7C6F64</color>
+    <!-- Apricot Cream -->
+    <!-- Warm Taupe -->
 
     <!-- Brand Colors -->
     <color name="colorPrimary">#ED7D31</color> <!-- Warm Orange -->
@@ -75,35 +69,17 @@
     <color name="button_secondary_bg">#4A86B8</color> <!-- Calm Blue -->
     <color name="button_secondary_text">#FFF9F5</color> <!-- Soft Ivory -->
 
-    <color name="button_outlined_bg">#FFF9F5</color> <!-- Soft Ivory -->
-    <color name="button_outlined_text">#333333</color> <!-- Charcoal Gray -->
+    <!-- Soft Ivory -->
+    <!-- Charcoal Gray -->
     <color name="button_outlined_border">#7C6F64</color> <!-- Warm Taupe -->
 
     <color name="button_success_bg">#B2E2B9</color> <!-- Mint Green -->
     <color name="button_success_text">#333333</color> <!-- Charcoal Gray -->
     <!--    legacy colors:-->
-    <color name="blue">#2CB9F0</color>
-    <color name="blue_dark">#111154</color>
-    <color name="purple">#642CF0</color>
-    <color name="teal_200">#F0642C</color>
-    <color name="blue_light">#2CF0C6</color>
-    <color name="teal_700">#F02CB9</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FFF9F5</color>
     <color name="gray">#4A4A4A</color>
-    <color name="background2">#FFF9F5</color>
-    <color name="palette_dark">#364954</color>
-    <color name="palette_natural">#5C98B8</color>
     <color name="blue_1">#00CFEC</color>
-    <color name="blue_2">#00E1D5</color>
-    <color name="green">#5DEEB1</color>
     <color name="red">#EA6970</color>
-    <color name="green_1">#AEF78B</color>
-    <color name="yellow">#F9F871</color>
-    <array name="loading_color">
-        <item>#FFFFFF</item>
-        <item>#FFFFFF</item>
-        <item>#FFFFFF</item>
-    </array>
 </resources>

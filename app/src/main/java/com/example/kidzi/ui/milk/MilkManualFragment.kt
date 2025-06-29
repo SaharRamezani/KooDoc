@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentMilkManualBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidAlergyDao
@@ -79,15 +80,15 @@ class MilkManualFragment : Fragment() {
             val isDietChecked = binding.radioDietNo.isChecked || binding.radioDietYes.isChecked
 
             if (ageText.isEmpty()) {
-                Toast.makeText(requireContext(), "سن باید بصورت عدد صحیح وارد شود.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_enter_age), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (!isLacSelected) {
-                Toast.makeText(requireContext(), "حساسیت به لاکتوز باید مشخص گردد.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_select_lactose), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (!isCowSelected) {
-                Toast.makeText(requireContext(), "حساسیت به شیر گاو باید مشخص گردد.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_select_cow), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -133,7 +134,7 @@ class MilkManualFragment : Fragment() {
                         )
                     )
                 } catch (e: Exception) {
-                    Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), getString(R.string.toast_save_error), Toast.LENGTH_SHORT).show()
                 }
             }
         }

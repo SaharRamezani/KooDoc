@@ -35,8 +35,9 @@ class ParentLoginFragment : Fragment() {
                 sharedPreferences.updateParent(parent)
                 sharedPreferences.updateLevel(2)
                 findNavController().navigate(ParentLoginFragmentDirections.actionParentLoginFragmentToParentInfoIntroFragment())
-            }else{
-                Toast.makeText(requireContext(),"باید یکی از گزینه ها را انتخاب کنید.",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(requireContext(), getString(R.string.toast_select_option), Toast.LENGTH_SHORT).show()
             }
         }
 
