@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentFamilyDisSecondBinding
 import com.example.kidzi.di.db.dao.FamilyDiseaseDao
 import com.example.kidzi.di.db.models.FamilyDiseaseModel
@@ -29,9 +30,9 @@ class FamilyDisSecondFragment : Fragment() {
         val parentId = FamilyDisSecondFragmentArgs.fromBundle(requireArguments()).parentId
 
         if (parentId == 1) {
-            binding.txtParent.text = "پدر"
+            binding.txtParent.text = getString(R.string.relation_father)
         } else {
-            binding.txtParent.text = "مادر"
+            binding.txtParent.text = getString(R.string.relation_mother)
         }
 
         loadData(parentId)
@@ -61,7 +62,7 @@ class FamilyDisSecondFragment : Fragment() {
                 }
 
             } catch (e: Exception) {
-                // Optionally log or handle error
+                // log or handle error
             }
         }
     }
@@ -83,7 +84,7 @@ class FamilyDisSecondFragment : Fragment() {
                 findNavController().popBackStack()
 
             } catch (e: Exception) {
-                // Optionally show a Toast or log
+                // show a Toast or log
             }
         }
     }

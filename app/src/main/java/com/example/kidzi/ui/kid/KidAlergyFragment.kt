@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidAlergyBinding
 import com.example.kidzi.di.db.dao.KidAlergyDao
 import com.example.kidzi.di.db.models.KidAlergyModel
@@ -85,7 +86,7 @@ class KidAlergyFragment : Fragment() {
 
             } catch (e: Exception) {
                 Log.e("AlergyLoad", "Failed to load allergy data", e)
-                Toast.makeText(requireContext(), "خطا در بارگذاری اطلاعات", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.error_save), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -106,7 +107,7 @@ class KidAlergyFragment : Fragment() {
 
             } catch (e: Exception) {
                 Log.e("AlergySave", "Failed to save allergy data", e)
-                Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.error_save), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -127,7 +128,7 @@ class KidAlergyFragment : Fragment() {
 
             } catch (e: Exception) {
                 Log.e("AlergySave", "Failed to save allergy data", e)
-                Toast.makeText(requireContext(), "خطا در ذخیره اطلاعات", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.error_save), Toast.LENGTH_SHORT).show()
             }
         }
     }

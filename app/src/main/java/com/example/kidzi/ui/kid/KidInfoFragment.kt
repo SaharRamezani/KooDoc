@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidInfoBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
@@ -59,7 +60,7 @@ class KidInfoFragment : Fragment() {
 
                 } catch (e: Exception) {
                     Log.e("KidInfoShowFragment", "Error loading kid info", e)
-                    Toast.makeText(requireContext(), "خطا در بارگذاری اطلاعات", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), getString(R.string.toast_load_error), Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -93,13 +94,13 @@ class KidInfoFragment : Fragment() {
 
         binding.btnNext.setOnClickListener {
             if (binding.txtName.text.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "نام نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_enter_name_kid), Toast.LENGTH_SHORT).show()
             } else if (binding.txtHeight.text.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "قد نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_enter_height), Toast.LENGTH_SHORT).show()
             } else if (binding.txtWeight.text.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "وزن نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_enter_weight), Toast.LENGTH_SHORT).show()
             } else if (!binding.btnGroup.text.toString().contains("/")) {
-                Toast.makeText(requireContext(), "تاریخ تولد نوزاد را وارد کنید", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_enter_birth_date_kid), Toast.LENGTH_SHORT).show()
             } else {
                 val sex = if (binding.radioWorkingYes.isChecked) 1 else 2
 
