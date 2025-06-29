@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentToxicDrugBinding
-import com.example.kidzi.ui.vaccine.VaccineAgeFragmentDirections
 import com.example.kidzi.ui.vaccine.adapters.VaccineAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +20,7 @@ class ToxicDrugFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentToxicDrugBinding.inflate(inflater)
         val vaccineArray = resources.getStringArray(R.array.toxic_drugs).toList()
 

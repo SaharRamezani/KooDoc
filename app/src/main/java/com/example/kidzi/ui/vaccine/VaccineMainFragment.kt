@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentVaccineMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,8 +16,7 @@ class VaccineMainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentVaccineMainBinding.inflate(inflater, container, false)
 
         binding.btnBack.setOnClickListener {
@@ -33,5 +31,4 @@ class VaccineMainFragment : Fragment() {
 
         return binding.root
     }
-
 }

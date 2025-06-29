@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentToxicIronBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,8 +15,7 @@ class ToxicIronFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentToxicIronBinding.inflate(inflater)
 
         binding.btnBack.setOnClickListener {
@@ -26,5 +24,4 @@ class ToxicIronFragment : Fragment() {
 
         return binding.root
     }
-
 }

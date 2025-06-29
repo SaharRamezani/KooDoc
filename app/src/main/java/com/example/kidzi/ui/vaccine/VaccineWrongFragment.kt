@@ -21,8 +21,7 @@ class VaccineWrongFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentVaccineWrongBinding.inflate(inflater, container, false)
 
         binding.btnBack.setOnClickListener {
@@ -37,5 +36,4 @@ class VaccineWrongFragment : Fragment() {
 
         return binding.root
     }
-
 }

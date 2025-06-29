@@ -3,7 +3,6 @@ package com.example.kidzi.ui.vaccine.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kidzi.databinding.ListVaccinesBinding
 import com.example.kidzi.databinding.ListWrongBinding
 
 class VaccineWrongAdapter(
@@ -11,7 +10,7 @@ class VaccineWrongAdapter(
 ) : RecyclerView.Adapter<VaccineWrongAdapter.VaccineViewHolder>() {
 
     inner class VaccineViewHolder(val binding: ListWrongBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(vaccine: String, position: Int) {
+        fun bind(vaccine: String) {
             binding.txtName.text = vaccine
         }
     }
@@ -22,7 +21,7 @@ class VaccineWrongAdapter(
     }
 
     override fun onBindViewHolder(holder: VaccineViewHolder, position: Int) {
-        holder.bind(vaccineList[position], position)
+        holder.bind(vaccineList[position])
     }
 
     override fun getItemCount(): Int = vaccineList.size
