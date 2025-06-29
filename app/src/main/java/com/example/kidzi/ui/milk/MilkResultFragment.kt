@@ -64,7 +64,6 @@ class MilkResultFragment : Fragment() {
             else -> getString(R.string.my_kid_milk)
         }
 
-        // Fetch kid info and generate list inside coroutine
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val kid = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
@@ -75,7 +74,7 @@ class MilkResultFragment : Fragment() {
 
             } catch (e: Exception) {
                 Log.e("MilkResultFragment", "Error loading milk list", e)
-                Toast.makeText(requireContext(), "خطا در بارگذاری لیست", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.toast_load_error), Toast.LENGTH_SHORT).show()
                 setupRecycler(binding, emptyList())
             }
         }

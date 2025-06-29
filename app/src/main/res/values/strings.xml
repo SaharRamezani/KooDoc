@@ -246,6 +246,11 @@
     <string name="datepicker_positive">تائید</string>
     <string name="datepicker_negative">بیخیال</string>
     <string name="datepicker_today">امروز</string>
+    <string name="choose_one_option">حداقل یک گزینه را انتخاب کنید.</string>
+    <string name="toast_enter_age">سن باید بصورت عدد صحیح وارد شود.</string>
+    <string name="toast_select_lactose">حساسیت به لاکتوز باید مشخص گردد.</string>
+    <string name="toast_select_cow">حساسیت به شیر گاو باید مشخص گردد.</string>
+    <string name="toast_save_error">خطا در ذخیره اطلاعات</string>
     <string name="relation_caregiver">مراقب کودک</string>
     <string name="toast_agree_rules">ابتدا باید با قوانین استفاده از کوداک موافقت نمایید.</string>
     <string name="toast_select_option">باید یکی از گزینه ها را انتخاب کنید.</string>

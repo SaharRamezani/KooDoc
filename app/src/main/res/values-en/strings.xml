@@ -38,6 +38,11 @@
     <string name="dose_10_12_5cc">Take 10-12 ml (cc).</string>
     <string name="error_choose_child">Choose a child first.</string>
     <string name="weight_kg_vs_months">Weight (kg) vs Months</string>
+    <string name="choose_one_option">Choose one of the options</string>
+    <string name="toast_enter_age">Age must be entered as an integer.</string>
+    <string name="toast_select_lactose">Lactose intolerance must be specified.</string>
+    <string name="toast_select_cow">Cow milk allergy must be specified.</string>
+    <string name="toast_save_error">Error saving information.</string>
     <string name="relation_father">Father</string>
     <string name="toast_invalid_kid_id">Invalid baby ID!</string>
     <string name="toast_load_error">Error loading information</string>
