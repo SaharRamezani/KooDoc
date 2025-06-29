@@ -30,6 +30,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:tint="@color/button_outlined_border"
+                    android:autoMirrored="true"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,14 +72,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
                                 android:text="@string/tox_ways"/>
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_ways"
                                 app:tint="@color/button_outlined_border"
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
@@ -124,13 +125,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
                                 android:text="@string/tox_family"/>
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_family"
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
                                 app:tint="@color/button_outlined_border"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
@@ -177,14 +178,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
                                 android:text="@string/tox_symptoms"/>
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_symptom"
                                 app:tint="@color/button_outlined_border"
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
@@ -229,7 +230,7 @@
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/button_success_text"
                                 android:id="@+id/txt_caution"
-                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
                                 android:text="@string/brain_kids"/>
                         </RelativeLayout>
 

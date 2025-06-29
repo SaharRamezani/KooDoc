@@ -7,19 +7,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.kid.FamilyDisSecondFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:layout_margin="18dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layoutDirection="rtl">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"

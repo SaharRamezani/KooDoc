@@ -37,7 +37,7 @@
             android:id="@+id/txt_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_kodak"
+            android:text="@string/welcome_KooDoc"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"
@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/whatis_kodak"
+            android:text="@string/whatis_KooDoc"
             android:layout_marginTop="12dp"
             android:textAlignment="center"
             android:textColor="@color/colorTextPrimary"

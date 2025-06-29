@@ -9,9 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layoutDirection="locale"
         android:orientation="vertical"
-        android:layout_margin="@dimen/main_margin"
-        android:layoutDirection="rtl">
+        android:layout_margin="@dimen/main_margin">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -31,13 +31,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="arrow"
                     app:tint="@color/button_outlined_border"
-                    android:src="@drawable/ic_arrow_left"/>
+                    android:src="@drawable/ic_arrow_left"
+                    android:autoMirrored="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_marginBottom="2dp"
                     android:text="@string/main_calculator"
                     android:textColor="@color/colorTextPrimary"
@@ -117,7 +119,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="16dp"> <!-- Added padding -->
+                            android:padding="16dp">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -183,7 +185,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Drug selector -->
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
@@ -198,7 +199,6 @@
                             android:inputType="none" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Weight input -->
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
@@ -213,19 +213,19 @@
                             android:inputType="numberDecimal" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Age input -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:baselineAligned="false"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
 
-                        <!-- Unit dropdown, outlined individually -->
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="@string/unit">
+
                             <AutoCompleteTextView
                                 android:id="@+id/auto_complete_age_unit"
                                 android:layout_width="wrap_content"
@@ -234,7 +234,6 @@
                                 android:inputType="none"/>
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <!-- Age input, outlined individually -->
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
@@ -242,6 +241,7 @@
                             android:layout_marginStart="@dimen/spacing_small"
                             android:layout_weight="1"
                             android:hint="@string/enter_age">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/input_age"
                                 android:layout_width="match_parent"
@@ -250,7 +250,6 @@
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
-                    <!-- Reminder text -->
                     <TextView
                         android:id="@+id/tv_warning"
                         android:layout_width="match_parent"
@@ -260,7 +259,6 @@
                         android:textSize="14sp"
                         android:layout_marginBottom="24dp" />
 
-                    <!-- Calculate button -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_calculate"
                         style="@style/Widget.MyApp.Button.Primary"
@@ -270,7 +268,6 @@
                         android:textSize="18sp" />
 
                 </LinearLayout>
-                <!-- END: NEW UI -->
             </ScrollView>
         </FrameLayout>
     </LinearLayout>

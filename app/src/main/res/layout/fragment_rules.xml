@@ -7,12 +7,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.RulesFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:layout_margin="@dimen/main_margin">
 
         <com.google.android.material.card.MaterialCardView
@@ -37,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rules"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"/>

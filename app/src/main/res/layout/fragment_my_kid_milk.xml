@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:orientation="vertical">
 
         <TextView
@@ -18,8 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:visibility="gone"
-            />
+            android:visibility="gone"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -38,11 +37,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:tint="@color/button_outlined_border"
+                    android:autoMirrored="true"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:id="@+id/txt_title"
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
@@ -56,8 +56,8 @@
             android:layout_height="match_parent"
             android:id="@+id/recycler"
             tools:listitem="@layout/list_milk"
-            android:layout_marginRight="18dp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginBottom="18dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

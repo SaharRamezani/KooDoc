@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:orientation="vertical">
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -28,16 +28,17 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoMirrored="true"
                     app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="انتخاب کودک"/>
+                    android:text="@string/choose_kid"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -47,8 +48,7 @@
             android:layout_height="match_parent"
             android:id="@+id/recycler"
             tools:listitem="@layout/list_kids"
-            android:layout_marginRight="18dp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginBottom="18dp"/>
     </LinearLayout>
 </FrameLayout>

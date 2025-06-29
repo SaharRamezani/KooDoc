@@ -7,11 +7,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.kid.KidInfoFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:layout_margin="18dp"
         android:orientation="vertical">
 
@@ -48,7 +47,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:hint="@string/weight"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:boxBackgroundColor="@color/white"
@@ -70,12 +68,9 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:hint="@string/height"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:boxBackgroundColor="@color/white"
@@ -117,27 +112,26 @@
             android:layout_marginTop="18dp"
             android:textSize="16sp"
             android:textStyle="bold"/>
+
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:id="@+id/radio_group_working">
             <RadioButton
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:id="@+id/radio_working_yes"
-                android:text="@string/boy"/>
+                android:layout_marginEnd="16dp"
+                android:text="@string/boy" />
 
             <RadioButton
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
                 android:id="@+id/radio_working_no"
                 android:text="@string/girl"/>
         </RadioGroup>
-
-
 
         <TextView
             android:layout_width="match_parent"
@@ -151,7 +145,6 @@
             app:backgroundTint="@color/colorPrimary"
             app:strokeColor="@color/colorPrimary"
             app:strokeWidth="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:text="@string/ok"
             android:textStyle="bold"
             app:cornerRadius="8dp"/>
@@ -164,10 +157,8 @@
             app:strokeColor="@color/colorSecondary"
             app:strokeWidth="2dp"
             android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:text="@string/before"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
-
     </LinearLayout>
 </FrameLayout>

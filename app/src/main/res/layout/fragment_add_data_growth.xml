@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:layoutDirection="locale"
     tools:context=".ui.milk.AddDataGrowthFragment">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layoutDirection="rtl"
         android:layout_height="match_parent">
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_header"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/btn_back"
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="0dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:tint="@color/button_outlined_border"
-                    android:src="@drawable/ic_arrow_left"/>
+                    android:autoMirrored="true"
+                    android:src="@drawable/ic_arrow_left" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
                     android:textColor="@color/black"
-                    android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="@string/register_growth"/>
-
+                    android:text="@string/register_growth" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -55,23 +56,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal"
-                android:layout_marginTop="18dp"
-                android:layoutDirection="rtl">
+                android:layout_marginTop="18dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
+                    android:layout_margin="12dp"
                     android:hint="@string/age_week"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     app:boxBackgroundColor="@color/white"
                     app:boxCornerRadiusTopStart="15dp"
                     app:boxCornerRadiusBottomStart="15dp"
                     app:boxCornerRadiusBottomEnd="15dp"
-                    android:visibility="visible"
                     app:boxCornerRadiusTopEnd="15dp"
+                    android:visibility="visible"
                     android:id="@+id/box_age"
                     app:endIconMode="clear_text"
                     app:boxStrokeColor="@color/black"
@@ -84,21 +85,19 @@
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
+                    android:layout_margin="12dp"
                     android:hint="@string/height"
-                    android:layout_marginRight="12dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     app:boxBackgroundColor="@color/white"
                     app:boxCornerRadiusTopStart="15dp"
                     app:boxCornerRadiusBottomStart="15dp"
                     app:boxCornerRadiusBottomEnd="15dp"
-                    android:visibility="visible"
                     app:boxCornerRadiusTopEnd="15dp"
+                    android:visibility="visible"
                     android:id="@+id/box_height"
                     app:endIconMode="clear_text"
                     app:boxStrokeColor="@color/black"
@@ -115,25 +114,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="18dp"
-                android:layoutDirection="rtl">
-
-
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
+                    android:layout_margin="12dp"
                     android:hint="@string/weight"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     app:boxBackgroundColor="@color/white"
                     app:boxCornerRadiusTopStart="15dp"
                     app:boxCornerRadiusBottomStart="15dp"
                     app:boxCornerRadiusBottomEnd="15dp"
-                    android:visibility="visible"
                     app:boxCornerRadiusTopEnd="15dp"
+                    android:visibility="visible"
                     android:id="@+id/box_weight"
                     app:endIconMode="clear_text"
                     app:boxStrokeColor="@color/black"
@@ -146,21 +142,19 @@
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_marginRight="12dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
+                    android:layout_margin="12dp"
                     android:hint="@string/head"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     app:boxBackgroundColor="@color/white"
                     app:boxCornerRadiusTopStart="15dp"
                     app:boxCornerRadiusBottomStart="15dp"
                     app:boxCornerRadiusBottomEnd="15dp"
-                    android:visibility="visible"
                     app:boxCornerRadiusTopEnd="15dp"
+                    android:visibility="visible"
                     android:id="@+id/box_head"
                     app:endIconMode="clear_text"
                     app:boxStrokeColor="@color/black"
@@ -177,20 +171,21 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:backgroundTint="@color/colorPrimary"
                 app:strokeColor="@color/colorPrimary"
                 app:strokeWidth="2dp"
-                android:layout_marginBottom="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:textStyle="bold"
                 app:cornerRadius="8dp"
+                android:textStyle="bold"
                 android:id="@+id/btn_register"
-                android:text="@string/register"/>
+                android:text="@string/register" />
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

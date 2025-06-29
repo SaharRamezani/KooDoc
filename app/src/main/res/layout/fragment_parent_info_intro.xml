@@ -10,14 +10,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:layout_margin="18dp"
         android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layoutDirection="rtl">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/test"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 android:textSize="18sp"
                 android:id="@+id/txt_relation"
                 android:textColor="@color/black"/>
@@ -74,14 +73,14 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/btn_next"
             android:layout_margin="18dp"
-            android:orientation="horizontal"
-            android:layoutDirection="rtl">
+            android:orientation="horizontal">
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/check_rules"/>
             <com.google.android.material.button.MaterialButton
-                android:layout_width="55dp"
+                android:layout_width="wrap_content"
+                android:minWidth="55dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:text="@string/rules_2"

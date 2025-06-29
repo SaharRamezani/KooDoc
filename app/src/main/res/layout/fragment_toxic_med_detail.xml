@@ -7,13 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.toxic.ToxicMedDetailFragment">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:orientation="vertical">
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,6 +21,7 @@
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="0dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,13 +45,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:id="@+id/tox_name"
                     android:textSize="@dimen/header_size"
-                    android:text="آهن"/>
-
+                    android:text="@string/iron"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -64,6 +63,5 @@
             android:justificationMode="inter_word"
             android:textColor="@color/colorTextPrimary"
             android:id="@+id/tox_detail"/>
-
     </LinearLayout>
 </FrameLayout>
