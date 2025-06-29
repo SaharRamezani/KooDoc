@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.example.kidzi.databinding.ActivityMainBinding
 import com.example.kidzi.di.db.PreferenceManager
@@ -38,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         Log.i("StartupDebug", "Level: $sharedPreferences.getLevel(), CanOpen: $sharedPreferences.canOpen()")
 
         val level = sharedPreferences.getLevel()
-        val canOpen = sharedPreferences.canOpen()
 
         val startDestination = when {
             level == 0 -> R.id.navigation_home
