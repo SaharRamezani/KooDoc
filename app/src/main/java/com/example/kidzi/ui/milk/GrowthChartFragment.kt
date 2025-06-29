@@ -10,14 +10,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentGrowthChartBinding
-import com.example.kidzi.ui.milk.adapters.GrowthChartAdapter
+import com.example.kidzi.ui.milk.adapters.GrowthChartSimpleAdapter
 import com.example.kidzi.util.GrowthChartHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class GrowthChartFragment : Fragment() {
 
-    lateinit var adapter: GrowthChartAdapter
+    lateinit var adapter: GrowthChartSimpleAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,7 +57,7 @@ class GrowthChartFragment : Fragment() {
             )
         }
 
-        adapter = GrowthChartAdapter(growthList) { /* no-op */ }
+        adapter = GrowthChartSimpleAdapter(growthList)
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
