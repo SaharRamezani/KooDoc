@@ -46,7 +46,6 @@ class MilkIntroFragment : Fragment() {
                 val kidInfo = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
                 binding.txtKidName.text = kidInfo.name
             } catch (e: Exception) {
-                // Handle error — e.g. show default text or log
                 binding.txtKidName.text = "نوزادی انتخاب نشده"
             }
         }
