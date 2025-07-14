@@ -12,7 +12,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
 
     @Inject
@@ -23,13 +22,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Disable system-drawn background
-        //WindowCompat.setDecorFitsSystemWindows(window, false)
-
-        // Set status bar to transparent manually
         window.statusBarColor = Color.TRANSPARENT
 
-        // Set up navigation with conditional start destination
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
         val navController = navHostFragment.navController
         val navGraph = navController.navInflater.inflate(R.navigation.mobile_navigation)
