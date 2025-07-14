@@ -1,5 +1,6 @@
 package com.example.kidzi.ui.symptoms
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -56,6 +57,7 @@ class SymptomsDetailsFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupInfo(binding: FragmentSymptomsDetailsBinding, row: Int) {
         val infoDetail = resources.getStringArray(R.array.symptoms_headers)[row]
         if (infoDetail.isNullOrEmpty() || infoDetail.length < 2) {
@@ -72,6 +74,7 @@ class SymptomsDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupEmergency(binding: FragmentSymptomsDetailsBinding, row: Int) {
         val detail = resources.getStringArray(R.array.symptoms_emergency)[row]
         if (detail.isNullOrEmpty() || detail.length < 2) {
@@ -90,6 +93,7 @@ class SymptomsDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupEmergencyMed(binding: FragmentSymptomsDetailsBinding, row: Int) {
         val detail = resources.getStringArray(R.array.symptoms_emergency_low)[row]
         if (detail.isNullOrEmpty() || detail.length < 2) {
@@ -108,6 +112,7 @@ class SymptomsDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupEmergencyLow(binding: FragmentSymptomsDetailsBinding, row: Int) {
         val detail = resources.getStringArray(R.array.symptoms_emergency_no)[row]
         if (detail.isNullOrEmpty() || detail.length < 2) {
@@ -126,6 +131,7 @@ class SymptomsDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupHome(binding: FragmentSymptomsDetailsBinding, row: Int) {
         val detail = resources.getStringArray(R.array.symptoms_home)[row]
         if (detail.isNullOrEmpty() || detail.length < 2) {
@@ -144,6 +150,7 @@ class SymptomsDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupRelative(binding: FragmentSymptomsDetailsBinding, row: Int) {
         val detail = resources.getStringArray(R.array.symptoms_related)[row]
         if (detail.isNullOrEmpty() || detail.length < 2) {
@@ -160,6 +167,7 @@ class SymptomsDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupCareSections(binding: FragmentSymptomsDetailsBinding, row: Int) {
         setupCare(
             binding.cardCareH1, binding.layoutMoreH1, binding.arrowH1,
