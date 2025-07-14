@@ -95,7 +95,7 @@
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
                                 android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:id="@+id/txt_right"
+                                android:id="@+id/txt_cause"
                                 android:text="@string/info_about"/>
 
                             <TextView
