@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
@@ -30,6 +29,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoMirrored="true"
                     app:tint="@color/button_outlined_border"
                     android:src="@drawable/ic_arrow_left" />
 
@@ -108,7 +108,6 @@
                     app:cornerRadius="8dp"
                     app:strokeColor="@color/button_outlined_border"
                     style="@style/Widget.Material3.Button.OutlinedButton" />
-
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

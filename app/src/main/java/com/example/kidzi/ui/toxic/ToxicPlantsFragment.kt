@@ -21,15 +21,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ToxicPlantsFragment : Fragment() {
-
-
     lateinit var adapter: ToxicPlantsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val binding = FragmentToxicPlantsBinding.inflate(inflater, container, false)
 
 
@@ -48,7 +45,6 @@ class ToxicPlantsFragment : Fragment() {
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
 
-
         return binding.root
     }
 
@@ -61,7 +57,4 @@ class ToxicPlantsFragment : Fragment() {
             null
         }
     }
-
-
-
 }
