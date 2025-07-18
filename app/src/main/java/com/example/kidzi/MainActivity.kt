@@ -3,15 +3,19 @@ package com.example.kidzi
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.example.kidzi.databinding.ActivityMainBinding
 import com.example.kidzi.di.db.PreferenceManager
+import com.example.kidzi.util.BaseActivity
+import com.example.kidzi.util.MyLanguageManager.getLanguage
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 import javax.inject.Inject
+import android.content.res.Configuration
+
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -23,8 +27,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Disable system-drawn background
-        //WindowCompat.setDecorFitsSystemWindows(window, false)
+        val lang = "fa"
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        config.setLayoutDirection(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
 
         // Set status bar to transparent manually
         window.statusBarColor = Color.TRANSPARENT

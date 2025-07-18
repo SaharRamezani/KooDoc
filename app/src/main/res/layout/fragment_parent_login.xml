@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="18dp"
+        android:layoutDirection="locale"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,16 +34,26 @@
                 android:layout_marginHorizontal="18dp"
                 android:layout_marginTop="12dp"
                 android:id="@+id/radio_group"
+                android:layoutDirection="locale"
+                android:gravity="start"
                 app:layout_constraintTop_toBottomOf="@id/question">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layoutDirection="locale"
+                    android:textDirection="locale"
+                    android:gravity="end"
+                    android:textAlignment="viewEnd"
                     android:text="@string/mother"
                     android:id="@+id/radio_mom"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layoutDirection="locale"
+                    android:textDirection="locale"
+                    android:gravity="end"
+                    android:textAlignment="viewEnd"
                     android:text="@string/dad"
                     android:id="@+id/radio_dad"/>
 
@@ -50,11 +61,13 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layoutDirection="locale"
+                    android:textDirection="locale"
+                    android:gravity="end"
+                    android:textAlignment="viewEnd"
                     android:text="@string/other"
                     android:id="@+id/radio_other"/>
             </RadioGroup>
-
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

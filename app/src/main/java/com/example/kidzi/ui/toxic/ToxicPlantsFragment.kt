@@ -3,6 +3,7 @@ package com.example.kidzi.ui.toxic
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -37,7 +38,7 @@ class ToxicPlantsFragment : Fragment() {
         val vaccineList = mutableListOf<ToxicPlantsModel>()
         val size = minOf(vaccineNames.size, vaccineAbout.size)
 
-        for(i in 0 until size){
+        for (i in 0 until size) {
             vaccineList.add(ToxicPlantsModel(vaccineNames[i], vaccineAbout[i],getDrawableByName("toxic$i")!!, false))
         }
 
@@ -49,11 +50,10 @@ class ToxicPlantsFragment : Fragment() {
     }
 
     fun getDrawableByName(drawableName: String): Drawable? {
-        return try {
-            val resId = R.drawable::class.java.getDeclaredField(drawableName).getInt(null)
+        val resId = resources.getIdentifier(drawableName, "drawable", requireContext().packageName)
+        return if (resId != 0) {
             ContextCompat.getDrawable(requireContext(), resId)
-        } catch (e: Exception) {
-            e.printStackTrace()
+        } else {
             null
         }
     }
