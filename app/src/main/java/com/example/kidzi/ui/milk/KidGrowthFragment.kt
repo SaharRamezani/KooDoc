@@ -40,7 +40,9 @@ class KidGrowthFragment : Fragment() {
     ): View {
         binding = FragmentKidGrowthBinding.inflate(inflater, container, false)
 
-        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.growthMainFragment)
+        }
 
         binding.btnAddData.setOnClickListener {
             findNavController().navigate(R.id.action_kidGrowthFragment_to_addDataGrowthFragment)

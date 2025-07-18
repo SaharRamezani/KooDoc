@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -13,6 +14,7 @@ import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentSymptomsDetailsBinding
 import com.example.kidzi.ui.symptoms.adapter.SymtomsAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.reflect.KMutableProperty0
 
 @AndroidEntryPoint
 class SymptomsDetailsFragment : Fragment() {
@@ -172,38 +174,44 @@ class SymptomsDetailsFragment : Fragment() {
         setupCare(
             binding.cardCareH1, binding.layoutMoreH1, binding.arrowH1,
             resources.getStringArray(R.array.symptoms_h1)[row],
-            R.id.txt_header_h1, R.id.h1_detail
-        ) { isH1 = it }
+            R.id.txt_header_h1, R.id.h1_detail,
+            ::isH1
+        )
 
         setupCare(
             binding.cardCareH2, binding.layoutMoreH2, binding.arrowH2,
             resources.getStringArray(R.array.symptoms_h2)[row],
-            R.id.txt_header_h2, R.id.h2_detail
-        ) { isH2 = it }
+            R.id.txt_header_h2, R.id.h2_detail,
+            ::isH2
+        )
 
         setupCare(
             binding.cardCareH3, binding.layoutMoreH3, binding.arrowH3,
             resources.getStringArray(R.array.symptoms_h3)[row],
-            R.id.txt_header_h3, R.id.h3_detail
-        ) { isH3 = it }
+            R.id.txt_header_h3, R.id.h3_detail,
+            ::isH3
+        )
 
         setupCare(
             binding.cardCareH4, binding.layoutMoreH4, binding.arrowH4,
             resources.getStringArray(R.array.symptoms_h4)[row],
-            R.id.txt_header_h4, R.id.h4_detail
-        ) { isH4 = it }
+            R.id.txt_header_h4, R.id.h4_detail,
+            ::isH4
+        )
 
         setupCare(
             binding.cardCareH5, binding.layoutMoreH5, binding.arrowH5,
             resources.getStringArray(R.array.symptoms_h5)[row],
-            R.id.txt_header_h5, R.id.h5_detail
-        ) { isH5 = it }
+            R.id.txt_header_h5, R.id.h5_detail,
+            ::isH5
+        )
 
         setupCare(
             binding.cardCareH6, binding.layoutMoreH6, binding.arrowH6,
             resources.getStringArray(R.array.symptoms_h6)[row],
-            R.id.txt_header_h6, R.id.h6_detail
-        ) { isH6 = it }
+            R.id.txt_header_h6, R.id.h6_detail,
+            ::isH6
+        )
 
         val h7Text = resources.getStringArray(R.array.symptoms_h7)[row]
         if (h7Text.isNullOrEmpty() || h7Text.length < 2) {
@@ -249,6 +257,7 @@ class SymptomsDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupCare(
         card: View,
         layout: View,
@@ -256,26 +265,48 @@ class SymptomsDetailsFragment : Fragment() {
         text: String,
         headerId: Int,
         detailId: Int,
-        toggle: (Boolean) -> Unit
+        state: KMutableProperty0<Boolean>
     ) {
-        if (text.isNullOrEmpty() || text.length < 2) {
+        if (text.isEmpty() || text.length < 2) {
             card.visibility = View.GONE
-        } else {
-            val model = parseStringToModel(text)
+            return
+        }
 
-            val header = card.findViewById<TextView>(headerId)
-            val detail = card.findViewById<TextView>(detailId)
+        val model = parseStringToModel(text)
+        val header = card.findViewById<TextView>(headerId)
+        val detail = card.findViewById<TextView>(detailId)
+        val arrowView = arrow as ImageView
 
-            header.text = model.header
-            detail.text = model.body
+        header.text = model.header
+        detail.text = model.body
 
-            card.setOnClickListener {
-                val state = layout.visibility != View.VISIBLE
-                toggle(state)
-                layout.visibility = if (state) View.VISIBLE else View.GONE
-                arrow.setBackgroundResource(
-                    if (state) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
-                )
+        card.setOnClickListener {
+            val shouldExpand = layout.visibility != View.VISIBLE
+
+            // ✅ Step 1: Update this section's state
+            state.set(shouldExpand)
+
+            // ✅ Step 2: Expand/collapse this section
+            layout.visibility = if (shouldExpand) View.VISIBLE else View.GONE
+            arrowView.setImageResource(if (shouldExpand) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down)
+
+            val binding = FragmentSymptomsDetailsBinding.bind(requireView())
+
+            // ✅ Step 3: Handle the parent visibility
+            if (shouldExpand) {
+                if (binding.layoutMoreCare.visibility != View.VISIBLE) {
+                    isCaring = true
+                    binding.layoutMoreCare.visibility = View.VISIBLE
+                    binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_up))
+                }
+            } else {
+                // ✅ Step 4: Re-evaluate ALL open states after state is updated
+                val anyStillOpen = isH1 || isH2 || isH3 || isH4 || isH5 || isH6 || isH7
+                if (!anyStillOpen) {
+                    isCaring = false
+                    binding.layoutMoreCare.visibility = View.GONE
+                    binding.arrowCare.setImageDrawable(requireContext().getDrawable(R.drawable.ic_arrow_down))
+                }
             }
         }
     }

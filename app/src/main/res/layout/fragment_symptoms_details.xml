@@ -67,58 +67,71 @@
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:clickable="true"
                         android:id="@+id/card_info"
                         app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
-                        app:cardCornerRadius="8dp"
-                        android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
+                        app:cardCornerRadius="8dp">
 
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/surface_bg_deep"/>
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_info"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:src="@drawable/ic_arrow_down"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:id="@+id/txt_cause"
-                                android:text="@string/info_about"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
+                        <!-- Outer vertical layout: stacks header + hidden content -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone"
-                            android:id="@+id/layout_more_info">
-                            <View
+                            android:orientation="vertical">
+
+                            <!-- Header row (always visible) -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/black"/>
-                            <TextView
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/surface_bg_deep" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_info"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:src="@drawable/ic_arrow_down" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txt_cause"
+                                    android:text="@string/info_about"
+                                    android:textColor="@color/black"
+                                    android:layout_margin="@dimen/margin_symptoms_cards" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <!-- Expandable detail section (initially hidden) -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_margin="12dp"
-                                android:lineSpacingExtra="@dimen/line_extra"
-                                android:id="@+id/info_detail"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/layout_more_info">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/black" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="12dp"
+                                    android:lineSpacingExtra="@dimen/line_extra"
+                                    android:id="@+id/info_detail" />
+                            </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -365,19 +378,21 @@
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:clickable="true"
                         android:layout_marginTop="12dp"
                         android:id="@+id/card_relative"
                         app:cardBackgroundColor="@color/surface_bg_deep"
                         app:cardElevation="2dp"
-                        app:cardCornerRadius="8dp"
-                        android:layout_height="wrap_content">
+                        app:cardCornerRadius="8dp">
 
+                        <!-- Make this vertical to stack header + details -->
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
+                            <!-- Header Row -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -410,6 +425,7 @@
                                     android:layout_weight="1" />
                             </LinearLayout>
 
+                            <!-- Expandable Details -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -424,7 +440,7 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_margin="12dp"
                                     android:lineSpacingExtra="@dimen/line_extra"
                                     android:id="@+id/relative_detail" />
@@ -925,7 +941,6 @@
 
                                     </LinearLayout>
                                 </com.google.android.material.card.MaterialCardView>
-
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
