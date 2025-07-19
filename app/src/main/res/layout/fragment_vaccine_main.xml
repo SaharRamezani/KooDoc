@@ -5,10 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@android:color/transparent"
     android:layout_height="match_parent"
+    android:layoutDirection="locale"
     tools:context=".ui.vaccine.VaccineMainFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:orientation="vertical"
         android:layout_margin="@dimen/main_margin"
         android:layout_height="match_parent">
@@ -17,10 +19,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_header_corrected"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:id="@+id/btn_back"
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="0dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,6 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:tint="@color/button_outlined_border"
+                    android:autoMirrored="true"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"

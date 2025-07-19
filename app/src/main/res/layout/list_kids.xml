@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layoutDirection="rtl"
+    android:layoutDirection="locale"
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@android:color/transparent"
         app:strokeWidth="0dp"
+        android:layoutDirection="locale"
         app:strokeColor="@android:color/transparent"
         app:cardElevation="0dp"
         app:cardForegroundColor="@android:color/transparent"
@@ -39,7 +40,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="نام کودک"
+                    android:text=""
                     android:textColor="@color/black"
                     android:layout_marginStart="12dp"
                     android:textSize="18sp"
@@ -56,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_arrow_left"
                     app:tint="@color/button_outlined_border"
-                    android:layoutDirection="ltr"
+                    android:autoMirrored="true"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>

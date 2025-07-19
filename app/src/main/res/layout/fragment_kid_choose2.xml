@@ -12,10 +12,13 @@
         android:layout_height="match_parent"
         android:layoutDirection="locale"
         android:orientation="vertical">
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_header"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:id="@+id/btn_back"
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"

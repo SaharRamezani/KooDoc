@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/info_for_baby"
                     android:textAlignment="center"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"/>
 
 

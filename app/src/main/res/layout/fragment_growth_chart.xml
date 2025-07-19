@@ -16,6 +16,8 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:layout_margin="@dimen/margin_header"
             android:id="@+id/btn_back"
             android:clickable="true"

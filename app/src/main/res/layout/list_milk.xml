@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@android:color/transparent"
     android:layout_height="wrap_content"
+    android:layoutDirection="locale"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="18dp"
         app:strokeWidth="1dp"
         app:cardCornerRadius="15dp"
+        android:layoutDirection="locale"
         app:cardBackgroundColor="@color/surface_bg_medium">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layoutDirection="rtl"
             android:padding="12dp"
             android:orientation="vertical">
 
@@ -29,7 +33,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:layoutDirection="rtl">
+                    tools:ignore="NestedWeights">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -50,12 +54,12 @@
                             android:textColor="@color/colorTextPrimary"
                             android:textSize="15sp"
                             android:textStyle="bold"
-                            android:text="نان ۱" />
+                            android:text="" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorTextPrimary"
-                            android:layout_marginRight="4dp"
+                            android:layout_marginEnd="4dp"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:id="@+id/parenthesisLeft"
@@ -65,21 +69,19 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorTextPrimary"
                             android:textSize="14sp"
-                            android:text="NAN1"
+                            android:text=""
                             android:id="@+id/en_name"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/parenthesisRight"
                             android:textColor="@color/colorTextPrimary"
-                            android:layout_marginRight="4dp"
+                            android:layout_marginEnd="4dp"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:text=")"/>
                     </LinearLayout>
                 </LinearLayout>
-
-
             </LinearLayout>
 
 
@@ -106,7 +108,7 @@
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
-                        android:text="0"
+                        android:text=""
                         android:gravity="center"
                         android:textColor="@color/black"
                         android:textSize="12sp"
@@ -135,7 +137,7 @@
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
-                        android:text="6"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:gravity="center"
@@ -147,7 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="@string/Month"
-                        android:layout_marginLeft="18dp"
+                        android:layout_marginStart="18dp"
                         android:textColor="@color/surface_text_light"
                         android:textSize="11sp"
                         android:id="@+id/txt_month"
@@ -158,22 +160,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="رگولار"
-                    android:layout_marginRight="8dp"
+                    android:text=""
+                    android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:id="@+id/txt_type"/>
-
-
-
             </LinearLayout>
-
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -187,8 +183,8 @@
                     android:layout_height="match_parent"
                     android:layoutDirection="rtl"
                     android:orientation="horizontal"
-                    android:layout_weight="2">
-
+                    android:layout_weight="2"
+                    tools:ignore="NestedWeights">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -202,18 +198,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="دارد"
-                        android:layout_marginRight="8dp"
+                        android:text=""
+                        android:layout_marginEnd="8dp"
                         android:gravity="center"
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:id="@+id/txt_lact"/>
-
-
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -222,7 +215,6 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:layout_weight="3">
-
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -236,24 +228,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="پروتئین شیر"
-                        android:layout_marginRight="8dp"
+                        android:text=""
+                        android:layout_marginEnd="8dp"
                         android:gravity="center"
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:id="@+id/txt_base"/>
-
                 </LinearLayout>
-
-
-
             </LinearLayout>
-
-
         </LinearLayout>
-
     </com.google.android.material.card.MaterialCardView>
-
 </RelativeLayout>

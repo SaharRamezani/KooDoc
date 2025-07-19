@@ -19,7 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:tint="@color/button_outlined_border"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:text="@string/family_disease_history" />
 
@@ -50,7 +50,7 @@
                     android:text="@string/father_health"
                     android:textColor="@color/black"
                     android:textAlignment="center"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:lineSpacingExtra="4dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -79,7 +79,7 @@
                     android:text="@string/mother_health"
                     android:textColor="@color/black"
                     android:textAlignment="center"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:lineSpacingExtra="4dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

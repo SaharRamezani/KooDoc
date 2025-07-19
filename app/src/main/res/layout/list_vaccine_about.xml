@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@android:color/transparent"
     android:layout_width="match_parent"
+    android:layoutDirection="locale"
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
@@ -13,7 +14,9 @@
         app:cardBackgroundColor="@color/surface_bg_medium"
         app:cardElevation="2dp"
         app:cardCornerRadius="8dp"
+        android:layoutDirection="locale"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +40,7 @@
                     android:layout_alignParentStart="true"
                     android:src="@drawable/ic_arrow_down"/>
             </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,8 +58,6 @@
                     android:id="@+id/txt_more"
                     android:lineSpacingExtra="@dimen/line_extra"/>
             </LinearLayout>
-
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-
 </LinearLayout>

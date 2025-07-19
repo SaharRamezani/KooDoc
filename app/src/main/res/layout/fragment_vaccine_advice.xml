@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/transparent"
+    android:layoutDirection="locale"
     android:layout_height="match_parent"
     tools:context=".ui.vaccine.VaccineAdviceFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="locale"
         android:layout_margin="@dimen/main_margin"
         android:orientation="vertical">
 
@@ -18,10 +19,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_header_corrected"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:id="@+id/btn_back"
             android:clickable="true"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="0dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -31,16 +35,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:tint="@color/button_outlined_border"
+                    android:autoMirrored="true"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
                     android:text="@string/care_advice"/>
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -107,10 +111,8 @@
                                 android:lineSpacingExtra="@dimen/line_extra"
                                 android:text="@string/physical_about"/>
                         </LinearLayout>
-
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
-
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
@@ -160,7 +162,6 @@
                                 android:layout_margin="12dp"
                                 android:text="@string/mental_about"/>
                         </LinearLayout>
-
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -213,19 +214,9 @@
                                 android:lineSpacingExtra="@dimen/line_extra"
                                 android:text="@string/after_about"/>
                         </LinearLayout>
-
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
             </LinearLayout>
         </ScrollView>
-
-
-
     </LinearLayout>
-
 </FrameLayout>

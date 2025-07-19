@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@android:color/transparent"
     android:layout_width="match_parent"
+    android:layoutDirection="locale"
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layoutDirection="locale"
         android:layout_marginBottom="12dp"
         android:clickable="true"
         android:id="@+id/card"
@@ -60,8 +62,6 @@
                     android:src="@drawable/toxic0"
                     android:layout_margin="16dp"/>
             </LinearLayout>
-
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-
 </LinearLayout>

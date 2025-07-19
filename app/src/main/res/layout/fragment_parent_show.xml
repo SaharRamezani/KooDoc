@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:layoutDirection="locale"
         android:layout_margin="18dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
             android:layout_width="wrap_content"

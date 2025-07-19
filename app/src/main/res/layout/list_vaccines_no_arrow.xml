@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layoutDirection="rtl"
+    android:layoutDirection="locale"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
+        android:layoutDirection="locale"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -23,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="نام واکسن"
+            android:text=""
             android:textColor="@color/black"
             android:layout_marginStart="12dp"
             android:textSize="18sp"
