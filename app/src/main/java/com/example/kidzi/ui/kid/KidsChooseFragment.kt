@@ -32,7 +32,7 @@ class KidsChooseFragment : Fragment() {
         val binding = FragmentKidsChooseBinding.inflate(inflater)
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.accountFragment)
+            findNavController().popBackStack()
         }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())

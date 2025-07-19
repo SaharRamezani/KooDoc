@@ -14,13 +14,6 @@
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            app:tint="@color/button_outlined_border"
-            android:src="@drawable/ic_vaccine"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,6 +28,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:tint="@color/button_outlined_border"
+            android:src="@drawable/ic_vaccine"/>
+
     </LinearLayout>
 
     <ImageView

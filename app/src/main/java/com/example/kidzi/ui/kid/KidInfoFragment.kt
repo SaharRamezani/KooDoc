@@ -38,7 +38,7 @@ class KidInfoFragment : Fragment() {
         if (!isNew) loadKidInfo(id, binding)
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(KidInfoFragmentDirections.actionKidInfoFragmentToKidIntroFragment())
+            findNavController().popBackStack()
         }
 
         binding.btnGroup.setOnClickListener { showDatePicker(binding) }

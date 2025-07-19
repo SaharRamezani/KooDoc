@@ -80,12 +80,7 @@
                             android:layout_width="match_parent"
                             android:padding="12dp"
                             android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:layout_alignParentEnd="true"
-                                android:text="@string/physical_advice"/>
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -93,6 +88,14 @@
                                 app:tint="@color/button_outlined_border"
                                 android:layout_alignParentStart="true"
                                 android:src="@drawable/ic_arrow_down"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:layout_alignParentEnd="true"
+                                android:text="@string/physical_advice"/>
+
                         </RelativeLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -131,12 +134,7 @@
                             android:layout_width="match_parent"
                             android:padding="12dp"
                             android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:layout_alignParentEnd="true"
-                                android:text="@string/mental_advice"/>
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -144,6 +142,14 @@
                                 app:tint="@color/button_outlined_border"
                                 android:layout_alignParentStart="true"
                                 android:src="@drawable/ic_arrow_down"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:layout_alignParentEnd="true"
+                                android:text="@string/mental_advice"/>
+
                         </RelativeLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -181,14 +187,9 @@
                         android:orientation="vertical">
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:padding="12dp"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:layout_alignParentEnd="true"
-                                android:text="@string/after_vaccine"/>
+                            android:layout_height="wrap_content"
+                            android:padding="12dp">
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -196,6 +197,14 @@
                                 app:tint="@color/button_outlined_border"
                                 android:layout_alignParentStart="true"
                                 android:src="@drawable/ic_arrow_down"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:layout_alignParentEnd="true"
+                                android:text="@string/after_vaccine"/>
+
                         </RelativeLayout>
                         <LinearLayout
                             android:layout_width="match_parent"

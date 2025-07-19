@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentKidChoose2Binding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
@@ -31,7 +32,7 @@ class KidChoose2Fragment : Fragment() {
     ): View {
         val binding = FragmentKidChoose2Binding.inflate(inflater)
 
-        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+        binding.btnBack.setOnClickListener { findNavController().navigate(R.id.accountFragment) }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
 
