@@ -17,9 +17,10 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_arrow_right"
             app:tint="@color/button_outlined_border"
-            android:src="@drawable/ic_vaccine"/>
+            android:autoMirrored="true"
+            android:layout_gravity="center_vertical"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,10 +40,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_left"
+            android:layout_gravity="center_vertical"
             app:tint="@color/button_outlined_border"
-            android:autoMirrored="true"
-            android:layout_gravity="center_vertical"/>
+            android:src="@drawable/ic_vaccine"/>
 
     </LinearLayout>
 

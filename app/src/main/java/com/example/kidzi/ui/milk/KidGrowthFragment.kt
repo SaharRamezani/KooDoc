@@ -69,41 +69,35 @@ class KidGrowthFragment : Fragment() {
         if (kidId != -1) {
             lifecycleScope.launch(Dispatchers.IO) {
                 val kidInfo = kidNameDao.getKidInfo(kidId)
-                if (kidInfo != null) {
-                    val sex = kidInfo.type
-                    val (m, p3, p97) = GrowthChartHelper.readGrowthChartFromCSV(requireContext(), sex)
+                val sex = kidInfo.type
+                val (m, p3, p97) = GrowthChartHelper.readGrowthChartFromCSV(requireContext(), sex)
 
-                    launch(Dispatchers.Main) {
-                        binding.txtKidName.text = kidInfo.name
-                        GrowthChartHelper.setupMultiLineChart(binding.lineChart, requireContext(), m, p3, p97)
-                    }
+                launch(Dispatchers.Main) {
+                    binding.txtKidName.text = kidInfo.name
+                    GrowthChartHelper.setupMultiLineChart(binding.lineChart, requireContext(), m, p3, p97)
+                }
 
-                    val savedData = growthDataDao.getAllGrowthDataForKid(kidId)
-                    val savedEntries = convertSavedDataToEntries(savedData)
+                val savedData = growthDataDao.getAllGrowthDataForKid(kidId)
+                val savedEntries = convertSavedDataToEntries(savedData)
 
-                    launch(Dispatchers.Main) {
-                        addSavedDataToChart(savedEntries)
-                    }
+                launch(Dispatchers.Main) {
+                    addSavedDataToChart(savedEntries)
+                }
 
-                    val savedDataForRecycler = savedData.map {
-                        GrowthModel(
-                            age = it.ageWeeks,
-                            startHeight = it.height,
-                            endHeight = it.height,
-                            startWeight = it.weight,
-                            endWeight = it.weight,
-                            startHead = it.headCircumference,
-                            endHead = it.headCircumference
-                        )
-                    }
+                val savedDataForRecycler = savedData.map {
+                    GrowthModel(
+                        age = it.ageWeeks,
+                        startHeight = it.height,
+                        endHeight = it.height,
+                        startWeight = it.weight,
+                        endWeight = it.weight,
+                        startHead = it.headCircumference,
+                        endHead = it.headCircumference
+                    )
+                }
 
-                    launch(Dispatchers.Main) {
-                        adapter.updateData(savedDataForRecycler)
-                    }
-                } else {
-                    launch(Dispatchers.Main) {
-                        findNavController().popBackStack()
-                    }
+                launch(Dispatchers.Main) {
+                    adapter.updateData(savedDataForRecycler)
                 }
             }
         }

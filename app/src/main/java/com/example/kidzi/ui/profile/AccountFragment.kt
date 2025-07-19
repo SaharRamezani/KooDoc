@@ -22,7 +22,7 @@ class AccountFragment : Fragment() {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
 
         binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
+            findNavController().navigate(R.id.mainFragment)
         }
 
         binding.btnMyDetail.setOnClickListener {

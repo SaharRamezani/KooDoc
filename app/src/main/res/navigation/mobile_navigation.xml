@@ -472,7 +472,7 @@
     </fragment>
     <fragment
         android:id="@+id/milGrowthFragment"
-        android:name="com.example.kidzi.ui.milk.MilGrowthFragment"
+        android:name="com.example.kidzi.ui.milk.MilkGrowthFragment"
         android:label="fragment_mil_growth"
         tools:layout="@layout/fragment_mil_growth" >
         <action

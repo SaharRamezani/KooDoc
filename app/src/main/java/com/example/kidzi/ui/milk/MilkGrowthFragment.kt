@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentMilGrowthBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MilGrowthFragment : Fragment() {
+class MilkGrowthFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,8 +20,8 @@ class MilGrowthFragment : Fragment() {
         val binding = FragmentMilGrowthBinding.inflate(inflater, container, false)
 
         binding.btnBack.setOnClickListener {findNavController().popBackStack()}
-        binding.btnMilk.setOnClickListener { findNavController().navigate(MilGrowthFragmentDirections.actionMilGrowthFragmentToMilkIntroFragment()) }
-        binding.btnGrowth.setOnClickListener { findNavController().navigate(MilGrowthFragmentDirections.actionMilGrowthFragmentToGrowthMainFragment()) }
+        binding.btnMilk.setOnClickListener { findNavController().navigate(MilkGrowthFragmentDirections.actionMilGrowthFragmentToMilkIntroFragment()) }
+        binding.btnGrowth.setOnClickListener { findNavController().navigate(MilkGrowthFragmentDirections.actionMilGrowthFragmentToGrowthMainFragment()) }
 
 
         return binding.root
