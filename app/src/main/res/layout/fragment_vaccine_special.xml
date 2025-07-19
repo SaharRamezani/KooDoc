@@ -77,14 +77,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
                                 android:text="@string/hot_ill"/>
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 app:tint="@color/button_outlined_border"
                                 android:id="@+id/arrow_hot"
-                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
@@ -129,13 +129,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
                                 android:text="@string/yellow_kids"/>
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_yellow"
-                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
                                 app:tint="@color/button_outlined_border"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
@@ -182,14 +182,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
                                 android:text="@string/pre_kids"/>
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 app:tint="@color/button_outlined_border"
                                 android:id="@+id/arrow_pre"
-                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
@@ -235,14 +235,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
-                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
                                 android:text="@string/brain_kids"/>
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/arrow_brain"
                                 app:tint="@color/button_outlined_border"
-                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_arrow_down"/>
                         </RelativeLayout>
                         <LinearLayout
