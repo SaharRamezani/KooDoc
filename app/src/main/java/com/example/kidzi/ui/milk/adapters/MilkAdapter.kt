@@ -35,12 +35,10 @@ class MilkAdapter(
             val currentLocale = context.resources.configuration.locales.get(0).language
             if (currentLocale == "fa") {
                 binding.persianName.visibility = View.VISIBLE
-                binding.parenthesisLeft.visibility = View.VISIBLE
-                binding.parenthesisRight.visibility = View.VISIBLE
+                binding.enName.text = "(${milk.englishName})"
             } else {
                 binding.persianName.visibility = View.GONE
-                binding.parenthesisLeft.visibility = View.GONE
-                binding.parenthesisRight.visibility = View.GONE
+                binding.enName.text = milk.englishName
             }
 
             binding.txtStart.text = milk.startAge.toString()
