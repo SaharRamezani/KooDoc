@@ -23,17 +23,17 @@ class MainActivity : BaseActivity() {
     lateinit var sharedPreferences: PreferenceManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val lang = "fa"
+        val lang = sharedPreferences.getLanguage()
         val locale = Locale(lang)
         Locale.setDefault(locale)
         val config = Configuration()
         config.setLocale(locale)
         config.setLayoutDirection(locale)
-        resources.updateConfiguration(config, resources.displayMetrics)
+        applyOverrideConfiguration(config)
+
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Set status bar to transparent manually
         window.statusBarColor = Color.TRANSPARENT

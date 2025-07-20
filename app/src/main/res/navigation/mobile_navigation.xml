@@ -14,6 +14,11 @@
             android:id="@+id/action_navigation_home_to_parentLoginFragment"
             app:popUpToInclusive="true"
             app:destination="@id/parentLoginFragment" />
+        <fragment
+            android:id="@+id/LanguageSelectionFragment"
+            android:name="com.example.kidzi.ui.profile.LanguageSelectionFragment"
+            android:label="Language Selection"
+            tools:layout="@layout/fragment_language_selection" />
         <action
             android:id="@+id/action_navigation_home_to_parentInfoIntroFragment"
             app:popUpToInclusive="true"

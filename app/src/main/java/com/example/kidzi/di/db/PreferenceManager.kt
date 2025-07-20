@@ -15,6 +15,7 @@ private const val CURRENT_KID = "ck"
 private const val CAN_OPEN = "co"
 private const val AGE_UNIT_KEY = "age_unit"
 private val SELECTED_MILKS = "selected_milks"
+private const val SELECTED_LANGUAGE = "selected_language"
 
 class PreferenceManager @Inject constructor(@ApplicationContext private val context: Context) {
     private val sharedPreferences = context.getSharedPreferences("MyPref",Context.MODE_PRIVATE)
@@ -81,5 +82,13 @@ class PreferenceManager @Inject constructor(@ApplicationContext private val cont
 
     fun setParentBirth(date: String) {
         sharedPreferences.edit().putString("parent_birth", date).apply()
+    }
+
+    fun saveLanguage(lang: String) {
+        sharedPreferences.edit().putString(SELECTED_LANGUAGE, lang).apply()
+    }
+
+    fun getLanguage(): String {
+        return sharedPreferences.getString(SELECTED_LANGUAGE, "fa") ?: "fa" // default to "fa"
     }
 }

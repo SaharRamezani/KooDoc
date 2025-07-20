@@ -41,6 +41,10 @@ class AccountFragment : Fragment() {
             findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToKidInfoFragmentNew(0, true))
         }
 
+        binding.btnLanguages.setOnClickListener {
+            findNavController().navigate(R.id.LanguageSelectionFragment)
+        }
+
         return binding.root
     }
 

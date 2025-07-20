@@ -11,7 +11,11 @@
     <string name="dose_3_5_4cc">۳٫۵-۴ میلی‌لیتر (سی‌سی) مصرف شود.</string>
     <string name="dose_5cc">۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>
     <string name="months">ماهگی</string>
+    <string name="languages">زبان ها</string>
+    <string name="selected_lang_fa">فارسی 🇮🇷</string>
+    <string name="selected_lang_en">English 🇬🇧</string>
     <string name="age">سن:</string>
+    <string name="milk_filters">مشخصات دلخواه</string>
     <string name="dose_7_5cc">۷٫۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>
     <string name="dose_10cc">۱۰ میلی‌لیتر (سی‌سی) مصرف شود.</string>
     <string name="dose_1_5cc">۱٫۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>

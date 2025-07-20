@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    tools:context=".ui.profile.AccountFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,6 +90,18 @@
             style="@style/Widget.Material3.Button"
             android:id="@+id/btn_rules"
             android:text="@string/rules_2"
+            android:textSize="16sp"
+            app:backgroundTint="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
+            android:layout_marginTop="18dp"
+            app:cornerRadius="@dimen/corner_main" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/Widget.Material3.Button"
+            android:id="@+id/btn_languages"
+            android:text="@string/languages"
             android:textSize="16sp"
             app:backgroundTint="@color/colorPrimary"
             app:strokeColor="@color/colorPrimary"

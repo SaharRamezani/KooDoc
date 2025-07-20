@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="symptoms_names">
+        <item>Vomiting with diarrhea</item>
+        <item>Vomiting without diarrhea</item>
+        <item>Vomiting in infants under 12 months</item>
+        <item>Fever measurement</item>
+        <item>Fever</item>
+        <item>Teething</item>
+        <item>Cough</item>
+        <item>Cold</item>
+        <item>Stomach (abdominal) pain</item>
+        <item>Diaper rash</item>
+        <item>Crying in infants under 3 months</item>
+        <item>Sore throat</item>
+        <item>Earache</item>
+    </string-array>
+
+    <string-array name="symptoms_headers">
+        <item>Vomiting and diarrhea may occur simultaneously and usually indicate a gastrointestinal problem or infection. Vomiting with watery stools carries the highest risk of dehydration. The younger the child, the higher the risk. Both vomiting and diarrhea can lead to dehydration. Therefore, close monitoring of the child\'s condition and fluid intake is very important. If signs of dehydration appear, see a doctor immediately.</item>
+        <item></item>
+        <item>The main risk of vomiting is dehydration, which means excessive loss of body fluids. The younger the child, the higher the risk. (See the dehydration section in care tips.) Vomiting scale: Mild: 1–2 times per day — Moderate: 3–7 times per day — Severe: vomiting all or most things or 8 or more times per day. The severity is mostly related to its duration. In early illness, it is common for a child to vomit everything for 3–4 hours, then usually stabilize to mild vomiting.</item>
+        <item>The part of the body where temperature is measured affects accuracy and true body temperature.
+Measurement accuracy order:
+Rectal temperature
+Forehead temperature
+Ear temperature (if done correctly) (Note: Ear temperature is not accurate before 6 months.)
+Underarm temperature is least accurate but useful at any age for convenience.
+Age-based recommendations:
+Under 3 months: underarm is safest. If over 37.2°C, recheck after 15 min. Reason: infants with fever should see a doctor immediately. (Recent studies suggest forehead temperature may also be accurate under 3 months.)
+3 months to 1 year: rectal or forehead temperatures are accurate. After 6 months, ear thermometer can be used. Underarm temperature is acceptable if taken correctly.
+Digital thermometers are affordable and widely available. They can be used for rectal and underarm readings and usually give accurate results in less than 10 seconds. Replace glass thermometers at home with these products.</item>
+        <item>Fever means a body temperature above normal. See the fever measurement guide. Rectal, ear, or forehead: 38°C or higher — Oral: 37.8°C or higher — Underarm: 37.2°C or higher. Caution: Ear temperature is not accurate before 6 months.</item>
+        <item>Baby teeth erupt between 6 and 24 months. – Warning! At least one visible tooth is required before using this care guide.</item>
+        <item>Sound and action of cough: A cough is a sound produced when the cough reflex clears the airway of irritants. Coughing can be part of a cold; most coughs are. – Cough attacks: a cough attack or persistent cough lasting over 5 minutes is continuous coughing. – Type: Dry cough: no mucus. Wet cough: with white, yellow, or green mucus. If coughing is prolonged, severe, or with other worrying symptoms, seek medical advice.</item>
+        <item>Cause: Runny nose and sore throat usually result from viral infections, possibly indicating a cold. – If family, friends, or classmates have similar symptoms, your child likely has a cold. – Upper respiratory infection: usually includes runny nose, sore throat, and cough.</item>
+        <item>Older child says their tummy hurts. – Younger child points to or holds their tummy. – Under 12 months, follow crying care guides. – Pain scale: Mild: the child feels pain but can do normal activities. School, play, sleep unaffected. Moderate: pain limits some activities. May wake from sleep. Severe: very strong pain prevents all normal activities.</item>
+        <item>Any rash in the diaper area from birth to 3 years old.</item>
+        <item>If an infant under 3 months cries repeatedly with crying as the only symptom, it may be colic—long, unexplained crying, usually in the evening.</item>
+        <item>Throat pain or discomfort worsened by eating; rare under 2 years old. Important: not due to throat injury. Kids under 2 usually don’t complain of sore throat. If they refuse favorite foods or cry when fed, they may have throat pain. Offering fluids can help manage these symptoms.</item>
+        <item>Older children complain of ear pain. – Younger children act like they did during a past ear infection or cry a lot. Ensure pain isn’t from physical ear injury.</item>
+    </string-array>
+
+    <string-array name="symptoms_emergency">
+        <item>Cannot wake up\n
+Does not move or is very weak.\n
+You think your child is in a life-threatening condition.\n
+Hard to wake up.\n
+Confused behavior or speech.\n
+Unresponsive though eyes open.\n
+Blood in vomit\n
+Bile (green color) in vomit\n
+Suspected appendicitis\n
+Suspected poisoning</item>
+        <item>Cannot wake up.\n
+Does not move or too weak to stand.\n
+You think your child is in a life-threatening condition.\n
+Hard to wake up.\n
+Confused behavior or speech.\n
+Unresponsive when awake ("lethargic").\n
+Stiff neck (cannot move neck normally).\n
+Blood in vomit not from nosebleed.\n
+Bile (green) in vomit. (Exception: yellow stomach fluid.)\n
+Suspected appendicitis: lower right abdominal pain, cannot jump, prefers lying down.\n
+Suspected poisoning.\n
+Suspected swallowed object (e.g., coin).</item>
+        <item>Does not move\n
+Hard to wake up\n
+Unresponsive when awake (appears disconnected)\n
+Stiff neck (can’t move neck normally)\n
+Blood in vomit not from nosebleed\n
+Bile (green) in vomit\n
+Suspected poisoning\n
+Suspected swallowed object like a coin</item>
+        <item></item>
+        <item>Child does not move or too weak to stand.\n
+Cannot wake up.\n
+Severe breathing difficulty (struggling for each breath; hard to speak or cry)\n
+Purple or blood-colored spots on skin\n
+You think your child is in a life-threatening emergency.\n
+Stiff neck (can’t move neck normally.)\n
+Under 1 year with swollen soft spot\n
+Hard to wake up\n
+History of febrile seizure\n
+Unaware of surroundings when awake (disoriented).\n
+Unintelligible speech.</item>
+        <item></item>
+        <item>Severe breathing problem: struggling for each breath, hard to speak or cry.\n
+Unconscious or stopped breathing.\n
+Lips or face blue (not during cough).\n
+You think your child is in a life-threatening emergency.\n
+Child choked on a small object possibly stuck in throat.\n
+Chest pulls inward with each breath (chest retractions).\n
+Unresponsive when awake (no response).</item>
+        <item>Severe breathing difficulty: child struggles for each breath, hard to speak or cry.\n
+You think your child is in a life-threatening emergency.\n
+Child unresponsive when awake ("asleep").\n
+Chest pulls inward with each breath.</item>
+        <item>Does not move or too weak to stand\n
+You think your child is in a life-threatening emergency.\n
+Suspected appendicitis: lower right abdominal pain, cannot jump, prefers lying down.\n
+Severe persistent pain: cannot move or do anything.\n
+Can’t walk or walks hunched holding abdomen.\n
+Blood in stool or vomit.\n
+Bile vomit (green). Exception: yellow stomach fluid.\n
+Suspected swallowed object (like coin).</item>
+        <item></item>
+        <item>If your child does not move or is very weak and you think they may have a life-threatening emergency</item>
+        <item>If your child struggles severely to breathe and for each breath.\n
+If child can barely speak or cry.\n
+If purple or blood-colored spots appear on skin with fever.\n
+If child cannot swallow any fluids.\n
+If purple or blood-colored spots without fever.\n
+If you think your child is in a life-threatening emergency.</item>
+        <item>Does not move or too weak to stand.\n
+You think your child is in a life-threatening emergency.\n
+Child unresponsive when awake ("no response").</item>
+    </string-array>
+
+    <string-array name="symptoms_emergency_low">
+        <item>Suspected dehydration (no urination over 8 hours, dark urine, very dry mouth, no tears)\n
+Abdominal pain without vomiting (except pain/crying before vomiting is common)\n
+Under 12 weeks old vomiting 2+ times (except normal spit-up)\n
+Vomiting 3+ times plus diarrhea (requires prompt attention)\n
+Severe vomiting (throwing up everything) over 8 hours during ORS or breastfeeding\n
+Head injury in last 24 hours (may need urgent evaluation)\n
+Vomited prescription medicine (may signal serious problem)\n
+Fever over 40°C (needs prompt attention)\n
+Child looks or acts very sick (may indicate serious issue)</item>
+        <item></item>
+        <item>Abdominal pain without vomiting (except pain/crying before vomiting common)\n
+Under 12 weeks vomiting 2+ times (except normal spit-up)\n
+Vomiting 3+ times plus diarrhea\n
+Severe vomiting (throwing up everything) over 8 hours during ORS or breastfeeding\n
+Head injury in last 24 hours\n
+Weakened immune system (e.g., sickle cell disease, HIV, cancer, transplant, oral steroids)\n
+Vomited prescription medicine\n
+Fever over 40°C\n
+Fever in infant under 12 weeks (warning: don’t give fever reducer before doctor visit)\n
+Child looks or acts very sick\n
+You think your child needs urgent exam</item>
+        <item></item>
+        <item>Child has breathing issue but not severe.\n
+Difficulty swallowing or spitting.\n
+Fever in infant under 12 weeks (caution: don’t give fever reducer before doctor exam)\n
+Fever over 40°C\n
+Shivering over 30 minutes\n
+Persistent crying or crying when touched or moved\n
+Suspected dehydration: no urination over 8 hours, dark urine, very dry mouth, no tears\n
+Pain/burning when urinating\n
+Weakened immune system: e.g., sickle cell, HIV, cancer, transplant, oral steroids</item>
+        <item>Child looks or acts very sick.</item>
+        <item>Breathing issue but not severe.\n
+Lips or face blue during cough.\n
+Noisy breathing.\n
+Wheezing (high-pitched or whistling sound when exhaling).\n
+Breathing much faster than normal.\n
+Can’t take deep breath due to chest pain.\n
+Severe chest pain.\n
+Coughed up blood.\n
+Weakened immune system: e.g., sickle cell, HIV, cancer, transplant, oral steroids.\n
+High-risk child: e.g., cystic fibrosis, other chronic lung disease.\n
+Fever in infant under 12 weeks: don’t give fever reducer before doctor exam.\n
+Fever over 40°C.\n
+Child looks or acts very sick.\n
+You think your child needs urgent exam</item>
+        <item>Breathing issue not severe: resolves after nose cleaned.\n
+Wheezing: high-pitched or whistling when exhaling.\n
+Faster breathing than normal.\n
+Difficulty swallowing, drooling starts.\n
+High-risk child: cystic fibrosis or other chronic lung disease.\n
+Weakened immune system: e.g., sickle cell, HIV, cancer, transplant, oral steroids.\n
+Fever over 40°C.\n
+Fever in infant under 12 weeks: don’t give fever reducer before doctor exam.\n
+Child looks or acts very sick.\n
+You think your child needs urgent exam.</item>
+        <item>Lower right abdominal pain\n
+Pain or swelling in testicle (boys)\n
+Persistent pain (or crying) over 2 hours\n
+Recent abdominal injury\n
+High-risk child (e.g., diabetes, sickle cell, recent abdominal surgery)\n
+Under 2 years old\n
+Fever over 40°C\n
+Child looks or acts very sick\n
+You think your child needs urgent exam</item>
+        <item>Bright red peeling skin.\n
+Spreading redness with fever.\n
+Infant under 1 month suspected infection (yellow sores, spreading redness).\n
+Infant under 1 month looks or acts abnormal.\n
+Child looks or acts very sick.\n
+You think your child needs urgent exam</item>
+        <item>Fever in infant under 12 weeks: don’t give fever reducer before doctor exam.\n
+Swollen soft spot on baby’s head.\n
+Swelling in scrotum or groin: see doctor.\n
+Vomiting: may indicate a problem.\n
+Crying when touched, moved, or held.\n
+Persistent crying over 2 hours not calmed by soothing.\n
+Very little or no drinking over 8+ hours.\n
+High-risk child: e.g., heart or brain conditions.\n
+Child looks or acts very sick or unusual.</item>
+        <item>If child has breathing difficulty that is not severe.\n
+If trouble swallowing fluids or saliva.\n
+If unable to fully open mouth.\n
+If stiff neck or can’t move neck normally.\n
+If signs of dehydration (no urination over 8 hours, dark urine, very dry mouth, no tears).\n
+Weakened immune system: e.g., sickle cell, HIV, cancer, transplant, oral steroids.\n
+Fever over 40°C.\n
+Child looks or acts very sick.</item>
+        <item></item>
+    </string-array>
+    <string-array name="symptoms_emergency_no">
+    <item>Age under 1 year with vomiting (if your child is under this age and is vomiting, they should be checked.)\n
+Vomiting for more than 24 hours (if your child has been vomiting for over 24 hours.)\n
+Fever for more than 3 days (if your child’s fever lasts more than 3 days, it’s important to see a doctor.)\n
+Vomiting is a recurring problem (if your child has frequent vomiting.)\n
+You have other questions or concerns (if you have other questions or concerns about your child’s condition.)</item>
+        <item>Age under 1 year with vomiting\n
+Vomiting for more than 24 hours\n
+Fever for more than 3 days\n
+Fever that returns after 24 hours\n
+You think your child needs to be examined, but it is not urgent</item>
+        <item></item>
+        <item></item>
+        <item>Baby 3 to 6 months old with fever.\n
+Baby 6 to 24 months old with fever over 48 hours (with no other symptoms like cough or diarrhea.)\n
+Fever lasting more than 3 days.\n
+Fever that goes away for more than 24 hours and then returns.\n
+Recent travel abroad.\n
+You think your child needs to be examined, but it is not urgent.</item>
+        <item>You think your child needs to be examined.</item>
+        <item>Persistent coughing fits.\n
+Age under 6 months.\n
+Ear pain or ear discharge.\n
+Sinus pain (not just congestion) around cheeks or eyes.\n
+Fever lasting more than 3 days.\n
+Fever that returns after more than 24 hours.\n
+Chest pain even when not coughing.\n
+Concern about vaping (e-cigarettes).\n
+Cough causing vomiting 3 or more times.\n
+Cough causing absence from school for 3 days or more.\n
+Allergy symptoms (like runny nose and itchy eyes) also present.\n
+Runny nose lasting more than 14 days.\n
+Cough lasting more than 3 weeks.\n
+You think your child needs to be examined, but it is not an emergency.</item>
+        <item>Age under 6 months.\n
+Ear pain or ear discharge.\n
+Yellow or green eye discharge.\n
+Sinus pain that is not just congestion and is felt around the cheeks or eyes.\n
+Fever lasting more than 3 days.\n
+Fever that returns after more than 24 hours.\n
+Nasal congestion that wakes the child from sleep.\n
+Yellow skin around nostrils.\n
+Sore throat lasting more than 5 days.\n
+Sinus congestion and fullness lasting more than 14 days.\n
+Nasal discharge lasting more than 2 weeks.\n
+You think your child needs to be examined, but it is not an emergency.</item>
+        <item>Moderate pain that prevents some normal activities.\n
+Mild pain that comes and goes (cramping), but lasts more than 24 hours.\n
+There is a fever.\n
+Suspected bladder infection: pain when urinating, sudden loss of bladder control.\n
+You think your child needs to be examined, but it is not urgent.\n
+Abdominal pain is a common problem.\n
+You have other questions or concerns.</item>
+        <item>Any rash, blister, boil, yellow sore or open sore\n
+You think your child needs to be examined, but it is not urgent.\n
+Diaper rash (rash) that is very scratched or bleeding.\n
+Rash that has spread beyond the diaper area.\n
+Rash that has not improved after 3 days of antifungal cream.\n
+You have other questions or concerns.</item>
+        <item>Any rash, blister, boil, yellow sore or open sore\n
+Diaper rash (rash) that is very scratched or bleeding.\n
+Rash that has spread beyond the diaper area.\n
+Rash that has not improved after 3 days of antifungal cream.\n
+If your child has the following features, see a doctor, but it is not urgent:\n
+Failure to gain weight or always hungry: if your baby does not gain weight or always seems hungry.\n
+New crying: if your baby has recently started crying, but can be calmed. They may keep crying, but the reason is unclear.\n
+Fatigue: if you are exhausted from all the crying and need help.\n
+If your child has not yet been evaluated for excessive crying.\n
+Other questions or concerns: if you have other questions or concerns and need advice, be sure to contact your doctor.\n
+Your child’s health is important and if you feel you need help, don’t hesitate.</item>
+        <item>If your child has a severe sore throat that has not improved after 2 hours of ibuprofen.\n
+If swollen lymph nodes are seen in the neck.\n
+If there is a widespread pink rash.\n
+If your child has ear pain or ear discharge.\n
+If there is sinus pain (not just congestion) around the cheeks or eyes.\n
+If your child’s fever lasts more than 3 days.\n
+If the fever returns after more than 24 hours.\n
+If your child is under 2 years of age.\n
+If there are sores on your child’s skin.\n
+If sore throat is the main symptom and lasts more than 48 hours.\n
+If the sore throat is accompanied by cold or cough symptoms lasting more than 5 days.\n
+If you think your child needs to be examined, but it is not an emergency, it is better to see a doctor.</item>
+        <item>Severe ear pain that has not improved after 2 hours of ibuprofen.\n
+Swelling or redness behind the ear.\n
+Stiff neck (inability to move the neck normally).\n
+Loss of balance when walking.\n
+Sharp object in ear canal (such as pencil, stick or wire).\n
+Weakened immune system: including sickle cell disease, HIV, cancer, organ transplant, or use of oral steroids.\n
+High fever (40°C).\n
+Your child looks or acts very ill.\n
+You think your child needs to be examined and it is urgent.\n
+Outer ear skin is red, swollen and painful.\n
+Cloudy discharge from the ear canal.</item>
+    </string-array>
+
+    <string-array name="symptoms_home">
+        <item>Mild or moderate vomiting with diarrhea</item>
+        <item>Mild or moderate vomiting</item>
+        <item></item>
+        <item></item>
+        <item>The child only has a fever and no other symptoms and appears well and the illness seems mild</item>
+        <item>Normal teething</item>
+        <item>Cough with no other symptoms</item>
+        <item>If your child has a mild cold and no other symptoms</item>
+        <item>Mild abdominal pain</item>
+        <item>Mild diaper rash that gets better with exposure</item>
+        <item>Normal crying in all infants\n
+Colic (frequent crying in an infant that can be soothed)</item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <string-array name="symptoms_related">
+        <item></item>
+        <item>Vomiting in a child under 1 year\n
+Diarrhea\n
+Abdominal pain</item>
+        <item></item>
+        <item></item>
+        <item>Diarrhea without vomiting\n
+Cold\n
+Cough\n
+Seasonal flu\n
+Diarrhea\n
+Earache\n
+Sore throat</item>
+        <item></item>
+        <item>Cold</item>
+        <item>Cough\n
+Fever</item>
+        <item>Diarrhea</item>
+        <item></item>
+        <item></item>
+        <item>Cough\n
+Cold</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="symptoms_h1">
+    <item>Causes of vomiting with diarrhea:
+Viral gastrointestinal infection (a viral infection of the digestive system is the most common cause. One common virus is rotavirus. The illness usually begins with vomiting and after 12 to 24 hours, watery and loose stools occur.)
+Food poisoning is a condition that causes vomiting and diarrhea quickly after eating spoiled food. It is caused by toxins produced by bacteria that have overgrown in leftover foods.
+Traveler’s diarrhea: (Caused by germs in food or drink. Suspect this if the condition developed after traveling abroad.)
+Bacterial gastrointestinal infection (some bacteria can cause diarrhea. Most bacterial diarrhea resolves on its own, but some can cause severe colon infection.)
+Serious complication: Dehydration (this means the body has lost too much fluid. (Read more under "dehydration"))</item>
+
+        <item>What to know about vomiting without diarrhea:
+Most vomiting is caused by a viral stomach infection. Sometimes mild food poisoning causes vomiting — vomiting is a way the body protects the lower intestine — the good news is stomach illnesses usually last a short time — the main risk of vomiting is dehydration. Dehydration means the body has lost too much fluid.</item>
+
+        <item>How to recognize dehydration:
+Dehydration means the body has lost too much fluid. This may result from vomiting or diarrhea; vomiting with watery diarrhea is the most common cause. Dehydration is one reason to see a doctor quickly.
+Signs of dehydration: reduced urination, meaning if they haven’t urinated for more than 8 hours, the urine becomes dark yellow. Pale yellow urine means no dehydration — dry tongue and mouth, a dry tongue and mouth are good indicators. Dry lips alone aren’t enough. — Dry eyes with little or no tears. — In infants, sunken soft spot on the head.
+Nail test: First press on a fingernail until it turns pale. Then release and count how many seconds it takes to turn pink again. If it takes more than 2 seconds, this is a warning sign. (For babies under 7 days old, up to 5 seconds is acceptable.) (Ask your doctor to show you how to do this test.) If your child is still alert, happy, and playful, dehydration is unlikely. A child with severe dehydration may be too weak to stand and feel very dizzy when standing.</item>
+
+        <item>How to take a rectal temperature:
+**Age**: Birth to 1 year
+1. Place your baby stomach-down on your lap. Alternatively, lay them on their back and lift their legs toward the chest.
+2. Apply some petroleum jelly to the thermometer tip and the anal area.
+3. Gently insert the thermometer into the rectum no more than 1 inch (2.5 cm). If under 6 months, insert only about 1 cm.
+4. Proceed gently; there should be no resistance. If there is, stop.
+5. Hold your baby still. Keep the digital thermometer in place until it beeps (about 10 seconds).
+Your baby has a fever if rectal temp is above 38°C (100.4°F).
+Warning: Do not take rectal temps in children with leukemia or other cancers. Also avoid in children with weak immune systems, such as transplants, HIV, or sickle cell disease.</item>
+
+        <item>What to know about fever:
+Fever means your child has a new infection, likely caused by a virus.
+You might not know the cause until other symptoms appear, which can take 24 hours or more.
+Most fevers are helpful for children. They help the body fight infection.
+Fever ranges in children (oral):
+- 37.8 - 39°C (100 - 102.2°F): Low-grade, helpful, do not treat.
+- 39 - 40°C (102.2 - 104°F): Moderate, helpful. Treat if causing fatigue with doctor advice.
+- 40°C (104°F): High, always treat after consulting a doctor.
+- 41.1°C (106°F): Very high, lowering fever is very important. Rarely reaches this level.</item>
+
+        <item>Main signs:
+Drooling: increased saliva and dribbling.
+Hives/redness on face: caused by drool with food bits that irritate skin.
+Chewing: increased need to chew objects.
+Gum pain: mild, not always present. Possibly due to germs entering gum cracks. Often just mild fussiness. Not painful enough to disrupt sleep.</item>
+
+        <item>Home cough remedy:
+Under 1 year: give more breast milk or formula. Do not give honey at this age.
+1 year and up: you can give ½ to 1 teaspoon (2-5 mL) of honey as needed. Honey acts as a natural cough remedy, thinning mucus and easing cough. Honey-based cough products offer no added benefit over plain honey.
+6 years and up: can use lozenges to reduce throat irritation. Avoid lozenges before age 6 due to choking risk. Continue using honey in warm water.</item>
+
+        <item>Cold symptoms:
+Runny or congested nose: discharge may start clear, turning gray, yellow, or green.
+Fever: most kids have fever at start of a cold.
+Sore throat: may be an early sign.
+Cough/hoarseness: sometimes a cough or hoarse voice occurs.
+Watery eyes and swollen neck glands: may also happen.</item>
+
+        <item>Causes of abdominal pain:
+Overeating can cause mild stomach pain.
+Young children may complain of tummy pain when hungry.
+Viral gastroenteritis can cause cramps and vomiting/diarrhea.
+Food poisoning causes sudden vomiting/diarrhea hours after bad food. Usually resolves in under 24 hrs, treat at home.
+Constipation: urge to pass stool may cause lower tummy cramps.
+Strep throat: about 10% of strep cases cause stomach pain with fever.
+Bladder infection: usually with painful urination, urgency, bad smell. Sometimes just lower stomach pain.
+Appendicitis: suspect if pain is in lower right side, child walks hunched, avoids jumping, prefers lying down. Take this seriously and go to clinic.
+Bowel obstruction: serious, sudden attacks of severe pain, calm between attacks. Caused by bowel folding into itself. Peak age 6 months-2 years. See doctor urgently.</item>
+
+        <item>What to know about diaper rash:
+Diaper rash is very common in babies.
+Often happens because stool isn’t cleaned off quickly.
+Stool is a strong skin irritant.</item>
+
+        <item>Colic signs:
+Timing: persistent crying at certain times of day, normal behavior between.
+Inconsolable: baby not soothed by usual methods.
+Check basics: not hungry, clean, comfortable temp. Usually calms when held.
+Starts before 2 weeks, ends by 3-4 months.
+Some cry over 3 hrs/day. If growing well and exam is normal, it\'s called colic. Not due to parenting or serious illness.</item>
+
+        <item>Throat pain relief tips:
+Over 1 year: warm fluids like broth or apple juice. Some prefer cold foods like ice cream.
+Over 6 years: can suck on hard candies (butterscotch helps).
+Over 8 years: can gargle with warm salt water.
+Honey (over 1 year): helps soothe throat, 5 mL (1 tsp) dissolved in warm water.
+Fluids &amp; soft diet: encourage fluids — cold drinks, shakes, syrup are good. Soft foods, cut into small pieces. Avoid sour, salty, spicy foods. Fluids more important than solids — swollen tonsils make swallowing hard.</item>
+
+        <item>What to know about ear pain:
+Possible ear infection: only way to confirm is eardrum exam.
+Waiting for office hours: safe to wait for doctor even if pain starts at night.
+Pain control: ear pain usually manageable with pain relievers.
+Ear infections &amp; viruses: many ear pains are viral, don’t need antibiotics.</item>
+    </string-array>
+
+    <string-array name="symptoms_h2">
+    <item>How to recognize dehydration:
+Dehydration means the body has lost too much fluid. This can happen due to vomiting or diarrhea; vomiting with watery diarrhea is the most common cause of dehydration. Dehydration is a reason to seek medical care urgently.
+Signs of dehydration: reduced urination (no urination for over 8 hours), dark yellow urine (if the urine is pale yellow, it is not a sign of dehydration) - dry tongue and mouth (dry tongue and mouth are good indicators; dry lips alone are not enough) - dry eyes with little or no tears - in infants, a sunken soft spot on the head.
+Nail test: First, press down on the fingernail until it turns pale. Then release. Count how many seconds it takes for the nail to turn pink again. If it takes more than 2 seconds, it\'s a warning sign (in babies under 7 days old, up to 5 seconds is acceptable). (Ask your doctor to teach you how to perform this test.) If your child is still alert, happy, and playful, it is not a sign of dehydration. A child with severe dehydration may be so weak they can’t stand and may feel very dizzy when standing.</item>
+
+        <item>What to expect:
+During the first 3 or 4 hours, your child may vomit everything. Then the stomach calms down. Vomiting from a viral illness usually stops within 12 to 24 hours. Mild vomiting and nausea may continue for up to 3 days.</item>
+
+        <item>Caring for formula-fed infants:
+If vomiting continues, give oral rehydration solution (ORS). If the baby vomits once, continue formula but give smaller amounts per feeding. If the baby vomits formula more than once, give ORS. If ORS is not available, continue with smaller amounts of formula until you can get ORS. ORS is a special liquid that can help prevent dehydration. You can buy ORS brands like Wanlite from a pharmacy. Give small amounts of ORS with a spoon or syringe: 1 to 2 teaspoons (5-10 mL) every 5 minutes. After 2 hours without vomiting, double the amount. Return to formula: after 4 hours without vomiting, go back to regular formula. Start with small amounts.</item>
+
+        <item>How to measure underarm temperature:
+**Age:** Suitable for all ages.
+1. Place the tip of the thermometer under the armpit. Make sure the armpit is dry.
+2. Close the armpit by holding the arm tightly against the chest until the thermometer beeps (about 10 seconds). The tip of the thermometer should stay under the skin.
+If the underarm temperature is above 37.2°C (99°F), your child has a fever. If in doubt, measure with a rectal or forehead thermometer.</item>
+
+        <item>Treatment helpful for all types of fever:
+Fluids alone can reduce fever. Reason: Water helps the body release heat through the skin.
+Give your child extra water or other fluids by mouth. (Cold fluids are best.) Until 6 months old, give extra formula or breast milk only.
+Dress all children in 1 light layer of clothing, unless they are shivering. Reason: Also helps the body lose heat through the skin.
+For chills (shivering), give your child a blanket.
+Caution: If your child is under 1 year old with fever, never overdress them. Reason: Infants overheat more easily than older children.</item>
+
+        <item>What to know about teething:
+Teething is a natural process.
+It is harmless and may cause mild gum pain.
+Main signs of teething include drooling and rubbing the gums.
+Teething does not cause fever or crying. If these symptoms are present, it is likely the child put a contaminated object in their mouth to scratch the gums.</item>
+
+        <item>Over-the-counter cough medicines:
+Over-the-counter cough medicines are not recommended as they have no proven benefit for children and are not approved for under 6 years old.
+Honey has been shown to work well for coughs. Caution: Do not give honey before 1 year of age.</item>
+
+        <item>Causes of colds:
+Colds are caused by various respiratory viruses. Healthy children get about 6 colds per year on average.
+The flu virus causes more severe colds with higher fever and more muscle aches.
+Colds are usually not serious. About 5-10% of children with colds develop other health problems, usually ear or sinus infections, caused by bacteria.</item>
+
+        <item>Causes of recurrent stomach pain:
+Stress or anxiety: The most common cause of recurrent stomach pain is stress. More than 10% of children have "nervous stomach pain." These children are usually sensitive and serious. Examples of stressful events: changing school, moving house, family conflicts. The pain is felt in the center of the belly or near the navel and is real.
+Abdominal migraine: Sudden attacks of stomach pain and vomiting. Usually occurs in children who later develop migraine headaches and is more likely if there is a family history of migraine.</item>
+
+        <item>Educational tips:
+Frequent diaper changes: Change diapers more often to prevent skin contact with stool. You may want to wake up at night for diaper changes.
+Wash with warm water: Wash the baby\'s skin with plenty of warm water at each diaper change. Only use mild soap (such as Firooz) after bowel movements. Reason: Frequent soap use can interfere with skin healing. Do not use wet wipes. Reason: They leave a layer of bacteria on the skin.
+Let the baby be uncovered: Expose the diaper area to air as much as possible. Loosely fasten the diaper at the waist to let air circulate. During naps, open the diaper and place the baby on a towel. Reason: Keeping the diaper area dry reduces the risk of fungal infections.</item>
+
+        <item>Causes of infant crying:
+The most common reason for infant crying is hunger. They stop crying once they start feeding and are happy after feeding.
+Sleepiness: The second most common cause of crying is the need for sleep. They need parents to help position them comfortably — covering the baby and laying them on their back may help them relax and fall asleep.
+Overfeeding: Some babies cry because of stomach discomfort from overeating.
+Caffeine: Caffeine is a stimulant that can increase crying and cause sleep problems. Breastfeeding mothers should limit caffeine.
+Clothing: Being too hot or cold can cause crying. Clothes that are too tight can also be a problem.
+Dirty diaper: Stool is very irritating to the skin and can cause pain and burning if not cleaned.
+Colic: Colic is the main cause of repeated crying in early months. All babies have some normal daily crying. If crying exceeds 3 hours a day, it is called colic. They are happy at other times.
+Pain (serious): Serious pains include earache, mouth sores, or severe diaper rash. A sore on the penis can also cause pain and crying. These babies cry a lot and are not happy even when not crying. At this age, fever is serious until proven otherwise.</item>
+
+        <item>Recommended care until you talk to your doctor:
+Cold compress for pain:
+Place a cool, moist cloth on the outer ear for 20 minutes. This should help relieve the pain until pain medicine takes effect.
+Note: Some children prefer warmth for 20 minutes.
+Warning: Prolonged heat or cold can cause burns or frostbite.
+Ear discharge:
+If discharge comes from the ear, the eardrum likely has a small tear, usually from an ear infection. Discharge may also occur if your child has ear tubes.
+The discharge may be bloody.
+This usually heals well after ear infection treatment.
+Clean the discharge as soon as you see it.
+Do not put cotton in the ear canal. Reason: retained discharge can lead to infection of the ear canal lining.</item>
+    </string-array>
+
+        <string-array name="symptoms_h3">
+        <item>Caring for formula-fed infants:
+If vomiting continues, give oral rehydration solution (ORS): If the baby vomits once, continue formula but give smaller amounts each feeding. - If the baby vomits more than once, give ORS. If ORS is not available, use formula in smaller amounts until you can get ORS. ORS is a special liquid that can help prevent dehydration. You can buy Vanlight or another brand from the pharmacy. Give ORS in small amounts using a spoon or syringe: 1 to 2 teaspoons (5-10 mL) every 5 minutes. - After 2 hours without vomiting, double the amount. - Return to formula: After 4 hours without vomiting, return to regular formula. Start with small amounts.</item>
+            <item></item>
+            <item>Caring for breastfed infants:
+Reduce breastfeeding amount: If the baby vomits once, nurse for half the usual time every 1 to 2 hours. - If the baby vomits more than once, nurse for 5 minutes every 30 to 60 minutes. After 4 hours without vomiting, return to normal breastfeeding starting with small feedings of 5 minutes every 30 minutes. Gradually increase the amount. - If vomiting continues, switch to expressed breast milk: ORS is rarely needed for breastfed babies unless vomiting worsens. Give small amounts of expressed breast milk using a spoon or syringe: 1 to 2 teaspoons (5-10 mL) every 5 minutes.</item>
+            <item>How to measure ear temperature:
+**Age**: 6 months and older (not accurate before 6 months)
+This thermometer measures heat waves coming from the eardrum.
+An accurate reading depends on pulling the ear back: If the child is over 1 year, pull the ear back and up.
+Then aim the probe tip between the eye and the opposite ear.
+Parents like this thermometer because it takes less than 2 seconds and does not require child cooperation or cause discomfort.
+Note: In cold weather, outdoor exposure can cause low readings. Keep the child indoors for 15 minutes before measuring. Earwax, ear infections, etc., do not prevent an accurate temperature.</item>
+            <item>Sponge bath for fever reduction:
+An option for high fevers, but rarely necessary. When to use: fevers over 40°C that don’t come down with fever medicine. (Always give fever medicine at least an hour before sponging.) How to sponge: Use lukewarm water (29.4 - 32.2°C) for 20 to 30 minutes. If your child shivers or feels cold, stop sponging. Another option: You can use warmer water. Never use alcohol — it is extremely dangerous!!!</item>
+            <item>Practical tips:
+Gum massage: Find the irritated or swollen gum area. Massage with a clean finger for 2 minutes. Repeat as needed. If over 12 months, you can use an ice cube wrapped in a wet cloth to massage the gum.
+Teethers: Babies rub their gums by chewing on hard, smooth objects. Give a chilled (not frozen) teething ring, pacifier, or cloth. If over 12 months, a piece of cool banana may help. Avoid hard foods that may cause choking (e.g. raw carrot). Avoid ice or candies that could freeze the gums.</item>
+            <item>Educational tips:
+The best remedy for cough or spasms is warm steam and fluids. At any age, inhale warm steam, like from a warm shower in a closed bathroom. For over 1 year, also drink warm fluids like apple juice or hot water. Reason: Both relax the airway and ease breathing.
+Vomiting due to hard coughing: Give smaller amounts of food more often. Reason: Vomiting from cough happens more often with a full stomach.
+Encourage fluids: Help your child drink plenty. It also loosens mucus in nose and lungs.
+Humidify: If home air is dry, use a humidifier or cool mist. Reason: Dry air worsens coughs.
+Avoid tobacco smoke: Smoke makes cough much worse.</item>
+            <item>What to do for breathing difficulty:
+Breathing trouble needs urgent medical attention. The medical term is “respiratory distress.”
+Struggling for each breath or shortness of breath.
+Breathing so hard the child can’t speak or cry.
+Chest pulling in with breaths (called chest retractions).
+Sudden noisy breathing (like wheezing).
+Much faster breathing than normal.
+Lips or face turning blue.</item>
+            <item>Educational tips:
+Mild stomach pain can have simple causes like gas or overeating. Sometimes, it signals the start of a viral infection that could lead to vomiting or loose stool.
+Watch your child for 2 hours to help identify the cause. Encourage lying down and resting.
+Give only clear fluids (like water, apple juice). Mild pain: usual diet is okay.
+Be ready for vomiting: Keep a vomit container handy. Younger children often describe nausea as stomach pain.
+Encourage sitting on the toilet and trying to have a bowel movement; it may help if the pain is from constipation or diarrhea.</item>
+            <item>Treatment:
+Cream: Most diaper rashes improve in 3 days with warm water cleansing and air exposure. If still very red, suspect yeast infection and use the right cream as advised by doctor or pharmacist.
+For scratched skin: Soak in warm water for 10 minutes. Add 2 tablespoons (30 mL) baking soda to bath. Do this twice a day.
+Pain relievers: Give acetaminophen for pain. Alternatively, ibuprofen (avoid in under 6 months). Ask doctor or pharmacist about dose. Don’t use pain medicine in under 3 months without doctor’s approval. If rash causes much pain, have the doctor examine the child.</item>
+            <item>Educational tips:
+Feeding: For formula-fed or breastfed babies, if over 2 hours since last feed, feed the baby. Don’t feed just because the baby cries — sometimes babies cry from a full tummy. Let baby decide when done (e.g., turns head away). Don’t insist on finishing bottle.
+Caffeine: If breastfeeding, limit caffeine to 2 servings/day (2 cups or 480 mL combined from coffee, tea, energy drinks).
+When baby cries without reason, hold and soothe. Hold lying down to help settle. Try swing or bouncer, stroller walk, pacifier, massage, or warm bath.
+Swaddling: Swaddling is very effective for calming crying babies. It also prevents sudden waking. Use a large square blanket. Arms inside and straight at sides. Bring left side across and tuck. Fold up bottom over knees. Bring right side across and tuck. Caution: Don’t cover head or overheat baby.
+White noise: Swaddling works better with low-frequency white noise (e.g. vacuum, fan). Caution: Don’t turn volume high — could harm hearing. Use only when baby cries. Turn off when baby is calm.
+Most crying is from sleep need. If over 2 hours since last nap, likely tired. If tried soothing and feeding didn’t help, let baby cry briefly to fall asleep. Avoid overtiredness: if awake for 2 hours, needs sleep. If napped over 2 hours, gently wake baby. Play or feed as needed to limit night waking.
+Warning: Never shake baby! Can cause brain bleeding and damage in seconds. Never leave baby with someone immature or with anger issues. If frustrated, place baby in safe spot and call a friend or family for help. Take a break to calm down.</item>
+            <item>Return to school:
+Child can return after fever resolves. Should feel well enough for normal activities.
+Sore throat alone usually not a reason to stay home.</item>
+            <item>Medicine for fever:
+For fevers over 39°C, you can use acetaminophen with pharmacist advice.
+Alternatively, ibuprofen with pharmacist advice.
+Note: Fevers under 39°C help fight infections.
+For all fevers: give plenty of cool fluids.</item>
+        </string-array>
+    <string-array name="symptoms_h4">
+    <item>Care for infants breastfeeding:
+Reduce feeding amount: If the baby vomits once, breastfeed for half the usual time every 1 to 2 hours. - If the baby vomits more than once, breastfeed for 5 minutes every 30 to 60 minutes. After 4 hours without vomiting, return to regular breastfeeding, starting with small feedings of 5 minutes every 30 minutes. Gradually increase the amount. - If vomiting continues, switch to expressed milk: Rarely, breastfed infants need ORS unless vomiting worsens. Give small amounts of expressed milk using a spoon or syringe. 1 to 2 teaspoons (5-10 mL) every 5 minutes.</item>
+        <item></item>
+        <item>Infants fed with expressed milk:
+Reduce the amount per feeding: If the baby vomits once, give half the usual amount every 1 to 2 hours. If vomiting more than once in the last 2 hours, give 30 mL every 30 to 60 minutes. If it continues, give 1 to 2 teaspoons (5-10 mL) every 5 minutes. Only switch to ORS every 5 minutes for a few hours if breast milk is not tolerated.</item>
+        <item>How to measure forehead temperature:
+**Age**: All ages
+This thermometer measures heat waves from the "temporal artery." This blood vessel is just under the skin of the forehead.
+This thermometer is commonly used in hospitals and doctors\' offices.
+1. Place the sensor in the center of the forehead and touch the skin.
+2. Gently slide the thermometer toward the top of the head and toward the ear. Keep it in contact with the skin.
+3. Stop when you reach the hairline.
+4. Read the temperature on the display.
+Note: Some newer forehead thermometers do not need to be slid across the forehead. Follow the box instructions for temperature measurement.
+Parents like this thermometer because it takes less than 2 seconds, requires no child cooperation, and causes no discomfort.
+Warning: Forehead temperatures should be digital. Forehead strips are not accurate.</item>
+        <item>False beliefs and facts about fever:
+Many parents think fever is dangerous and may harm their child. When their child has a fever, they worry and can’t sleep at night. This fear is called "fever phobia." In reality, fevers are usually harmless and often helpful. But this does not mean they are unimportant. So read and take other advice seriously.
+False belief: If my child feels warm, they must have a fever. Fact: Kids can feel warm for many reasons like playing hard, crying, coming out of a warm bed, or warm weather. This is just "heat production." Usually, their skin temperature returns to normal within 20 minutes. Interestingly, about 80% of kids who seem sick and feel warm actually have a fever. So if in doubt, measure the temperature. For fever: Rectal, ear, or forehead temperature: 38.0°C or higher – Oral: 37.8°C or higher – Armpit: 37.2°C or higher.
+False belief: All fevers are dangerous. Fact: Fevers help the immune system fight infections. Fevers between 37.8 and 40°C are generally beneficial.
+False belief: Anyone can have a febrile seizure. Fact: Only 4% of children may have one.
+False belief: Febrile seizures are dangerous. Fact: They may look scary but last less than 5 minutes and cause no permanent harm. They do not cause speech, learning, or seizure problems without fever.
+False belief: All fevers need treatment. Fact: Only fevers causing discomfort need treatment. Fevers below 39–39.5°C usually don’t cause discomfort.
+False belief: Treatment should bring temperature to normal. Fact: Most fevers drop only 1–1.5°C with treatment.
+False belief: If the fever doesn’t drop to normal, the cause is serious. Fact: Fevers not dropping to normal may be due to viruses or bacteria. Fever medicine effect doesn’t reveal infection cause.
+False belief: Once reduced, fever should stay down. Fact: In most viral infections, fever can last 2–3 days. When medicine wears off, fever can return and need treatment again. Fever usually goes away when the body defeats the virus, often on day 3 or 4.
+False belief: Oral temperatures between 37.1–37.8°C are low-grade fever. Fact: These are normal. Body temperature varies during the day, highest in the early evening. True low-grade fever is 37.8–39°C.</item>
+        <item>Treatment:
+Pain relievers: Usually not needed for mild teething discomfort. - Gum massage usually helps. If not, give acetaminophen with pharmacist advice. If over 6 months old, ibuprofen is another option. Do this only for 1–2 days with pharmacist or doctor advice.
+Teething gels: Over-the-counter gels may be used. - If they contain benzocaine, they are not FDA approved at any age. Reason: Benzocaine can cause choking, serious syndromes, and allergic reactions. Its use under 2 years can be harmful. - Gum massage works much better.</item>
+        <item></item>
+        <item>When to see a doctor:
+Number of colds: Healthy kids normally have at least 6 colds a year because of the many cold viruses. With each new cold, your child builds immunity.
+Recognizing colds: Most parents know when their child has a cold. Sometimes they catch it themselves or other kids at school have it. Usually, no need to see a doctor unless there are complications (like ear pain or prolonged symptoms).
+Cold duration: Colds usually last about 2 weeks and no medicine shortens it.
+Early symptoms: Usually starts with a runny nose, which turns into nasal congestion after 3–4 days. Each symptom needs a different treatment.</item>
+        <item>Do not use medications:
+Any medication (like ibuprofen) can upset the stomach and worsen pain. Avoid giving any painkillers or laxatives for abdominal cramps.
+For fever above 39°C, you may give acetaminophen with doctor or pharmacist advice.</item>
+        <item>Causes of diaper rash:
+Irritation rash: Mild rashes can be from drying soaps.
+Stool rash: Stool left on the skin is very irritating because it contains bacteria. Urine alone usually doesn\'t irritate. This rash is common around the anus or hidden stool areas. Small sores around the anus are often from prolonged stool contact.
+Ammonia rash: Stool and urine left together can produce ammonia, causing mild chemical burns. You can smell ammonia at diaper change. This rash is more common with cloth diapers.
+Diarrhea rash: Rashes around the anus are common during diarrhea. Diarrheal stools contain enzymes that irritate the skin.
+Yeast rash: May result in secondary yeast infection. Very red, may have sores or discharge. Small red sores or pimples may appear beyond rash edges. Diaper rash should improve within 3 days if treated correctly. If not, likely a yeast infection; use antifungal cream with doctor or pharmacist advice.
+Bacterial rash: Bacteria can cause secondary infection. Less common than yeast rashes. Bacteria can cause sores, yellow scabs, pimples, or discharge. Can form a painful red lump (boil).
+Cellulitis (serious): Bacterial infection spreads, causing redness beyond the sore. Red area is painful to touch.
+Staph skin breakdown (serious): Caused by staph bacteria. Main sign is large blisters. Skin is very red, baby looks very ill.</item>
+        <item>What to expect:
+The best way to calm a baby varies by child. You may need to try several ways to find what works best.
+Crying should reduce to about 1 hour per day.
+Colic peaks at 4–6 weeks, improves after 2 months, and usually ends by 3 months.</item>
+        <item>What to expect:
+- Usually, sore throat pain from viral illness lasts 4 to 5 days.</item>
+        <item>Return to school:
+Ear infections are not contagious.
+Your child can return when the fever is fully gone.</item>
+    </string-array>
+
+    <string-array name="symptoms_h5">
+    <item>Infants fed with expressed milk:
+Reduce amount per feeding: If vomiting once, give half the usual amount every 1–2 hours. If vomiting more than once in the last 2 hours, give 30 mL every 30–60 minutes. If it continues, give 1–2 teaspoons (5–10 mL) every 5 minutes. Only use ORS every 5 minutes for a few hours if breast milk is not tolerated.</item>
+        <item></item>
+        <item>Feeding tips:
+Stop all solid foods: Avoid giving solid foods to vomiting children. After 8 hours without vomiting, slowly reintroduce. Start with starchy, easy-to-digest foods like cereals, crackers, and bread.
+Key to success: Give small amounts of fluid. Offer 2–3 teaspoons (10–15 mL) every 5 minutes. Older kids can sip ORS slowly. - Increase fluids: After 4 hours without vomiting, increase fluid amount. After 8 hours, return to normal fluids. - Avoid juice and soda: They can worsen diarrhea. Note: If symptoms persist or worsen, see a doctor.</item>
+        <item>How to take no-touch forehead temperature:
+**Age**: All ages
+1. Aim the thermometer at the forehead center.
+2. Stay less than 1 inch (2.5 cm) away. Do not touch the forehead.
+3. Do not move the thermometer.
+4. Press the measurement button.</item>
+        <item>Fever measurement:
+The body site affects accuracy. Accuracy order: Rectal, forehead, ear (if done correctly). Ear temperature before 6 months is not accurate. Armpit is least accurate but useful at any age.
+Recommendations by age: Under 3 months: Armpit safest. If over 37.2°C, recheck in 15 min. Reason: Fever in small babies needs doctor check. (New research suggests forehead temps may be accurate under 3 months.) - 3 to 12 months: Rectal or forehead accurate. After 6 months, ear thermometer can be used. Armpit okay if done properly. Digital thermometers are cheap and available, can be used rectally or underarm, and give quick readings. Replace glass ones.
+Rectal temperature: Birth to 1 year. Lay baby tummy down on your lap or on back with legs up. Apply Vaseline to thermometer tip and anus. Insert gently no more than 1 inch (2.5 cm); under 6 months, only 1 cm. Stop if resistance. Hold still until beep (about 10 sec). Fever: rectal temp over 38°C. Warning: Avoid rectal in leukemia, cancer, or weak immune system.
+Armpit temperature: All ages. Place tip in dry armpit, close arm. Hold until beep (about 10 sec). If over 37.2°C, the child has fever. If unsure, check rectal or forehead.
+Ear temperature: 6 months and up (not accurate younger). Measures heat from eardrum. Correct angle needed. Over 1 year: pull ear back and up. Point probe between eye and opposite ear. Parents like it: under 2 sec, no cooperation, no discomfort. *Note: Cold air can give low readings. Stay inside 15 min before measuring. Earwax, infection don’t affect result.
+Forehead temperature: All ages. Measures heat from "temporal artery" under skin. Common in clinics. Place sensor center of forehead, touch skin, slide toward hairline and ear. Stop at hairline. Read screen. Some models don’t need sliding. Follow instructions. Parents like it: under 2 sec, no cooperation, no discomfort. Warning: must be digital; strips not accurate.
+No-touch forehead: All ages. Aim at center, stay under 2.5 cm, don’t touch, don’t move, press button.</item>
+        <item>False beliefs about teething:
+Teething does not cause fever, diarrhea, diaper rash, or runny nose.
+Teething does not cause severe crying.
+Teething does not increase risk of illness.
+Warning about fever: Blaming fever on teething can delay care for serious infections (e.g. ear or urinary infections).
+Two reasons infections start between 6–12 months: loss of mother’s antibodies and putting dirty objects in mouth.</item>
+        <item></item>
+        <item>Care tips:
+Runny nose with lots of discharge – empty or suction nose: Mucus helps wash germs from nose/sinuses. Teach kids at 2–3 years to blow nose. For younger, use suction bulb gently. Apply Vaseline under nose to prevent redness.
+Saline for nose wash – saline spray: To loosen dry mucus. If none, a few drops water. Step 1: 3 drops each nostril (1 drop if under 1 year). Step 2: Close one nostril, empty the other. Repeat. Step 3: Repeat until clear.
+Give extra fluids: Encourage drinking. Goal: thin mucus, loosen lung mucus.
+Humidifier: Use if air is dry. Reason: dry air thickens mucus.</item>
+        <item>Teach your child:
+Help your child worry less about things they can’t control. Teach to lie in a calm place, breathe slowly and deeply, let tummy rise/fall. Relax muscles, think of pleasant things. Make sure they get enough sleep.</item>
+        <item>Prevent diaper rash recurrence:
+Change diapers more often. Focus on keeping stool off the skin.
+Wash skin well with warm water.
+Clean all skin folds of stool.</item>
+        <item></item>
+        <item>Call your doctor if:
+- Sore throat is main symptom over 48 hours.
+- Sore throat with cold lasts over 5 days.
+- Fever lasts over 3 days or over 40°C.
+- You think your child needs to be seen.
+- Your child’s condition worsens.</item>
+        <item>Call your doctor if:
+Pain gets worse.
+You think your child needs to be seen.
+Condition worsens.</item>
+    </string-array>
+    <string-array name="symptoms_h6">
+    <item>Nutrition tips:
+Stop all solid foods: Avoid giving all solid foods and baby foods to children who are vomiting. After 8 hours without vomiting, gradually reintroduce them. If on solid foods, start with starchy foods that are easy to digest. Examples include cereals, biscuits, and bread.
+Care for older children (over 1 year): Give small amounts of oral rehydration solutions (ORS) for 8 hours — when vomiting is accompanied by watery diarrhea, ORS (such as Oralite) should be used. If ORS is not accepted, you can use diluted sports drinks. To prepare, mix equal parts of sports drink and water.
+Key to success: Give small amounts of fluids. Offer 2 to 3 teaspoons (10 to 15 ml) of fluid every 5 minutes. Older children can slowly sip ORS. Increase fluid amount: After 4 hours without vomiting, you can increase the fluid amount. After 8 hours without vomiting, you can return to normal fluids. Avoid juices and sodas: Avoid fruit juices and carbonated drinks, as these can worsen diarrhea. Note: If symptoms persist or the child’s condition worsens, be sure to consult a doctor.</item>
+        <item></item>
+        <item>Do not use medications:
+Stop all over-the-counter medicines for 8 hours. Reason: Some of these medicines can make vomiting worse.
+Mild fevers do not need medication. For higher fevers, you can use a paracetamol suppository with the advice of a pharmacist or doctor. Ask the pharmacist to help you find this product. Do not use ibuprofen as it can irritate the stomach.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>Cold medications:
+Cold and cough medicines: No over-the-counter cold or cough medicine is recommended for children under 6 years of age, as they are not FDA approved and may cause serious side effects.
+Allergy medicines: Only useful if your child has nasal allergy issues.
+Antibiotics: Not useful for colds. Antibiotics are only used if an ear or sinus infection occurs.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <string-array name="symptoms_h7">
+    <item>Do not use medications:
+Stop all over-the-counter medicines for 8 hours. Reason: Some of these medicines can make vomiting worse.
+Mild fevers do not need medication. For higher fevers, you can use a paracetamol suppository with the advice of a pharmacist or doctor. Ask the pharmacist to help you find this product. Do not use ibuprofen as it can irritate the stomach.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+</resources>

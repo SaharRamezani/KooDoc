@@ -41,7 +41,7 @@
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="مشخصات دلخواه"/>
+                    android:text="@string/milk_filters"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -50,7 +50,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:hint="@string/age_month"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:boxBackgroundColor="@color/white"
@@ -175,6 +174,4 @@
             app:backgroundTint="@color/colorPrimary"
             android:text="@string/see_milks"/>
     </LinearLayout>
-
-
 </FrameLayout>
