@@ -14,6 +14,7 @@ import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentParentShowBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.util.NumberFormatter
+import com.example.kidzi.util.showLocalizedDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -21,28 +22,6 @@ import javax.inject.Inject
 class ParentShowFragment : Fragment() {
 
     @Inject lateinit var preferenceManager: PreferenceManager
-
-    private fun showDatePickerDialog(button: Button) {
-        val datePicker = PersianLinearDatePicker(requireContext()).apply {
-            setMaxYear(1400,1320)
-        }
-
-        val dialog = AlertDialog.Builder(requireContext())
-            .setTitle(getString(R.string.dialog_title_select_date))
-            .setView(datePicker)
-            .setPositiveButton(getString(R.string.dialog_positive_button)) { _, _ ->
-                val year = datePicker.getSelectedYear()
-                val month = datePicker.getSelectedMonth()
-                val day = datePicker.getSelectedDay()
-                val selectedDate = "$year/${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}"
-                button.text = context?.let { NumberFormatter.formatNumber(it, selectedDate) }
-                preferenceManager.setParentBirth(selectedDate)
-            }
-            .setNegativeButton(getString(R.string.dialog_negative_button), null)
-            .create()
-
-        dialog.show()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -88,7 +67,9 @@ class ParentShowFragment : Fragment() {
         }
 
         binding.btnDate.setOnClickListener {
-            showDatePickerDialog(binding.btnDate)
+            showLocalizedDatePicker(requireContext()) { selectedDate ->
+                binding.btnDate.text = selectedDate
+            }
         }
 
         binding.btnNext.setOnClickListener {

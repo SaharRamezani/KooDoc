@@ -13,6 +13,7 @@ import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentParentInfoBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.util.NumberFormatter
+import com.example.kidzi.util.showLocalizedDatePicker
 import com.pouyaheydari.lineardatepicker.PersianLinearDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -34,35 +35,15 @@ class ParentInfoFragment : Fragment() {
                 findNavController().navigate(ParentInfoFragmentDirections.actionParentInfoFragmentToKidIntroFragment())
         }
 
-        binding.btnDate.setOnClickListener { showDatePickerDialog(binding.btnDate) }
+        binding.btnDate.setOnClickListener { showLocalizedDatePicker(requireContext()) { selectedDate ->
+            binding.btnDate.text = selectedDate
+        }}
 
         binding.btnBack.setOnClickListener {
             findNavController().navigate(ParentInfoFragmentDirections.actionParentInfoFragmentToParentInfoIntroFragment())
         }
 
         return binding.root
-    }
-
-    private fun showDatePickerDialog(button: Button) {
-        val datePicker = PersianLinearDatePicker(requireContext()).apply {
-            setMaxYear(1400,1320)
-        }
-
-        val dialog = AlertDialog.Builder(requireContext())
-            .setTitle(getString(R.string.dialog_title_select_date))
-            .setView(datePicker)
-            .setPositiveButton(getString(R.string.dialog_positive_button)) { _, _ ->
-                val year = datePicker.getSelectedYear()
-                val month = datePicker.getSelectedMonth()
-                val day = datePicker.getSelectedDay()
-                val selectedDate = "$year/${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}"
-
-                button.text = context?.let { NumberFormatter.formatNumber(it, selectedDate) }
-            }
-            .setNegativeButton(getString(R.string.dialog_negative_button), null)
-            .create()
-
-        dialog.show()
     }
 
     private fun checkNext(binding: FragmentParentInfoBinding): Boolean {
