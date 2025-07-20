@@ -178,6 +178,11 @@
                         android:textAlignment="center"/>
 
                     <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:text=""/>
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text=""
@@ -206,6 +211,11 @@
                         android:textColor="@color/surface_text_light"
                         android:textSize="11sp"
                         android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:text=""/>
 
                     <TextView
                         android:layout_width="wrap_content"
