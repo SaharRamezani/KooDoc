@@ -14,11 +14,6 @@
             android:id="@+id/action_navigation_home_to_parentLoginFragment"
             app:popUpToInclusive="true"
             app:destination="@id/parentLoginFragment" />
-        <fragment
-            android:id="@+id/LanguageSelectionFragment"
-            android:name="com.example.kidzi.ui.profile.LanguageSelectionFragment"
-            android:label="Language Selection"
-            tools:layout="@layout/fragment_language_selection" />
         <action
             android:id="@+id/action_navigation_home_to_parentInfoIntroFragment"
             app:popUpToInclusive="true"
@@ -36,6 +31,11 @@
             app:popUpToInclusive="true"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/LanguageSelectionFragment"
+        android:name="com.example.kidzi.ui.profile.LanguageSelectionFragment"
+        android:label="Language Selection"
+        tools:layout="@layout/fragment_language_selection" />
     <fragment
         android:id="@+id/parentLoginFragment"
         android:name="com.example.kidzi.ui.home.ParentLoginFragment"
@@ -572,6 +572,9 @@
         <action
             android:id="@+id/action_accountFragment_to_kidChoose2Fragment"
             app:destination="@id/kidChoose2Fragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_LanguageSelectionFragment"
+            app:destination="@id/LanguageSelectionFragment" />
     </fragment>
     <fragment
         android:id="@+id/kidInfoNewFragment"

@@ -1,5 +1,6 @@
 package com.example.kidzi.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,22 @@ class LanguageSelectionFragment : Fragment() {
         return binding.root
     }
 
+    private fun changeLanguage(lang: String) {
+        preferenceManager.saveLanguage(lang)
+
+        val context = requireActivity()
+        val intent = context.packageManager.getLaunchIntentForPackage(context.packageName)
+
+        if (intent != null) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            context.finishAffinity() // Kill the current task
+        } else {
+            // Optional: fallback or error handling
+            throw IllegalStateException("Unable to restart app: launch intent is null")
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnPersian.setOnClickListener {
             changeLanguage("fa")
@@ -41,12 +58,6 @@ class LanguageSelectionFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().navigateUp()
         }
-    }
-
-    private fun changeLanguage(lang: String) {
-        preferenceManager.saveLanguage(lang)
-        MyLanguageManager.setLocale(requireActivity(), lang)
-        requireActivity().recreate()
     }
 
     override fun onDestroyView() {

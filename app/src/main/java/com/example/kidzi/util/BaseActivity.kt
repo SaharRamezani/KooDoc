@@ -5,14 +5,15 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kidzi.di.db.PreferenceManager
 import java.util.Locale
 
 open class BaseActivity : AppCompatActivity() {
 
-    override fun attachBaseContext(newBase: Context) {
-        val locale = Locale(MyLanguageManager.getLanguage(newBase))
-        val context = updateLocale(newBase, locale)
-        super.attachBaseContext(context)
+    override fun attachBaseContext(base: Context) {
+        val lang = PreferenceManager(base).getLanguage() ?: "fa"
+        val newBase = MyLanguageManager.setLocale(base, lang)
+        super.attachBaseContext(newBase)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

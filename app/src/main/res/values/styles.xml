@@ -16,7 +16,7 @@
         <item name="cardBackgroundColor">@color/surface_bg_deep</item>
     </style>
 
-    <!-- res/values/styles.xml -->
+    <!-- res/values-fa/styles.xml -->
     <style name="ShapeAppearanceOverlay.Kidzi.Dialog"
         parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>

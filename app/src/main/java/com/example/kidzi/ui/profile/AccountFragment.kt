@@ -42,7 +42,7 @@ class AccountFragment : Fragment() {
         }
 
         binding.btnLanguages.setOnClickListener {
-            findNavController().navigate(R.id.LanguageSelectionFragment)
+            findNavController().navigate(R.id.action_accountFragment_to_LanguageSelectionFragment)
         }
 
         return binding.root

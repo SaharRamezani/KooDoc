@@ -1,4 +1,4 @@
-<!-- res/values/arrays.xml -->
+<!-- res/values-fa/arrays.xml -->
 <resources>
     <string-array name="drug_names">
         <item>@string/drug_ibuprofen_syrup</item>
