@@ -9,7 +9,7 @@
     <string name="dose_2_5ml">Take 2.5 ml (cc).</string>
     <string name="iron">iron</string>
     <string name="months">months</string>
-    <string name="age">age:</string>
+    <string name="age">Age:</string>
     <string name="my_child_growth_chart">My child\'s growth chart</string>
     <string name="time">Time</string>
     <string name="milk_filters">Filters</string>
@@ -289,13 +289,13 @@
     <string name="snake_forbids">Do not cut, suck out venom by mouth, apply ice, or use cold compresses.</string>
     <string name="add_kid">Add child</string>
     <string name="growth_feed">Growth and nutrition</string>
-    <string name="growth_chart">Growth chart</string>
+    <string name="growth_chart">Growth Chart</string>
     <string name="boy_chart">Boys\' growth chart</string>
     <string name="girl_chart">Girls\' growth chart</string>
     <string name="register_growth">Register growth</string>
     <string name="register">Register</string>
     <string name="age_week">Age (weeks)</string>
-    <string name="head">Head circumference</string>
+    <string name="head">Head</string>
     <string name="info_about">Information about</string>
     <string name="emergency">If you see any of these signs, go to the emergency room immediately</string>
     <string name="emergency_medium">If you see the signs below, go to a pharmacy or clinic</string>
@@ -307,7 +307,7 @@
     <string name="before">Previous</string>
     <string name="normal_height">Normal height (cm):</string>
     <string name="normal_weight">Normal weight (kg):</string>
-    <string name="normal_head">Normal head circumference (cm):</string>
+    <string name="normal_head">Normal head (cm):</string>
     <string name="elixir">Elixir</string>
     <string name="rules">Disclaimer</string>
     <string name="rules_info">Privacy:\n“Koodoc” collects information from its users which can be used to provide better and more precise services. “Koodoc” has the right to use this information for research purposes and to improve its services. There is no right to publicly share or disclose content sent to “Koodoc.”\n\nDisclaimer:\nAlthough we ensure the quality of the information, its accuracy is not guaranteed. This content is designed solely as a general educational aid and should not be considered medical or health advice or a substitute for medical treatment for individual problems. This service does not replace professional advice or services from a healthcare provider familiar with your specific characteristics. Always prioritize advice from your doctor or other healthcare providers regarding medical conditions and before starting any new treatment.\n\nIndemnification:\nYou agree to hold harmless “Koodoc,” its managers, staff, agents, and affiliates from any liability, damages, losses, claims, costs (including reasonable attorney\'s fees), and breaches directly or indirectly related to content submitted or transmitted through the service.\n\nService modification or suspension:\n“Koodoc” may at any time, without prior notice, temporarily or permanently change, suspend, or discontinue this service or part of it. “Koodoc” will not be entitled to receive any fees if the service is discontinued.\n\nTermination:\nEither party may terminate this agreement at any time, even without reason. After termination, you should no longer access the service.</string>

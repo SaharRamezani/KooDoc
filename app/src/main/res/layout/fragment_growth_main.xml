@@ -55,6 +55,7 @@
             app:layout_constraintTop_toBottomOf="@id/btn_back"
             android:layout_margin="18dp"
             app:cardCornerRadius="25dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,7 +98,6 @@
 
             </LinearLayout>
 
-
         </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
@@ -110,8 +110,8 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:textAllCaps="false"
                 android:text="@string/kid_growth_chart"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
                 app:cornerRadius="@dimen/corner_milk_buttons"
                 android:backgroundTint="@color/surface_bg_medium"
                 android:textColor="@color/colorTextPrimary"
@@ -122,8 +122,8 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:textAllCaps="false"
                 android:text="@string/boy_chart"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
                 app:cornerRadius="@dimen/corner_milk_buttons"
                 app:strokeWidth="2dp"
                 android:backgroundTint="@color/surface_bg_medium"
@@ -136,8 +136,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="@string/girl_chart"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
                 app:cornerRadius="@dimen/corner_milk_buttons"
+                android:textAllCaps="false"
                 android:backgroundTint="@color/surface_bg_medium"
                 app:strokeColor="@color/button_outlined_border"
                 app:strokeWidth="2dp"

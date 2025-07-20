@@ -41,8 +41,7 @@
                     android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="نمودار رشد"/>
-
+                    android:text="@string/growth_chart"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -52,7 +51,7 @@
                     android:id="@+id/txt_type"
                     android:layout_marginBottom="2dp"
                     android:textSize="@dimen/header_size"
-                    android:text="پسران"/>
+                    android:text=""/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

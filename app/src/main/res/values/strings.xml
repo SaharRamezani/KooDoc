@@ -12,6 +12,7 @@
     <string name="dose_5cc">۵ میلی‌لیتر (سی‌سی) مصرف شود.</string>
     <string name="months">ماهگی</string>
     <string name="languages">زبان ها</string>
+    <string name="boys">پسران</string>
     <string name="selected_lang_fa">فارسی 🇮🇷</string>
     <string name="selected_lang_en">English 🇬🇧</string>
     <string name="age">سن:</string>
@@ -208,7 +209,6 @@
     <string name="snake_forbids">"استفاده از برش، مکش سم با دهان ، گذاشتن یخ و کمپرس سرد ممنوع است. "</string>
     <string name="add_kid">افزودن کودک</string>
     <string name="growth_feed">رشد و تغذیه</string>
-    <string name="growth_chart">نمودار رشد</string>
     <string name="kid_growth_chart">نمودار رشد کودک من</string>
     <string name="add_new_data">اضافه کردن داده</string>
     <string name="error_no_name">نامی ثبت نشده</string>
@@ -249,8 +249,8 @@
     <string name="success_delete">با موفقیت حذف شد</string>
     <string name="error_info_not_valid">اطلاعات وارد شده معتبر نیست</string>
     <string name="girl_chart">نمودار رشد دختران</string>
-    <string name="boys">پسران</string>
     <string name="girls">دختران</string>
+    <string name="growth_chart">نمودار رشد</string>
     <string name="weeks">هفته</string>
     <string name="child_growth_chart">نمودار رشد کودک من</string>
     <string name="register_growth">ثبت رشد</string>

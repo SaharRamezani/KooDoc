@@ -137,13 +137,12 @@ class MilkResultFragment : Fragment() {
         lactoseLevel: Int, typeStr: String,
         cow: Boolean, lac: Boolean, type: Int, milkUse: String
     ): Boolean {
-        return age in start..end &&
-                !(lac && lactoseLevel >= 3) &&
+        return /*age in start..end &&*/ !(lac && lactoseLevel >= 3) /* &&
                 !(cow && typeStr.contains(getString(R.string.cow_protein))) &&
                 !(cow && typeStr.contains(getString(R.string.milk_protein))) &&
                 ((type == 5) ||
                         (type == 3 && milkUse.contains(getString(R.string.diet))) ||
                         (type == 4 && milkUse.contains(getString(R.string.regular)))) ||
-                (type == 6)
+                (type == 6) */
     }
 }

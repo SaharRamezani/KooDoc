@@ -1,6 +1,7 @@
 package com.example.kidzi.ui.milk
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,7 +45,24 @@ class MilkManualFragment : Fragment() {
 
             try {
                 val kid = kidNameDao.getKidInfo(kidId)
-                val dobMillis = parsePersianDateToGregorianMillis(kid.birthDate)
+                val dobMillis = if (Locale.getDefault().language == "fa") {
+                    parsePersianDateToGregorianMillis(kid.birthDate)
+                } else {
+                    Log.d("MilkManualFragment", "Birth date: ${kid.birthDate}")
+
+                    val parts = kid.birthDate.split("/")
+                    if (parts.size >= 3) {
+                        val year = parts[0].toIntOrNull() ?: 0
+                        val month = parts[1].toIntOrNull()?.minus(1) ?: 0
+                        val day = parts[2].toIntOrNull() ?: 0
+                        Calendar.getInstance().apply {
+                            set(year, month, day)
+                        }.timeInMillis
+                    } else {
+                        0L
+                    }
+                }
+
                 val dob = Calendar.getInstance().apply { timeInMillis = dobMillis }
                 val now = Calendar.getInstance()
 
@@ -115,6 +133,9 @@ class MilkManualFragment : Fragment() {
                             type = 4 // regular
                         }
                     }
+
+                    Log.d("MilkResult", "Type=$type, Age=$age, Lac=$lac, Cow=$cow")
+
                     findNavController().navigate(
                         MilkManualFragmentDirections.actionMilkManualFragmentToMilkResultFragment(
                             type, age, lac, cow

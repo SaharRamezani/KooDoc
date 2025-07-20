@@ -55,6 +55,7 @@
             app:layout_constraintTop_toBottomOf="@id/btn_back"
             android:layout_margin="18dp"
             app:cardCornerRadius="25dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,20 +63,19 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
-                    android:autoMirrored="true"
-                    app:tint="@color/button_outlined_border"/>
-
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
                     android:text="@string/current_kid"
-                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="2dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
@@ -85,13 +85,18 @@
                     android:layout_weight="2"
                     android:layout_marginEnd="4dp"
                     android:id="@+id/txt_kid_name"
-                    android:textSize="18sp"
-                    android:text=""
+                    android:text="پویا"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
-            </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoMirrored="true"
+                    android:src="@drawable/ic_arrow_right"
+                    app:tint="@color/button_outlined_border" />
 
+            </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 

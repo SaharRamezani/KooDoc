@@ -27,9 +27,9 @@ class GrowthMainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentGrowthMainBinding.inflate(inflater, container, false)
-        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+        binding.btnBack.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToMilkGrowthMainFragment()) }
         binding.btnChooseKid.setOnClickListener { findNavController().navigate(R.id.kidsChooseFragment) }
         binding.btnBoy.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToGrowthChartFragment(1)) }
         binding.btnGirl.setOnClickListener { findNavController().navigate(GrowthMainFragmentDirections.actionGrowthMainFragmentToGrowthChartFragment(2)) }

@@ -13,7 +13,6 @@
         android:layout_marginBottom="18dp"
         app:strokeWidth="1dp"
         app:cardCornerRadius="15dp"
-        android:layoutDirection="locale"
         app:cardBackgroundColor="@color/surface_bg_medium">
 
         <LinearLayout
@@ -22,212 +21,176 @@
             android:padding="12dp"
             android:orientation="vertical">
 
+            <!-- First row: Checkbox + Persian/English name -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    tools:ignore="NestedWeights">
+                android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <CheckBox
-                            android:id="@+id/milk_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:buttonTint="@color/button_outlined_border" />
-                        <TextView
-                            android:id="@+id/persian_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorTextPrimary"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:text="" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorTextPrimary"
-                            android:textSize="14sp"
-                            android:text=""
-                            android:id="@+id/en_name"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="12dp"
-                android:layout_height="wrap_content">
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layoutDirection="rtl"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/surface_text_light"
-                        android:text="@string/comatible_with"/>
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:text=""
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        android:textAlignment="center"
-                        android:textStyle="bold"
-                        android:id="@+id/txt_start"/>
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:text="@string/Month"
-                        android:gravity="center"
-                        android:textColor="@color/surface_text_light"
-                        android:textSize="11sp"
-                        android:textAlignment="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/to"
-                        android:gravity="center"
-                        android:textColor="@color/surface_text_light"
-                        android:textSize="11sp"
-                        android:textAlignment="center"/>
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:id="@+id/txt_end"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/Month"
-                        android:layout_marginStart="18dp"
-                        android:textColor="@color/surface_text_light"
-                        android:textSize="11sp"
-                        android:id="@+id/txt_month"
-                        android:gravity="center"/>
-                </LinearLayout>
-
+                <CheckBox
+                    android:id="@+id/milk_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:buttonTint="@color/button_outlined_border" />
 
                 <TextView
+                    android:id="@+id/persian_name"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text=""
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
                     android:layout_marginEnd="8dp"
-                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/en_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="14sp"
+                    android:text="" />
+            </LinearLayout>
+
+            <!-- Second row: Start-End-Month + Type -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="@string/comatible_with"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/surface_text_light"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/txt_start"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:text="" />
+
+                    <TextView
+                        android:text="@string/to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:gravity="center"
+                        android:textColor="@color/surface_text_light"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/txt_end"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/txt_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center"
+                        android:textColor="@color/surface_text_light"
+                        android:textSize="11sp"
+                        android:text="@string/Month" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:textAlignment="center"
                     android:textStyle="bold"
-                    android:id="@+id/txt_type"/>
+                    android:gravity="center"
+                    android:text="" />
             </LinearLayout>
 
+            <!-- Third row: Lactose + Base -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="12dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1">
+                android:gravity="center_vertical">
+
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layoutDirection="rtl"
-                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    tools:ignore="NestedWeights">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
                         android:text="@string/lactose"
-                        android:gravity="center"
-                        android:textColor="@color/surface_text_light"
-                        android:textSize="11sp"
-                        android:textAlignment="center"/>
-
-                    <TextView
-                        android:layout_width="2dp"
-                        android:layout_height="match_parent"
-                        android:text=""/>
-
-                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text=""
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/surface_text_light"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/txt_lact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        android:textAlignment="center"
                         android:textStyle="bold"
-                        android:id="@+id/txt_lact"/>
+                        android:text="" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layoutDirection="rtl"
-                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
                     android:orientation="horizontal"
-                    android:layout_weight="3">
+                    android:gravity="center_vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
                         android:text="@string/base"
-                        android:gravity="center"
-                        android:textColor="@color/surface_text_light"
-                        android:textSize="11sp"
-                        android:textAlignment="center"/>
-
-                    <TextView
-                        android:layout_width="2dp"
-                        android:layout_height="match_parent"
-                        android:text=""/>
-
-                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text=""
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/surface_text_light"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/txt_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        android:textAlignment="center"
                         android:textStyle="bold"
-                        android:id="@+id/txt_base"/>
+                        android:text="" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

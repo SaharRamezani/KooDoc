@@ -228,8 +228,8 @@
             android:id="@+id/action_mainFragment_to_SymptomsParentFragment"
             app:destination="@id/symptomsParentFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_milGrowthFragment"
-            app:destination="@id/milGrowthFragment" />
+            android:id="@+id/action_mainFragment_to_milkGrowthFragment"
+            app:destination="@id/milkGrowthFragment" />
         <action
             android:id="@+id/action_mainFragment_to_milkIntroFragment"
             app:destination="@id/milkIntroFragment" />
@@ -476,16 +476,19 @@
             app:destination="@id/symptomsParentFragment" />
     </fragment>
     <fragment
-        android:id="@+id/milGrowthFragment"
+        android:id="@+id/milkGrowthFragment"
         android:name="com.example.kidzi.ui.milk.MilkGrowthFragment"
-        android:label="fragment_mil_growth"
-        tools:layout="@layout/fragment_mil_growth" >
+        android:label="fragment_milk_growth"
+        tools:layout="@layout/fragment_milk_growth" >
         <action
-            android:id="@+id/action_milGrowthFragment_to_milkIntroFragment"
+            android:id="@+id/action_milkGrowthFragment_to_milkIntroFragment"
             app:destination="@id/milkIntroFragment" />
         <action
-            android:id="@+id/action_milGrowthFragment_to_growthMainFragment"
+            android:id="@+id/action_milkGrowthFragment_to_growthMainFragment"
             app:destination="@id/growthMainFragment" />
+        <action
+            android:id="@+id/action_milkGrowthFragment_to_MainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/growthMainFragment"
@@ -501,6 +504,9 @@
         <action
             android:id="@+id/action_growthMainFragment_to_KidGrowthFragment"
             app:destination="@id/kidGrowthFragment" />
+        <action
+            android:id="@+id/action_growthMainFragment_to_milkGrowthMainFragment"
+            app:destination="@id/milkGrowthFragment" />
     </fragment>
     <fragment
         android:id="@+id/growthChartFragment"
