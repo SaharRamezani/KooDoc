@@ -69,6 +69,7 @@ class ParentShowFragment : Fragment() {
         binding.btnDate.setOnClickListener {
             showLocalizedDatePicker(requireContext()) { selectedDate ->
                 binding.btnDate.text = selectedDate
+                preferenceManager.setParentBirth(selectedDate)
             }
         }
 

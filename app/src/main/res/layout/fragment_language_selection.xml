@@ -66,7 +66,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_persian"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:text="@string/selected_lang_fa"
                 android:textColor="@android:color/white"
@@ -82,7 +82,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_english"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:text="@string/selected_lang_en"
                 android:textColor="@android:color/white"
