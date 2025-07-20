@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import saman.zamani.persiandate.PersianDate
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -16,11 +15,11 @@ import com.example.kidzi.databinding.FragmentMilkResultBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidAlergyDao
 import com.example.kidzi.di.db.dao.KidNameDao
-import com.example.kidzi.di.helpers.PersianDateHelper.Companion.toEnglishDigits
 import com.example.kidzi.ui.milk.adapters.MilkAdapter
+import com.example.kidzi.util.parsePersianDateToGregorianMillis
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.util.Calendar
+import java.util.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -32,24 +31,16 @@ class MilkResultFragment : Fragment() {
     @Inject lateinit var kidNameDao: KidNameDao
     @Inject lateinit var kidAlergyDao: KidAlergyDao
 
-    fun getAgeInMonthsEn(persianDate: String): Int {
-        val parts = persianDate.toEnglishDigits().split("/")
-        val (year, month, day) = parts.map { it.toInt() }
+    private fun getAgeInMonths(dateStr: String): Int {
+        val gregorianMillis = parsePersianDateToGregorianMillis(dateStr).takeIf { it != 0L }
+            ?: return 0
 
-        val dobPersian = PersianDate().apply {
-            setShYear(year)
-            setShMonth(month)
-            setShDay(day)
-        }
-
-        val dobGregorian = Calendar.getInstance().apply {
-            timeInMillis = dobPersian.toDate().time
-        }
-
+        val dob = Calendar.getInstance().apply { timeInMillis = gregorianMillis }
         val now = Calendar.getInstance()
 
-        val yearDiff = now.get(Calendar.YEAR) - dobGregorian.get(Calendar.YEAR)
-        val monthDiff = now.get(Calendar.MONTH) - dobGregorian.get(Calendar.MONTH)
+        val yearDiff = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
+        val monthDiff = now.get(Calendar.MONTH) - dob.get(Calendar.MONTH)
+
         return yearDiff * 12 + monthDiff
     }
 
@@ -67,7 +58,7 @@ class MilkResultFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val kid = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
-                val age = kid.birthDate.let { getAgeInMonthsEn(it) }
+                val age = getAgeInMonths(kid.birthDate)
 
                 val milkList = generateMilkList(args.type, age, args.cow, args.lac)
                 setupRecycler(binding, milkList)
@@ -84,13 +75,10 @@ class MilkResultFragment : Fragment() {
 
     private fun setupRecycler(binding: FragmentMilkResultBinding, milkList: List<MilkModel>) {
         try {
-            // Step 1: Get previously selected items
             val savedSet = preferenceManager.getSelectedMilks()
 
-            // Step 2: Update each item based on saved selection
             milkList.forEach { it.isSelected = savedSet.contains(it.englishName) }
 
-            // Step 3: Pass preferenceManager and context to adapter
             adapter = MilkAdapter(
                 milkList.toMutableList(),
                 requireContext(),
@@ -127,7 +115,17 @@ class MilkResultFragment : Fragment() {
             val milkUse = milkUseArr[i]
 
             if (isMilkSuitable(age, start, end, lactoseLevel, typeStr, cow, lac, type, milkUse)) {
-                list.add(createModel(i, persianName, englishName, monthStart, monthFinish, milkLac, milkUseArr, milkType))
+                list.add(
+                    MilkModel(
+                        persianName[i],
+                        englishName[i],
+                        start,
+                        end,
+                        lactoseLevel,
+                        milkUse,
+                        typeStr
+                    )
+                )
             }
         }
 
@@ -148,19 +146,4 @@ class MilkResultFragment : Fragment() {
                         (type == 4 && milkUse.contains(getString(R.string.regular)))) ||
                 (type == 6)
     }
-
-    private fun createModel(
-        i: Int,
-        fa: Array<String>, en: Array<String>,
-        start: Array<String>, end: Array<String>,
-        lac: Array<String>, use: Array<String>, type: Array<String>
-    ) = MilkModel(
-        fa[i],
-        en[i],
-        start[i].toInt(),
-        end[i].toInt(),
-        lac[i].toInt(),
-        use[i],
-        type[i]
-    )
 }

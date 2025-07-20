@@ -9,14 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
-import com.example.kidzi.databinding.FragmentMilkManualBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidAlergyDao
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.di.db.models.KidAlergyModel
 import dagger.hilt.android.AndroidEntryPoint
-import ir.hamsaa.persiandatepicker.util.PersianCalendar
 import kotlinx.coroutines.launch
+import com.example.kidzi.util.parsePersianDateToGregorianMillis
 import java.util.*
 import javax.inject.Inject
 
@@ -26,18 +25,6 @@ class MilkManualFragment : Fragment() {
     @Inject lateinit var kidAlergyDao: KidAlergyDao
     @Inject lateinit var preferenceManager: PreferenceManager
     @Inject lateinit var kidNameDao: KidNameDao
-
-    private fun parsePersianDateToGregorianMillis(persianDate: String): Long {
-        return try {
-            val parts = persianDate.split("/")
-            val (year, month, day) = parts.map { it.toInt() }
-            val persian = PersianCalendar()
-            persian.setPersianDate(year, month - 1, day)
-            persian.timeInMillis
-        } catch (_: Exception) {
-            0L
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

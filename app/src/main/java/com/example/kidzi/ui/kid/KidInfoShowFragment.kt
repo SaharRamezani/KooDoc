@@ -15,8 +15,7 @@ import com.example.kidzi.databinding.FragmentKidInfoShowBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.di.db.models.KidNameModel
-import com.example.kidzi.util.NumberFormatter
-import com.example.kidzi.util.showPersianDatePicker
+import com.example.kidzi.util.showLocalizedDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -69,8 +68,8 @@ class KidInfoShowFragment : Fragment() {
     }
 
     private fun showDatePicker(binding: FragmentKidInfoShowBinding) {
-        showPersianDatePicker(requireContext()) { formattedDate ->
-            binding.btnGroup.text = NumberFormatter.formatNumber(requireContext(), formattedDate)
+        showLocalizedDatePicker(requireContext()) { selectedDate ->
+            binding.btnGroup.text = selectedDate
         }
     }
 
