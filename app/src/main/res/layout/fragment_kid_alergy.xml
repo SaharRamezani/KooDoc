@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/lactose" />
+                    android:text="@string/lactose_without_colon" />
 
                 <CheckBox
                     android:id="@+id/check_protein"

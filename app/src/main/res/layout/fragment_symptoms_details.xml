@@ -93,13 +93,6 @@
                                     android:layout_height="match_parent"
                                     android:background="@color/surface_bg_deep" />
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/arrow_info"
-                                    android:layout_margin="@dimen/margin_symptoms_cards"
-                                    android:src="@drawable/ic_arrow_down" />
-
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -112,6 +105,13 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_info"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:src="@drawable/ic_arrow_down" />
                             </LinearLayout>
 
                             <!-- Expandable detail section (initially hidden) -->
@@ -159,12 +159,6 @@
                                     android:layout_width="10dp"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/holo_red_dark"/>
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/arrow_emergency"
-                                    android:layout_margin="@dimen/margin_symptoms_cards"
-                                    android:src="@drawable/ic_arrow_down"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -176,6 +170,12 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_emergency"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:src="@drawable/ic_arrow_down"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -220,12 +220,6 @@
                                     android:layout_width="10dp"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/holo_orange_light"/>
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/arrow_emergency_medium"
-                                    android:layout_margin="@dimen/margin_symptoms_cards"
-                                    android:src="@drawable/ic_arrow_down"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -237,6 +231,12 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_emergency_medium"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:src="@drawable/ic_arrow_down"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -280,12 +280,6 @@
                                     android:layout_width="10dp"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/holo_blue_light"/>
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/arrow_emergency_low"
-                                    android:layout_margin="@dimen/margin_symptoms_cards"
-                                    android:src="@drawable/ic_arrow_down"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -297,6 +291,12 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_emergency_low"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:src="@drawable/ic_arrow_down"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -340,12 +340,6 @@
                                     android:layout_width="10dp"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/holo_green_light"/>
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/arrow_home"
-                                    android:layout_margin="@dimen/margin_symptoms_cards"
-                                    android:src="@drawable/ic_arrow_down"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -357,6 +351,12 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_home"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:src="@drawable/ic_arrow_down"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -405,13 +405,6 @@
                                     android:layout_height="match_parent"
                                     android:background="@color/surface_bg_deep" />
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/arrow_relative"
-                                    android:layout_margin="@dimen/margin_symptoms_cards"
-                                    android:src="@drawable/ic_arrow_down" />
-
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -425,6 +418,14 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/arrow_relative"
+                                    android:layout_margin="@dimen/margin_symptoms_cards"
+                                    android:src="@drawable/ic_arrow_down" />
+
                             </LinearLayout>
 
                             <!-- Expandable Details -->
@@ -475,13 +476,6 @@
                                 android:layout_height="match_parent"
                                 android:background="@color/surface_bg_deep" />
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/arrow_care"
-                                android:layout_margin="@dimen/margin_symptoms_cards"
-                                android:src="@drawable/ic_arrow_down" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -495,6 +489,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/arrow_care"
+                                android:layout_margin="@dimen/margin_symptoms_cards"
+                                android:src="@drawable/ic_arrow_down" />
                         </LinearLayout>
 
                         <LinearLayout

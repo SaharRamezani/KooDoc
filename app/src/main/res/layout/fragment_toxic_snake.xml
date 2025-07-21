@@ -73,7 +73,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorErrorText"
-                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
                                 android:text="@string/alert"/>
                         </RelativeLayout>
                         <LinearLayout
@@ -118,7 +118,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/text_pastel_background"
-                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
                                 android:text="@string/forbid"/>
                         </RelativeLayout>
                         <LinearLayout
@@ -163,7 +163,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/button_success_text"
-                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
                                 android:text="@string/actions"/>
                         </RelativeLayout>
                         <LinearLayout

@@ -42,8 +42,6 @@
                     android:layout_height="wrap_content"
                     android:layoutDirection="locale"
                     android:textDirection="locale"
-                    android:gravity="end"
-                    android:textAlignment="viewEnd"
                     android:text="@string/mother"
                     android:id="@+id/radio_mom"/>
 
@@ -52,8 +50,6 @@
                     android:layout_height="wrap_content"
                     android:layoutDirection="locale"
                     android:textDirection="locale"
-                    android:gravity="end"
-                    android:textAlignment="viewEnd"
                     android:text="@string/dad"
                     android:id="@+id/radio_dad"/>
 
@@ -63,8 +59,6 @@
                     android:layout_height="wrap_content"
                     android:layoutDirection="locale"
                     android:textDirection="locale"
-                    android:gravity="end"
-                    android:textAlignment="viewEnd"
                     android:text="@string/other"
                     android:id="@+id/radio_other"/>
             </RadioGroup>

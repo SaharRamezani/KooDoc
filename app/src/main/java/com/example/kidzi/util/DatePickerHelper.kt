@@ -43,6 +43,44 @@ fun gregorianToShamsi(date: Date): Triple<Int, Int, Int> {
     return Triple(persianDate.shYear, persianDate.shMonth, persianDate.shDay)
 }
 
+fun getAgeInMonths(dateStr: String, locale: Locale = Locale.getDefault()): Int {
+    val gregorianMillis = when (locale.language) {
+        "fa" -> parsePersianDateToGregorianMillis(dateStr)
+        else -> parseGregorianDateToMillis(dateStr)
+    }.takeIf { it != 0L } ?: return 0
+
+    val dob = Calendar.getInstance().apply { timeInMillis = gregorianMillis }
+    val now = Calendar.getInstance()
+
+    var yearDiff = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
+    var monthDiff = now.get(Calendar.MONTH) - dob.get(Calendar.MONTH)
+    val dayDiff = now.get(Calendar.DAY_OF_MONTH) - dob.get(Calendar.DAY_OF_MONTH)
+
+    if (dayDiff < 0) {
+        monthDiff -= 1
+    }
+
+    return yearDiff * 12 + monthDiff
+}
+
+fun parseGregorianDateToMillis(dateStr: String): Long {
+    return try {
+        val parts = dateStr.split("/")
+        val (year, month, day) = parts.map { it.toInt() }
+        Calendar.getInstance().apply {
+            set(Calendar.YEAR, year)
+            set(Calendar.MONTH, month - 1)
+            set(Calendar.DAY_OF_MONTH, day)
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.timeInMillis
+    } catch (_: Exception) {
+        0L
+    }
+}
+
 fun showLocalizedDatePicker(
     context: Context,
     onDateSelected: (formattedDate: String) -> Unit

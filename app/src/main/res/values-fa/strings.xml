@@ -338,6 +338,7 @@
     <string name="ok">باشه</string>
     <string name="select_milk_type">نوع شیر خشک:</string>
     <string name="base">پایه:</string>
+    <string name="lactose_without_colon">لاکتوز</string>
     <string name="lactose">لاکتوز:</string>
     <string name="diet">رژیمی</string>
     <string name="regular">رگولار</string>

@@ -16,6 +16,7 @@ import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidAlergyDao
 import com.example.kidzi.di.db.dao.KidNameDao
 import com.example.kidzi.ui.milk.adapters.MilkAdapter
+import com.example.kidzi.util.getAgeInMonths
 import com.example.kidzi.util.parsePersianDateToGregorianMillis
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -30,19 +31,6 @@ class MilkResultFragment : Fragment() {
     @Inject lateinit var preferenceManager: PreferenceManager
     @Inject lateinit var kidNameDao: KidNameDao
     @Inject lateinit var kidAlergyDao: KidAlergyDao
-
-    private fun getAgeInMonths(dateStr: String): Int {
-        val gregorianMillis = parsePersianDateToGregorianMillis(dateStr).takeIf { it != 0L }
-            ?: return 0
-
-        val dob = Calendar.getInstance().apply { timeInMillis = gregorianMillis }
-        val now = Calendar.getInstance()
-
-        val yearDiff = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
-        val monthDiff = now.get(Calendar.MONTH) - dob.get(Calendar.MONTH)
-
-        return yearDiff * 12 + monthDiff
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = FragmentMilkResultBinding.inflate(inflater, container, false)
@@ -137,12 +125,13 @@ class MilkResultFragment : Fragment() {
         lactoseLevel: Int, typeStr: String,
         cow: Boolean, lac: Boolean, type: Int, milkUse: String
     ): Boolean {
-        return /*age in start..end &&*/ !(lac && lactoseLevel >= 3) /* &&
+        Log.d("MilkResult (end): ", "Type=$type, Age=$age, Lac=$lac, Cow=$cow")
+        return age in start..end && !(lac && lactoseLevel >= 3) &&
                 !(cow && typeStr.contains(getString(R.string.cow_protein))) &&
                 !(cow && typeStr.contains(getString(R.string.milk_protein))) &&
                 ((type == 5) ||
                         (type == 3 && milkUse.contains(getString(R.string.diet))) ||
                         (type == 4 && milkUse.contains(getString(R.string.regular)))) ||
-                (type == 6) */
+                (type == 6)
     }
 }

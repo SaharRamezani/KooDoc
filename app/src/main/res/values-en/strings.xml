@@ -191,8 +191,9 @@
     <string name="choose_alergy">Select the child’s non-drug allergies.</string>
     <string name="peanut">Peanut</string>
     <string name="honey">Honey</string>
-    <string name="lactose">Lactose</string>
-    <string name="cow_protein">Cow’s milk protein</string>
+    <string name="lactose">Lactose:</string>
+    <string name="lactose_without_colon">Lactose</string>
+    <string name="cow_protein">Cow\'s milk protein</string>
     <string name="my_kid_milk">My child’s suitable formula</string>
     <string name="my_kid_allergy_milk">Formula suitable for the child’s allergy</string>
     <string name="all_milk">All formulas</string>
@@ -314,7 +315,7 @@
     <string name="agree">Understood</string>
     <string name="with">With</string>
     <string name="rules_2">Rules</string>
-    <string name="agree_koodoc">I accept using Koodoc.</string>
+    <string name="agree_koodoc">are acknowledged and agreed to.</string>
     <string name="your_kid_info">Your child\'s information:</string>
     <string name="weight2">Weight:</string>
     <string name="length">Height:</string>
