@@ -298,9 +298,9 @@
     <string name="age_week">Age (weeks)</string>
     <string name="head">Head</string>
     <string name="info_about">Information about</string>
-    <string name="emergency">If you see any of these signs, go to the emergency room immediately</string>
+    <string name="emergency">If you see the signs below, go to the emergency</string>
     <string name="emergency_medium">If you see the signs below, go to a pharmacy or clinic</string>
-    <string name="emergency_low">If you see the signs below, see a doctor within 24 hours</string>
+    <string name="emergency_low">If you see the signs below, see a doctor</string>
     <string name="home_care">If you see the signs below, you can provide home care</string>
     <string name="caring_advice">Care tips</string>
     <string name="related_symptoms">Related symptoms</string>

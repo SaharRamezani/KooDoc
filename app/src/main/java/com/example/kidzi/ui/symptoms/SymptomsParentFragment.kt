@@ -9,14 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentSymptomsParentBinding
 import com.example.kidzi.ui.symptoms.adapter.SymptomSearchAdapter
-import com.example.kidzi.ui.toxic.ToxicMedFragmentDirections
-import com.example.kidzi.ui.vaccine.adapters.VaccineAdapter
 
 class SymptomsParentFragment : Fragment() {
     private lateinit var adapter: SymptomSearchAdapter
@@ -68,10 +65,10 @@ class SymptomsParentFragment : Fragment() {
             val editText = searchView.findViewById<View>(searchTextId)
             if (editText is EditText) {
                 searchEditText = editText
-                searchEditText.textDirection = View.TEXT_DIRECTION_RTL
-                searchEditText.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
-                searchEditText.gravity = Gravity.RIGHT or Gravity.CENTER_VERTICAL
-                searchEditText.layoutDirection = View.LAYOUT_DIRECTION_RTL
+                // searchEditText.textDirection = View.TEXT_DIRECTION_RTL
+                // searchEditText.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
+                // searchEditText.gravity = Gravity.END or Gravity.CENTER_VERTICAL
+                // searchEditText.layoutDirection = View.LAYOUT_DIRECTION_RTL
             }
         } else {
             Log.e("SymptomsFragment", "search_src_text ID not found")

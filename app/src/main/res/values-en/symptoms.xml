@@ -3,7 +3,7 @@
     <string-array name="symptoms_names">
         <item>Vomiting with diarrhea</item>
         <item>Vomiting without diarrhea</item>
-        <item>Vomiting in infants under 12 months</item>
+        <item>Vomiting in infants</item>
         <item>Fever measurement</item>
         <item>Fever</item>
         <item>Teething</item>
