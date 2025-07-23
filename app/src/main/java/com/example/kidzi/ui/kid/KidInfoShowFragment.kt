@@ -37,14 +37,14 @@ class KidInfoShowFragment : Fragment() {
         if (!isNew) loadKidInfo(id, binding)
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(KidInfoShowFragmentDirections.actionKidInfoShowFragmentToKidChoose2Fragment())
+            findNavController().navigate(KidInfoShowFragmentDirections.actionKidInfoShowFragmentToKidChooseFragment(true))
         }
 
         binding.btnGroup.setOnClickListener { showDatePicker(binding) }
 
         binding.btnNext.setOnClickListener {
             validateAndSaveKidInfo(binding, id) {
-                findNavController().navigate(KidInfoShowFragmentDirections.actionKidInfoShowFragmentToKidChoose2Fragment())
+                findNavController().navigate(KidInfoShowFragmentDirections.actionKidInfoShowFragmentToKidChooseFragment())
             }
         }
 

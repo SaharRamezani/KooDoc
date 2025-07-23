@@ -45,15 +45,8 @@ Wash the child’s skin and mouth thoroughly with cool water, give them milk or 
     <string-array name="toxic_drugs">
         <item>Cannabis (Hashish)</item>
         <item>Opium and derivatives</item>
-        <item>Methamphetamine and amphetamines</item>
+        <item>Methamphetamine</item>
         <item>Alcohol (ethanol, methanol)</item>
-    </string-array>
-
-    <string-array name="toxic_drug_weight">
-        <item>Any amount</item>
-        <item>Any amount</item>
-        <item>Smallest amount</item>
-        <item>Small amount</item>
     </string-array>
 
     <string-array name="toxic_drug_symptom">

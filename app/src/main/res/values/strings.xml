@@ -108,8 +108,8 @@
     <string name="info_for_baby">یه کم از بچه‌ات برام بگو، دوست دارم بیشتر بشناسمش! 😊</string>
     <string name="ready_2">آماده‌ای؟</string>
     <string name="kid_info">اطلاعات کودک</string>
-    <string name="weight">وزن</string>
-    <string name="height">قد</string>
+    <string name="weight">وزن (کیلوگرم)</string>
+    <string name="height">قد (سانتی متر)</string>
     <string name="disease_name">نام بیماری</string>
     <string name="add">افزودن</string>
     <string name="choose_disease">کودک به کدام موارد زیر مبتلاست؟</string>
@@ -266,7 +266,8 @@
     <string name="iron_phase2_symptoms">کم شدن و بهبود علائم گوارشی مانند استفراغ و اسهال</string>
     <string name="iron_phase3_time">۱۲ تا ۳۶ ساعت بعد</string>
     <string name="iron_phase3_symptoms">کم آب شدن بدن\nدرگیری احتمالی کبد</string>
-    <string name="head">دور سر</string>
+    <string name="head">دور سر (سانتی متر)</string>
+    <string name="symptom_index_error">دیتایی موجود نیست.</string>
     <string name="my_child_growth_chart">نمودار رشد کودک من</string>
     <string name="my_formula_milk">شیر خشک من</string>
     <string name="choose_kid">انتخاب کودک</string>

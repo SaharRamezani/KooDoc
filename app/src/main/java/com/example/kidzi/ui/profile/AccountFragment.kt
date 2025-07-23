@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.R
@@ -30,7 +31,9 @@ class AccountFragment : Fragment() {
         }
 
         binding.btnKids.setOnClickListener {
-            findNavController().navigate(R.id.action_accountFragment_to_kidChoose2Fragment)
+            findNavController().navigate(
+                AccountFragmentDirections.actionAccountFragmentToKidChooseFragment(true)
+            )
         }
 
         binding.btnRules.setOnClickListener {

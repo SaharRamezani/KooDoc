@@ -11,7 +11,7 @@
         <item>Cold</item>
         <item>Stomach (abdominal) pain</item>
         <item>Diaper rash</item>
-        <item>Crying in infants under 3 months</item>
+        <item>Crying (3 months)</item>
         <item>Sore throat</item>
         <item>Earache</item>
     </string-array>
@@ -354,7 +354,7 @@ Traveler’s diarrhea: (Caused by germs in food or drink. Suspect this if the co
 Bacterial gastrointestinal infection (some bacteria can cause diarrhea. Most bacterial diarrhea resolves on its own, but some can cause severe colon infection.)
 Serious complication: Dehydration (this means the body has lost too much fluid. (Read more under "dehydration"))</item>
 
-        <item>What to know about vomiting without diarrhea:
+        <item>Vomiting without diarrhea:
 Most vomiting is caused by a viral stomach infection. Sometimes mild food poisoning causes vomiting — vomiting is a way the body protects the lower intestine — the good news is stomach illnesses usually last a short time — the main risk of vomiting is dehydration. Dehydration means the body has lost too much fluid.</item>
 
         <item>How to recognize dehydration:
@@ -496,7 +496,7 @@ Dirty diaper: Stool is very irritating to the skin and can cause pain and burnin
 Colic: Colic is the main cause of repeated crying in early months. All babies have some normal daily crying. If crying exceeds 3 hours a day, it is called colic. They are happy at other times.
 Pain (serious): Serious pains include earache, mouth sores, or severe diaper rash. A sore on the penis can also cause pain and crying. These babies cry a lot and are not happy even when not crying. At this age, fever is serious until proven otherwise.</item>
 
-        <item>Recommended care until you talk to your doctor:
+        <item>Recommended care:
 Cold compress for pain:
 Place a cool, moist cloth on the outer ear for 20 minutes. This should help relieve the pain until pain medicine takes effect.
 Note: Some children prefer warmth for 20 minutes.
@@ -635,7 +635,7 @@ Reduce amount per feeding: If vomiting once, give half the usual amount every 1�
         <item>Feeding tips:
 Stop all solid foods: Avoid giving solid foods to vomiting children. After 8 hours without vomiting, slowly reintroduce. Start with starchy, easy-to-digest foods like cereals, crackers, and bread.
 Key to success: Give small amounts of fluid. Offer 2–3 teaspoons (10–15 mL) every 5 minutes. Older kids can sip ORS slowly. - Increase fluids: After 4 hours without vomiting, increase fluid amount. After 8 hours, return to normal fluids. - Avoid juice and soda: They can worsen diarrhea. Note: If symptoms persist or worsen, see a doctor.</item>
-        <item>How to take no-touch forehead temperature:
+        <item>How to take no-touch temperature:
 **Age**: All ages
 1. Aim the thermometer at the forehead center.
 2. Stay less than 1 inch (2.5 cm) away. Do not touch the forehead.

@@ -1,6 +1,7 @@
 package com.example.kidzi.ui.kid
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -30,13 +31,20 @@ class KidsChooseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentKidsChooseBinding.inflate(inflater)
+
+        Log.i("KidsChooseFragment", "arguments = $arguments")
+        Log.i("KidsChooseFragment", "navigateToInfo key exists = ${arguments?.containsKey("navigateToInfo")}")
+
         val navigateToInfo = arguments?.getBoolean("navigateToInfo") ?: false
+        Log.i("KidsChooseFragment", "Final navigateToInfo value = $navigateToInfo")
+
 
         binding.btnBack.setOnClickListener {
             if (navigateToInfo)
                 findNavController().navigate(R.id.accountFragment)
             else
                 findNavController().popBackStack()
+            Log.i("KidsChooseFragment", "navigateToInfo = $navigateToInfo")
         }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
@@ -48,12 +56,14 @@ class KidsChooseFragment : Fragment() {
                 val selectedKidId = kidList[position].id
                 preferenceManager.updateCurrentKid(selectedKidId)
 
+                Log.i("KidsChooseFragment", "navigateToInfo2 = $navigateToInfo")
                 if (navigateToInfo) {
                     findNavController().navigate(
                         KidsChooseFragmentDirections
                             .actionKidsChooseFragmentToKidInfoShowFragment(selectedKidId, false)
                     )
                 } else {
+                    Log.i("selectedKidId", "selectedKidId = $selectedKidId")
                     findNavController().popBackStack()
                 }
             }

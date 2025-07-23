@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -116,6 +117,15 @@ class SymptomsDetailsFragment : Fragment() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupEmergencyLow(binding: FragmentSymptomsDetailsBinding, row: Int) {
+        val emergencyNoArray = resources.getStringArray(R.array.symptoms_emergency_no)
+
+        // Check if row is within bounds
+        if (row >= emergencyNoArray.size) {
+            binding.cardEmergencyLow.visibility = View.GONE
+            Toast.makeText(requireContext(), resources.getString(R.string.symptom_index_error), Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val detail = resources.getStringArray(R.array.symptoms_emergency_no)[row]
         if (detail.isNullOrEmpty() || detail.length < 2) {
             binding.cardEmergencyLow.visibility = View.GONE
@@ -171,49 +181,67 @@ class SymptomsDetailsFragment : Fragment() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupCareSections(binding: FragmentSymptomsDetailsBinding, row: Int) {
+
+        val h1Array = resources.getStringArray(R.array.symptoms_h1)
+        val h2Array = resources.getStringArray(R.array.symptoms_h2)
+        val h3Array = resources.getStringArray(R.array.symptoms_h3)
+        val h4Array = resources.getStringArray(R.array.symptoms_h4)
+        val h5Array = resources.getStringArray(R.array.symptoms_h5)
+        val h6Array = resources.getStringArray(R.array.symptoms_h6)
+        val h7Array = resources.getStringArray(R.array.symptoms_h7)
+
+        if (row >= h1Array.size || row >= h2Array.size || row >= h3Array.size ||
+            row >= h4Array.size || row >= h5Array.size || row >= h6Array.size ||
+            row >= h7Array.size) {
+            // Log error and return early
+            android.util.Log.e("SymptomsDetails", "Invalid row index: $row")
+            return
+        }
+
+        // Then proceed with your existing setupCare calls using safe indices
         setupCare(
             binding.cardCareH1, binding.layoutMoreH1, binding.arrowH1,
-            resources.getStringArray(R.array.symptoms_h1)[row],
+            h1Array[row],
             R.id.txt_header_h1, R.id.h1_detail,
             ::isH1
         )
 
         setupCare(
             binding.cardCareH2, binding.layoutMoreH2, binding.arrowH2,
-            resources.getStringArray(R.array.symptoms_h2)[row],
+            h2Array[row],
             R.id.txt_header_h2, R.id.h2_detail,
             ::isH2
         )
 
         setupCare(
             binding.cardCareH3, binding.layoutMoreH3, binding.arrowH3,
-            resources.getStringArray(R.array.symptoms_h3)[row],
+            h3Array[row],
             R.id.txt_header_h3, R.id.h3_detail,
             ::isH3
         )
 
         setupCare(
             binding.cardCareH4, binding.layoutMoreH4, binding.arrowH4,
-            resources.getStringArray(R.array.symptoms_h4)[row],
+            h4Array[row],
             R.id.txt_header_h4, R.id.h4_detail,
             ::isH4
         )
 
         setupCare(
             binding.cardCareH5, binding.layoutMoreH5, binding.arrowH5,
-            resources.getStringArray(R.array.symptoms_h5)[row],
+            h5Array[row],
             R.id.txt_header_h5, R.id.h5_detail,
             ::isH5
         )
 
         setupCare(
             binding.cardCareH6, binding.layoutMoreH6, binding.arrowH6,
-            resources.getStringArray(R.array.symptoms_h6)[row],
+            h6Array[row],
             R.id.txt_header_h6, R.id.h6_detail,
             ::isH6
         )
 
-        val h7Text = resources.getStringArray(R.array.symptoms_h7)[row]
+        val h7Text = h7Array[row]
         if (h7Text.isNullOrEmpty() || h7Text.length < 2) {
             binding.cardCareH7.visibility = View.GONE
         } else {
