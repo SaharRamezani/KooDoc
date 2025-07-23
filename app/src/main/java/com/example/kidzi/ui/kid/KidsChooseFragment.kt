@@ -30,9 +30,13 @@ class KidsChooseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentKidsChooseBinding.inflate(inflater)
+        val navigateToInfo = arguments?.getBoolean("navigateToInfo") ?: false
 
         binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
+            if (navigateToInfo)
+                findNavController().navigate(R.id.accountFragment)
+            else
+                findNavController().popBackStack()
         }
 
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
@@ -41,8 +45,17 @@ class KidsChooseFragment : Fragment() {
             val kidList = kidNameDao.getAll()
 
             adapter = KidChooseAdapter(kidList) { position ->
-                preferenceManager.updateCurrentKid(kidList[position].id)
-                findNavController().popBackStack()
+                val selectedKidId = kidList[position].id
+                preferenceManager.updateCurrentKid(selectedKidId)
+
+                if (navigateToInfo) {
+                    findNavController().navigate(
+                        KidsChooseFragmentDirections
+                            .actionKidsChooseFragmentToKidInfoShowFragment(selectedKidId, false)
+                    )
+                } else {
+                    findNavController().popBackStack()
+                }
             }
 
             binding.recycler.adapter = adapter

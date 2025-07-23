@@ -40,7 +40,6 @@ class LanguageSelectionFragment : Fragment() {
             startActivity(intent)
             context.finishAffinity() // Kill the current task
         } else {
-            // Optional: fallback or error handling
             throw IllegalStateException("Unable to restart app: launch intent is null")
         }
     }

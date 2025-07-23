@@ -264,7 +264,15 @@
         android:id="@+id/kidsChooseFragment"
         android:name="com.example.kidzi.ui.kid.KidsChooseFragment"
         android:label="fragment_kids_choose"
-        tools:layout="@layout/fragment_kids_choose" />
+        tools:layout="@layout/fragment_kids_choose">
+        <argument
+            android:name="navigateToInfo"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+        <action
+            android:id="@+id/action_kidsChooseFragment_to_kidInfoShowFragment"
+            app:destination="@id/kidInfoShowFragment" />
+    </fragment>
     <fragment
         android:id="@+id/milkManualFragment"
         android:name="com.example.kidzi.ui.milk.MilkManualFragment"
@@ -576,8 +584,8 @@
             android:id="@+id/action_accountFragment_to_kidInfoFragmentNew"
             app:destination="@id/kidInfoNewFragment" />
         <action
-            android:id="@+id/action_accountFragment_to_kidChoose2Fragment"
-            app:destination="@id/kidChoose2Fragment" />
+            android:id="@+id/action_accountFragment_to_kidChooseFragment"
+            app:destination="@id/kidsChooseFragment" />
         <action
             android:id="@+id/action_accountFragment_to_LanguageSelectionFragment"
             app:destination="@id/LanguageSelectionFragment" />
@@ -607,15 +615,6 @@
             app:destination="@id/accountFragment" />
     </fragment>
     <fragment
-        android:id="@+id/kidChoose2Fragment"
-        android:name="com.example.kidzi.ui.kid.KidChoose2Fragment"
-        android:label="fragment_kid_choose2"
-        tools:layout="@layout/fragment_kid_choose2" >
-        <action
-            android:id="@+id/action_kidChoose2Fragment_to_kidInfoShowFragment"
-            app:destination="@id/kidInfoShowFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/kidInfoShowFragment"
         android:name="com.example.kidzi.ui.kid.KidInfoShowFragment"
         android:label="fragment_kid_info_show"
@@ -627,7 +626,7 @@
             android:name="new"
             app:argType="boolean"/>
         <action
-            android:id="@+id/action_KidInfoShowFragment_to_KidChoose2Fragment"
-            app:destination="@id/kidChoose2Fragment" />
+            android:id="@+id/action_KidInfoShowFragment_to_KidChooseFragment"
+            app:destination="@id/kidsChooseFragment" />
     </fragment>
 </navigation>
