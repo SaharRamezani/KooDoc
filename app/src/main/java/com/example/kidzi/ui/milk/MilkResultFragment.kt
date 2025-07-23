@@ -46,7 +46,7 @@ class MilkResultFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val kid = kidNameDao.getKidInfo(preferenceManager.getCurrentKid())
-                val age = getAgeInMonths(kid.birthDate)
+                val age = args.age
 
                 val milkList = generateMilkList(args.type, age, args.cow, args.lac)
                 setupRecycler(binding, milkList)
