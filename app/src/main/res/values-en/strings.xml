@@ -233,7 +233,7 @@
     <string name="is_protein">Allergic to cow’s milk protein?</string>
     <string name="vaccine_main">Vaccine information</string>
     <string name="vaccine_age">Vaccine by age</string>
-    <string name="special_child">Vaccination of children with special conditions</string>
+    <string name="special_child">Vaccination with special conditions</string>
     <string name="care_advice">Vaccination advice</string>
     <string name="wrong_believes">Wrong beliefs</string>
     <string name="about_vaccines">About vaccines</string>
@@ -299,7 +299,7 @@
     <string name="head">Head</string>
     <string name="info_about">Information about</string>
     <string name="emergency">If you see the signs below, go to the emergency</string>
-    <string name="emergency_medium">If you see the signs below, go to a pharmacy or clinic</string>
+    <string name="emergency_medium">If you see the signs below, go to a clinic</string>
     <string name="emergency_low">If you see the signs below, see a doctor</string>
     <string name="home_care">If you see the signs below, you can provide home care</string>
     <string name="caring_advice">Care tips</string>

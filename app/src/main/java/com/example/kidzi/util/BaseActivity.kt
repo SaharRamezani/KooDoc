@@ -10,10 +10,17 @@ import java.util.Locale
 
 open class BaseActivity : AppCompatActivity() {
 
-    override fun attachBaseContext(base: Context) {
-        val lang = PreferenceManager(base).getLanguage() ?: "fa"
-        val newBase = MyLanguageManager.setLocale(base, lang)
-        super.attachBaseContext(newBase)
+    override fun attachBaseContext(newBase: Context) {
+        val lang = PreferenceManager(newBase).getLanguage() ?: "fa"
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+
+        val config = Configuration()
+        config.setLocale(locale)
+        config.setLayoutDirection(locale)
+
+        val context = newBase.createConfigurationContext(config)
+        super.attachBaseContext(context)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,6 +1,5 @@
 package com.example.kidzi
 
-import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
@@ -8,9 +7,7 @@ import com.example.kidzi.databinding.ActivityMainBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.util.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Locale
 import javax.inject.Inject
-import android.content.res.Configuration
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
@@ -19,19 +16,6 @@ class MainActivity : BaseActivity() {
 
     @Inject
     lateinit var sharedPreferences: PreferenceManager
-
-    override fun attachBaseContext(newBase: Context) {
-        val lang = PreferenceManager(newBase).getLanguage() ?: "fa"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-
-        val config = Configuration()
-        config.setLocale(locale)
-        config.setLayoutDirection(locale)
-
-        val context = newBase.createConfigurationContext(config)
-        super.attachBaseContext(context)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
