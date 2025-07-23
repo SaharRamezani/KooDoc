@@ -11,6 +11,13 @@ object MyLanguageManager {
     private const val KEY_LANGUAGE = "app_language"
     private const val DEFAULT_LANGUAGE = "en"
 
+    /** Retrieve saved language (default is English) */
+    fun getLanguage(context: Context? = null): String {
+        return context?.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+            ?.getString(KEY_LANGUAGE, DEFAULT_LANGUAGE)
+            ?: DEFAULT_LANGUAGE
+    }
+
     /*fun setLocale(context: Context, language: String): Context {
         val locale = Locale(language)
         Locale.setDefault(locale)
@@ -27,11 +34,4 @@ object MyLanguageManager {
         val prefs: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         prefs.edit().putString(KEY_LANGUAGE, language).apply()
     }*/
-
-    /** Retrieve saved language (default is English) */
-    fun getLanguage(context: Context? = null): String {
-        return context?.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-            ?.getString(KEY_LANGUAGE, DEFAULT_LANGUAGE)
-            ?: DEFAULT_LANGUAGE
-    }
 }
