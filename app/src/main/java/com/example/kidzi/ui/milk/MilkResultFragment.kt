@@ -15,12 +15,10 @@ import com.example.kidzi.databinding.FragmentMilkResultBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.KidAlergyDao
 import com.example.kidzi.di.db.dao.KidNameDao
+import com.example.kidzi.di.db.models.MilkModel
 import com.example.kidzi.ui.milk.adapters.MilkAdapter
-import com.example.kidzi.util.getAgeInMonths
-import com.example.kidzi.util.parsePersianDateToGregorianMillis
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.util.*
 import javax.inject.Inject
 
 @AndroidEntryPoint

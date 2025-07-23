@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kidzi.databinding.ListGrowthBinding
-import com.example.kidzi.ui.milk.GrowthModel
+import com.example.kidzi.di.db.models.GrowthModel
 import com.example.kidzi.util.NumberFormatter
 
 class GrowthChartSimpleAdapter(

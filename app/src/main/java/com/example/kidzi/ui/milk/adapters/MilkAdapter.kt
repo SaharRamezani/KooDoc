@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kidzi.R
 import com.example.kidzi.databinding.ListMilkBinding
 import com.example.kidzi.di.db.PreferenceManager
-import com.example.kidzi.ui.milk.MilkModel
+import com.example.kidzi.di.db.models.MilkModel
 
 class MilkAdapter(
     private val milkList: MutableList<MilkModel>,
     private val context: Context,
     private val preferenceManager: PreferenceManager,
     private val onItemRemoved: ((Int) -> Unit)? = null, // Only used by MyKidMilkFragment
-    private val removeOnUncheck: Boolean = false // New flag to control behavior
+    private val removeOnUncheck: Boolean = false
 ) : RecyclerView.Adapter<MilkAdapter.GrowthChartViewHolder>() {
 
     inner class GrowthChartViewHolder(val binding: ListMilkBinding) : RecyclerView.ViewHolder(binding.root) {

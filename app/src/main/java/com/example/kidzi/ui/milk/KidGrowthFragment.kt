@@ -15,6 +15,7 @@ import com.example.kidzi.databinding.FragmentKidGrowthBinding
 import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.dao.GrowthDataDao
 import com.example.kidzi.di.db.dao.KidNameDao
+import com.example.kidzi.di.db.models.GrowthModel
 import com.example.kidzi.di.db.models.KidGrowthModel
 import com.example.kidzi.ui.milk.adapters.GrowthChartAdapter
 import com.example.kidzi.util.GrowthChartHelper

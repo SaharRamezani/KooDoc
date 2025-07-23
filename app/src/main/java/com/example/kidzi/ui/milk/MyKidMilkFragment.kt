@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.databinding.FragmentMyKidMilkBinding
 import com.example.kidzi.di.db.PreferenceManager
+import com.example.kidzi.di.db.models.MilkModel
 import com.example.kidzi.ui.milk.adapters.MilkAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

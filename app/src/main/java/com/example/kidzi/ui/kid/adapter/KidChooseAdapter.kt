@@ -1,24 +1,10 @@
 package com.example.kidzi.ui.kid.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kidzi.R
-import com.example.kidzi.databinding.ListGrowthBinding
 import com.example.kidzi.databinding.ListKidsBinding
-import com.example.kidzi.databinding.ListMilkBinding
-import com.example.kidzi.databinding.ListVaccineAboutBinding
-import com.example.kidzi.databinding.ListVaccinesBinding
-import com.example.kidzi.databinding.ListWrongBinding
-import com.example.kidzi.di.db.PreferenceManager
 import com.example.kidzi.di.db.models.KidNameModel
-import com.example.kidzi.ui.milk.GrowthModel
-import com.example.kidzi.ui.milk.MilkModel
-import com.example.kidzi.ui.vaccine.VaccineAboutModel
-import javax.inject.Inject
 
 class KidChooseAdapter(
     private val vaccineList: List<KidNameModel>,

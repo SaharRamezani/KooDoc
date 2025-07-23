@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kidzi.databinding.FragmentLanguageSelectionBinding
 import com.example.kidzi.di.db.PreferenceManager
-import com.example.kidzi.util.MyLanguageManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

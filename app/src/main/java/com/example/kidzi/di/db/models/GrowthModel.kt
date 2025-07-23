@@ -1,4 +1,4 @@
-package com.example.kidzi.ui.milk
+package com.example.kidzi.di.db.models
 
 data class GrowthModel(
     val age: Int,

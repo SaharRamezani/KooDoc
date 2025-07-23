@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kidzi.R
 import com.example.kidzi.databinding.FragmentGrowthChartBinding
+import com.example.kidzi.di.db.models.GrowthModel
 import com.example.kidzi.ui.milk.adapters.GrowthChartSimpleAdapter
 import com.example.kidzi.util.GrowthChartHelper
 import dagger.hilt.android.AndroidEntryPoint
