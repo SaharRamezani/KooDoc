@@ -101,6 +101,7 @@ class CalculatorResultFragment : DialogFragment() {
                 append(resultText)
                 append("\n\n⚠ ")
                 append(getString(R.string.warning_fever_usage))
+                append(" ")
                 append(getString(R.string.warning_ibuprofen_syrup_usage))
             }
         }
