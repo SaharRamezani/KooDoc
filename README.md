@@ -41,11 +41,6 @@ We are continuously working to improve Koodoc, with planned features including:
 - **Account Syncing Across Devices**: Securely sync child data across multiple parent devices.
 - **Improved Accessibility**: Dark mode, larger text options, and screen reader support.
 
-## Contribution
-
-We welcome contributions! Please refer to our [Contribution Guidelines](CONTRIBUTING.md) for more details.
-
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
+No license is available for this project. No one can use or modify the code without the owner's permission.
