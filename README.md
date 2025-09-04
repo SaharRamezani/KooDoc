@@ -21,34 +21,42 @@ Koodoc is an Android application designed to empower parents with essential tool
 
 Koodoc offers a comprehensive suite of tools, all within a bilingual (Farsi/English) and RTL/LTR UI supported environment:
 
+---
+
+### 🏠 Home Dashboard
+Clean and simple home screen to navigate between features.  
+<img src="screenshots/main_page.jpg" width="250"/>
+
+---
+
 ### 🧮 Drug Calculator
 Accurately determine safe dosages of common medicines based on weight and age.  
-![Drug Calculator](screenshots/calculator_dosage.jpg)
+<img src="screenshots/calculator_dosage.jpg" width="250"/>
 
 ---
 
 ### 📊 Growth Chart
 Visualize your child's physical development (weight, height, head circumference) against percentile curves.  
-![Growth Chart](screenshots/growth_chart.jpg)
+<img src="screenshots/growth_chart.jpg" width="250"/>
 
 ---
 
 ### 🍼 Feeding & Formula Suggestions
 Personalized milk formula recommendations based on age, allergies, and nutrition needs.  
-![Milk Formulas](screenshots/milks.jpg)
+<img src="screenshots/milks.jpg" width="250"/>
 
 ---
 
 ### ❤️ Symptom Assessment
 Quickly check symptoms like vomiting, diarrhea, or fever and get guidance on whether to seek medical care.  
-![Symptom Search](screenshots/search_symptoms.jpg)  
-![Symptom Details](screenshots/symptoms.jpg)
+<img src="screenshots/search_symptoms.jpg" width="250"/>  
+<img src="screenshots/symptoms.jpg" width="250"/>
 
 ---
 
 ### ⚠️ Poisoning Awareness
 Critical information on poisoning risks (like iron poisoning) with clear timelines and emergency guidance.  
-![Poisoning Info](screenshots/iron_toxic.jpg)
+<img src="screenshots/iron_toxic.jpg" width="250"/>
 
 ---
 
@@ -59,13 +67,7 @@ Provides structured information on vaccines and schedules (future updates will a
 
 ### 👶 Child Profile
 Create detailed child profiles including birthday, weight, height, and head size to personalize recommendations.  
-![Child Profile](screenshots/calender_birthday.jpg)
-
----
-
-### 🏠 Home Dashboard
-Clean and simple home screen to navigate between features.  
-![Main Page](screenshots/main_page.jpg)
+<img src="screenshots/calender_birthday.jpg" width="250"/>
 
 ---
 
